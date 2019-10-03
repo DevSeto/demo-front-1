@@ -1,0 +1,459 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+  <li>Modules</li>
+  <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>client/src/app/app.routing.module.ts</code>
+        </p>
+
+
+        
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {NgModule} from &#x27;@angular/core&#x27;;
+import {Routes, RouterModule} from &#x27;@angular/router&#x27;;
+import {AuthGuard} from &quot;./services/auth-guard/auth-guard.service&quot;;
+import {SecondaryAuthGuard} from &quot;./services/auth-guard/secondary.auth-guard.service&quot;;
+import {UsersProfileComponent} from &quot;./components/users-profile/users-profile.component&quot;;
+import {IndexComponent} from &quot;./components/index/index.component&quot;;
+import {LoginComponent} from &quot;./components/login/login.component&quot;;
+import {LoginAgent} from &quot;./components/login-agent/login-agent&quot;;
+import {RegisterComponent} from &quot;./components/register/register.component&quot;;
+import {LogoutComponent} from &quot;./components/logout/logout.component&quot;;
+import {ErrorPageComponent} from &quot;./components/error-page/error-page.component&quot;;
+import {TicketsComponent} from &quot;./components/tickets/tickets.component&quot;;
+import {TicketIndividualComponent} from &quot;./components/ticket-individual/ticket-individual.component&quot;;
+import {SettingsComponent} from &quot;./components/settings/settings.component&quot;;
+
+import {UsersComponent} from &quot;./components/users/users.component&quot;;
+import {DeleteUser} from &quot;./components/delete-user/delete-user&quot;;
+import {MailboxComponent} from &quot;./components/mailbox/mailbox.component&quot;;
+import {AddMailbox} from &quot;./components/add-mailbox/add-mailbox.component&quot;;
+import {CannedReplies} from &quot;./components/canned-replies/canned-replies.component&quot;;
+import {BusyComponent} from &quot;./components/busy/busy.component&quot;;
+import {ErrorsPopup} from &quot;./components/errors-popup/errors-popup.component&quot;;
+import {StepsComponent} from &quot;./components/steps/steps.component&quot;;
+import {Loading} from &quot;./components/loading/loading&quot;;
+import {NotificationsComponent} from &quot;./components/notifications/notifications.component&quot;;
+import {PreferencesComponent} from &quot;./components/preferences/preferences.component&quot;;
+import {CompanyProfileComponent} from &quot;./components/company-profile/company-profile.component&quot;;
+import {MailboxSettingsComponent} from &quot;./components/mailbox-settings/mailbox-settings.component&quot;;
+import {CompanyUsersActive} from &quot;./components/company-users-active/company-users-active.component&quot;;
+import {CompanyGroups} from &quot;./components/company-groups/company-groups.component&quot;;
+import {CompanyBilling} from &quot;./components/company-billing/company-billing.component&quot;;
+import {CompanyAPI} from &quot;./components/company-API/company-API.component&quot;;
+import {ResetPassword} from &quot;./components/reset-password/reset-password&quot;;
+import {HourSettings} from &quot;./components/hour-settings/hour-settings&quot;;
+import {EmailForgetPassword} from &quot;./components/email-forget-password/email-forget-password.component&quot;;
+import {ForgetPassword} from &quot;./components/forget-password/forget-password.component&quot;;
+
+const APP_ROUTES: Routes &#x3D; [
+    {
+        path: &#x27;login&#x27;,
+        component: LoginComponent,
+        canActivate: [SecondaryAuthGuard]
+    },
+    
+    {
+        path: &#x27;agent-login&#x27;,
+        component: LoginAgent
+    },
+
+    {
+        path: &#x27;forget-password&#x27;,
+        component: ForgetPassword,
+        canActivate: [SecondaryAuthGuard]
+    },
+
+    // {
+    //     path: &#x27;mailbox&#x27;,
+    //     component: MailboxComponent,
+    //     canActivate: [AuthGuard]
+    // },
+
+    {
+        path: &#x27;busy&#x27;,
+        component: BusyComponent,
+    },
+
+    // {
+    //     path: &#x27;addMailbox&#x27;,
+    //     component: AddMailbox,
+    //     canActivate: [AuthGuard]
+    // },
+    // {
+    //     path: &#x27;add-another-agent&#x27;,
+    //     component: AddAnotherAgent,
+    //     canActivate: [AuthGuard]
+    // },
+    {
+        path: &#x27;delete-user&#x27;,
+        component: DeleteUser,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;reset-password&#x27;,
+        component: ResetPassword,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;hour-settings&#x27;,
+        component: HourSettings,
+        canActivate: [AuthGuard]
+    },
+
+    // {
+    //     path: &#x27;addUser&#x27;,
+    //     component: AddUserComponent,
+    //     canActivate: [AuthGuard]
+    // },
+
+    {
+        path: &#x27;errors-popup&#x27;,
+        component: ErrorsPopup,
+        canActivate: [AuthGuard]
+
+    },
+    {
+        path: &#x27;steps&#x27;,
+        component: StepsComponent,
+        canActivate: [AuthGuard]
+
+    },
+    
+    {
+        path: &#x27;register&#x27;,
+        component: RegisterComponent,
+        canActivate: [SecondaryAuthGuard]
+    },
+    {
+        path: &#x27;logout&#x27;,
+        component: LogoutComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;error-page&#x27;,
+        component: ErrorPageComponent
+    },
+    {
+        path: &#x27;tickets&#x27;,
+        component: TicketsComponent,
+        canActivate: [AuthGuard],
+        data: {
+            sidebar: &quot;sidebar&quot;,
+            createLabel: &quot;create-label&quot;
+        }
+    },
+    {
+        path: &#x27;tickets/:status&#x27;,
+        component: TicketsComponent,
+        canActivate: [AuthGuard]
+    },
+    // {
+    //     path: &#x27;create-label&#x27;,
+    //     component: CreateLabel,
+    //     canActivate: [AuthGuard]
+    // },
+    {
+        path: &#x27;ticket/:id&#x27;,
+        component: TicketIndividualComponent,
+        canActivate: [AuthGuard],
+        data: {
+            sidebar: &quot;sidebar&quot;,
+            createLabel: &quot;create-label&quot;
+        }
+    },
+    // {
+    //     path: &#x27;create-ticket&#x27;,
+    //     component: CreateTicket,
+    //     canActivate: [AuthGuard]
+    // },
+    {
+        path: &#x27;email-forget-password&#x27;,
+        component: EmailForgetPassword,
+        canActivate: [SecondaryAuthGuard]
+    },
+
+    {
+        path: &#x27;settings&#x27;,
+        children: [
+            {
+                path: &#x27;&#x27;,
+                component: SettingsComponent
+            },
+            {
+                path: &#x27;users&#x27;,
+                component: UsersComponent
+            },
+            {
+                path: &#x27;canned-replies&#x27;,
+                component: CannedReplies
+            },
+            {
+                path: &#x27;company-profile&#x27;,
+                component: CompanyProfileComponent
+            },
+            {
+                path: &#x27;notifications&#x27;,
+                component: NotificationsComponent
+            },
+            {
+                path: &#x27;preferences&#x27;,
+                component: PreferencesComponent
+            },
+            {
+                path: &#x27;users-profile/:id&#x27;,
+                component: UsersProfileComponent
+            },
+            {
+                path: &#x27;addMailbox&#x27;,
+                component: AddMailbox
+            },
+            {
+                path: &#x27;mailbox&#x27;,
+                component: MailboxComponent
+            }
+        ],
+        canActivate: [AuthGuard],
+        data: {
+            sidebar: &#x27;sidebar-settings&#x27;
+        }
+    },
+    // {
+    //     path: &#x27;notifications&#x27;,
+    //     component: NotificationsComponent,
+    //     canActivate: [AuthGuard],
+    //     data: {
+    //         sidebar: &#x27;sidebar-settings&#x27;
+    //     }
+    // },
+    // {
+    //     path: &#x27;preferences&#x27;,
+    //     component: PreferencesComponent,
+    //     canActivate: [AuthGuard],
+    //     data: {
+    //         sidebar: &#x27;sidebar-settings&#x27;
+    //     }
+    // },
+    //{
+    //    path: &#x27;settings/company-profile&#x27;,
+    //    component: CompanyProfileComponent,
+    //    canActivate: [AuthGuard]
+    //},
+    {
+        path: &#x27;company-users-active&#x27;,
+        component: CompanyUsersActive,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;company-groups&#x27;,
+        component: CompanyGroups,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;company-billing&#x27;,
+        component: CompanyBilling,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: &#x27;company-API&#x27;,
+        component: CompanyAPI,
+        canActivate: [AuthGuard]
+    },
+    // {
+    //     path: &#x27;users-profile/:id&#x27;,
+    //     component: UsersProfileComponent,
+    //     canActivate: [AuthGuard],
+    //     data: {
+    //         sidebar: &#x27;sidebar-settings&#x27;
+    //     }
+    // },
+    {
+        path: &#x27;mailbox-settings/:id&#x27;,
+        component: MailboxSettingsComponent,
+        data: {
+            sidebar: &#x27;sidebar-settings&#x27;
+        },
+        canActivate: [AuthGuard]
+    },
+
+    {
+        path: &#x27;mailbox-settings/:id/:type&#x27;,
+        component: MailboxSettingsComponent,
+        canActivate: [AuthGuard],
+        data: {
+            sidebar: &#x27;sidebar-settings&#x27;
+        }
+    },
+    {
+        path: &#x27;loading&#x27;,
+        component: Loading,
+        canActivate: [AuthGuard]
+    },
+
+    {
+        path: &#x27;&#x27;,
+        component: TicketsComponent,
+        canActivate: [AuthGuard],
+        data: {
+            sidebar: &#x27;sidebar&#x27;,
+            createLabel: &quot;create-label&quot;
+        }
+    },
+    {
+        path: &#x27;**&#x27;,
+        redirectTo: &#x27;&#x27;
+    }
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(APP_ROUTES)],
+    exports: [RouterModule],
+    /*declarations: [
+        LoginComponent,
+        RegisterComponent,
+        LogoutComponent,
+        ErrorPageComponent,
+        TicketsComponent,
+        CreateLabel,
+        TicketIndividualComponent,
+        MergeTickets,
+        SettingsComponent,
+        NotificationsComponent,
+        PreferencesComponent,
+        CompanyProfileComponent,
+        CompanyUsersActive,
+        CompanyGroups,
+        CompanyBilling,
+        CompanyAPI,
+        UsersComponent
+    ]*/
+})
+
+export class AppRoutingModule {}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

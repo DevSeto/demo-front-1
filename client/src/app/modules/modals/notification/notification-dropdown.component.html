@@ -1,0 +1,163 @@
+<!--<div *ngIf="ticketService.ticketsNotification.notifications && ticketService.ticketsNotification.notifications.length"
+     class="progressbar-notification ">
+    <ul
+            *ngIf="usersService.user.role_id === 2 && usersService.user.step && usersService.user.step.step === 1"
+            class="list-unstyled notification-dropdown progress-dropdown"
+    &gt;
+        <li class="notification-header border-bottom full-width-left">
+            <p>Setup 66% complete</p>
+            <div class="full-width-left">
+                <div class="progress pull-left">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar" role="progressbar" [ngStyle]="{'width':  66 + '%'}">
+                        <span class="sr-only">66% Complete</span>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <span class="completed-step-info">Step 2/3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="full-width-left progress-box-content">
+                <ul class="text-center list-unstyled">
+                    <li>Forwarding</li>
+                    <li>
+                        <i class="la la-paper-plane-o"></i>
+                    </li>
+                    <li>
+                        <p>
+                            To complete your account and take full control of BirdDesk
+                            please complete your setup
+                        </p>
+                    </li>
+                    <li>
+                        <a class="btn custom-default-btn" (click)="redirectToMailbox()">
+                            Setup forwarding
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="list-unstyled notification-dropdown scroll-box" (scroll)="scrollingNotification($event)">
+        <li class="notification-header border-bottom">
+            <p>
+                Notifications
+
+                <span class="pull-right" *ngIf="ticketService.ticketsNotification.total_new">
+                    {{ticketService.ticketsNotification.total_new}}
+                </span>
+            </p>
+        </li>
+        <li
+                *ngFor="let notification of ticketService.ticketsNotification.notifications; let idx = index"
+                (click)="redirectToTicketPage(notification,idx)"
+        &gt;
+            <div  class="{{!notification.is_viewed ? 'last-notification' : ''}} notification-content">
+                <div class="tickets-info pull-left">
+                    <span *ngIf="notification.author ">
+                        <img src="{{notification.author.avatar_url}}" alt="user photo" class="img-circle">
+                    </span>
+                    <span
+                            class="first-letter-item"
+                            [ngStyle]="{'background-color': notification.color}"
+                            *ngIf="!notification.author && notification.customer"
+                    &gt;
+                        {{ ( notification.customer.first_name +' '+ notification.customer.last_name )| circleLetters}}
+                    </span>
+                </div>
+                <div class="pull-left">
+                    <p class="notification-user-name text-dotted">
+
+                        <span *ngIf="notification.message" [innerHTML]="notification.message">
+                        </span>
+                    </p>
+                    <p
+                            *ngIf="notification.body"
+                            class="notification-text text-dotted"
+                            [innerHTML]="notification.body | shorten:1500"
+                    ></p>
+
+                    <p
+                            *ngIf="notification.files"
+
+                            class="notification-text text-dotted"
+                    >
+                             <span *ngFor="let file of notification.files;"
+                                [title]="file.file_name"
+                             >
+                                 <i class="la la-file fileContent">  </i>
+                             </span>
+                    </p>
+
+                </div>
+                <div class="pull-right">
+                    <a class="ticket-num"> #{{(notificaxtion.ticket_id)?notification.ticket_id: notification.id}}</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>-->
+
+
+
+<div class="notification" *ngIf="ticketService.ticketsNotification.notifications && ticketService.ticketsNotification.notifications.length">
+    <div class="notification__bg"></div>
+    <div class="notification__content">
+        <span class="notification__content-after"></span>
+
+
+        <div class="notification__item notifications">
+            <div class="notifications__header ">
+                <h3 class="notifications__header-title">Notifications</h3>
+                <button class="notifications__header-btn btn" >Mark all as read</button>
+            </div>
+
+            <div class="notifications__container" (scroll)="scrollingNotification($event)">
+
+                <div class="notifications-item"
+                     *ngFor="let notification of ticketService.ticketsNotification.notifications; let idx = index"
+                     (click)="redirectToTicketPage(notification,idx)"
+                     [class.new]="!notification.is_viewed"
+                >
+                    <div class="notifications-item__img" >
+                        <img [src]="notification.author.avatar_url" alt="User" *ngIf="notification.author">
+                        <span
+                                class="first-letter-item"
+                                [ngStyle]="{'background-color': notification.color}"
+                                *ngIf="!notification.author && notification.customer">
+                                {{ ( notification.customer.first_name + ' '+ notification.customer.last_name )| circleLetters}}
+                        </span>
+                    </div>
+                    <div class="notifications-item__content">
+                        <div class="notifications-item__user bold" *ngIf="notification.message" [innerHTML]="notification.message"> </div>
+
+                        <div
+                                *ngIf="notification.body"
+                                class="notifications-item__title bold"
+                        >
+                            {{notification.body | splitTags | shorten:1500}}
+                        </div>
+
+                        <p
+                                *ngIf="notification.files"
+
+                                class="notification-text text-dotted"
+                        >
+                             <span *ngFor="let file of notification.files;"
+                                   [title]="file.file_name"
+                             >
+                                 <i class="la la-file fileContent">  </i>
+                             </span>
+                        </p>
+                    </div>
+                    <div class="notifications-item__info">
+                        <div class="notifications-item__time">{{notification.created_at | date:"hh:mm"}}</div>
+                        <div class="notifications-item__id">#{{(notification.ticket_id)?notification.ticket_id: notification.id}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

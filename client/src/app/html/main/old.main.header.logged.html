@@ -1,0 +1,95 @@
+<header class="site-header clearfix" [ngClass]="{'blureffect': userService.forBlure }">
+    <div class="header-content col-md-12">
+        <ul class="list-inline list-unstyled pull-left header-menu">
+            <li>
+                <span class="toggle-icon"><i class="la la-fw la-bars"></i></span>
+            </li>
+            <li class="logo_item">
+                <a title="Tickets" (click)="redirectToTicekt()">
+                    <img src="../../../../../public/images/logo.png" alt="Bird Desk">
+                </a>
+            </li>
+            <li class="menu-item">
+                <a title="Mailbox" (click)="redirectToTicekt()">
+                    Mailbox
+                </a>
+            </li>
+        </ul>
+
+        <div class="header-search-item">
+            <search-tickets></search-tickets>
+        </div>
+
+        <ul class="list-inline list-unstyled pull-right header-menu desktop-right-menu">
+            <li class="notification-btn" dropdown="">
+                <a title="Notification" dropdown-open>
+                    <i class="la la-bell-o"></i>
+                </a>
+                <div class="progressbar-notification ">
+                    <span class="notification-item" *ngIf="ticketService.ticketsNotification.total_new">
+                        {{ticketService.ticketsNotification.total_new}}
+                    </span>
+                </div>
+                <notification-dropdown class="header-dropdown-menu"></notification-dropdown>
+            </li>
+            <!--<li class="menu-item">-->
+                <!--<a title="Chat" (click)="chatClick()">-->
+                    <!--<i class="la la-comments-o"></i>-->
+                <!--</a>-->
+            <!--</li>-->
+            <li class="menu-item">
+                <a title="Settings" [routerLink]="['/settings']">
+                    <i class="la la-gear"></i>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a title="Help" href="javascript:void (0)">
+                    <i class="la la-question-circle"></i>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a title="Sign out" [routerLink]="['/logout']">
+                    <i class="la la-sign-out"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="list-inline list-unstyled pull-right mobile-right-menu">
+            <li>
+                <div class="dropdown pull-left">
+                    <a href="javascript:void (0)" type="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="la la-fw la-user"></i> <i class="la la-fw la-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void (0)">
+                                Notification
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a [routerLink]="['/settings']">
+                                Settings
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void (0)">
+                                Help
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a [routerLink]="['/logout']">
+                                Sign out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<steps
+        stopScrolling
+        *ngIf="userService.forBlure"
+>
+</steps>

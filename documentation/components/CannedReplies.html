@@ -1,0 +1,1035 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CannedReplies</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/components/canned-replies/canned-replies.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>canned-replies</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../../html/canned-replies/canned-replies.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cannedrepliesService">cannedrepliesService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cloud">cloud</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lastSelectedReply">lastSelectedReply</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#mailboxService">mailboxService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#previousTitle">previousTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedMailboxName">selectedMailboxName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeMailbox">changeMailbox</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#confirmModal">confirmModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deleteReplies">deleteReplies</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, cannedrepliesService: <a href="../injectables/CannedrepliesService.html">CannedrepliesService</a>, mailboxService: <a href="../injectables/MailBoxService.html">MailBoxService</a>, mailboxModel: <a href="../injectables/MailBoxModel.html">MailBoxModel</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cannedrepliesService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/CannedrepliesService.html" target="_self" >CannedrepliesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailboxService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxService.html" target="_self" >MailBoxService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailboxModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxModel.html" target="_self" >MailBoxModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeMailbox"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeMailbox
+                            </b>
+                            <a href="#changeMailbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>changeMailbox(mailBoxId: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, mailBoxName: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>mailBoxId</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>mailBoxName</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="confirmModal"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            confirmModal
+                            </b>
+                            <a href="#confirmModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>confirmModal(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>index</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteReplies"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            deleteReplies
+                            </b>
+                            <a href="#deleteReplies"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>deleteReplies()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cannedrepliesService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            cannedrepliesService
+                            </b>
+                            <a href="#cannedrepliesService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>cannedrepliesService:     <code><a href="../injectables/CannedrepliesService.html" target="_self" >CannedrepliesService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/CannedrepliesService.html" target="_self" >CannedrepliesService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cloud"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            cloud
+                            </b>
+                            <a href="#cloud"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>cloud:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>showed</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lastSelectedReply"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            lastSelectedReply
+                            </b>
+                            <a href="#lastSelectedReply"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>lastSelectedReply:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        id: &#x27;&#x27;,
+        index: &#x27;&#x27;
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mailboxService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            mailboxService
+                            </b>
+                            <a href="#mailboxService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>mailboxService:     <code><a href="../injectables/MailBoxService.html" target="_self" >MailBoxService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/MailBoxService.html" target="_self" >MailBoxService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="previousTitle"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            previousTitle
+                            </b>
+                            <a href="#previousTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>previousTitle:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedMailboxName"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectedMailboxName
+                            </b>
+                            <a href="#selectedMailboxName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>selectedMailboxName:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Mailbox name&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">client/src/app/components/canned-replies/canned-replies.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
+import {Title} from &#x27;@angular/platform-browser&#x27;;
+import {MailBoxService} from &#x27;../../services/components/mailbox.service&#x27;
+import {CannedrepliesService} from &#x27;../../services/components/cannedreplies.service&#x27;
+import {MailBoxModel} from &quot;../../models/components/mailbox.model&quot;;
+
+declare let $ :any;
+
+@Component({
+    selector: &#x27;canned-replies&#x27;,
+    templateUrl: &#x27;../../html/canned-replies/canned-replies.component.html&#x27;,
+})
+
+export class CannedReplies implements OnInit {
+
+    public cloud: any &#x3D; showed;
+    public previousTitle: string;
+
+    public lastSelectedReply: any &#x3D; {
+        id: &#x27;&#x27;,
+        index: &#x27;&#x27;
+    };
+
+    public selectedMailboxName : any &#x3D; &#x27;Mailbox name&#x27;;
+
+    constructor (
+        private title: Title,
+        public cannedrepliesService: CannedrepliesService,
+        public mailboxService: MailBoxService,
+        private mailboxModel: MailBoxModel
+    )
+    {
+    }
+    
+    public ngOnInit()
+    {
+        this.cannedrepliesService.mailboxId &#x3D; this.mailboxModel.getMailboxCurrentId();
+
+        this.mailboxService.mailboxes.forEach( (mailbox: any) &#x3D;&gt; {
+            if (mailbox.id &#x3D;&#x3D; this.cannedrepliesService.mailboxId)
+                this.selectedMailboxName &#x3D; mailbox.name;
+        });
+
+        this.previousTitle &#x3D; this.title.getTitle();
+    }
+
+    public changeMailbox( mailBoxId : any , mailBoxName : any) : void
+    {
+        this.cannedrepliesService.mailboxId &#x3D; mailBoxId;
+        this.mailboxModel.insertMailboxId(mailBoxId);
+        this.selectedMailboxName &#x3D; mailBoxName;
+
+        this.cannedrepliesService.getCannedRepliesByMailboxId()
+            .then((data: any )&#x3D;&gt;
+            {
+                if(data.success)
+                {
+                    this.cannedrepliesService.cannedReplies.reset();
+                    this.cannedrepliesService.cannedReplies.set(data.data);
+                }
+            });
+    }
+
+    public confirmModal( id : any , index : number ) : void
+    {
+        this.cloud.effect &#x3D; &#x27;confirmModal&#x27;;
+        this.lastSelectedReply.id &#x3D; id;
+        this.lastSelectedReply.index &#x3D; index;
+    }
+
+    public deleteReplies() : void
+    {
+        this.cannedrepliesService.deleteReplies(this.lastSelectedReply.id)
+            .then((data : any) &#x3D;&gt; 
+            {
+                this.cannedrepliesService.cannedReplies.splice(this.lastSelectedReply.index,1);
+                this.cloud.effect &#x3D; &#x27;confirmModal&#x27;;
+            });
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;page-main-content&quot;&gt;
+    &lt;div class&#x3D;&quot;main-content canned-replies-page white-bg&quot;&gt;
+        &lt;div class&#x3D;&quot;page-title-box full-width-left &quot;&gt;
+            &lt;span class&#x3D;&quot;p-title&quot;&gt;Canned replies &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;full-width-left user-profile-info&quot;&gt;
+            &lt;ul class&#x3D;&quot;list-unstyled list-inline select_mailbox_item align-middle&quot;&gt;
+                &lt;li class&#x3D;&quot;select-title&quot;&gt;
+                    &lt;span&gt;Mailbox&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;div class&#x3D;&quot;dropdown dropdown_default&quot; dropdown&gt;
+                        &lt;button class&#x3D;&quot;btn&quot; dropdown-open&gt;
+                            {{selectedMailboxName}}
+                            &lt;span *ngIf&#x3D;&quot;mailboxService.mailboxes.length &gt; 1&quot; class&#x3D;&quot;pull-right&quot;&gt;
+                                &lt;i class&#x3D;&quot;la la-angle-down&quot;&gt;&lt;/i&gt;
+                            &lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;ul *ngIf&#x3D;&quot;mailboxService.mailboxes.length &gt; 1&quot; class&#x3D;&quot;custom-dropdown-menu dropdown-menu &quot;&gt;
+                            &lt;li *ngFor&#x3D;&quot;let mailBox of mailboxService.mailboxes&quot;&gt;
+                                &lt;a (click)&#x3D;&quot;changeMailbox(mailBox.id,mailBox.name)&quot;&gt; {{mailBox.name}}&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;page-title-box full-width-left &quot;&gt;
+            &lt;span *ngIf&#x3D;&quot;cannedrepliesService.cannedReplies.length&quot; class&#x3D;&quot;p-title pacific-blue-color&quot;&gt;All canned replies&lt;/span&gt;
+            &lt;span (click)&#x3D;&quot;cloud.effect &#x3D; &#x27;createCannedReplies&#x27;&quot; class&#x3D;&quot;pull-right create_item&quot;&gt;&lt;i class&#x3D;&quot;la la-plus-circle&quot;&gt;&lt;/i&gt; Create new reply&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;custom-table full-width-left canned-replies-table&quot;&gt;
+            &lt;div class&#x3D;&quot;full-width-left&quot;&gt;
+                &lt;div
+                        *ngIf&#x3D;&quot;cannedrepliesService.cannedReplies.length &#x3D;&#x3D; 0&quot;
+                        class&#x3D;&quot;empty-box&quot;
+                &gt;
+                    Currently this folder dosn&#x27;t contain any canned replies
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;table-scroll&quot;&gt;
+                &lt;table class&#x3D;&quot;table&quot;&gt;
+                    &lt;tr *ngFor&#x3D;&quot;let repliesData of cannedrepliesService.cannedReplies; let idx &#x3D; index&quot;&gt;
+                        &lt;td&gt;
+                            &lt;ul class&#x3D;&quot;list-inline list-unstyled align-middle &quot;&gt;
+                                &lt;li&gt;
+                                    &lt;h2 class&#x3D;&quot;canned_reply_title&quot;&gt;{{repliesData.name}}&lt;/h2&gt;
+                                    &lt;div class&#x3D;&quot;canned_reply_body&quot; [innerHTML] &#x3D; &quot;repliesData.body | shorten: 20&quot;&gt;&lt;/div&gt;
+
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/td&gt;
+                        &lt;td class&#x3D;&quot;text-right&quot;&gt;
+                            &lt;p class&#x3D;&quot;canned_reply_category&quot;&gt;{{repliesData.category.name}}&lt;/p&gt;
+                        &lt;/td&gt;
+                        &lt;td class&#x3D;&quot;text-right trash_col&quot;&gt;
+                            &lt;span class&#x3D;&quot;trash_item&quot; (click)&#x3D;&quot;confirmModal(repliesData.id , idx)&quot;&gt;&lt;i class&#x3D;&quot;la la-trash-o&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div *ngIf&#x3D;&quot;cloud.effect.confirmModal&quot; class&#x3D;&quot;modal fade box-ticket modal-background&quot; id&#x3D;&quot;delete-user-popup&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; (click)&#x3D;&quot;cloud.effect &#x3D; &#x27;confirmModal&#x27;&quot;&gt;
+                        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;
+                            &lt;i class&#x3D;&quot;la la-close&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;h4 class&#x3D;&quot;modal-title&quot;&gt;Delete canned reply&lt;/h4&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                    &lt;p&gt;Are you sure you want to delete canned reply: &lt;b&gt;&lt;/b&gt;&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;italic-style&quot;&gt;By confirming the canned reply will be deleted from the system permanently.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot; custom-round-btn gray-btn&quot; (click)&#x3D;&quot;cloud.effect &#x3D; &#x27;confirmModal&#x27;&quot;&gt;Close&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot; custom-round-btn red-btn&quot; (click)&#x3D;&quot;deleteReplies()&quot;&gt;Delete canned reply&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="page-main-content">    <div class="main-content canned-replies-page white-bg">        <div class="page-title-box full-width-left ">            <span class="p-title">Canned replies </span>        </div>        <div class="full-width-left user-profile-info">            <ul class="list-unstyled list-inline select_mailbox_item align-middle">                <li class="select-title">                    <span>Mailbox</span>                </li>                <li>                    <div class="dropdown dropdown_default" dropdown>                        <button class="btn" dropdown-open>                            {{selectedMailboxName}}                            <span *ngIf="mailboxService.mailboxes.length > 1" class="pull-right">                                <i class="la la-angle-down"></i>                            </span>                        </button>                        <ul *ngIf="mailboxService.mailboxes.length > 1" class="custom-dropdown-menu dropdown-menu ">                            <li *ngFor="let mailBox of mailboxService.mailboxes">                                <a (click)="changeMailbox(mailBox.id,mailBox.name)"> {{mailBox.name}}</a>                            </li>                        </ul>                    </div>                </li>            </ul>        </div>        <div class="page-title-box full-width-left ">            <span *ngIf="cannedrepliesService.cannedReplies.length" class="p-title pacific-blue-color">All canned replies</span>            <span (click)="cloud.effect = \'createCannedReplies\'" class="pull-right create_item"><i class="la la-plus-circle"></i> Create new reply</span>        </div>        <div class="custom-table full-width-left canned-replies-table">            <div class="full-width-left">                <div                        *ngIf="cannedrepliesService.cannedReplies.length == 0"                        class="empty-box"                >                    Currently this folder dosn\'t contain any canned replies                </div>            </div>            <div class="table-scroll">                <table class="table">                    <tr *ngFor="let repliesData of cannedrepliesService.cannedReplies; let idx = index">                        <td>                            <ul class="list-inline list-unstyled align-middle ">                                <li>                                    <h2 class="canned_reply_title">{{repliesData.name}}</h2>                                    <div class="canned_reply_body" [innerHTML] = "repliesData.body | shorten: 20"></div>                                </li>                            </ul>                        </td>                        <td class="text-right">                            <p class="canned_reply_category">{{repliesData.category.name}}</p>                        </td>                        <td class="text-right trash_col">                            <span class="trash_item" (click)="confirmModal(repliesData.id , idx)"><i class="la la-trash-o"></i></span>                        </td>                    </tr>                </table>            </div>        </div>    </div>    <div *ngIf="cloud.effect.confirmModal" class="modal fade box-ticket modal-background" id="delete-user-popup" tabindex="-1" role="dialog">        <div class="modal-dialog" role="document">            <div class="modal-content">                <div class="modal-header">                    <button type="button" class="close" (click)="cloud.effect = \'confirmModal\'">                        <span aria-hidden="true">                            <i class="la la-close"></i>                        </span>                    </button>                    <h4 class="modal-title">Delete canned reply</h4>                </div>                <div class="modal-body">                    <p>Are you sure you want to delete canned reply: <b></b></p>                    <p class="italic-style">By confirming the canned reply will be deleted from the system permanently.</p>                </div>                <div class="modal-footer">                    <button type="button" class=" custom-round-btn gray-btn" (click)="cloud.effect = \'confirmModal\'">Close</button>                    <button type="button" class=" custom-round-btn red-btn" (click)="deleteReplies()">Delete canned reply</button>                </div>            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'CannedReplies'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CannedReplies.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

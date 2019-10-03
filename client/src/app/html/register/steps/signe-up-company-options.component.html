@@ -1,0 +1,201 @@
+
+
+
+    <form class="multistep-form multistep-form--reg"
+          [formGroup]="userForm"
+          (ngSubmit)="register()"
+          id="signe-up-options"
+    >
+
+        <h2 class="multistep-form__title text-center bold">Registration</h2>
+        <div class="multistep-form-input-wrapper flex"
+        >
+            <div class="multistep-form__login-input"
+            >
+                <input
+                    type="text"
+                    class="multistep-form__input multistep-form__input--name input fb-100"
+                    placeholder="First name"
+                    [class.input-error-style]="classError('first_name')"
+                    [class.input-success-style]="classSuccess('first_name')"
+                    autocomplete="off"
+                    name="first_name"
+                    [(ngModel)]="usersService.stepsData.first_name"
+                    data-rules="required"
+                    formControlName="first_name"
+                    autofocus
+                >
+            </div>
+            <div class="multistep-form__login-input margin-l18"
+                 [class.multistep-form-input-wrapper--passed]="classSuccess('last_name') === true && classSuccess('first_name') === true"
+            >
+                <input
+                    type="text"
+                    class="multistep-form__input input fb-100"
+                    placeholder="Last name"
+                    [class.input-error-style]="classError('last_name')"
+                    [class.input-success-style]="classSuccess('last_name')"
+                    autocomplete="off"
+                    name="last_name"
+                    [(ngModel)]="usersService.stepsData.last_name"
+                    data-rules="required"
+                    formControlName="last_name"
+                >
+            </div>
+        </div>
+        <span  class="error-span help-block error backend-error input-group-error signe-up-error">
+                <form-errors
+                        [control]="userForm.controls.first_name"
+                        [controlName]="'First name'"
+                        [formSubmit]="userForm.submitted"
+                ></form-errors>
+                <span *ngIf="userFormErrors.first_name.verify">
+                    {{userFormErrors.first_name.text}}
+                </span>
+        </span>
+        <span  class="error-span help-block error backend-error input-group-error signe-up-error">
+                <form-errors
+                        [control]="userForm.controls.last_name"
+                        [controlName]="'Last name'"
+                        [formSubmit]="userForm.submitted"
+                ></form-errors>
+                <span *ngIf="userFormErrors.last_name.verify">
+                    {{userFormErrors.last_name.text}}
+                </span>
+        </span>
+        <div
+            class="multistep-form-input-wrapper"
+            [class.multistep-form-input-wrapper--passed]="classSuccess('company_name')"
+            >
+                <input
+                    type="text"
+                    class="multistep-form__input input w-100"
+                    placeholder="Company name"
+                    [class.input-error-style]="classError('company_name')"
+                    [class.input-success-style]="classSuccess('company_name')"
+                    [(ngModel)]="usersService.stepsData.company_name"
+                    autocomplete="off"
+                    name="company_name"
+                    data-rules="required"
+                    formControlName="company_name"
+                    autofocus
+                >
+            <span class="multistep-form__login-domain sign-up-domain bold">.birddesk.com</span>
+
+        </div>
+        <span  class="error-span help-block error backend-error input-group-error signe-up-error">
+            <form-errors
+                    [control]="userForm.controls.company_name"
+                    [controlName]="'company name'"
+                    [formSubmit]="userForm.submitted"
+            ></form-errors>
+            <span *ngIf="userFormErrors.company_name.verify">
+                {{userFormErrors.company_name.text}}
+            </span>
+         </span>
+        <div
+            class="multistep-form-input-wrapper"
+            [class.multistep-form-input-wrapper--passed]="classSuccess('company_url')"
+            >
+                <input
+                    type="text"
+                    class="multistep-form__input input w-100"
+                    autofocus
+                    [class.input-error-style]="classError('company_url')"
+                    [class.input-success-style]="classSuccess('company_url')"
+                    [class.ok]="classSuccess('company_url')"
+                    placeholder="Your company domain"
+                    name="company_url"
+                    value=""
+                    data-rules="required"
+                    formControlName="company_url"
+                    [(ngModel)]="usersService.stepsData.company_url"
+                    (ngModelChange)="verifyTwinsError('company_url', $event)"
+                >
+        </div>
+        <span class="error-span help-block error backend-error input-group-error signe-up-error relative-error">
+                <form-errors
+                        [control]="userForm.controls.company_url"
+                        [formSubmit]="userForm.submitted"
+                        [controlName]="'company url'"
+                ></form-errors>
+                <span *ngIf="userFormErrors.company_url.verify">
+                    {{userFormErrors.company_url.text}}
+                </span>
+            </span>
+
+        <div class="multistep-form__login-input"
+             [class.multistep-form-input-wrapper--passed]="classSuccess('password') === true"
+        >
+                <input
+                        type="password"
+                        class="multistep-form__input multistep-form__input--password input w-100"
+                        placeholder="Password"
+                        [class.input-error-style]="classError('password')"
+                        [class.input-success-style]="classSuccess('password')"
+                        autocomplete="off"
+                        name="password"
+                        id="password"
+                        value=""
+                        data-rules="required"
+                        formControlName="password"
+                        [(ngModel)]="usersService.stepsData.password"
+                        (keyup)="passwordIncludes(userForm.controls.password.value)"
+                >
+        </div>
+        <span id="password-error" class="error-span help-block error backend-error input-group-error  signe-up-error">
+            <form-errors
+                    [control]="userForm.controls.password"
+                    [formSubmit]="userForm.submitted"
+                    [controlName]="'password'"
+            ></form-errors>
+            <span *ngIf="userFormErrors.password.verify">
+                {{userFormErrors.password.text}}
+            </span>
+        </span>
+        <div
+                *ngIf="usersService.stepsData.password"
+                [ngClass]="{
+                        'password-level':true,
+                        'password-level--1' : passwordLevel == 1 ,
+                        'password-level--2' : (passwordLevel > 1 && passwordLevel < 5),
+                        'password-level--3' : passwordLevel > 4
+                        }"
+        >
+            <div class="password-level__el"></div>
+            <div class="password-level__el"></div>
+            <div class="password-level__el"></div>
+        </div>
+
+        <div [class.button-margin]="buttonpadding"
+             *ngIf="usersService.stepsData.password"
+            >
+            <div *ngIf="userForm.controls.password.value.length">
+                <p class="password-strength">
+                    Password strength:
+                    <span id="strength-text"></span>
+                </p>
+                <div class="strength-progressbar">
+                    <div id="progress-width"></div>
+                </div>
+            </div>
+            <ul class="include-list">
+                <li
+                        *ngFor="let field of passwordInclude;"
+                >
+                    <span [class.password-include-circle]="field.active" class="custom-blue-circle"></span>
+                    <span [class.password-include-text]="field.active" style="padding-left: 5px">
+                                            {{field.name}}
+                                        </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grad-btn grad-btn--fill">
+            <button  type="submit" class="grad-btn__btn">Continue</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+
+        <p class="text--md mt24 accept-policy text-center">By clicking this button, you agree to our Terms, Privacy Policy and Security Policy</p>
+
+    </form>

@@ -1,0 +1,28 @@
+.tabs {
+  font-size: 0;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  white-space: nowrap;
+
+
+  &__tab {
+    font-size: 18px;
+    padding: 0 40px 16px 40px;
+    color: $text-grey;
+    border-bottom: 1px solid $row-border;
+    cursor: pointer;
+
+    &--active, &:hover {
+      color: $text-black;
+      border-color: currentColor;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

@@ -1,0 +1,140 @@
+<div class="flex align-center bordered">
+    <div class="ui-input mailbox-settings__input connection-settings__input">
+        <label class="ui-input__label" >
+            Forward a copy of all {{mailboxService.mailbox.email}} email to this address:
+        </label>
+        <input
+                class="ui-input__input input dnsForward"
+                type="text"
+                disabled
+                value="{{mailboxService.mailbox.forward_address}}"
+        >
+    </div>
+
+    <button class="btn btn-no-border check"
+            *ngIf="mailboxService.mailbox.forwarding_verified == '0' && mailboxService.mailbox.default != 1"
+            (click)="checkForward()"
+    >
+        Check
+    </button>
+
+    <div class="grad-btn">
+        <button class="grad-btn__btn" (click)="copyTextToClipboard('dnsForward')">
+            {{copyBtnText['dnsForward']}}
+        </button>
+        <span class="grad-btn__bg"></span>
+    </div>
+</div>
+
+
+
+<div class="check-your-email" *ngIf="mailboxService.mailbox.dns_verified !== 1 && !mailboxService.mailbox.default">
+    <h2 class="popup-content__header">
+        Check your email
+    </h2>
+    <div class="mailbox-check-text">
+        <p>
+            A six - digit code has been sent to <span class="bold">{{mailboxService.mailbox.email}}</span>.
+        </p>
+        <p>
+            Please confirm owneship by typing the code in below:
+        </p>
+    </div>
+
+        <!--<div class="flex">-->
+            <input
+                    class="input popup-content__form-input"
+                    type="text"
+                    (keypress)="onlyNumber($event)"
+                    [(ngModel)]="emailVerify"
+            >
+            <!--<button class="btn checking">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 210 210"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,210v-210h210v210z" fill="none"/><g fill="#FFFFFF"><g id="surface1"><path d="M177.63184,52.94434l-103.25684,103.23975l-42.00683,-41.98974l-12.23633,12.68066l54.24316,53.81592l115.49317,-115.51025z"/></g></g></g></svg>
+            </button>
+        </div>-->
+        <div class="flex justify-around">
+            <a class="link"  (click)="sendNewCode()">Send a new code</a>
+            <a class="link" [ngStyle]="{'float': 'right' }"  (click)="verifyModal()">Comfirm mailbox </a>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ng-container *ngIf="mailboxService.mailbox.dns_name !== '' || mailboxService.mailbox.dns_value !== ''">
+
+<p class="mt40 mb64">
+    Copy this codes into the settings of your DNS, add text record with following credentials
+</p>
+
+<div class="flex mb40 align-center bordered no-border justify-between connection-copy">
+    <div class="ui-input mailbox-settings__input connection-settings__input">
+        <label class="ui-input__label"  >
+            Name
+        </label>
+        <input disabled
+               class="ui-input__input input dnsName"
+               type="text"
+               placeholder="info@gmail.com"
+               value="{{mailboxService.mailbox.dns_name}}"
+
+
+        >
+    </div>
+    <button class="btn btn-no-border check"
+            *ngIf="!mailboxService.mailbox.dns_verified"
+            (click)="checkDkim()"
+    >
+        <i class="fa fa-spin fa-circle-o-notch" *ngIf="cloud.effect.checkDkim"></i>
+
+        Check
+    </button>
+    <div class="grad-btn">
+        <button class="grad-btn__btn"
+                (click)="copyTextToClipboard('dnsName')"
+        >
+            {{copyBtnText['dnsName']}}
+        </button>
+        <span class="grad-btn__bg"></span>
+    </div>
+</div>
+
+<div class="flex align-center bordered no-border justify-between connection-copy">
+    <div class="ui-input mailbox-settings__input connection-settings__input">
+        <label class="ui-input__label" >
+            Content
+        </label>
+        <input
+                disabled
+                value="{{mailboxService.mailbox.dns_value}}"
+                class="ui-input__input input dnsValue"
+               type="text"
+               placeholder="info@gmail.com"
+        >
+    </div>
+
+    <div class="grad-btn">
+        <button class="grad-btn__btn"
+                (click)="copyTextToClipboard('dnsValue')"
+        >
+            {{copyBtnText['dnsValue']}}
+
+        </button>
+        <span class="grad-btn__bg"></span>
+    </div>
+</div>
+
+<p class="bordered grey mt24 info">
+    Veifying DNS settings can take up to 24 hours. You can find it’s status in your notifications.
+</p>
+</ng-container>-->

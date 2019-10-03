@@ -1,0 +1,65 @@
+<div class="sign-wrapper">
+    <div class="birddesk-logo">
+        <img src="../../../../../public/images/logo/logo.svg" alt="Logo">
+        <a href="#">BirdDesk</a>
+    </div>
+
+    <button class="back-reg-btn" [routerLink]="['/login']">
+        <div class="individual-ticket-panel__btn back">
+            <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            <span>Back</span>
+        </div>
+    </button>
+
+
+    <section *ngIf="!successEmail" class="email-confirm">
+        <div class="email-confirm__img">
+            <img src="../../../../../public/images/sign-up/find-company.png" alt="Email confirm">
+        </div>
+        <h2 class="email-confirm__header bold ">Find your company</h2>
+        <p class="email-confirm__text">We’ll send you an email to confirm your address and find existing workspaces you’ve joined or can join.</p>
+        <form class="email-confirm__form"
+              [formGroup]="emailForm"
+              (submit) ="findCompany()"
+        >
+
+            <div class="multistep-form__login-input"
+                 [class.multistep-form-input-wrapper--passed]="classSuccess('email') === true && !emailFormErrors.email.verify"
+            >
+                <input
+                        class="multistep-form__input input email-confirm__input"
+                        placeholder="E-mail"
+                        [class.input-error-style]="classError('email') || emailFormErrors.email.verify"
+                        [class.input-success-style]="classSuccess('email') && !emailFormErrors.email.verify"
+                        autocomplete="off"
+                        name="email"
+                        type="email"
+                        value=""
+                        data-rules="required|email"
+                        formControlName="email"
+                >
+
+                <button class="btn primary" type="submit" >Confirm</button>
+            </div>
+            <span  class="error-span help-block error backend-error input-group-error">
+                <form-errors
+                        [control]="emailForm.controls.email"
+                        [formSubmit]="emailForm.submitted"
+                        [controlName]="'email'"
+                ></form-errors>
+                <span *ngIf="emailFormErrors.email.verify">
+                    {{emailFormErrors.email.text}}
+                </span>
+            </span>
+        </form>
+    </section>
+    <section  *ngIf="successEmail" class="email-confirm">
+        <div class="email-confirm__img">
+            <img src="../../../../../public/images/sign-up/check-email.svg" alt="Email confirm">
+        </div>
+        <h2 class="email-confirm__header bold">Check your email</h2>
+        <p class="email-confirm__text">We've emailed a special link to <span class="bold">{{emailInputValue.email}}</span>. Click the link to confirm your address and get started.</p>
+        <p class="email-confirm__text">Wrong email? Please <a (click)="successEmail = !!0;" class="link">re-enter your address.</a></p>
+    </section>
+</div>

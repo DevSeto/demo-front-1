@@ -1,0 +1,205 @@
+<section class="page-main-content">
+    <div class="main-content settings-page">
+        <div class="page-title-box full-width-left">
+            <span class="p-title">Company Profile</span>
+        </div>
+        <div class="full-width-left info-tab-box">
+            <div id="tab" class="custom-tab-content current">
+                <div class="user-settings-tab">
+                    <form
+                            (submit)="updateCompany()"
+                            [formGroup]="companyProfileForm"
+                    >
+                        <ul class="list-unstyled list-inline align-middle">
+                            <li class="no-padding">
+                                <div class="pull-left text-right label-box">
+                                    <label>Logo</label>
+                                </div>
+                            </li>
+                            <li class="no-padding">
+                                <div class="pull-left user-photo">
+                                    <img src="{{usersService.company.logo_full_path}}" alt="csdfsa photo" class="img-circle">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pull-left add-photo-item">
+                                    <input type="file" (change)="uploadCompanyLogo($event.target)">
+                                    Add a company logo
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-inline list-unstyled input-fields-content align-middle">
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="company_name">Company name</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            type="text"
+                                            name=" "
+                                            id="company_name"
+                                            formControlName="company_name"
+                                            [class.input-error-style]="classError('company_name')"
+                                            [class.input-success-style]="classSuccess('company_name')"
+                                            class="form-control"
+                                            [(ngModel)]="companyData.company_name"
+                                    >
+                                </div>
+                                <span id="registartion_company_name-error"
+                                      class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.company_name"
+                                            [controlName]="'company_name'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.company_name.verify">
+                                        {{_companyProfileFormErrors.company_name.text}}
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="website">Website</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            type="text"
+                                            name=" "
+                                            id="website"
+                                            formControlName="website"
+                                            [class.input-error-style]="classError('website')"
+                                            [class.input-success-style]="classSuccess('website')"
+                                            class="form-control"
+                                            [(ngModel)]="companyData.website"
+                                    >
+                                </div>
+                                <span id="registartion_website-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.website"
+                                            [controlName]="'website'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.website.verify">
+                                        {{_companyProfileFormErrors.website.text}}
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="subdomain">Subdomain</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input type="text"
+                                           name=" "
+                                           id="subdomain"
+                                           formControlName="subdomain"
+                                           class="form-control"
+                                           value="{{subdomain}}"
+                                           disabled
+                                    >
+                                </div>
+                                <span id="registartion_subdomain-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.subdomain"
+                                            [controlName]="'subdomain'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.subdomain.verify">
+                                        {{_companyProfileFormErrors.subdomain.text}}
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="country">Country</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            type="text"
+                                            name=" "
+                                            id="country"
+                                            value=""
+                                            formControlName="country"
+                                            [class.input-error-style]="classError('country')"
+                                            [class.input-success-style]="classSuccess('country')"
+                                            class="form-control"
+                                            [(ngModel)]="companyData.country"
+                                    >
+                                </div>
+                                <span id="registartion_country-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.country"
+                                            [controlName]="'country'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.country.verify">
+                                        {{_companyProfileFormErrors.country.text}}
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="phone">Phone Number</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            (keypress)="onlyNumber($event)"
+                                            placeholder="Add your company phone-number"
+                                            type="tel"
+                                            name=" "
+                                            id="phone"
+                                            formControlName="phone"
+                                            [class.input-error-style]="classError('phone')"
+                                            [class.input-success-style]="classSuccess('phone')"
+                                            class="form-control"
+                                            [(ngModel)]="companyData.phone"
+                                    >
+                                </div>
+                                <span id="registartion_phone-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.phone"
+                                            [controlName]="'phone'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.phone.verify">
+                                        {{_companyProfileFormErrors.phone.text}}
+                                    </span>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label>Timezone</label>
+                                </div>
+                                <div class="pull-left field-box select-box">
+                                    <select
+                                            id="time_zone"
+                                            formControlName="timezone"
+                                            class="form-control"
+                                            [(ngModel)]="companyData.timezone"
+                                            (change)="changeTimezone($event.target)"
+                                    >
+                                        <option
+                                                *ngFor="let time of timeZonesCount | numberedCycle"
+                                                [attr.selectedValue]="time"
+                                                [selected]="currentUserTimezone === '(UTC/GMT '+time+' hours) CEST' "
+                                        >(UTC/GMT {{time}} hours) CEST
+                                        </option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                </div>
+                                <div class="pull-right field-box">
+                                    <button
+                                            type="submit"
+                                            class="btn custom-default-btn"
+                                    >
+                                        <i class="fa fa-spin fa-circle-o-notch"
+                                           *ngIf="cloud.effect.companyUpdateSpin"></i>
+                                        Save profile
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

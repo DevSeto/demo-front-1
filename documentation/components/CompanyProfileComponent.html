@@ -1,0 +1,1966 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CompanyProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/components/company-profile/company-profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>company-profile</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../../html/company-profile/company-profile.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_companyProfileFormErrors">_companyProfileFormErrors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cloud">cloud</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#companyAvatar">companyAvatar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#companyProfileForm">companyProfileForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#companyValidation">companyValidation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentUserTimezone">currentUserTimezone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#defaultToastrParams">defaultToastrParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#defoultimgUrl">defoultimgUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loadingGif">loadingGif</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#timeZonesCount">timeZonesCount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usersService">usersService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#buildUpdatedData">buildUpdatedData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeTimezone">changeTimezone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCompanySettings">getCompanySettings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onlyNumber">onlyNumber</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showSuccess">showSuccess</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateCompany">updateCompany</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#uploadCompanyLogo">uploadCompanyLogo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#classError">classError</a>
+                            </li>
+                            <li>
+                                <a href="#classSuccess">classSuccess</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#companyProfileFormErrors">companyProfileFormErrors</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(usersService: <a href="../injectables/UsersService.html">UsersService</a>, companyStorageModel: <a href="../injectables/CompanyStorageModel.html">CompanyStorageModel</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, toastr: <a href="../injectables/ToastrService.html">ToastrService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:136</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>companyStorageModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/CompanyStorageModel.html" target="_self" >CompanyStorageModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ToastrService.html" target="_self" >ToastrService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="classError"></a>
+                        <code>classError</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>( param: string ) : boolean &#x3D;&gt;
+    {
+        if ( ! this.companyProfileForm.controls[param].valid &amp;&amp; this.companyProfileForm.controls[param].touched  &amp;&amp; this.companyProfileForm.submitted)
+            return !!1;
+        if ( ! this.companyProfileForm.controls[param].valid &amp;&amp; !this.companyProfileForm.controls[param].touched  &amp;&amp; !this._companyProfileFormErrors[param].verify &amp;&amp; this.companyProfileForm.submitted)
+            return !!1;
+        else if ( this._companyProfileFormErrors[param].verify )
+            return !!1;
+        else
+            return !!0;
+    }</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:119</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="classSuccess"></a>
+                        <code>classSuccess</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>( param: string ) : boolean &#x3D;&gt;
+    {
+
+        return this.companyProfileForm.controls[param].valid &amp;&amp; this.companyProfileForm.controls[param].touched;
+    }</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:132</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buildUpdatedData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            buildUpdatedData
+                            </b>
+                            <a href="#buildUpdatedData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>buildUpdatedData()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="206" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:206</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeTimezone"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeTimezone
+                            </b>
+                            <a href="#changeTimezone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>changeTimezone(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:161</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getCompanySettings"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getCompanySettings
+                            </b>
+                            <a href="#getCompanySettings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getCompanySettings()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="217" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:217</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:150</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onlyNumber"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onlyNumber
+                            </b>
+                            <a href="#onlyNumber"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onlyNumber(event: KeyboardEvent)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:167</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code>KeyboardEvent</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSuccess"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            showSuccess
+                            </b>
+                            <a href="#showSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>showSuccess()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:156</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateCompany"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            updateCompany
+                            </b>
+                            <a href="#updateCompany"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>updateCompany()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="238" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:238</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadCompanyLogo"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            uploadCompanyLogo
+                            </b>
+                            <a href="#uploadCompanyLogo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>uploadCompanyLogo(target: HTMLInputElement)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:175</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>target</td>
+                                                        <td>
+                                                                    <code>HTMLInputElement</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_companyProfileFormErrors"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            _companyProfileFormErrors
+                            </b>
+                            <a href="#_companyProfileFormErrors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>_companyProfileFormErrors:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        company_name: {
+            verify: !!0,
+            text: _._
+        },
+        website: {
+            verify: !!0,
+            text: _._
+        },
+        country: {
+            verify: !!0,
+            text: _._
+        },
+        phone: {
+            verify: !!0,
+            text: _._
+        },
+        timezone: {
+            verify: !!0,
+            text: _._
+        }
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cloud"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            cloud
+                            </b>
+                            <a href="#cloud"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>cloud:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>showed</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="companyAvatar"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            companyAvatar
+                            </b>
+                            <a href="#companyAvatar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>companyAvatar:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        updated: !!0,
+        url: &#x27;&#x27;,
+        file: {}
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="companyProfileForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            companyProfileForm
+                            </b>
+                            <a href="#companyProfileForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>companyProfileForm:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="companyValidation"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            companyValidation
+                            </b>
+                            <a href="#companyValidation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>companyValidation:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        company_name: [
+            this.usersService.company.company_name,
+            [
+                Validators.required,
+                Validators.minLength(3)
+            ]
+        ],
+        website: [
+            this.usersService.company.website,
+            [
+                Validators.required,
+                ValidationService.webSiteValidator,
+                Validators.minLength(6)
+            ]
+        ],
+        country: [
+            this.usersService.company.country,
+            [
+                Validators.required,
+            ]
+        ],
+        phone: [
+            this.usersService.company.phone,
+            [
+                // ValidationService.phoneNubmer,
+                Validators.minLength(6),
+                Validators.required
+            ]
+        ],
+        timezone: [
+            this.usersService.company.timezone,
+            [
+            ]
+        ],
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentUserTimezone"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            currentUserTimezone
+                            </b>
+                            <a href="#currentUserTimezone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>currentUserTimezone:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="defaultToastrParams"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            defaultToastrParams
+                            </b>
+                            <a href="#defaultToastrParams"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>defaultToastrParams:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;any&gt; {
+        progressBar: true,
+        positionClass: &quot;toast-bottom-right&quot;,
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="defoultimgUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            defoultimgUrl
+                            </b>
+                            <a href="#defoultimgUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>defoultimgUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;../../../../../public/images/user-default-img.png&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingGif"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            loadingGif
+                            </b>
+                            <a href="#loadingGif"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>loadingGif:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;../../../../../public/images/loading.gif&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeZonesCount"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Readonly</span>
+                            timeZonesCount
+                            </b>
+                            <a href="#timeZonesCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>timeZonesCount:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>24</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usersService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            usersService
+                            </b>
+                            <a href="#usersService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>usersService:     <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:139</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="companyProfileFormErrors"></a>
+                        <span class="name"><b>companyProfileFormErrors</b><a href="#companyProfileFormErrors"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>companyProfileFormErrors()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:98</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>companyProfileFormErrors(currentErrors: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">client/src/app/components/company-profile/company-profile.component.ts:103</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>currentErrors</td>
+                                                    
+                                                            <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, Input} from &quot;@angular/core&quot;;
+import {FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import {_} from &quot;../../services/helpers/helper.service&quot;;
+import {UsersService} from &#x27;../../services/components/users.service&#x27;;
+import {ToastrService} from &#x27;../../modules/toastr&#x27;;
+import {CompanyStorageModel} from &#x27;../../models/components/company.model&#x27;;
+import {ValidationService} from &#x27;../../services/helpers/validation.service&#x27;;
+
+@Component({
+    selector: &#x27;company-profile&#x27;,
+    templateUrl: &#x27;../../html/company-profile/company-profile.component.html&#x27;,
+})
+
+export class CompanyProfileComponent implements OnInit {
+
+    public cloud: any &#x3D; showed;
+    private defaultToastrParams: any &#x3D; &lt;any&gt; {
+        progressBar: true,
+        positionClass: &quot;toast-bottom-right&quot;,
+    };
+
+    public defoultimgUrl &#x3D; &quot;../../../../../public/images/user-default-img.png&quot;;
+
+    public loadingGif &#x3D; &quot;../../../../../public/images/loading.gif&quot;;
+
+    public readonly timeZonesCount: number &#x3D; 24;
+
+    public companyProfileForm: any;
+
+    public companyAvatar: any &#x3D; {
+        updated: !!0,
+        url: &#x27;&#x27;,
+        file: {}
+    };
+
+
+    public currentUserTimezone: any;
+    public _companyProfileFormErrors: any &#x3D; {
+        company_name: {
+            verify: !!0,
+            text: _._
+        },
+        website: {
+            verify: !!0,
+            text: _._
+        },
+        country: {
+            verify: !!0,
+            text: _._
+        },
+        phone: {
+            verify: !!0,
+            text: _._
+        },
+        timezone: {
+            verify: !!0,
+            text: _._
+        }
+    };
+
+    public companyValidation:any &#x3D; {
+        company_name: [
+            this.usersService.company.company_name,
+            [
+                Validators.required,
+                Validators.minLength(3)
+            ]
+        ],
+        website: [
+            this.usersService.company.website,
+            [
+                Validators.required,
+                ValidationService.webSiteValidator,
+                Validators.minLength(6)
+            ]
+        ],
+        country: [
+            this.usersService.company.country,
+            [
+                Validators.required,
+            ]
+        ],
+        phone: [
+            this.usersService.company.phone,
+            [
+                // ValidationService.phoneNubmer,
+                Validators.minLength(6),
+                Validators.required
+            ]
+        ],
+        timezone: [
+            this.usersService.company.timezone,
+            [
+            ]
+        ],
+    };
+
+    public get companyProfileFormErrors() : any
+    {
+        return this._companyProfileFormErrors;
+    }
+
+    public set companyProfileFormErrors( currentErrors: any )
+    {
+        if ( _.empty(currentErrors) )
+        {
+            for ( let key in currentErrors )
+            {
+                if ( currentErrors.hasOwnProperty(key) &amp;&amp; this._companyProfileFormErrors.hasOwnProperty(key) )
+                {
+                    this._companyProfileFormErrors[key].verify &#x3D; !!1;
+                    this._companyProfileFormErrors[key].text &#x3D; currentErrors[key][0];
+                }
+            }
+        }
+    }
+
+    @Input()
+    public classError: any &#x3D; ( param: string ) : boolean &#x3D;&gt;
+    {
+        if ( ! this.companyProfileForm.controls[param].valid &amp;&amp; this.companyProfileForm.controls[param].touched  &amp;&amp; this.companyProfileForm.submitted)
+            return !!1;
+        if ( ! this.companyProfileForm.controls[param].valid &amp;&amp; !this.companyProfileForm.controls[param].touched  &amp;&amp; !this._companyProfileFormErrors[param].verify &amp;&amp; this.companyProfileForm.submitted)
+            return !!1;
+        else if ( this._companyProfileFormErrors[param].verify )
+            return !!1;
+        else
+            return !!0;
+    };
+
+    @Input()
+    public classSuccess: any &#x3D; ( param: string ) : boolean &#x3D;&gt;
+    {
+
+        return this.companyProfileForm.controls[param].valid &amp;&amp; this.companyProfileForm.controls[param].touched;
+    };
+
+    constructor(
+        public usersService: UsersService,
+        private companyStorageModel: CompanyStorageModel,
+        private formBuilder: FormBuilder,
+        private toastr: ToastrService
+    )
+    {
+        this.companyProfileForm &#x3D; this.formBuilder.group(this.companyValidation);
+
+        this.getCompanySettings()
+    }
+
+    public ngOnInit() : void
+    {
+        this.currentUserTimezone &#x3D; new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1];
+        this.currentUserTimezone &#x3D; +this.currentUserTimezone.split(&#x27; &#x27;)[1].replace(/\(|\)/g, &quot;&quot;)
+    }
+
+    public showSuccess()
+    {
+        this.toastr.success(&#x27;You have successfully changed your company profile settings..&#x27;, &#x27;Success&#x27;, this.defaultToastrParams);
+    }
+
+    public changeTimezone( event: any ) : void
+    {
+        this.usersService.company.timezone &#x3D; event.selectedOptions[0].attributes[&#x27;selectedValue&#x27;].value;
+
+    }
+
+    public onlyNumber( event: KeyboardEvent ) : void
+    {
+        if ( ! +event.key &amp;&amp; event.key !&#x3D;&#x3D; &#x27;0&#x27; )
+        {
+            event.preventDefault();
+        }
+    }
+
+    public uploadCompanyLogo (target: HTMLInputElement): void {
+        let fileList: FileList,
+            reader: FileReader;
+
+        fileList &#x3D; target.files;
+        reader &#x3D; new FileReader();
+
+        reader.onload &#x3D; ( ( newAvatar: ProgressEvent ) : void &#x3D;&gt;
+        {
+
+
+            let formData &#x3D; new FormData();
+            formData.append(&quot;avatar&quot;, fileList[0]);
+
+            this.usersService.updateCompanyLogo(formData)
+                .then( ( data: any ) : void &#x3D;&gt; {
+
+                    if( data.success)
+                    {
+                        this.usersService.company.logo_full_path &#x3D; (&lt;FileReader&gt;newAvatar.target).result;
+
+                        // this.companyAvatar.url &#x3D; data.data.logo
+                        this.companyStorageModel.insert(this.usersService.company);
+                    }
+                })
+        });
+
+        reader.readAsDataURL(fileList[0]);
+    }
+
+
+    public buildUpdatedData() : void
+    {
+        // let newData: any;
+        //
+        // newData &#x3D; &lt;Object&gt;(this.companyProfileForm.value);
+        // newData.timezone_offset &#x3D; this.currentUserTimezone;
+        //
+        // this.companyData &#x3D; newData;
+    }
+
+
+    public getCompanySettings():void
+    {
+        if(this.companyStorageModel.select()){
+            this.usersService.setCompany(this.companyStorageModel.select());
+            // console.log(&#x27;this.usersService.company &#x27;,this.usersService.company )
+        }else{
+            this.usersService.companySettings()
+                .then( ( data: any ) : void &#x3D;&gt; {
+
+                    if (data.success)
+                    {
+
+                        this.companyStorageModel.insert(data.data);
+                        this.usersService.setCompany(data.data);
+                    }
+                })
+        }
+        // console.log(this.usersService.company)
+
+    }
+
+    public updateCompany(): void
+    {
+        this.buildUpdatedData();
+        if ( this.companyProfileForm.dirty &amp;&amp; this.companyProfileForm.valid )
+        {
+            this.companyProfileForm.value.timezone_offset &#x3D; this.usersService.company.timezone ;
+            this.cloud.effect &#x3D; &#x27;companyUpdateSpin&#x27;;
+            this.usersService.updateCompany(this.companyProfileForm.value)
+                .then( ( data: any ) : void &#x3D;&gt; {
+
+                    if ( ! data.success )
+                        this._companyProfileFormErrors &#x3D; data.errors;
+                    else
+                    {
+                        this.usersService.setCompany(data.data);
+                        this.companyStorageModel.insert(data.data);
+                        this.showSuccess();
+                        this.companyProfileForm.submitted &#x3D; !!0;
+                    }
+                    this.cloud.effect &#x3D; &#x27;companyUpdateSpin&#x27;;
+                })
+        }else{
+            this.companyProfileForm.submitted &#x3D; !!1;
+        }
+    }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;page-main-content&quot;&gt;
+    &lt;div class&#x3D;&quot;main-content settings-page&quot;&gt;
+        &lt;div class&#x3D;&quot;page-title-box full-width-left&quot;&gt;
+            &lt;span  class&#x3D;&quot;p-title&quot;&gt;Company Profile&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;full-width-left info-tab-box&quot;&gt;
+            &lt;div id&#x3D;&quot;tab&quot; class&#x3D;&quot;custom-tab-content current&quot;&gt;
+                &lt;div class&#x3D;&quot;user-settings-tab&quot;&gt;
+                    &lt;form
+                            (ngSubmit)&#x3D;&quot;updateCompany()&quot;
+                            [formGroup]&#x3D;&quot;companyProfileForm&quot;
+                    &gt;
+                        &lt;ul class&#x3D;&quot;list-unstyled list-inline align-middle&quot;&gt;
+                            &lt;li class&#x3D;&quot;no-padding&quot;&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label&gt;Logo&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;no-padding&quot; &gt;
+                                &lt;div class&#x3D;&quot;pull-left user-photo&quot;&gt;
+                                    &lt;img src&#x3D;&quot;{{usersService.company.logo_full_path}}&quot;  alt&#x3D;&quot;csdfsa photo&quot; class&#x3D;&quot;img-circle&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left add-photo-item&quot;&gt;
+                                    &lt;input type&#x3D;&quot;file&quot; (change)&#x3D;&quot;uploadCompanyLogo($event.target)&quot;&gt;
+                                    Add a company logo
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;ul class&#x3D;&quot;list-inline list-unstyled input-fields-content align-middle&quot;&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label for&#x3D;&quot;company_name&quot;&gt;Company name&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box&quot;&gt;
+                                    &lt;input
+                                            type&#x3D;&quot;text&quot;
+                                            id&#x3D;&quot;company_name&quot;
+                                            formControlName&#x3D;&quot;company_name&quot;
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;company_name&#x27;)&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;company_name&#x27;)&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            [(ngModel)]&#x3D;&quot;usersService.company.company_name&quot;
+                                            autocomplete&#x3D;&quot;off&quot;
+                                            placeholder&#x3D;&quot;Full Name&quot;
+                                            name&#x3D;&quot;company_name&quot;
+                                            value&#x3D;&quot;{{usersService.company.company_name}}&quot;
+
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;registartion_company_name-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;companyProfileForm.controls.company_name&quot;
+                                            [formSubmit]&#x3D;&quot;companyProfileForm.submitted&quot;
+                                            [controlName]&#x3D;&quot;&#x27;company name&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;_companyProfileFormErrors.company_name.verify&quot;&gt;
+                                        {{_companyProfileFormErrors.company_name.text}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label for&#x3D;&quot;website&quot;&gt;Website&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box&quot;&gt;
+                                    &lt;input
+                                            type&#x3D;&quot;text&quot;
+                                            name&#x3D;&quot; &quot;
+                                            id&#x3D;&quot;website&quot;
+                                            formControlName&#x3D;&quot;website&quot;
+                                            placeholder&#x3D;&quot;Website&quot;
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;website&#x27;)&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;website&#x27;)&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            [(ngModel)]&#x3D;&quot;usersService.company.website&quot;
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;registartion_website-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;companyProfileForm.controls.website&quot;
+                                            [formSubmit]&#x3D;&quot;companyProfileForm.submitted&quot;
+                                            [controlName]&#x3D;&quot;&#x27;website&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;_companyProfileFormErrors.website.verify&quot;&gt;
+                                        {{_companyProfileFormErrors.website.text}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label for&#x3D;&quot;subdomain&quot;&gt;Subdomain&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box&quot;&gt;
+                                    &lt;input type&#x3D;&quot;text&quot;
+                                           name&#x3D;&quot; &quot;
+                                           id&#x3D;&quot;subdomain&quot;
+                                           class&#x3D;&quot;form-control&quot;
+                                           value&#x3D;&quot;{{usersService.company.subdomain}}&quot;
+                                           disabled
+                                    &gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label for&#x3D;&quot;country&quot;&gt;Country&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box&quot;&gt;
+                                    &lt;input
+                                            type&#x3D;&quot;text&quot;
+                                            name&#x3D;&quot; &quot;
+                                            id&#x3D;&quot;country&quot;
+                                            value&#x3D;&quot;&quot;
+                                            formControlName&#x3D;&quot;country&quot;
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;country&#x27;)&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;country&#x27;)&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            [(ngModel)]&#x3D;&quot;usersService.company.country&quot;
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;registartion_country-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;companyProfileForm.controls.country&quot;
+                                            [formSubmit]&#x3D;&quot;companyProfileForm.submitted&quot;
+                                            [controlName]&#x3D;&quot;&#x27;country&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;_companyProfileFormErrors.country.verify&quot;&gt;
+                                        {{_companyProfileFormErrors.country.text}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label for&#x3D;&quot;phone&quot;&gt;Phone Number&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box&quot;&gt;
+                                    &lt;input
+                                            (keypress)&#x3D;&quot;onlyNumber($event)&quot;
+                                            placeholder&#x3D;&quot;Add your company phone-number&quot;
+                                            type&#x3D;&quot;tel&quot;
+                                            name&#x3D;&quot; &quot;
+                                            id&#x3D;&quot;phone&quot;
+                                            formControlName&#x3D;&quot;phone&quot;
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;phone&#x27;)&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;phone&#x27;)&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            [(ngModel)]&#x3D;&quot;usersService.company.phone&quot;
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;registartion_phone-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;companyProfileForm.controls.phone&quot;
+                                            [formSubmit]&#x3D;&quot;companyProfileForm.submitted&quot;
+                                            [controlName]&#x3D;&quot;&#x27;phone number&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;_companyProfileFormErrors.phone.verify&quot;&gt;
+                                        {{_companyProfileFormErrors.phone.text}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                    &lt;label&gt;Timezone&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-left field-box select-box&quot;&gt;
+                                    &lt;select
+                                            id&#x3D;&quot;time_zone&quot;
+                                            formControlName&#x3D;&quot;timezone&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            [(ngModel)]&#x3D;&quot;usersService.company.timezone&quot;
+                                            (change)&#x3D;&quot;changeTimezone($event.target)&quot;
+                                    &gt;
+                                        &lt;option
+                                                *ngFor&#x3D;&quot;let time of timeZonesCount | numberedCycle&quot;
+                                                [attr.selectedValue]&#x3D;&quot;time&quot;
+                                                [selected]&#x3D;&quot;currentUserTimezone &#x3D;&#x3D; &#x27;(UTC/GMT &#x27;+time+&#x27; hours) CEST&#x27; || time &#x3D;&#x3D; usersService.company.timezone &quot;
+                                        &gt;(UTC/GMT {{time}} hours) CEST&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;div class&#x3D;&quot;pull-left text-right label-box&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;pull-right field-box&quot;&gt;
+                                    &lt;button
+                                            type&#x3D;&quot;submit&quot;
+                                            class&#x3D;&quot;btn custom-default-btn&quot;
+                                    &gt;
+                                        &lt;i class&#x3D;&quot;fa fa-spin fa-circle-o-notch&quot; *ngIf&#x3D;&quot;cloud.effect.companyUpdateSpin&quot;&gt;&lt;/i&gt;
+                                        Save profile
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="page-main-content">    <div class="main-content settings-page">        <div class="page-title-box full-width-left">            <span  class="p-title">Company Profile</span>        </div>        <div class="full-width-left info-tab-box">            <div id="tab" class="custom-tab-content current">                <div class="user-settings-tab">                    <form                            (ngSubmit)="updateCompany()"                            [formGroup]="companyProfileForm"                    >                        <ul class="list-unstyled list-inline align-middle">                            <li class="no-padding">                                <div class="pull-left text-right label-box">                                    <label>Logo</label>                                </div>                            </li>                            <li class="no-padding" >                                <div class="pull-left user-photo">                                    <img src="{{usersService.company.logo_full_path}}"  alt="csdfsa photo" class="img-circle">                                </div>                            </li>                            <li>                                <div class="pull-left add-photo-item">                                    <input type="file" (change)="uploadCompanyLogo($event.target)">                                    Add a company logo                                </div>                            </li>                        </ul>                        <ul class="list-inline list-unstyled input-fields-content align-middle">                            <li>                                <div class="pull-left text-right label-box">                                    <label for="company_name">Company name</label>                                </div>                                <div class="pull-left field-box">                                    <input                                            type="text"                                            id="company_name"                                            formControlName="company_name"                                            [class.input-error-style]="classError(\'company_name\')"                                            [class.input-success-style]="classSuccess(\'company_name\')"                                            class="form-control"                                            [(ngModel)]="usersService.company.company_name"                                            autocomplete="off"                                            placeholder="Full Name"                                            name="company_name"                                            value="{{usersService.company.company_name}}"                                    >                                </div>                                <span id="registartion_company_name-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="companyProfileForm.controls.company_name"                                            [formSubmit]="companyProfileForm.submitted"                                            [controlName]="\'company name\'"                                    ></form-errors>                                    <span *ngIf="_companyProfileFormErrors.company_name.verify">                                        {{_companyProfileFormErrors.company_name.text}}                                    </span>                                </span>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                    <label for="website">Website</label>                                </div>                                <div class="pull-left field-box">                                    <input                                            type="text"                                            name=" "                                            id="website"                                            formControlName="website"                                            placeholder="Website"                                            [class.input-error-style]="classError(\'website\')"                                            [class.input-success-style]="classSuccess(\'website\')"                                            class="form-control"                                            [(ngModel)]="usersService.company.website"                                    >                                </div>                                <span id="registartion_website-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="companyProfileForm.controls.website"                                            [formSubmit]="companyProfileForm.submitted"                                            [controlName]="\'website\'"                                    ></form-errors>                                    <span *ngIf="_companyProfileFormErrors.website.verify">                                        {{_companyProfileFormErrors.website.text}}                                    </span>                                </span>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                    <label for="subdomain">Subdomain</label>                                </div>                                <div class="pull-left field-box">                                    <input type="text"                                           name=" "                                           id="subdomain"                                           class="form-control"                                           value="{{usersService.company.subdomain}}"                                           disabled                                    >                                </div>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                    <label for="country">Country</label>                                </div>                                <div class="pull-left field-box">                                    <input                                            type="text"                                            name=" "                                            id="country"                                            value=""                                            formControlName="country"                                            [class.input-error-style]="classError(\'country\')"                                            [class.input-success-style]="classSuccess(\'country\')"                                            class="form-control"                                            [(ngModel)]="usersService.company.country"                                    >                                </div>                                <span id="registartion_country-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="companyProfileForm.controls.country"                                            [formSubmit]="companyProfileForm.submitted"                                            [controlName]="\'country\'"                                    ></form-errors>                                    <span *ngIf="_companyProfileFormErrors.country.verify">                                        {{_companyProfileFormErrors.country.text}}                                    </span>                                </span>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                    <label for="phone">Phone Number</label>                                </div>                                <div class="pull-left field-box">                                    <input                                            (keypress)="onlyNumber($event)"                                            placeholder="Add your company phone-number"                                            type="tel"                                            name=" "                                            id="phone"                                            formControlName="phone"                                            [class.input-error-style]="classError(\'phone\')"                                            [class.input-success-style]="classSuccess(\'phone\')"                                            class="form-control"                                            [(ngModel)]="usersService.company.phone"                                    >                                </div>                                <span id="registartion_phone-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="companyProfileForm.controls.phone"                                            [formSubmit]="companyProfileForm.submitted"                                            [controlName]="\'phone number\'"                                    ></form-errors>                                    <span *ngIf="_companyProfileFormErrors.phone.verify">                                        {{_companyProfileFormErrors.phone.text}}                                    </span>                                </span>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                    <label>Timezone</label>                                </div>                                <div class="pull-left field-box select-box">                                    <select                                            id="time_zone"                                            formControlName="timezone"                                            class="form-control"                                            [(ngModel)]="usersService.company.timezone"                                            (change)="changeTimezone($event.target)"                                    >                                        <option                                                *ngFor="let time of timeZonesCount | numberedCycle"                                                [attr.selectedValue]="time"                                                [selected]="currentUserTimezone == \'(UTC/GMT \'+time+\' hours) CEST\' || time == usersService.company.timezone "                                        >(UTC/GMT {{time}} hours) CEST</option>                                    </select>                                </div>                            </li>                            <li>                                <div class="pull-left text-right label-box">                                </div>                                <div class="pull-right field-box">                                    <button                                            type="submit"                                            class="btn custom-default-btn"                                    >                                        <i class="fa fa-spin fa-circle-o-notch" *ngIf="cloud.effect.companyUpdateSpin"></i>                                        Save profile                                    </button>                                </div>                            </li>                        </ul>                    </form>                </div>            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'CompanyProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CompanyProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

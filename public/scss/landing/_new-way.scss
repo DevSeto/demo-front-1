@@ -1,0 +1,143 @@
+.new-way {
+  padding-left: 74px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1820px;
+  margin: 0 auto;
+  margin-bottom: 640px;
+
+  @media (max-width: 1660px) {
+    margin-bottom: 320px;
+  }
+
+  &__video {
+    width: 51.04vw;
+    height: 29.79vw;
+    max-width: 980px;
+    max-height: 572px;
+    position: relative;
+    background-color: rgba(102, 99, 99, 0.3);
+    background-image: url(../images/images/video.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 5.5%;
+  }
+
+  &__video-play {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(270deg, #08AEEA 0%, #14CD9A 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-triangle {
+      border-left: 18px solid $white-bg;
+      display: inline-block;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__info {
+    width: 475px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+
+  }
+
+  &__text {
+    line-height: (30em / 18);
+    margin-bottom: 3.33em;
+  }
+
+  &__blockquote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__blockquote-author {
+    flex-basis: 100px;
+    text-align: center;
+    margin-right: 16px;
+
+    img {
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    span {
+      white-space: nowrap;
+      color: $storm-dust;
+      font-family: 'SF Display Semibold';
+    }
+  }
+
+  &__blockquote-text {
+    flex-basis: 325px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+
+@media all and (max-width: 1280px) {
+  .new-way {
+    padding: 0 40px;
+  }
+}
+
+@media all and (max-width: 1140px) {
+  .new-way {
+    align-items: flex-start;
+    margin-bottom: 150px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .new-way {
+    &__blockquote-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .new-way {
+    padding: 0 30px;
+    margin-bottom: 232px;
+  }
+}
+
+@media (max-width: 667px) {
+  .new-way {
+    padding: 0 15px;
+    flex-direction: column;
+
+    &__video {
+      width: 100%;
+      height: (172vw / 3.2);
+      margin-bottom: 24px;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+}

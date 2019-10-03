@@ -1,0 +1,237 @@
+
+
+<!--<form-->
+        <!--class="multistep-form forward-email"-->
+        <!--[formGroup]="userForm"-->
+        <!--(ngSubmit)="register()"-->
+<!--&gt;-->
+
+    <!--<h2 class="multistep-form__title text-center bold">Forward your email to BirdDesk</h2>-->
+    <!--<p class="mb40 text&#45;&#45;lg text-center">To start recieving emails in BirdDesk, you will need to redirect-->
+        <!--your emails to your new account</p>-->
+    <!--<div class="multistep-form-input-wrapper "-->
+         <!--[class.multistep-form-input-wrapper&#45;&#45;passed]="userForm.controls.mailbox_name.valid"-->
+    <!--&gt;-->
+
+    <!--<input type="text"-->
+           <!--class="multistep-form__input input w-100"-->
+           <!--placeholder="Mailbox name"-->
+           <!--[(ngModel)]="usersService.stepsData.mailbox_name"-->
+           <!--[class.input-error-style]="classError('mailbox_name')"-->
+           <!--[class.input-success-style]="classSuccess('mailbox_name')"-->
+           <!--autocomplete="off"-->
+           <!--name="mailbox_name"-->
+           <!--data-rules="required"-->
+           <!--formControlName="mailbox_name"-->
+           <!--autofocus-->
+    <!--&gt;-->
+    <!--<span id="full_name-error" class="error-span help-block error backend-error input-group-error">-->
+            <!--<form-errors-->
+                    <!--[control]="userForm.controls.mailbox_name"-->
+                    <!--[controlName]="'Mail box name'"-->
+                    <!--[formSubmit]="userForm.submitted"-->
+            <!--&gt;</form-errors>-->
+            <!--<span *ngIf="userFormErrors.mailbox_name.verify">-->
+                <!--{{userFormErrors.mailbox_name.text}}-->
+            <!--</span>-->
+    <!--</span>-->
+
+    <!--</div>-->
+    <!--<div class="multistep-form-input-wrapper"-->
+         <!--[class.multistep-form-input-wrapper&#45;&#45;passed]="userForm.controls.mailbox_email.valid"-->
+    <!--&gt;-->
+        <!--<input-->
+               <!--class="multistep-form__input input w-100"-->
+               <!--[class.input-error-style]="classError('mailbox_email')"-->
+               <!--[class.input-success-style]="classSuccess('mailbox_email')"-->
+               <!--autocomplete="off"-->
+               <!--placeholder="Your email"-->
+               <!--name="email"-->
+               <!--type="email"-->
+               <!--value=""-->
+               <!--data-rules="required|email"-->
+               <!--formControlName="mailbox_email"-->
+        <!--&gt;-->
+        <!--<span id="mailbox_email-error" class="error-span help-block error backend-error input-group-error">-->
+            <!--<form-errors-->
+                    <!--[control]="userForm.controls.mailbox_email"-->
+                    <!--[controlName]="'Your email'"-->
+                    <!--[formSubmit]="userForm.submitted"-->
+            <!--&gt;</form-errors>-->
+            <!--<span *ngIf="userFormErrors.mailbox_email.verify">-->
+                <!--{{userFormErrors.mailbox_email.text}}-->
+            <!--</span>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<p class="mb16 text&#45;&#45;lg">Forwarding address</p>-->
+    <!--<div class="multistep-form-input-wrapper">-->
+        <!--<input-->
+                <!--type="text"-->
+                <!--name="mailbox_forwarding"-->
+                <!--[value]="usersService.stepsData.mailbox_forwarding"-->
+               <!--class="multistep-form__input forwarding-address-input input w-100 mb40 forwardingAddress"-->
+               <!--[placeholder]="usersService.stepsData.mailbox_forwarding"-->
+                <!--disabled-->
+        <!--&gt;-->
+        <!--<button-->
+                <!--type="button"-->
+                <!--class="forwarding-address-btn "-->
+                <!--(click)="copyTextToClipboard('forwardingAddress')"-->
+        <!--&gt;-->
+            <!--Copy address-->
+        <!--</button>-->
+    <!--</div>-->
+    <!--<div class="flex justify-center">-->
+        <!--<button class="btn dafault" type="button" (click)="saveRegistration()">Cancel</button>-->
+
+        <!--<div class="grad-btn grad-btn&#45;&#45;fill" [class.disabled]="registrationLoader || disabled">-->
+            <!--<i class="fa fa-spin fa-circle-o-notch" *ngIf="registrationLoader || disabled"></i>-->
+            <!--<button class="grad-btn__btn" [disabled]="registrationLoader || disabled" type="submit" >Done</button>-->
+            <!--<span class="grad-btn__bg"></span>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+<!--</form>-->
+
+<div class="inbox-wrapper overflow-visible">
+    <h2 class="multistep-form__title text-center bold">Create Inbox</h2>
+
+    <div class="inbox-form-wrapper">
+
+        <div class="inbox-form inbox-form-company"
+                [ngClass]="{'active': nextLibAvailable2 == !1}"
+                >
+            <form
+                    [formGroup]="userForm"
+                    (ngSubmit)="register()"
+            >
+                <div class="inbox-form-company-inner">
+                    <h2 class="multistep-form__title text-center bold">Company Inbox</h2>
+                    <p class="bold mb40 text-center">Add your email by which you’ll aproach your customers</p>
+                    <div class="multistep-form-input-wrapper">
+                        <div class="multistep-form__login-input"
+                             [class.multistep-form-input-wrapper--passed]="classSuccess('mailbox_name') === true"
+                        >
+                            <input type="text"
+                                   class="multistep-form__input input w-100"
+                                   placeholder="Mailbox name"
+                                   [(ngModel)]="usersService.stepsData.mailbox_name"
+                                   [class.input-error-style]="classError('mailbox_name')"
+                                   [class.input-success-style]="classSuccess('mailbox_name')"
+                                   (focus)="nextLibAvailable = !!1"
+                                   (blur)="nextLibAvailable = !!0"
+                                   autocomplete="off"
+                                   name="mailbox_name"
+                                   data-rules="required"
+                                   formControlName="mailbox_name"
+                                   autofocus
+                            >
+                        </div>
+                        <span id="full_name-error" class="error-span help-block error backend-error input-group-error">
+                                <form-errors
+                                        [control]="userForm.controls.mailbox_name"
+                                        [controlName]="'Mail box name'"
+                                        [formSubmit]="userForm.submitted"
+                                ></form-errors>
+                                <span *ngIf="userFormErrors.mailbox_name.verify">
+                                    {{userFormErrors.mailbox_name.text}}
+                                </span>
+                        </span>
+                    </div>
+                    <div class="multistep-form-input-wrapper">
+                        <div class="multistep-form__login-input"
+                             [class.multistep-form-input-wrapper--passed]="classSuccess('mailbox_email') === true"
+                        >
+                            <input type="email"
+                                   class="multistep-form__input input w-100"
+                                   placeholder="Company Mail"
+                                   [class.input-error-style]="classError('mailbox_email')"
+                                   [class.input-success-style]="classSuccess('mailbox_email')"
+                                   autocomplete="off"
+                                   placeholder="Your email"
+                                   (focus)="nextLibAvailable = !!1"
+                                   (blur)="nextLibAvailable = !!0"
+                                   name="email"
+                                   type="email"
+                                   value=""
+                                   data-rules="required|email"
+                                   formControlName="mailbox_email"
+                            >
+                        </div>
+                        <span id="mailbox_email-error" class="error-span help-block error backend-error input-group-error">
+                                <form-errors
+                                        [control]="userForm.controls.mailbox_email"
+                                        [controlName]="'Your email'"
+                                        [formSubmit]="userForm.submitted"
+                                ></form-errors>
+                                <span *ngIf="userFormErrors.mailbox_email.verify">
+                                    {{userFormErrors.mailbox_email.text}}
+                                </span>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <div class="grad-btn grad-btn--fill disabled" [class.disabled]="disabled || registrationLoader || nextLibAvailable2 == !!1">
+                            <button class="grad-btn__btn" type="submit" [disabled]="disabled || registrationLoader || nextLibAvailable2 == !!1">Create Inbox</button>
+                            <span class="grad-btn__bg"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="inbox-form-separator">
+            <span class="inbox-form-separator__value">OR</span>
+        </div>
+
+        <div class="inbox-form inbox-form-demo"
+                [ngClass]="{'active': nextLibAvailable == !1}"
+                >
+            <form
+                    [formGroup]="mailboxForm"
+                    (ngSubmit)="registerMailboxName()"
+            >
+                <div class="inbox-form-demo-inner">
+                    <h2 class="multistep-form__title text-center mb40 bold">Demo Inbox</h2>
+                    <p class="bold mb40 text-center">Would you simply like to test our service without creating company
+                        mail?</p>
+                    <div class="multistep-form-input-wrapper">
+                        <div class="multistep-form__login-input"
+                             [class.multistep-form-input-wrapper--passed]="usersService.stepsData.demo_mailbox_name"
+                        >
+                            <input
+                                    type="text"
+                                    class="multistep-form__input input w-100"
+                                   placeholder="Mailbox name"
+                                   autocomplete="off"
+                                   name="demo_mailbox_name"
+                                    (focus)="nextLibAvailable2 = !!1"
+                                    (blur)="nextLibAvailable2 = !!0"
+                                    [(ngModel)]="usersService.stepsData.demo_mailbox_name"
+                                   [class.input-error-style]="!usersService.stepsData.demo_mailbox_name && mailboxForm.submitted"
+                                   [class.input-success-style]="usersService.stepsData.demo_mailbox_name && mailboxForm.submitted"
+                                   data-rules="required"
+                                   formControlName="demo_mailbox_name"
+                                   autofocus
+                            >
+                        </div>
+                        <span class="error-span help-block error backend-error input-group-error">
+                                <form-errors
+                                        [control]="mailboxForm.controls.demo_mailbox_name"
+                                        [controlName]="'Mail box name'"
+                                        [formSubmit]="mailboxForm.submitted"
+                                ></form-errors>
+                                <span *ngIf="userFormErrors.demo_mailbox_name.verify">
+                                    {{userFormErrors.demo_mailbox_name.text}}
+                                </span>
+                        </span>
+                    </div>
+                    <div class="grad-btn grad-btn--fill mt40 " [class.disabled]="disabled || registrationLoader  || nextLibAvailable == !!1">
+                        <button class="grad-btn__btn" [disabled]="disabled || registrationLoader  || nextLibAvailable == !!1" type="submit">Create Inbox</button>
+                        <span class="grad-btn__bg"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

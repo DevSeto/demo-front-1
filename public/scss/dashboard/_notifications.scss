@@ -1,0 +1,490 @@
+.notification-container {
+  position: relative;
+}
+
+.notification {
+
+  &__content {
+    position: absolute;
+    opacity: 0;
+    width: 400px;
+    height: 600px;
+    top: 42px;
+    right: -13px;
+    z-index: 6;
+    animation: fadeInNotifivation 0.6s forwards;
+
+
+    &-after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      right: 20px;
+      top: -5px;
+      background-color: $white-bg;
+      transform: rotateZ(45deg);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      z-index: 7;
+    }
+  }
+
+  &__bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
+  &__item {
+    min-height: 150px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    background-color: $white-bg;
+    position: relative;
+    z-index: 6;
+    box-shadow: 2px 1px 7px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.forwarding {
+  padding: 24px;
+
+  hr {
+    background-color: $row-border;
+    border: none;
+    height: 1px;
+    display: block;
+  }
+
+  &-process {
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    &__bar {
+      border-radius: 5px;
+      height: 8px;
+      position: relative;
+      overflow: hidden;
+      background-color: $whisper;
+      margin-bottom: 16px;
+    }
+
+    &__bar-thumb {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 66%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background: linear-gradient(270deg, #08AEEA 0%, #14CD9A 100%);
+      transition: all .6s;
+    }
+
+    &__steps {
+      color: $text-grey;
+    }
+
+    &__message {
+      text-align: center;
+
+      &-header {
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+
+      &-text {
+        color: $viridian-green;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.notifications {
+  padding: 24px;
+  padding-bottom: 0px;
+  overflow: auto;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $row-border;
+    margin-bottom: 16px;
+  }
+
+  &__header-title {
+    font-size: 14px;
+  }
+
+  &__header-btn {
+    font-size: 14px;
+    cursor: pointer;
+    color: $blue;
+  }
+
+  &__container {
+    height: 206px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.notifications-item {
+  display: flex;
+  min-height: 71px;
+  margin-bottom: 8px;
+  //background-color: $mint-cream;
+  border-bottom: 1px solid $row-border;
+  padding: 11px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__img {
+    flex-basis: 48px;
+    height: 48px;
+    margin-right: 16px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    font-size: 12px;
+    padding-left: 8px;
+    flex-grow: 1;
+  }
+
+  &__user {
+    line-height: 24px;
+    color: $manatee;
+  }
+
+  &__title {
+    line-height: 24px;
+  }
+
+  &__time {
+    text-align: right;
+    color: $manatee;
+    font-size: 12px;
+    line-height: 24px;
+
+  }
+
+  &__id {
+    text-align: right;
+    color: $manatee;
+    font-size: 12px;
+    line-height: 24px;
+
+  }
+}
+
+@keyframes fadeInNotifivation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.notification__item.forwarding {
+  top: 41px;
+  width: 368px;
+  right: -20px;
+  padding: 36px 24px;
+  overflow: hidden;
+  box-shadow: 2px 1px 7px 0 rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+}
+
+.forwarding-process__message {
+  height: 270px;
+  overflow: hidden;
+}
+
+.forwarding-process__succes {
+  display: none;
+  position: absolute;
+  background: linear-gradient(270deg, #08AEEA 0%, #14CD9A 100%);
+  width: 100px;
+  height: 100px;
+  height: 177px;
+  top: 86px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding-top: 20px;
+  box-sizing: border-box;
+
+  &-header {
+    color: #F5FAFA;
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &-text {
+    margin-bottom: 26px;
+    font-size: 14px;
+    text-align: center;
+    color: #F5FAFA;
+  }
+}
+
+.forwarding-process__message-text {
+  margin-bottom: 30px;
+}
+
+.forwarding-process-list {
+  text-align: left;
+  margin-bottom: 24px;
+
+  &__item {
+    color: #5F6061;
+    padding-left: 62px;
+    line-height: 20px;
+    background-image: url(/public/images//ico/cros-forwarding.svg);
+    background-repeat: no-repeat;
+    background-position: 20px 0;
+
+    &.passed {
+      background-image: url(/public/images//ico/check-forwarding.svg);
+    }
+
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+  }
+}
+
+.progressbar-notification-wrapper {
+  &.open {
+    &::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 999;
+    }
+  }
+}
+
+@media all and (max-width: 560px) {
+
+  .progressbar-notification-wrapper {
+    margin-right: 40px !important;
+  }
+
+  .notification-pref__header {
+    flex-wrap: wrap;
+  }
+
+  .notification__bg {
+    background-color: #1D1D1D;
+    opacity: 0.34;
+  }
+
+  .notification__content-after {
+    display: none;
+  }
+
+  .notification__content {
+    position: fixed;
+    width: 90%;
+    height: auto;
+    right: 5%;
+    top: 50%;
+    margin-top: -144px;
+  }
+
+  .notifications .notifications__container {
+    height: 228px !important;
+  }
+
+  .notifications-item__content {
+    padding-left: 0;
+  }
+
+  .notifications-item__title {
+    max-width: 100px;
+  }
+
+  .notifications-item__user {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .progressbar-notification-wrapper {
+    &.open {
+      &::after {
+        background-color: #1D1D1D;
+        opacity: 0.34;
+      }
+    }
+  }
+
+  .notification__item.forwarding {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    box-sizing: border-box;
+    height: auto;
+  }
+}
+
+.notification__item.forwarding.dropdown-menu {
+  z-index: 1000;
+  animation: fadeInNotifivation 0.6s forwards;
+}
+
+.notification__content-after {
+  z-index: 1001;
+}
+
+.progressbar-notification-wrapper {
+
+  button {
+    color: $text-grey;
+
+    &:hover {
+      color: $text-green;
+    }
+  }
+
+}
+
+.forwarding-process__message {
+  opacity: 1;
+  transition: opacity 0.3s;
+  padding-bottom: 36px;
+  box-sizing: border-box;
+  height: 306px;
+}
+
+.notification__item.forwarding {
+  // height: 394px;
+  box-sizing: border-box;
+  padding-bottom: 0;
+  min-height: auto;
+  z-index: 6;
+
+  @media (max-width: 560px) {
+    z-index: 1000;
+  }
+
+  .notification__content-after {
+    background-color: #fff;
+    top: -6px;
+
+    @media (max-width: 560px) {
+      display: none !important;
+    }
+  }
+}
+
+.progressbar-notification-wrapper {
+  .notification__content-after {
+    display: none;
+  }
+
+  &.open {
+    .notification__content-after {
+      display: block;
+      top: 38px;
+      right: 6px;
+      border-top: 1px solid rgba(0, 0, 0, .1);
+      border-left: 1px solid rgba(0, 0, 0, .1);
+
+      @media (max-width: 560px) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+//---------------ANIMATION----------------
+
+.notification__item.forwarding.passed {
+  .forwarding-process__bar-thumb {
+    width: 100%;
+  }
+  .forwarding-process__message {
+    opacity: 0;
+    pointer-events: none;
+    animation: hideForwardingMessage 1.2s 0.3s forwards;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .forwarding-process__succes {
+    animation: showforwardingSucces 0s 0.9s forwards;
+    display: block;
+    opacity: 0;
+  }
+}
+
+@keyframes hideForwardingMessage {
+  0% {
+    padding-bottom: 36px;
+    height: 306px;
+  }
+
+  50% {
+    padding-bottom: 0px;
+    height: 0px;
+  }
+
+  100% {
+    height: 170px;
+  }
+}
+
+@keyframes showforwardingSucces {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

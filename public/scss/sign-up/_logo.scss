@@ -1,0 +1,32 @@
+.birddesk-logo {
+  position: absolute;
+  top: 40px;
+  left: 160px;
+  padding-left: 64px;
+  font-size: 24px;
+  line-height: 28px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+
+  a {
+    font-family: 'Montserrat Bold';
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 36px;
+  }
+}
+@media all and (max-width: 1280px) {
+  .birddesk-logo {
+    left: 40px;
+    left: 12px;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  
+}

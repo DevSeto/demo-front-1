@@ -1,0 +1,213 @@
+
+
+<steps
+        stopScrolling
+        *ngIf="userService.forBlure"
+>
+</steps>
+<div class="dashboard-wrapper" [ngClass]="{'blureffect':userService.forBlure}">
+
+    <div class="workflow-wrapper">
+    <header class="header-panel">
+        <button class="backbutton-sm">
+            <svg height="16" width="8" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z"
+                    fill="currentColor" fill-rule="nonzero"></path>
+            </svg>
+            <span>Back</span>
+        </button>
+        <div class="header-panel__left">
+            <button class="toogle-tickets-btn" (click)="cloud.effect = 'ticketspanel'">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button class="create-ticket-btn create-ticket-btn_header" *ngIf="mailboxService.mailboxes.length"
+                 (click)="cloud.effect = 'createTicket'">
+                <svg width="157px" height="36px" viewBox="0 0 157 36" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <linearGradient x1="100%" y1="50%" x2="9.90453078%" y2="50%" id="linearGradient-1">
+                            <stop stop-color="#08AEEA" offset="0%"></stop>
+                            <stop stop-color="#14CD9A" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g id="Mailbox-v4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Advanced-Search-State" transform="translate(-162.000000, -18.000000)">
+                            <g id="top-expanded" transform="translate(80.000000, 0.000000)">
+                                <g id="bn">
+                                    <g transform="translate(82.000000, 18.000000)">
+                                        <g id="Group-15">
+                                            <text id="Create-ticket" fill="url(#linearGradient-1)" font-family="Lato Bold, Lato"
+                                                  font-size="18" font-weight="bold">
+                                                <tspan x="51.7645" y="25">Create ticket</tspan>
+                                            </text>
+                                            <g id="Group-12" stroke="url(#linearGradient-1)">
+                                                <circle id="Oval" stroke-width="1.7" cx="18" cy="18" r="17.15"></circle>
+                                                <path d="M25.3333333,17.3333333 L18.6666667,17.3333333 L18.6666667,10.6666667 C18.6666667,10.3 18.368,10 18,10 C17.632,10 17.3333333,10.3 17.3333333,10.6666667 L17.3333333,17.3333333 L10.6666667,17.3333333 C10.2986667,17.3333333 10,17.6333333 10,18 C10,18.37 10.2986667,18.6666667 10.6666667,18.6666667 L17.3333333,18.6666667 L17.3333333,25.3333333 C17.3333333,25.7033333 17.632,26 18,26 C18.368,26 18.6666667,25.7033333 18.6666667,25.3333333 L18.6666667,18.6666667 L25.3333333,18.6666667 C25.7013333,18.6666667 26,18.37 26,18 C26,17.6333333 25.7013333,17.3333333 25.3333333,17.3333333"
+                                                      id="Fill-49" stroke-width="0.2" fill="url(#linearGradient-1)"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <!--<input class="input input-header-search" type="text" placeholder="Search">-->
+            <div class="input-header-search">
+                <input id="input-search" class="input" type="text" placeholder="Search">
+
+                <div class="search-results" style="display: none;">
+                    <ul class="search-list"></ul>
+                    <a class="search-results__advaced-search" href="#">Advanced Search</a>
+                </div>
+            </div>
+
+
+            <!--new style advanced search input-->
+            <!--<div class="input-header-search">
+                &lt;!&ndash; <input id="input-search" class="input" type="text" placeholder="Search"> &ndash;&gt;
+                <span class="label bordered green search-label">
+              <span class="label__text">Customer:</span>
+              <span class="search-label__req" contenteditable="true">Vincent Black</span>
+            </span>
+                <div class="search-results">
+                    <ul class="search-list"></ul>
+                    <a class="search-results__advaced-search" href="#">Advanced Search</a>
+                </div>
+            </div>-->
+
+
+
+
+
+
+
+        </div>
+
+        <div class="progressbar-notification-wrapper notification-container " dropdown *ngIf="(mailboxService.defaultMailbox.default && mailboxService.defaultMailbox.default == 2) || (!mailboxService.defaultMailbox.forwarding_verified || mailboxService.defaultMailbox.forwarding_verified == 3)">
+            <span class="notification__content-after"></span>
+            <button class="open-notification-container" type="button" dropdown-open>
+                <icon-svg [pathToSVG]="'/public/images/ico/spinner-of-dots.svg'"></icon-svg>
+            </button>
+
+            <div class="dropdown-menu-no-style" >
+                <demo-mailbox-steps
+                        [dropdown-not-closable-zone]="!!1"
+                >
+
+                </demo-mailbox-steps>
+<!--                <div class="forwarding-process">-->
+<!--                    <div class="forwarding-process__header">-->
+<!--                        <span class="forwarding-process__status">Setup {{(socketService.complitationStep/3 * 100) |  number:'1.0-0'}}% complete</span>-->
+<!--                        <span class="forwarding-process__steps">Step {{socketService.complitationStep}}/3</span>-->
+<!--                    </div>-->
+
+<!--                    <div class="forwarding-process__bar">-->
+<!--                        <div class="forwarding-process__bar-thumb"></div>-->
+<!--                    </div>-->
+
+<!--                    <hr>-->
+
+<!--                    <div class="forwarding-process__message">-->
+<!--                        <h3 class="forwarding-process__message-header">Forfwarding</h3>-->
+<!--                        <p class="forwarding-process__message-text">-->
+<!--                            To complete your account and take full control of-->
+<!--                            <br />-->
+<!--                            BirdDesk please complete your setup-->
+<!--                        </p>-->
+
+<!--                        <ul class="forwarding-process-list">-->
+<!--                            <li class="forwarding-process-list__item passed">Account profile</li>-->
+<!--                            <li class="forwarding-process-list__item passed">Company profile</li>-->
+<!--                            <li class="forwarding-process-list__item " [class.passed]="socketService.complitationStep == 3">Mailboxes</li>-->
+<!--                        </ul>-->
+
+<!--                        <div class="forwarding-process__message-btn grad-btn grad-btn&#45;&#45;fill">-->
+<!--                            <button class="grad-btn__btn" (click)="redirectToMailbox()">Setup forwarding</button>-->
+<!--                            <span class="grad-btn__bg"></span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="forwarding-process__succes">-->
+<!--                        <h4 class="forwarding-process__succes-header">Congrats!</h4>-->
+<!--                        <p class="forwarding-process__succes-text">Now your profile is completed</p>-->
+<!--                        <div class="text-center">-->
+<!--                            <img src="/public/images/ico/ok-forwarding.svg" alt="OK">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+
+        </div>
+
+        <div id="notification-container" class="header-panel__right notification-container" dropdown>
+
+                <button class="notification-btn" dropdown-open>
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.057 18.063c-2.158-1.875-4.154-4.52-4.154-11.126C18.903 3.112 15.806 0 12 0 8.194 0 5.097 3.112 5.097 6.937c0 6.612-1.996 9.255-4.155 11.128A2.753 2.753 0 0 0 0 20.135c0 .437.352.79.785.79h7.452C8.6 22.678 10.149 24 12 24c1.85 0 3.4-1.321 3.763-3.075h7.452a.787.787 0 0 0 .785-.79c0-.797-.344-1.553-.943-2.072zM12 22.422a2.278 2.278 0 0 1-2.134-1.497h4.268A2.278 2.278 0 0 1 12 22.422zM1.88 19.347c.028-.031.059-.061.09-.09 3.293-2.856 4.697-6.54 4.697-12.32 0-2.955 2.393-5.359 5.333-5.359 2.94 0 5.332 2.404 5.332 5.36 0 5.773 1.405 9.458 4.699 12.32.032.028.062.058.091.089H1.88z" />
+                    </svg>
+                    <span class="notification-btn__badge"  *ngIf="ticketService.ticketsNotification.total_new">
+                            {{ticketService.ticketsNotification.total_new}}
+                    </span>
+                </button>
+                <notification-dropdown class="header-dropdown-menu"></notification-dropdown>
+        </div>
+
+    </header>
+    <main class="main-wrapper">
+        <sidebar-settings *ngIf="showedSidebar === 'sidebar-settings'"></sidebar-settings>
+       <sidebar  *ngIf=" showedSidebar === 'sidebar'"></sidebar>
+        <div class="tickets-wrapper " [class.on-spam]="ticketService.filterticketsStatus == 'spam' && !ticketService.onDestroyTicket" [ngClass]="{'scroll':showedSidebar === 'sidebar-settings'}">
+
+
+
+            <router-outlet></router-outlet>
+        </div>
+        <div *ngIf="ticketService.ticket && ticketService.ticket.id"  [ngClass]="{'resent-activites': true,'open':cloud.effect.resentActivites}">
+            <button id="resent-activites-btn-id" class="resent-activites-btn" (click)="cloud.effect = 'resentActivites'">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.404 21.993c.5-.1 1.1.2 1.1.602.1.502-.2 1.104-.7 1.204-.2.1-.5.201-.7.201-.2 0-.5-.1-.7-.2-.2-.101-.4-.302-.4-.603-.1-.502.3-1.004.8-1.104.2 0 .4-.1.6-.1zm7.197-13.048c-.1-.201-.2-.402-.2-.502-.2-.502 0-1.104.5-1.305.5-.2 1.1 0 1.3.502.1.2.2.502.3.702.2.502-.1 1.004-.6 1.205-.3.1-.7.1-.9-.1-.2-.101-.3-.302-.4-.502zm-3.998 11.642c.4-.3 1-.1 1.3.201.3.402.1 1.004-.3 1.305-.2.1-.4.301-.6.401-.3.201-.7.201-1 0l-.3-.3c-.2-.402-.1-1.004.4-1.305.2-.1.3-.201.5-.302zM24 11.654v.703c0 .602-.5 1.004-1 1.004-.2 0-.3-.1-.5-.201-.2-.2-.4-.502-.4-.803v-.602c0-.502.4-1.004.9-1.004.5-.1 1 .402 1 .903zm-2.599 6.424c.4.301.5.904.2 1.405-.2.201-.3.402-.5.603-.3.401-.9.501-1.3.2l-.1-.1c-.399-.402-.399-1.004-.099-1.405.1-.201.3-.301.4-.502.4-.402 1-.502 1.4-.2zm1.4-3.513c.5.1.8.703.5 1.104 0 .201-.1.502-.2.703-.1.502-.7.803-1.2.602-.1 0-.1-.1-.2-.1-.3-.201-.5-.703-.3-1.104.1-.201.1-.402.2-.603.2-.501.7-.803 1.2-.602zm-12.595 7.628c.5.1.9.603.8.904-.1.502-.6.903-1.1.803a11.947 11.947 0 0 1-4.798-2.008c-.5-.401-1-.803-1.499-1.305C1.81 18.881.61 16.573.211 14.063c0-.2-.1-.501-.1-.702-.1-.201-.1-.502-.1-.703-.1-2.51.5-5.018 1.899-7.126.1-.1.2-.301.3-.402 0-.1.1-.1.2-.2v-.1C4.009 2.62 6.408 1.115 9.007.412c.3-.1.6-.2 1-.2 2.998-.603 6.097.1 8.595 1.806l.8-1.104c.2-.301.5-.301.6.1l.9 3.312c.1.302-.1.703-.5.703l-3.299.301c-.4 0-.5-.2-.3-.502l.8-1.104c-3.499-2.308-7.997-2.208-11.295.1-1 .703-1.8 1.506-2.499 2.51-3.199 4.517-2.1 10.94 2.399 14.152.4.2.7.402 1 .602.1.1.3.201.5.301.799.402 1.599.603 2.498.803zm1.2-17.966c.4 0 .8.402.8.803v6.825l6.296 3.312c.3.201.5.703.3 1.105-.1.2-.4.401-.7.401-.2 0-.3 0-.4-.1l-7.096-3.714V5.03c0-.401.4-.803.8-.803z"
+                          fill="currentColor" fill-rule="nonzero" /></svg>
+            </button>
+            <div class="resent-activites-bar__wrapper">
+
+                <div class="resent-activites-bar">
+
+                    <button id="resent-activites-close-btn-id" class="resent-activites__close-btn" (click)="cloud.effect = 'resentActivites'">
+                        <icon-svg pathToSVG="/public/images/icons/close.svg" ripple="false"></icon-svg>
+                    </button>
+
+
+                    <div class="resent-activites-bar__user-avatar empty bold" [ngStyle]="{'background-color': ticketService.ticket.color}" >{{ticketService.ticket.customer_name | circleLetters}}</div>
+                    <h3 class="resent-activites-bar__user-name text-center bold">{{ticketService.ticket.customer_name }}</h3>
+                    <a class="resent-activites-bar__user-email text-center"
+                       *ngIf="mailboxService.mailboxes.length"
+                       (click)="cloud.effect = 'createTicket'"
+                    >
+                        {{ticketService.ticket.customer_email}}
+                    </a>
+
+                    <div class="resent-activites-details__wrapper">
+                        <customer-tickets>
+
+                        </customer-tickets>
+                        <individual-history>
+
+                        </individual-history>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</div>
+
+<action-gif></action-gif>
+<alert></alert>

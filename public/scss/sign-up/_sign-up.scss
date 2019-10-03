@@ -1,0 +1,884 @@
+.sign-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-color: $snow-bg;
+  padding-top: 200px;
+  box-sizing: border-box;
+}
+
+
+// 1-get-started.html
+
+.get-started {
+  width: 640px;
+
+  &__img {
+    text-align: center;
+
+    &--md {
+      width: 388px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__haeder {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  &-router {
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.03);
+    position: relative;
+    margin-bottom: 60px;
+
+    &__item {
+      display: block;
+      font-size: 18px;
+      padding: 38px 40px;
+      background-color: $white-bg;
+      border-bottom: 1px solid $white-smoke;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid $green;
+        border-bottom: 2px solid $green;
+        box-sizing: border-box;
+        top: 50%;
+        right: 42px;
+        margin-top: -6px;
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        color: $green;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+
+// 2-create-company.html
+
+.email-confirm {
+  width: 510px;
+
+  &__form {
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    width: 300px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__header {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.33;
+  }
+
+  &__input {
+    display: inline-block;
+    margin-right: 24px;
+    width: 296px;
+    border: 1px solid #E6E6E6;
+  }
+}
+
+// 3-check-email.html
+
+.multistep-form-wrapper {
+  width: 480px;
+}
+
+.multistep-form__input {
+  border: 1px solid #E6E6E6;
+  border-radius: 2px;
+}
+
+
+.steps {
+  user-select: none;
+  max-width: none !important;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &--sm {
+    width: 128px;
+    overflow: hidden;
+  }
+
+  &__item {
+    width: 24px;
+    height: 24px;
+    color: $text-step-color;
+    border: 1px solid;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    position: relative;
+    background-color: $snow-bg;
+    z-index: 2;
+    margin-right: 86px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 114px;
+      background-color: $text-step-color;
+      z-index: 1;
+      top: 50%;
+      left: calc(100% + 1px);
+      transition: background-color 0.6s;
+      cursor: default;
+    }
+
+    &.active {
+      color: $text-green;
+    }
+    &.passed {
+
+      font-size: 0;
+      border-color: $green;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        transform: rotate(45deg);
+        background-color: $green;
+        background-image: url(../images/icons/white.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        left: -1px;
+        top: -1px;
+        animation: showPassed 0.6s linear forwards;
+      }
+
+      &::after {
+        background-color: $green;
+      }
+    }
+  }
+}
+
+.multistep-form {
+  &__domain {
+    margin-left: 16px;
+  }
+
+  &__title {
+    font-size: 48px;
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    margin-bottom: 16px;
+    box-sizing: border-box;
+
+    &--password {
+      margin-bottom: 0px;
+    }
+
+    &--url {
+      padding-right: 40px;
+      background-repeat: no-repeat;
+      background-position: 97% center;
+      background-size: 24px;
+
+      // company url status
+
+      &.ok {
+        background-image: url(../images/icons/green-check.svg);
+      }
+
+      &.not-ok {
+        background-image: url(../images/icons/red-cross.svg);
+      }
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    padding-left: 40px;
+    margin-bottom: 40px;
+
+    .ui-checkbox__label {
+      font-size: 18px;
+    }
+
+    .ui-checkbox__check {
+      top: 12px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .ui-checkbox__input:checked+.ui-checkbox__check::after {
+      height: 12px;
+      width: 6px;
+      left: 7px;
+      top: 1px;
+    }
+  }
+
+  .grad-btn {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto !important;
+  }
+
+  &__login-input {
+    position: relative;
+    margin-bottom: 24px;
+
+    .multistep-form__input {
+      margin-bottom: 0;
+      padding-right: 118px;
+    }
+  }
+
+  &__login-domain {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    line-height: 1;
+  }
+}
+
+.password-level {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: -15px;
+  margin-bottom: 32px;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  position: relative;
+
+  &__el {
+    width: calc(33.333% - 8px);
+    height: 4px;
+    background-color: $gray84;
+  }
+
+  //Password levels
+  &--1 {
+    .password-level__el:nth-child(1) {
+      background-color: $text-red;
+    }
+  }
+
+  &--2 {
+
+    .password-level__el:nth-child(1),
+    .password-level__el:nth-child(2) {
+      background-color: $yellow;
+    }
+  }
+
+  &--3 {
+    .password-level__el {
+      background-color: $green;
+    }
+  }
+}
+
+@import './your-companies';
+
+//coming-soon
+
+.coming-soon {
+  &.email-confirm {
+    width: auto;
+  }
+
+  .email-confirm__img {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: 55vh;
+      max-height: 760px;
+    }
+  }
+
+  .email-confirm__header {
+    font-size: 96px;
+    text-align: center;
+  }
+
+  .email-confirm__text {
+    width: 66vw;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .coming-soon {
+    &.email-confirm {
+      width: 95vw;
+    }
+
+    .email-confirm__img {
+      width: 60vw;
+    }
+
+    .email-confirm__header {
+      font-size: 48px;
+    }
+
+    .email-confirm__text {
+      width: 75vw;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .coming-soon {
+    &.email-confirm {
+      width: 95vw;
+    }
+
+    .email-confirm__img {
+      width: 100%;
+    }
+
+    .email-confirm__header {
+      font-size: 48px;
+    }
+
+    .email-confirm__text {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media all and (max-width: 620px) {
+  .coming-soon .email-confirm__img img {
+    width: 75%;
+    height: auto;
+  }
+}
+
+.multistep-form-input-wrapper {
+  position: relative;
+
+  &--last {
+    .multistep-form__input {
+      padding-bottom: 17px;
+    }
+  }
+
+  &--passed {
+    &::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 6px;
+      right: -48px;
+      background-image: url(../images/icons/green-check.svg);
+      background-size: contain;
+      background-position: center;
+
+    }
+  }
+}
+
+@keyframes showPassed {
+  from {
+    opacity: 0;
+    transform: scale(2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media all and (max-width: 992px) {
+  .sign-wrapper {
+    min-height: 600px;
+  }
+
+  .sign-wrapper.align-center {
+    align-items: flex-start;
+
+    .reset-pass {
+      margin-top: 100px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .sign-wrapper {
+    padding-top: 260px;
+  }
+
+  .get-started {
+    width: 76%;
+  }
+
+  .get-started__img--md {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 620px) {
+  .steps {
+    top: 66px;
+  }
+
+  .sign-wrapper {
+    padding-top: 140px;
+  }
+
+  .birddesk-logo {
+    top: 20px;
+    font-size: 14px;
+    padding: 0;
+    padding-left: 32px;
+
+    img {
+      top: 2px;
+      width: auto;
+      height: 18px;
+    }
+  }
+
+  .multistep-form--reg {
+    width: 92.5%;
+    height: 100%;
+    margin: 0 auto;
+
+    .grad-btn {
+      width: 100%;
+      margin-left: 4%;
+      margin-bottom: 16px;
+    }
+  }
+
+  .multistep-form-wrapper {
+    width: 92.5%;
+  }
+
+  .multistep-form-input-wrapper--passed::after {
+    right: -10%;
+  }
+
+  .back-reg-btn {
+    top: 64px;
+  }
+
+  .get-started-router {
+    margin-bottom: 40px;
+  }
+
+  .get-started__haeder,
+  .multistep-form__title {
+    font-size: 32px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .get-started {
+    width: 92.5%;
+  }
+
+  .get-started__img--md {
+    width: 66.2%;
+  }
+
+  .get-started-router__item {
+    font-size: 14px;
+    padding: 32px 24px;
+  }
+
+  .email-confirm__form.flex.justify-between.align-center {
+    flex-direction: column;
+
+    .help-block {
+      margin-top: 0 !important;
+    }
+
+    .email-confirm__input {
+      width: 100%;
+    }
+
+    .error-span {
+      order: 2;
+    }
+
+    .btn {
+      order: 3;
+    }
+  }
+
+  .email-confirm {
+    width: 92.5%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__form {
+      margin-bottom: 40px;
+    }
+
+    &__img {
+      width: 66.2%;
+    }
+
+    &__header {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    &__input {
+      margin-bottom: 16px;
+      width: 296px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    &__text {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+
+      br {
+        display: none;
+      }
+    }
+
+    .btn {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .multistep-form__domain {
+    display: none;
+  }
+
+  .multistep-form__checkbox .ui-checkbox__label {
+    font-size: 16px;
+  }
+
+  .multistep-form__checkbox .ui-checkbox__check {
+    width: 16px;
+    height: 16px;
+  }
+
+  .multistep-form__checkbox .ui-checkbox__input:checked+.ui-checkbox__check::after {
+    border-width: 1px;
+    height: 8px;
+    width: 4px;
+    left: 5px;
+  }
+
+  .sign-wrapper.align-center {
+    .reset-pass {
+      margin-top: 60px;
+    }
+  }
+}
+
+.multistep-form-wrapper--agent {
+  width: 90%;
+
+  .ui-checkbox-wrapper {
+    margin-bottom: 57px;
+  }
+
+  .multistep-form {
+    margin-top: 9vh;
+  }
+
+  .multistep-form-inner {
+    width: 480px;
+    margin: 0 auto;
+  }
+
+  .grad-btn {
+    width: 204px;
+    margin-bottom: 20px !important;
+  }
+
+  @media all and (max-width: 620px) {
+    .multistep-form {
+      margin-top: 64px;
+    }
+
+    .ui-checkbox-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .multistep-form-inner {
+      padding-bottom: 48px;
+    }
+  }
+
+  @media all and (max-width: 520px) {
+    .multistep-form-inner {
+      width: 100%;
+    }
+  }
+}
+
+.multistep-form.forward-email {
+  .multistep-form__title {
+    width: 685px;
+    margin-left: -100px;
+
+    @media (max-width: 520px) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .grad-btn {
+    width: 130px;
+    min-width: auto;
+    margin: 0 !important;
+    margin-left: 36px !important;
+  }
+}
+
+.forwarding-address {
+
+  &-btn {
+    width: 85px + 16px;
+    height: 46px;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-input {
+    padding-right: 85px + 16px;
+  }
+}
+
+.multistep-form-wrapper--lg {
+  width: 90%;
+  max-width: 660px;
+}
+
+.multistep-form__input--name {
+  margin-right: 16px;
+}
+
+@media all and (max-width: 680px) {
+  .steps__item {
+    margin-right: 36px;
+    cursor: pointer;
+
+    &::after {
+      width: 36px !important;
+    }
+  }
+
+  .inbox-form {
+    .multistep-form__title {
+      font-size: 24px !important;
+    }
+  }
+}
+
+.inbox-wrapper {
+  overflow-x: hidden;
+}
+
+.inbox-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.inbox-form-separator {
+  min-height: 100%;
+  min-width: 2px;
+  background-color: $white-smoke-2;
+  position: relative;
+  margin: 0 67px;
+  align-self: auto;
+
+  &__value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4px;
+    background-color: $snow-bg;
+    color: $text-green;
+  }
+}
+
+.inbox-form-company {
+  padding: 44px 80px 55px 80px;
+}
+
+.inbox-form-company-inner {
+
+  .grad-btn--fill {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.inbox-form-demo {
+  width: 480px;
+  padding: 44px 80px 55px 80px;
+
+}
+
+.inbox-form-demo-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .multistep-form-input-wrapper {
+    width: 100%;
+  }
+}
+
+.multistep-form-wrapper.w-100 {
+  width: 100%;
+}
+
+.inbox-form {
+  width: 480px;
+
+  &.active {
+    background-color: $white-bg;
+    box-shadow: 0 9px 10px 0 rgba(0, 0, 0, 0.03);
+  }
+}
+
+@media all and (max-width: 1400px) {
+  .inbox-form {
+    width: 320px;
+  }
+
+  .inbox-form-separator {
+    margin: 0 36px;
+  }
+
+}
+
+@media all and (max-width: 1024px) {
+  .inbox-form-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inbox-form-separator {
+    width: 100%;
+    height: 2px;
+    margin: 47px 0;
+  }
+
+  .inbox-form {
+    width: 95%;
+    max-width: 480px;
+    padding: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+    .multistep-form__title {
+      font-size: 32px;
+    }
+
+
+    &.active {
+      .multistep-form__title {
+        color: $green;
+      }
+    }
+  }
+
+  .inbox-form-company-inner .grad-btn--fill {
+    margin-top: 24px;
+  }
+
+  .inbox-form-wrapper {
+    margin-bottom: 102px;
+  }
+
+  .mb40 {
+    margin-bottom: 24px !important;
+  }
+
+  .inbox-form {
+    .multistep-form__title {
+      margin-bottom: 24px !important;
+    }
+  }
+}
+
+.back-reg-btn .individual-ticket-panel__btn.back {
+  display: block !important;
+}

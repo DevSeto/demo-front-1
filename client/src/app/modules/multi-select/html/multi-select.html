@@ -1,0 +1,143 @@
+<!--<div id="editable">-->
+<!--    <ng-template #taItemTemplate let-value="item">-->
+<!--        {{ complex ? value[nameField] : value }}-->
+<!--    </ng-template>-->
+<!--    <span-->
+<!--            class="type-ahead-badge"-->
+<!--            *ngFor="let value of values; let i = index"-->
+<!--    >-->
+<!--        <span [class.cild_maildata]="!activeEditables[i]">-->
+<!--            <span-->
+<!--                    [class]="value"-->
+<!--                    (dblclick)="changeEvent($event, i)"-->
+<!--                    (focusout)="changeEvent($event, i, !!1)"-->
+<!--                    (keyup)="changeEvent($event, i)"-->
+<!--                    (keydown)="changeEvent($event, i)"-->
+<!--            >-->
+<!--                <ng-template-->
+<!--                        [ngTemplateOutlet]="taItemTemplate"-->
+<!--                        [ngTemplateOutletContext]="{ item: value, index: i, complex: complex, nameField: nameField }"-->
+<!--                ></ng-template>-->
+<!--            </span>-->
+
+<!--            <span-->
+<!--                    *ngIf="!activeEditables[i]"-->
+<!--                    class="remove_email"-->
+<!--                    title="Remove"-->
+<!--                    aria-hidden="true"-->
+<!--                    (click)="removeValue(value)"-->
+<!--            >-->
+<!--                <i class="la la-close"></i>-->
+<!--            </span>-->
+<!--        </span>-->
+<!--    </span>-->
+
+<!--    <input-->
+<!--            *ngIf="!isDisabled || !multi || !values.length"-->
+<!--            [disabled]="isDisabled || null"-->
+<!--            placeholder="{{(isDisabled || values.length) ? '' : placeholder}}"-->
+<!--            type="text"-->
+<!--            autocomplete="off"-->
+<!--            (keyup)="handleInput($event); emailAutocomplete($event.target.value)"-->
+<!--            (keydown)="handleInput($event)"-->
+<!--            (paste)="handleInput($event)"-->
+<!--            (change)="handleInputChange($event)"-->
+<!--            class="input-select"-->
+<!--    />-->
+<!--    <div-->
+<!--            class="forward-autocomplete"-->
+<!--            [class.change-display]="(customerEmails && customerEmails.length) && hideDropdown"-->
+<!--            [style.left.px]="dropdownposition"-->
+<!--    >-->
+<!--        <ul class="list-unstyled scroll-box email-autocomplete">-->
+<!--            <ng-container *ngFor="let customer of customerEmails;let idx = index">-->
+<!--                <ng-container *ngIf="values.indexOf(customer.email) !== -1">-->
+<!--                    {{ resetEmails(idx)}}-->
+<!--                </ng-container>-->
+<!--                <li-->
+<!--                        *ngIf="values.indexOf(customer.email) === -1;"-->
+<!--                        (click)="selectedEmail(customer.email)"-->
+<!--                        class="dropdownEmails"-->
+<!--                >-->
+<!--                    <span>{{customer.first_name}} {{customer.last_name}}</span>-->
+<!--                    <p>{{customer.email}}</p>-->
+<!--                </li>-->
+<!--            </ng-container>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="multi-select-content" (click)="setCursor($event)">
+    <div class="content-select">
+        <label for="forward-ticket-to">{{labelText}}</label>
+
+        <div class="select-items">
+            <ng-template #taItemTemplate let-value="item">
+                {{ complex ? value[nameField] : value }}
+            </ng-template>
+            <span
+                    class="forwarded-ticket-to"
+                    *ngFor="let value of values; let i = index"
+            >
+                <span  class="forwarded-user"
+                       [class.cild_maildata]="!activeEditables[i]"
+                       [class]="value"
+                       (dblclick)="changeEvent($event, i)"
+                       (focusout)="changeEvent($event, i, !!1)"
+                       (keyup)="changeEvent($event, i)"
+                       (keydown)="changeEvent($event, i)"
+                >
+
+                    <ng-template
+                            [ngTemplateOutlet]="taItemTemplate"
+                            [ngTemplateOutletContext]="{ item: value, index: i, complex: complex, nameField: nameField }"
+                    ></ng-template>
+                     <button
+                             *ngIf="!activeEditables[i]"
+                             title="Remove"
+                             (click)="removeValue(value)"
+                     >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" style="width:13px;height:13px;vertical-align:middle"
+                             viewBox="0 0 1024 1024" fill="currentColor" overflow="hidden">
+                        <path d="M451.67 512L55.107 908.544a42.778 42.778 0 0 0 0 60.33 42.778 42.778 0 0 0 60.33 0L512 572.357l396.544 396.561c16.597 16.598 43.776 16.598 60.33 0 16.598-16.597 16.598-43.776 0-60.373L572.349 512l396.56-396.544c16.598-16.597 16.598-43.776 0-60.33-16.597-16.598-43.775-16.598-60.373 0L512 451.66 115.456 55.125a42.778 42.778 0 0 0-60.33 0 42.778 42.778 0 0 0 0 60.331L451.668 512z"/>
+                        </svg>
+                    </button>
+
+                </span>
+            </span>
+        </div>
+
+        <input id="forward-ticket-to"
+               class="forwarded-ticket-to-input input-select"
+               type="text"
+               [placeholder]="placeholder"
+               *ngIf="!isDisabled || !multi || !values.length"
+               [disabled]="isDisabled || null"
+               autocomplete="off"
+               (keyup)="handleInput($event); emailAutocomplete($event.target.value)"
+               (keydown)="handleInput($event)"
+               (paste)="handleInput($event)"
+               (change)="handleInputChange($event)"
+        >
+        <div
+                class="forward-autocomplete"
+                [class.change-display]="(customerEmails && customerEmails.length) && hideDropdown"
+                [style.left.px]="dropdownposition"
+        >
+            <ul class="list-unstyled scroll-box email-autocomplete">
+                <ng-container *ngFor="let customer of customerEmails;let idx = index">
+                    <ng-container *ngIf="values.indexOf(customer.email) !== -1">
+                        {{ resetEmails(idx)}}
+                    </ng-container>
+                    <li
+                            *ngIf="values.indexOf(customer.email) === -1;"
+                            (click)="selectedEmail(customer.email)"
+                            class="dropdownEmails"
+                    >
+                        <span>{{customer.first_name}} {{customer.last_name}}</span>
+                        <p>{{customer.email}}</p>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>

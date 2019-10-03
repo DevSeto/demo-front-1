@@ -1,0 +1,21 @@
+<!--,'border-color': label.color}"-->
+<span class="show-labels" *ngIf="labels.length"
+
+      [ngStyle]="{'top': parentTag.offsetTop + 54.7 + 'px','left': currentPosition.left + 200 + 'px'}">
+        <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                <ul class="send-as-clored-btn__dropdown-list-labels">
+        <ng-container
+                *ngFor="let label of labels ;let ind = index"
+        >
+
+                <li class="send-as-clored-btn__dropdown-list__el"
+                    *ngIf = "labels[labels.length -1].body !== label.body"
+                    [ngStyle]="{'color': label.color,'background-color': 'white','padding-top': 2 +'px','padding-bottom': 2 +'px','padding-right': 6 +'px'}"
+                >
+                        <span class="label bordered">{{label.body}}</span>
+                </li>
+
+        </ng-container>
+                </ul>
+        </div>
+</span>

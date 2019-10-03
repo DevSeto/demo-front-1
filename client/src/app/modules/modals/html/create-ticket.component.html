@@ -1,0 +1,593 @@
+<section>
+    <div class="popup">
+        <div class="popup__bg"></div>
+        <div class="popup-content create-ticket">
+            <div class="popup__head">
+                <h3 class="popup__header">Create ticket</h3>
+                <button class="btn popup__close-btn" (click)="closeCreateTicket()">
+                    <icon-svg pathToSVG="/public/images/icons/close.svg" ripple="false"></icon-svg>
+                </button>
+            </div>
+
+            <form
+                    [formGroup]="ticketForm"
+                    (ngSubmit)="create()"
+                    (keydown.enter)="$event.preventDefault()"
+            >
+                <div class="create-ticket-form">
+
+                    <div class="ui-input create-ticket-form__input create-ticket-form__input--half">
+                        <label class="ui-input__label" for="customer-name">Customer name</label>
+                        <input
+                                [(ngModel)]="ticket.customer_name"
+                                type="text"
+                                id="customer-name"
+                                placeholder="Customer name"
+                                class="ui-input__input input"
+                                name="customer_name"
+                                [class.input-error-style]="classError('customer_name')"
+                                [class.input-success-style]="classSuccess('customer_name')"
+                                autocomplete="off"
+                                (keyup)="changeInputData()"
+                                value=""
+                                data-rules="required"
+                                formControlName="customer_name"
+                        >
+                        <span class="error-span help-block error backend-error input-group-error">
+                            <form-errors
+                                    [control]="ticketForm.controls.customer_name"
+                                    [controlName]="'customer name'"
+                                    [formSubmit]="ticketForm.submitted"
+                            ></form-errors>
+                            <span *ngIf="_ticketFormErrors.customer_name.verify">
+                                {{_ticketFormErrors.customer_name.text}}
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="ui-input create-ticket-form__input create-ticket-form__input--half">
+                        <label class="ui-input__label" for="customer-email">Customer E-mail</label>
+                        <input
+                                [(ngModel)]="ticket.customer_email"
+                                type="text"
+                                id="customer-email"
+                                placeholder="customer@emailaddress.com"
+                                class="ui-input__input input"
+                                name="customer_email"
+                                [class.input-error-style]="classError('customer_email')"
+                                [class.input-success-style]="classSuccess('customer_email')"
+                                autocomplete="off"
+                                (keyup)="changeInputData(); getCustomerEmails($event.target.value)"
+                                value=""
+                                data-rules="required|email"
+                                formControlName="customer_email"
+                                (blur)="getCustomerEmails('')"
+                                (focus)="getCustomerEmails($event.target.value)"
+                        >
+                        <div class="autocomplete" [class.change-display]="customerEmails.length">
+                            <ul class="list-unstyled scroll-box email-autocomplete">
+                                <li *ngFor="let customer of customerEmails"
+                                    (mousedown)="emailAutocomplete(customer)"
+                                >
+                                    <span>{{customer.first_name}} {{customer.last_name}}</span>
+                                    <p>{{customer.email}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="error-span help-block error backend-error input-group-error">
+                            <form-errors
+                                    [control]="ticketForm.controls.customer_email"
+                                    [controlName]="'customer email'"
+                                    [formSubmit]="ticketForm.submitted"
+                            ></form-errors>
+                            <span *ngIf="_ticketFormErrors.customer_email.verify">
+                                {{_ticketFormErrors.customer_email.text}}
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="ui-select create-ticket-form__input autoreply-subject " dropdown *ngIf="mailboxService.mailboxes.length > 1">
+                        <label class="ui-select__label" for="create-from">From</label>
+                        <div class="ui-select__input empty-content" id="create-from" dropdown-open> {{(mailboxname)?mailboxname:mailboxService.mailbox.name}}</div>
+                        <div class="ui-select__options create-form-option-scroll">
+                            <div class="ui-select__option   " *ngFor="let data of mailboxService.mailboxes"
+                                 (click)=" ticket.mailbox_id = data.id;
+                                  mailboxname = data.name;
+                                  changeInputData(!!1,!!1); ">
+                                {{data.name}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ui-select create-ticket-form__input create-ticket-form__input_dropdown w-100">
+                        <label class="ui-select__label ui-select__input" [class.open_row]="showBccCC" for="create-from" (click)="enableCcBcc(!showBccCC)">CC/BCC </label>
+                    </div>
+                    <ng-container *ngIf="showBccCC">
+                        <div class="ui-input create-ticket-form__input">
+                            <label class="ui-input__label" >CC</label>
+                            <!--                        <input-->
+                            <!--                                class="ui-input__input input"-->
+                            <!--                                id="cc"-->
+                            <!--                                type="text"-->
+                            <!--                                placeholder="CC"-->
+                            <!--                                [(ngModel)]="ticket.cc"-->
+                            <!--                                name="cc"-->
+                            <!--                                [class.input-error-style]="classError('cc')"-->
+                            <!--                                [class.input-success-style]="classSuccess('cc')"-->
+                            <!--                                autocomplete="off"-->
+                            <!--                                (keyup)="changeInputData()"-->
+                            <!--                                value=""-->
+                            <!--                                data-rules="required"-->
+                            <!--                                formControlName="cc"-->
+                            <!--                        >-->
+                            <ng-container>
+
+                                <multi-select
+                                        [defaultToastrParams]="defaultToastrParams"
+                                        [infoTexts]="infoTexts"
+                                        [multi]="!!1"
+                                        [placeholder]="''"
+                                        (valueChange)="ticket.cc=$event;"
+                                ></multi-select>
+                            </ng-container>
+                            <span class="error-span help-block error backend-error input-group-error">
+                            <form-errors
+                                    [control]="ticketForm.controls.cc"
+                                    [controlName]="'CC'"
+                                    [formSubmit]="ticketForm.submitted"
+                            ></form-errors>
+                            <span *ngIf="_ticketFormErrors.cc.verify">
+                                {{_ticketFormErrors.cc.text}}
+                            </span>
+                        </span>
+                        </div>
+
+                        <div class="ui-input create-ticket-form__input">
+                            <label class="ui-input__label" for="bcc">BCC</label>
+                            <!--                        <input-->
+                            <!--                                class="ui-input__input input"-->
+                            <!--                                id="bcc"-->
+                            <!--                                type="text"-->
+                            <!--                                placeholder="BCC"-->
+                            <!--                                [(ngModel)]="ticket.bcc"-->
+                            <!--                                name="bcc"-->
+                            <!--                                [class.input-error-style]="classError('bcc')"-->
+                            <!--                                [class.input-success-style]="classSuccess('bcc')"-->
+                            <!--                                autocomplete="off"-->
+                            <!--                                (keyup)="changeInputData()"-->
+                            <!--                                value=""-->
+                            <!--                                data-rules="required"-->
+                            <!--                                formControlName="bcc"-->
+                            <!--                        >-->
+                            <ng-container>
+
+                                <multi-select
+                                        [defaultToastrParams]="defaultToastrParams"
+                                        [infoTexts]="infoTexts"
+                                        [multi]="!!1"
+                                        [placeholder]="''"
+                                        (valueChange)="ticket.bcc=$event;"
+                                ></multi-select>
+                            </ng-container>
+                            <span class="error-span help-block error backend-error input-group-error">
+                            <form-errors
+                                    [control]="ticketForm.controls.bcc"
+                                    [controlName]="'BCC '"
+                                    [formSubmit]="ticketForm.submitted"
+                            ></form-errors>
+                            <span *ngIf="_ticketFormErrors.bcc.verify">
+                                {{_ticketFormErrors.bcc.text}}
+                            </span>
+                        </span>
+                        </div>
+
+                    </ng-container>
+
+
+
+
+
+                    <div class="ui-input create-ticket-form__input">
+                        <label class="ui-input__label" for="subject">Subject</label>
+                        <input
+                                class="ui-input__input input"
+                               id="subject"
+                               type="text"
+                               placeholder="Subject"
+                               [(ngModel)]="ticket.subject"
+                               name="subject"
+                               [class.input-error-style]="classError('subject')"
+                               [class.input-success-style]="classSuccess('subject')"
+                               autocomplete="off"
+                               (keyup)="changeInputData()"
+                               value=""
+                               data-rules="required"
+                               formControlName="subject"
+                        >
+                        <span class="error-span help-block error backend-error input-group-error">
+                            <form-errors
+                                    [control]="ticketForm.controls.subject"
+                                    [controlName]="'Subject'"
+                                    [formSubmit]="ticketForm.submitted"
+                            ></form-errors>
+                            <span *ngIf="_ticketFormErrors.subject.verify">
+                                {{_ticketFormErrors.subject.text}}
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="ticket-editor ticket-editor--create-ticket">
+                        <div class="text-editor-box clearfix">
+                            <div class="editior_section">
+                                <div class="dropdown pull-right  create-canned-reply-item" >
+                                    <a id="dropdownMenu1" (click)="cannedrepliesService.textArea = textEditor; cloud.effect = 'showReply'">
+                                        <i class="la la-commenting-o"></i>
+                                    </a>
+
+                                </div>
+                                <div [froalaEditor]="textEditor.editorOptions"></div>
+                                <div id="attachedFiles"></div>
+                            </div>
+                            <div id="attachedFiles" *ngIf="ticket.attachments.length">
+                                <ng-container *ngFor=" let attachments of ticket.attachments; let ind = index">
+                                    <a class="data-isFile" *ngIf="attachments.disposition === 'attachment'">
+                                        {{attachments.name}}
+                                        <i
+                                                class="fa fa-times"
+                                                (click)="ticket.attachments.splice(ind,1);draftService.addIndividualdraftData();"
+                                        ></i>
+                                    </a>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <div class="text-right create-ticket__controls mt24">
+                            <div class="ticket-editor__btn assign-on" dropdown>
+                                <div class="send-as-clored-btn__dropdown dropdown-men">
+                                    <div class="send-as-clored-btn__dropdown-content">
+                                        <ul class="send-as-clored-btn__dropdown-list">
+                                            <li class="send-as-clored-btn__dropdown-list__el" (click)="changeAssignedUser(0);everyone = defaultAssign;">
+                                                {{defaultAssign}}
+                                            </li>
+                                            <ng-container *ngIf="userService.activeUsers">
+                                                <ng-container *ngFor="let user of userService.activeUsers">
+                                                    <li class="send-as-clored-btn__dropdown-list__el"
+                                                            *ngIf="user.preferences.answer === 'available'"
+                                                            (click)="changeAssignedUser(user.id);everyone = returnUsername(user);"
+                                                    >
+                                                        <span>{{returnUsername(user)}}</span>
+                                                    </li>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button type="button" dropdown-open>
+                                    <span class="user " id="anyone-size"  >{{everyone}}</span>
+                                    <svg width="8" height="7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4l4-4H0z" fill="currentColor" fill-rule="nonzero"></path>
+                                    </svg>
+                                </button>
+
+
+                            </div>
+
+                            <div class="ticket-editor__btn send-as-clored-btn" dropdown>
+                                <div class="send-as-clored-btn__dropdown ropdown-men dropdown-men">
+                                    <div class="send-as-clored-btn__dropdown-content">
+                                        <ul class="send-as-clored-btn__dropdown-list">
+                                            <li class="send-as-clored-btn__dropdown-list__el"
+                                                *ngFor="let status of sendingStatusList; let idx = index"
+                                                (click)="changeSendingStatus(status)">
+                                                {{ status['showedString'] }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="send-as-clored-btn__inner">
+                                    <button class="send-as-clored-btn__inner-value" type="submit" [disabled]="oneclick">
+                                        <span>{{selectedOptions['sendingStatus']['showedString']}}</span>
+                                    </button>
+                                    <button id="send-as--btn" type="button" dropdown-open>
+                                        <svg width="8" height="7" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 4l4-4H0z" fill="currentColor" fill-rule="nonzero"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+<!--            <div class="canned-respons__controls">-->
+<!--                &lt;!&ndash;-->
+<!--                <button class="btn dafault">Cancel</button>-->
+
+<!--                <div class="grad-btn">-->
+<!--                  <button class="grad-btn__btn">Paste</button>-->
+<!--                  <span class="grad-btn__bg"></span>-->
+<!--                </div> &ndash;&gt;-->
+
+<!--            </div>-->
+        </div>
+    </div>
+</section>
+<!--    <div closeModal class="modal fade box-ticket modal-background closeModal" id="create_ticket_popup" tabindex="-1" role="dialog">-->
+<!--        <div class="modal-dialog" role="document">-->
+<!--            <div class="modal-content" *ngIf="afterSucces">-->
+<!--                <div class="modal-header">-->
+<!--                    <button type="button" class="close" title="Close" (click)="closeCreateTicket()">-->
+<!--                        <span aria-hidden="true">-->
+<!--                            <i class="la la-close"></i>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                    <h4 class="modal-title">Create ticket</h4>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <form-->
+<!--                            [formGroup]="ticketForm"-->
+<!--                            (ngSubmit)="create()"-->
+<!--                            class="block-form-registration"-->
+<!--                    >-->
+<!--                        <div>-->
+<!--                            <div class="row create-ticket-to">-->
+<!--                                <div class="col-md-12">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <label>To</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6 col-sm-6">-->
+<!--                                        <input-->
+<!--                                                [(ngModel)]="ticket.customer_name"-->
+<!--                                                type="text"-->
+<!--                                                placeholder="Customer name"-->
+<!--                                                class="form-control"-->
+<!--                                                name="customer_name"-->
+<!--                                                [class.input-error-style]="classError('customer_name')"-->
+<!--                                                [class.input-success-style]="classSuccess('customer_name')"-->
+<!--                                                autocomplete="off"-->
+<!--                                                (keyup)="changeInputData()"-->
+<!--                                                value=""-->
+<!--                                                data-rules="required"-->
+<!--                                                formControlName="customer_name"-->
+<!--                                        >-->
+<!--                                        <span class="error-span help-block error backend-error input-group-error">-->
+<!--                                            <form-errors-->
+<!--                                                    [control]="ticketForm.controls.customer_name"-->
+<!--                                                    [controlName]="'customer name'"-->
+<!--                                                    [formSubmit]="ticketForm.submitted"-->
+<!--                                            ></form-errors>-->
+<!--                                            <span *ngIf="_ticketFormErrors.customer_name.verify">-->
+<!--                                                {{_ticketFormErrors.customer_name.text}}-->
+<!--                                            </span>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6 col-sm-6">-->
+<!--                                        <input-->
+<!--                                                [(ngModel)]="ticket.customer_email"-->
+<!--                                                type="text"-->
+<!--                                                placeholder="customer@emailaddress.com"-->
+<!--                                                class="form-control"-->
+<!--                                                name="customer_email"-->
+<!--                                                [class.input-error-style]="classError('customer_email')"-->
+<!--                                                [class.input-success-style]="classSuccess('customer_email')"-->
+<!--                                                autocomplete="off"-->
+<!--                                                (keyup)="changeInputData(); getCustomerEmails($event.target.value)"-->
+<!--                                                value=""-->
+<!--                                                data-rules="required|email"-->
+<!--                                                formControlName="customer_email"-->
+<!--                                                (blur)="getCustomerEmails('')"-->
+<!--                                                (focus)="getCustomerEmails($event.target.value)"-->
+<!--                                        >-->
+<!--                                        <span class="error-span help-block error backend-error input-group-error">-->
+<!--                                            <form-errors-->
+<!--                                                    [control]="ticketForm.controls.customer_email"-->
+<!--                                                    [controlName]="'customer email'"-->
+<!--                                                    [formSubmit]="ticketForm.submitted"-->
+<!--                                            ></form-errors>-->
+<!--                                            <span *ngIf="_ticketFormErrors.customer_email.verify">-->
+<!--                                                {{_ticketFormErrors.customer_email.text}}-->
+<!--                                            </span>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div class="autocomplete" [class.change-display]="customerEmails.length">-->
+<!--                                        <ul class="list-unstyled scroll-box email-autocomplete">-->
+<!--                                            <li *ngFor="let customer of customerEmails" (mousedown)="emailAutocomplete(customer)">-->
+<!--                                                <span>{{customer.first_name}} {{customer.last_name}}</span>-->
+<!--                                                <p>{{customer.email}}</p>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div *ngIf="mailboxService.mailboxes.length > 1" class="col-md-12 create-ticket-from">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <label>From</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="dropdown custom-select-item" dropdown>-->
+<!--                                            <button-->
+<!--                                                    class="form-control text-left"-->
+<!--                                                    type="button"-->
+<!--                                                    name="from"-->
+<!--                                                    dropdown-open-->
+<!--                                            >-->
+<!--                                                {{mailboxname}}-->
+<!--                                            </button>-->
+<!--                                            <ul class="dropdown-menu mailbox_font_size">-->
+<!--                                                <li-->
+<!--                                                        *ngFor="let data of mailboxService.mailboxes"-->
+<!--                                                        (click)=" ticket.mailbox_id = data.id;-->
+<!--                                                                    mailboxname = data.name;-->
+<!--                                                                    changeInputData(!!1,!!1); "-->
+<!--                                                >-->
+<!--                                                    <a href="javascript:void (0)">-->
+<!--                                                        {{data.name}}-->
+<!--                                                    </a>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="row create-ticket_subject">-->
+<!--                                <div class="col-md-12">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <label>Subject</label>-->
+<!--                                        <input-->
+<!--                                                [(ngModel)]="ticket.subject"-->
+<!--                                                type="text"-->
+<!--                                                class="form-control"-->
+<!--                                                name="subject"-->
+<!--                                                [class.input-error-style]="classError('subject')"-->
+<!--                                                [class.input-success-style]="classSuccess('subject')"-->
+<!--                                                autocomplete="off"-->
+<!--                                                (keyup)="changeInputData()"-->
+<!--                                                value=""-->
+<!--                                                data-rules="required"-->
+<!--                                                formControlName="subject"-->
+<!--                                        >-->
+<!--                                        <span class="error-span help-block error backend-error input-group-error">-->
+<!--                                            <form-errors-->
+<!--                                                    [control]="ticketForm.controls.subject"-->
+<!--                                                    [controlName]="'Subject'"-->
+<!--                                                    [formSubmit]="ticketForm.submitted"-->
+<!--                                            ></form-errors>-->
+<!--                                            <span *ngIf="_ticketFormErrors.subject.verify">-->
+<!--                                                {{_ticketFormErrors.subject.text}}-->
+<!--                                            </span>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-md-12">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="text-editor-box clearfix">-->
+<!--                                            <div class="editior_section">-->
+<!--                                                <div class="dropdown pull-right  create-canned-reply-item" dropdown>-->
+<!--                                                    <a id="dropdownMenu1" dropdown-open>-->
+<!--                                                        <i class="la la-commenting-o"></i>-->
+<!--                                                    </a>-->
+<!--                                                    <canned-replies-dropdown-->
+<!--                                                            [text]="(textEditor.core)?textEditor.core.html.get():''"-->
+<!--                                                            (value)="-->
+<!--                                                                textEditor.core.selection.restore();-->
+<!--                                                                textEditor.core.html.insert($event, false);-->
+<!--                                                            "-->
+<!--                                                    >-->
+<!--                                                    </canned-replies-dropdown>-->
+<!--                                                </div>-->
+<!--                                                <div [froalaEditor]="textEditor.editorOptions"></div>-->
+<!--                                                <div id="attachedFiles"></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="dropdown pull-left editor-labels icon-top" dropdown>-->
+<!--                                                <a dropdown-open>-->
+<!--                                                    <i class="la la-fw la-tag"></i>-->
+<!--                                                </a>-->
+<!--                                                <change-label-->
+<!--                                                        class="dropdown-menu-onlabel"-->
+<!--                                                        stopScrolling-->
+<!--                                                >-->
+<!--                                                </change-label>-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <ul class="list-unstyled list-inline ">-->
+<!--                                                    <li *ngFor="let label of labelsService.readyForAssign">-->
+<!--                                                        <span class="indv-labels label-two" [ngStyle]="{'background-color': label.color}">-->
+<!--                                                        <span>{{label.body}}</span>-->
+<!--                                                        <i class="la la-fw la-close" (click)="labelRemove(label.id)"></i>-->
+<!--                                                        </span>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                            <div id="attachedFiles" *ngIf="ticket.attachments.length">-->
+<!--                                                <ng-container *ngFor=" let attachments of ticket.attachments; let ind = index">-->
+<!--                                                    <a class="data-isFile" *ngIf="attachments.disposition === 'attachment'">-->
+<!--                                                        {{attachments.name}}-->
+<!--                                                        <i-->
+<!--                                                                class="fa fa-times"-->
+<!--                                                                (click)="ticket.attachments.splice(ind,1);draftService.addIndividualdraftData();"-->
+<!--                                                        ></i>-->
+<!--                                                    </a>-->
+<!--                                                </ng-container>-->
+<!--                                            </div>-->
+<!--                                            <div class="editor-bottom-part full-width-left">-->
+<!--                                                <ul class="list-unstyled list-inline pull-right">-->
+<!--                                                    <li>-->
+<!--                                                        <div class="dropdown pull-left" dropdown>-->
+<!--                                                            <button type="button">-->
+<!--                                                                <span>{{everyone}}</span>-->
+<!--                                                            </button>-->
+<!--                                                            <span class="pull-right box-assignto" dropdown-open>-->
+<!--                                                                <i-->
+<!--                                                                        class="la"-->
+<!--                                                                        [class.la-angle-down]="!dropdownOptions.assignTo"-->
+<!--                                                                        [class.la-angle-up]="dropdownOptions.assignTo">-->
+
+<!--                                                                </i>-->
+<!--                                                            </span>-->
+<!--                                                            <ul class="custom-dropdown-menu send-assign dropdown-menu">-->
+<!--                                                                <li (click)="changeAssignedUser(0);everyone = defaultAssign;">-->
+<!--                                                                    {{defaultAssign}}-->
+<!--                                                                </li>-->
+<!--                                                                <ng-container *ngIf="userService.activeUsers">-->
+<!--                                                                    <ng-container *ngFor="let user of userService.activeUsers">-->
+<!--                                                                        <li-->
+<!--                                                                                *ngIf="user.preferences.answer === 'available'"-->
+<!--                                                                                (click)="changeAssignedUser(user.id);everyone = returnUsername(user);"-->
+<!--                                                                        >-->
+<!--                                                                            <span>{{returnUsername(user)}}</span>-->
+<!--                                                                        </li>-->
+<!--                                                                    </ng-container>-->
+<!--                                                                </ng-container>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </li>-->
+<!--                                                    <li class="action-select-item">-->
+<!--                                                        <div class="dropdown pull-left" dropdown>-->
+<!--                                                            <button [disabled]="oneclick" type="button" type="submit">-->
+<!--                                                                <i class="fa fa-spin fa-circle-o-notch" *ngIf="cloud.effect.createTicketSpin"></i>-->
+<!--                                                                <span>{{selectedOptions['sendingStatus']['showedString']}}</span>-->
+<!--                                                            </button>-->
+<!--                                                            <span class="pull-right box-sendas" dropdown-open>-->
+<!--                                                                <i-->
+<!--                                                                        class="la"-->
+<!--                                                                        [class.la-angle-down]="!dropdownOptions.sendingStatus"-->
+<!--                                                                        [class.la-angle-up]="dropdownOptions.sendingStatus"-->
+<!--                                                                ></i>-->
+<!--                                                            </span>-->
+<!--                                                            <ul class="custom-dropdown-menu send-assign">-->
+<!--                                                                <li-->
+<!--                                                                        *ngFor="let status of sendingStatusList; let idx = index"-->
+<!--                                                                        (click)="changeSendingStatus(status)"-->
+<!--                                                                >-->
+<!--                                                                    <a>-->
+<!--                                                                        <div class="rounded-radiobtn pull-left">-->
+<!--                                                                            <input-->
+<!--                                                                                    id="{{idx}}"-->
+<!--                                                                                    name="check"-->
+<!--                                                                                    [checked]="status['sendingString'] === selectedOptions['sendingStatus']['sendingString']"-->
+<!--                                                                                    type="radio"-->
+<!--                                                                            >-->
+<!--                                                                            <label for="{{idx}}"></label>-->
+<!--                                                                        </div>-->
+<!--                                                                        <span class="box-send">{{ status['showedString'] }}</span>-->
+<!--                                                                        <span class="pull-right"></span>-->
+<!--                                                                    </a>-->
+<!--                                                                </li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->

@@ -1,0 +1,21 @@
+.reset-pass {
+  width: 480px;
+  font-size: 18px;
+  
+  p {
+    line-height: (26em / 18);
+  }
+
+  .grad-btn__btn {
+    padding: 0 32px;
+  }
+}
+
+@media all and (max-width: 620px) {
+  .reset-pass {
+    width: auto;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 16px;
+  }
+}

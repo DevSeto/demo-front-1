@@ -1,0 +1,297 @@
+.tickets-panel {
+  flex-basis: 320px;
+  height: calc(100% - 1px);
+  background-color: $white-bg;
+  box-shadow: 2px 0 7px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin-left: 0;
+  transition: margin-left 0.3s;
+  z-index: 3;
+
+  &.close {
+    margin-left: -320px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    .hide-tickets-panel-btn {
+      opacity: 1;
+    }
+  }
+
+  &__header {
+    position: absolute;
+    height: 72px;
+    width: 320px;
+    top: -73px;
+    left: 0;
+    background-color: $white-bg;
+    box-shadow: 2px 0 7px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &-inner {
+    width: 320px;
+    overflow: auto;
+    max-height: 100%;
+    position: relative;
+
+  }
+
+  &-item {
+    position: relative;
+    overflow: hidden;
+
+    &__content {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height .5s;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 75%;
+      background-color: $whisper;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    &.close &__title::after {
+      transform: rotateZ(135deg);
+    }
+
+    &.close {
+      .tickets-panel-item__content {
+        max-height: 0px;
+      }
+    }
+
+    &__title {
+      margin-top: 24px;
+      margin-bottom: 20px;
+      padding: 8px 0px;
+      outline: none;
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 16px;
+        border-top: 2px solid $text-grey;
+        border-right: 2px solid $text-grey;
+        width: 14px;
+        height: 14px;
+        box-sizing: border-box;
+        transform: rotateZ(-45deg);
+        transition: transform 0.3s;
+        transform-origin: 70% 25%;
+      }
+    }
+
+    &__category {
+      padding: 18px 40px;
+      font-size: 18px;
+      line-height: 1.2;
+      display: flex;
+      cursor: pointer;
+      transition: color 0.3s;
+      position: relative;
+
+      &.attention {
+        color: $text-red;
+      }
+
+      &.active {
+        .tickets-panel-item__category__title {
+          @extend .bold;
+        }
+      }
+
+      &.active::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $green;
+      }
+
+      &:hover,
+      &:hover &__icon,
+      &.active,
+      &.active &__icon {
+        color: $green;
+      }
+
+      &__icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 16px;
+        color: $text-grey;
+      }
+
+      &__title {
+        flex-grow: 1;
+        margin-right: 16px;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &:last-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.tickets-panel-item__category.active {
+  .tickets-panel-item__category__amount {
+    font-family: 'Lato Bold';
+  }
+}
+
+.tickets-panel-item__category.tickets-panel-item__category--mailbox.active::before {
+  height: 54px;
+
+}
+
+.create-ticket-btn_tickets-panel {
+  display: block;
+  margin-top: 18px;
+  margin-left: 86px;
+}
+
+.hide-tickets-panel-btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  right: 0;
+  outline: none;
+  transform: translate(50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+
+  img {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.tickets-panel-item__category.active.attention {
+  color: $text-red;
+
+  svg {
+    fill: $text-red !important;
+    color: $text-red !important;
+  }
+
+}
+
+.mailboxes-sublist {
+  flex-basis: 100%;
+  margin-left: 30px;
+  padding-left: 17px;
+  margin-top: 16px;
+  font-size: 16px;
+  border-left: 2px solid $white-smoke2;
+
+  &__el {
+    line-height: (19em / 16);
+    margin-bottom: 12px;
+    color: $black;
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--add {
+      color: $blue;
+
+      .plus {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1700px) {
+  .tickets-panel {
+    position: absolute;
+    top: 72px;
+    height: calc(100% - 73px);
+  }
+}
+
+@media all and (max-width: 1200px) {}
+
+.touch .tickets-panel .hide-tickets-panel-btn {
+  opacity: 1;
+}
+
+.individual-ticket-panel__btn>* {
+  transition: all 0.15s !important;
+}
+
+.touch .tickets-panel.close .hide-tickets-panel-btn {
+  opacity: 0 !important;
+}
+
+@media all and (max-width: 560px) {
+
+  .create-ticket-btn.create-ticket-btn_tickets-panel {
+    margin-left: 8px;
+    margin-right: auto;
+  }
+
+  .hide-tickets-panel-btn {
+    display: none !important;
+  }
+
+  .tickets-panel {
+    width: calc(100vw - 80px);
+    right: 0vw;
+    left: auto;
+    transition: right 0.3s;
+
+    &.close {
+      right: 100vw;
+    }
+
+    &__header {
+      width: 100%;
+    }
+
+    &-inner {
+      width: 100%;
+    }
+  }
+
+  .tickets-controls.tickets-controls {
+    padding: 12px 26px !important;
+  }
+}

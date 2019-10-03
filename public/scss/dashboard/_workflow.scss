@@ -1,0 +1,13 @@
+.workflow-wrapper {
+  height: 100%;
+  width: calc(100% - 80px);;
+  flex-grow: 1;
+  background-color: $white-smoke-bg;
+  margin-left: 80px;
+}
+
+@media all and (max-width: 560px) {
+  .workflow-wrapper {
+    margin-left: 0;
+  }
+}

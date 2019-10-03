@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="78px" viewBox="0 0 80 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>profile icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Settings-General" transform="translate(-728.000000, -133.000000)" fill="#14CD9A">
+            <g id="personal" transform="translate(655.000000, 133.000000)">
+                <g id="profile-icon" transform="translate(73.000000, 0.000000)">
+                    <path d="M40,44.5 C28,44.5 18,34.5 18,22.5 C18,10.5 28,0.5 40,0.5 C52,0.5 62,10.5 62,22.5 C62,34.5 52,44.5 40,44.5 Z M40,39.4 C49.3888407,39.4 57,31.7888407 57,22.4 C57,13.0111593 49.3888407,5.4 40,5.4 C30.6111593,5.4 23,13.0111593 23,22.4 C23,31.7888407 30.6111593,39.4 40,39.4 Z" id="Shape"></path>
+                    <path d="M53,46.5 L27,46.5 C12,46.5 0,59 0,74 C0,76 1.5,77.5 3.5,77.5 L76,77.5 C78,77.5 79.5,76 79.5,74 C80,58.5 68,46.5 53,46.5 Z M5.10305744,72.5274353 C5.10305744,63.3762296 13.9183701,51.4826904 24.6082268,51.4826904 L55.0489425,51.4826904 C65.6114308,51.4826904 74.5437731,63.3340349 74.5437731,72.5274353 L5.10305744,72.5274353 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

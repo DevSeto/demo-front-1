@@ -1,0 +1,47 @@
+.accordion {
+  &__title {
+    position: relative;
+    @extend .bold;
+    font-size: 24px;
+    cursor: pointer;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      border-top: 1px solid #1D1D1D;
+      border-right: 1px solid #1D1D1D;
+      width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      transform: rotateZ(135deg) translateX(-50%);
+      transition: transform 0.3s;
+      transform-origin: 25% 25%;
+    }
+  }
+
+  &__content {
+    max-height: 0px;
+    transition: max-height .8s;
+    overflow: hidden;
+
+    &.open {
+      max-height: 500px;
+    }
+  }
+
+  &__item {
+    padding: 6px 12px;
+    cursor: pointer;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.accordion__title.open::after {
+  transform: rotateZ(-45deg) translateX(-50%);
+}

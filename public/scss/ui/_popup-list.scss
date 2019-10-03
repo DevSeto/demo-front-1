@@ -1,0 +1,56 @@
+.popup-wrapper {
+  position: relative;
+}
+
+.popup-list {
+  position: absolute;
+  left: 0;
+  background-color: $white-bg;
+  top: 99%;
+  border-radius: 2px;
+  box-shadow: 2px 0 7px 0 rgba(0,0,0,0.05);
+  width: 100%;
+  border: 1px solid $whisper;
+  cursor: default;
+  animation: showPopupList .3s;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid $whisper;
+    border-left: 1px solid $whisper;
+    box-sizing: border-box;
+    top: 0;
+    margin-top: -5px;
+    transform: rotate(45deg);
+    background-color: $white-bg;
+    left: 16px;
+  }
+  
+  &__item {
+    line-height: (22em / 16);
+    font-size: 16px;
+    padding: 8px 16px;
+    border-bottom: 1px solid $whisper;
+    color: $black !important;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@keyframes showPopupList {
+  from {
+    opacity: 0;
+    transform: scale(.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

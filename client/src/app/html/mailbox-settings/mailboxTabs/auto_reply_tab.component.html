@@ -1,0 +1,152 @@
+<ng-container >
+    <form
+
+            [formGroup]="autoReplyForm"
+            (ngSubmit)=" saveChanges()"
+            class="block-form-registration"
+    >
+        <table class="auto-reply-pref-table">
+            <thead class="notification-pref-table__head">
+            <tr class="notification-pref-table__row">
+                <td class="notification-pref-table__cell bold grey">Auto Reply</td>
+                <td class="notification-pref-table__cell bold grey"></td>
+                <td class="notification-pref-table__cell bold grey"></td>
+            </tr>
+            </thead>
+            <tbody class="notification-pref-table__body">
+
+            <tr class="notification-pref-table__row">
+                <td class="notification-pref-table__cell">Auto Reply</td>
+                <td class="notification-pref-table__cell">
+                </td>
+                <td class="notification-pref-table__cell">
+                    <label class="toggle-btn">
+                        <input class="toggle-btn__input"
+                               type="checkbox"
+                               [checked] = "mailboxService.mailbox.auto_reply !== 3"
+                               (change)="mailboxService.mailbox.auto_reply !== 3 ? mailboxService.mailbox.auto_reply = 3 : mailboxService.mailbox.auto_reply = 2;"
+                        >
+                        <span class="toggle-btn__marker toggle-btn__marker--on" >ON</span>
+                        <span class="toggle-btn__marker toggle-btn__marker--off">OFF</span>
+                        <span class="toggle-btn__thumb"></span>
+                    </label>
+<!--                    <label class="ui-checkbox">-->
+<!--                        <input-->
+<!--                                class="ui-checkbox__input"-->
+<!--                               type="checkbox"-->
+<!--                                [checked] = "mailboxService.mailbox.auto_reply !== 3"-->
+<!--                                name="onoffswitch"-->
+<!--                                (click)="mailboxService.mailbox.auto_reply === 2 ? mailboxService.mailbox.auto_reply = 3 : mailboxService.mailbox.auto_reply = 2;"-->
+
+<!--                        >-->
+<!--                        <span class="ui-checkbox__check"></span>-->
+<!--                    </label>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    <ng-container
+            *ngIf="mailboxService.mailbox.auto_reply !== 3"
+    >
+        <table class="auto-reply-pref-table">
+            <thead class="notification-pref-table__head">
+            <tr class="notification-pref-table__row">
+                <td class="notification-pref-table__cell bold grey">Send Auto Reply</td>
+                <td class="notification-pref-table__cell bold grey"></td>
+                <td class="notification-pref-table__cell bold grey"></td>
+            </tr>
+            </thead>
+            <tbody class="notification-pref-table__body">
+
+            <tr class="notification-pref-table__row">
+                <td class="notification-pref-table__cell">Only outside of Enabled hours</td>
+                <td class="notification-pref-table__cell">
+                </td>
+                <td class="notification-pref-table__cell">
+                    <label class="ui-checkbox">
+                        <input
+                                class="ui-checkbox__input"
+                                type="checkbox"
+                                name="after-i-replay"
+                                [checked]="mailboxService.mailbox.auto_reply === 1"
+                                (change)="mailboxService.mailbox.auto_reply === 1 ? mailboxService.mailbox.auto_reply = 2 : mailboxService.mailbox.auto_reply = 1;"
+                        >
+                        <span class="ui-checkbox__check"></span>
+                    </label>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <span class="bold grey">Office Hours</span>
+
+        <div class="office-hours bordered">
+            <enabled-hours
+                    (validHoursEmit)="validHours = $event"
+            ></enabled-hours>
+
+
+        </div>
+        <div class="ui-input subject">
+            <label class="ui-input__label" for="subject">Subject</label>
+            <input class="ui-input__input input"
+                   id="subject"
+                   type="text"
+                   [(ngModel)]="mailboxService.mailbox.auto_reply_subject"
+                   [class.input-error-style]="!autoReplyForm.controls.auto_reply_subject.valid && autoReplyForm.submitted"
+                   [class.input-success-style]="autoReplyForm.controls.auto_reply_subject.valid && autoReplyForm.submitted"
+                   autocomplete="off"
+                   value=""
+                   data-rules="required"
+                   formControlName="auto_reply_subject"
+            >
+            <span class="error-span help-block error backend-error input-group-error">
+                <form-errors
+                        [control]="autoReplyForm.controls.auto_reply_subject"
+                        [controlName]="'Message'"
+                        [formSubmit]="autoReplyForm.submitted"
+                ></form-errors>
+            </span>
+        </div>
+
+        <div class="ticket-editor ticket-editor--create-ticket">
+            <div class="variable" dropdown>
+                <button class="variable__btn btn grey" type="button" dropdown-open>Variable</button>
+                <div class="send-as-clored-btn__dropdown-content dropdown-menu-variable">
+                    <ul class="send-as-clored-btn__dropdown-list">
+                        <li class="send-as-clored-btn__dropdown-list__el"
+                            *ngFor="let variable of variablesJson.json"
+                            (click)="insertVariables(variable.value,'auto_reply_body')"
+                        >
+                            {{variable.key | capitalizeFirst}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                    [class.editor-error]="!autoReplyForm.controls.auto_reply_body.valid && autoReplyForm.submitted"
+                    [froalaEditor]="textEditor.editorOptions"
+                    [(froalaModel)]="mailboxService.mailbox.auto_reply_body"
+            >
+
+            </div>
+            <span class="error-span help-block error backend-error input-group-error"
+            *ngIf="!autoReplyForm.controls.auto_reply_body.valid && autoReplyForm.submitted"
+            >
+                <form-errors
+                        [control]="autoReplyForm.controls.auto_reply_body"
+                        [controlName]="'Message'"
+                        [formSubmit]="autoReplyForm.submitted"
+                ></form-errors>
+            </span>
+
+        </div>
+    </ng-container>
+        <div class="w-100">
+
+            <div class="grad-btn pull-right">
+                <button class="grad-btn__btn" type="submit">Save Changes</button>
+                <span class="grad-btn__bg"></span>
+            </div>
+        </div>
+    </form>
+</ng-container>

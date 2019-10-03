@@ -1,0 +1,102 @@
+<section>
+    <!--<div class="stepModal modal-background in modal" id="welcome-popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="tab-content current">
+                        <div class="text-center step1">
+                            <img src="../../../../../public/images/logo-birddesk-ticketsystem.png" alt="Bird Desk">
+                            <h3 class="welcome-step-text">Welcome to BirdDesk <span> {{usersService.user.first_name}} {{usersService.user.last_name}},</span></h3>
+                            <p class="maergin-top-p">
+                                You're only seconds away from starting to deliver even more exceptional
+                                customer service than ever before.
+                            </p>
+                            <form
+                                    (ngSubmit)="changeMailboxname()"
+                                    [formGroup]="mailboxForm"
+                                    id="mailboxForm"
+                            >
+                                <div class="fields-box">
+                                    <ul class="list-inline list-unstyled input-fields-content align-middle">
+                                        <li>
+                                            <div class="pull-left text-left ">
+                                                <label for="mailbox_name">How would you like to name your first
+                                                    mailbox?</label>
+                                            </div>
+                                            <input
+                                                    type="text"
+                                                    name=""
+                                                    [class.input-error-style]="classError('name')"
+                                                    [class.input-success-style]="classSuccess('name')"
+                                                    id="mailbox_name"
+                                                    class="form-control"
+                                                    formControlName="name"
+                                                    placeholder="Mailbox name"
+                                                    value=""
+                                            >
+                                            <span class="error-span help-block error backend-error input-group-error text-left">
+                                                <form-errors
+                                                        [control]="mailboxForm.controls.name"
+                                                        [controlName]="'name'"
+                                                ></form-errors>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button
+                                            type="submit"
+                                            class="custom-default-btn border-none">Let's get started!
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="small_italic">Remember, you can make changes to your mailbox settings at anytime. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="popup first-popup">
+        <div class="popup__bg"></div>
+        <div class="popup-content">
+            <div class="popup-content__img">
+                <img src="../../../../../public/images/logo/logo.svg" alt="Logo">
+            </div>
+            <h2 class="popup-content__header text-center">
+                Welcome to BirdDesk <span class="green">{{usersService.user.first_name}} {{usersService.user.last_name}}</span>
+            </h2>
+            <p class="popup-content__text">
+                You’re only seconds away from starting to deliver even more exceptional customer service than ever before.
+            </p>
+            <form
+                    class="popup-content__form"
+                    (ngSubmit)="changeMailboxname()"
+                    [formGroup]="mailboxForm"
+                    id="mailboxForm"
+            >
+<!--                <h3 class="popup-content__form-header" for="mailbox_name">-->
+<!--                    How would you like to name your first mailbox?-->
+<!--                </h3>-->
+<!--                <input class="input popup-content__form-input"-->
+<!--                       type="text"-->
+<!--                       placeholder="Mailbox name"-->
+<!--                       name=""-->
+<!--                       [class.input-error-style]="classError('name')"-->
+<!--                       [class.input-success-style]="classSuccess('name')"-->
+<!--                       id="mailbox_name"-->
+<!--                       formControlName="name"-->
+<!--                       value="">-->
+<!--                <span class="error-span help-block error backend-error input-group-error text-left">-->
+<!--                    <form-errors-->
+<!--                            [control]="mailboxForm.controls.name"-->
+<!--                            [controlName]="'name'"-->
+<!--                    ></form-errors>-->
+<!--                </span>-->
+                <button id="popup-content__form-btn" class="popup-content__form-btn btn primary" type="submit">Let’s get started!</button>
+            </form>
+            <p class="popup-content__text">
+                Remember, you can make changes to your mailbox settings at anytime.
+            </p>
+        </div>
+    </div>
+</section>

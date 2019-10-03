@@ -1,0 +1,189 @@
+
+<!--<div class="canned-respons__search clearfix">-->
+<!--    <span>Pick a canned response</span>-->
+<!--    <input class="input input-header-search canned-respons__search-input" type="text" placeholder="Search">-->
+<!--</div>-->
+
+
+<div class="canned-responses"   >
+    <div class="canned-responses__header-category upper grey bold">
+        Category
+
+        <div class="grad-btn plus">
+            <button class="grad-btn__btn" type="button" (click)="cloud.effect = 'createCannedRepliesCategory'"></button>
+            <span class="grad-btn__bg"></span>
+        </div>
+
+    </div>
+
+    <div class="canned-responses__header-response-title upper grey bold">
+        Create a new Canned Reply
+
+
+        <div class="grad-btn plus" *ngIf="cannedrepliesService.categorys.length" >
+            <button class="grad-btn__btn" (click)="cloud.effect = 'createCannedReplies'"></button>
+            <span class="grad-btn__bg"></span>
+        </div>
+
+    </div>
+
+    <div class="canned-responses__categories-wrapper">
+        <div class="canned-responses__categories">
+
+            <div class="canned-responses-category"
+                 [ngClass]="{'canned-responses-category--edit': category['edit']}"
+                 *ngFor="let category of cannedrepliesService.categorys; let ind = index"
+                 [class.active]="category.id == cannedrepliesService.categoryId"
+                 (click)="cannedrepliesService.categoryId = category.id ;getRepliesByCategory( category.id); "
+                 (dblclick)="category['edit'] = !!1;focuseInput('categoryName' + category.id, ind)"
+            >
+                         <span class="canned-responses-category__title"
+                               [class.display_block]="category['edit']"
+                               [class.display_none]="!category['edit']"
+                         >
+                            <input
+                                    [id]="'categoryName' + category.id"
+                                    class="input"
+                                    type="text"
+                                    [value]="category.name"
+                                    (blur)="editCategory($event.target['value'],$event.target['value'] != category.name, ind )"
+                            >
+                         </span>
+                <span class="canned-responses-category__title"
+                      *ngIf="!category['edit']"
+
+                >{{category.name}}</span>
+                <span class="canned-responses-category__amount">{{category.canned_replies_count}}</span>
+                <button
+                        (click)="deleteCategory(category.id,ind)"
+                        class="btn canned-responses-title__view canned-responses-title__trash"
+                >
+                    <icon-svg [pathToSVG]="'/public/images/ico/moon.svg'"></icon-svg>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="canned-responses__titles-wrapper">
+        <div class="canned-responses__titles">
+            <ng-container
+                    *ngFor="let cannedreplies of cannedrepliesService.cannedReplies;let ind = index;"
+            >
+                <div class="canned-responses-title"
+                     *ngIf="cannedreplies.name"
+                     (click)="editReply(cannedreplies)"
+                >
+                    <span class="canned-responses-title__value">{{cannedreplies.name}}</span>
+
+                    <button
+                            class="btn canned-responses-title__view"
+
+                    >
+                        <img src="../../../../../public/images/icons/eye-green.svg" alt="Show">
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<div class="canned-respons__inner" *ngIf="cloud.effect.showReply">
+
+    <div class="canned-responses">
+
+        <div class="canned-responses__header-category upper grey bold">
+            Category test
+
+            <div class="grad-btn plus">
+                <button class="grad-btn__btn" (click)="cloud.effect = 'createCannedRepliesCategory'"></button>
+                <span class="grad-btn__bg"></span>
+            </div>
+
+        </div>
+
+        <div class="canned-responses__header-response-title upper grey bold">
+
+            Response title
+
+            <div class="grad-btn plus">
+                <button class="grad-btn__btn" (click)="cloud.effect = 'createCannedReplies'"></button>
+                <span class="grad-btn__bg"></span>
+            </div>
+
+        </div>
+
+        <div class="canned-responses__categories-wrapper">
+            <div class="canned-responses__categories">
+                <div class="canned-responses-category "
+                     *ngFor="let category of cannedrepliesService.categorys; let ind = index"
+                     [class.active]="category.id == cannedrepliesService.categoryId"
+                     (click)="cannedrepliesService.categoryId = category.id ;getRepliesByCategory( category.id); "
+                     (dblclick)="category['edit'] = !!1;focuseInput('categoryName' + category.id, ind)"
+                >
+                            <span class="canned-responses-category__title"
+                                  [class.display_block]="category['edit']"
+                                  [class.display_none]="!category['edit']"
+                            >
+                                <input
+                                        [id]="'categoryName' + category.id"
+                                        class="input"
+                                        type="text"
+                                        [value]="category.name"
+                                        (blur)="editCategory($event.target['value'],$event.target['value'] != category.name, ind )"
+                                >
+                            </span>
+                    <span class="canned-responses-category__title"
+                          *ngIf="!category['edit']"
+
+                    >{{category.name}}</span>
+                    <span class="canned-responses-category__amount">{{category.canned_replies_count}}</span>
+                    <button
+                            (click)="deleteCategory(category.id,ind)"
+                            *ngIf="!category['edit']"
+                            class="btn canned-responses-title__view canned-responses-title__trash"
+                    >
+                        <img src="../../../../../public/images/icons/trash.svg" alt="Show">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="canned-responses__titles-wrapper">
+            <div class="canned-responses__titles">
+                <ng-container
+                        *ngFor="let cannedreplies of cannedrepliesService.cannedReplies;let ind = index;"
+                >
+                    <div class="canned-responses-title"
+                         *ngIf="cannedreplies.name"
+                    >
+                        <label class="radio">
+                            <input
+                                    class="radio__input"
+                                    type="checkbox"
+                                    name="canned-responses"
+                                    (change)="selectReply(cannedreplies)"
+                            >
+                            <span class="radio__border">
+                                        <span class="radio__point"></span>
+                                    </span>
+                        </label>
+                        <span class="canned-responses-title__value">{{cannedreplies.name}}</span>
+
+                        <button
+                                class="btn canned-responses-title__view"
+                                (click)="editReply(cannedreplies)"
+                        >
+                            <img src="../../../../../public/images/icons/eye-green.svg" alt="Show">
+                        </button>
+                    </div>
+                </ng-container>
+            </div>
+
+        </div>
+
+    </div>
+</div>

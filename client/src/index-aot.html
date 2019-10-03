@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <title>Birddesk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="author" content="Birddesk.com">
+    <meta name="description" content="Birddesk">
+    <meta name="keywords" content="Birddesk">
+
+</head>
+<body>
+
+    <birddesk></birddesk>
+
+</body>
+
+<script src="public/js/extsrc.min.js"></script>
+
+<script extsrc="main.js"></script>
+
+<script>window.module = 'aot';</script>
+
+</html>
+
+<script>
+    (function () {
+        var resource = document.createElement('link');
+        resource.setAttribute("rel", "stylesheet");
+        resource.setAttribute("href","main.css");
+        resource.setAttribute("type","text/css");
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(resource);
+    })();
+</script>

@@ -1,0 +1,50 @@
+html, body {
+  font-size: 18px;
+  font-family: 'SF Text Regular';
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-weight: 300;
+  background-color: $ivory;
+  color: $jumbo;
+}
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: 'SF Display Semibold';
+  color: $storm-dust;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: (64em / 48);
+
+  @media (max-width: 1360px) {
+    font-size: 32px;
+  }
+}
+
+blockquote {
+  font-family: 'PlayfairDisplay Italic';
+}
+
+@media (max-width: 667px) {
+  h2[class$="__header"] {
+    margin-bottom: 24px;
+  }
+}

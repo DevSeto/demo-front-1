@@ -1,0 +1,1446 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>Toast</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/modules/toastr/toastr/toast-component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>[toast-component]</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;button *ngIf&#x3D;&quot;options.closeButton&quot; (click)&#x3D;&quot;remove()&quot; class&#x3D;&quot;toast-close-button&quot;&gt;
+  &amp;times;
+&lt;/button&gt;
+&lt;div *ngIf&#x3D;&quot;title&quot; class&#x3D;&quot;{{options.titleClass}}&quot; [attr.aria-label]&#x3D;&quot;title&quot;&gt;
+  {{title}}
+&lt;/div&gt;
+&lt;div *ngIf&#x3D;&quot;message &amp;&amp; options.enableHtml&quot; class&#x3D;&quot;{{options.messageClass}}&quot; [innerHTML]&#x3D;&quot;message&quot;&gt;
+&lt;/div&gt;
+&lt;div *ngIf&#x3D;&quot;message &amp;&amp; !options.enableHtml&quot; class&#x3D;&quot;{{options.messageClass}}&quot; [attr.aria-label]&#x3D;&quot;message&quot;&gt;
+  {{message}}
+&lt;/div&gt;
+&lt;div *ngIf&#x3D;&quot;options.progressBar&quot;&gt;
+  &lt;div class&#x3D;&quot;toast-progress&quot; [style.width.%]&#x3D;&quot;width&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#hideTime">hideTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#intervalId">intervalId</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#onAction">onAction</a>
+                            </li>
+                            <li>
+                                <a href="#onTap">onTap</a>
+                            </li>
+                            <li>
+                                <a href="#options">options</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sub">sub</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sub1">sub1</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#timeout">timeout</a>
+                            </li>
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                            <li>
+                                <a href="#toastId">toastId</a>
+                            </li>
+                            <li>
+                                <a href="#width">width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activateToast">activateToast</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#remove">remove</a>
+                            </li>
+                            <li>
+                                <a href="#updateProgress">updateProgress</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#@flyInOut">@flyInOut</a>
+                            </li>
+                            <li>
+                                <a href="#class">class</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click">click</a>
+                            </li>
+                            <li>
+                                <a href="#mouseenter">mouseenter</a>
+                            </li>
+                            <li>
+                                <a href="#mouseleave">mouseleave</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(toastrService: <a href="../injectables/ToastrService.html">ToastrService</a>, data: <a href="../classes/ToastData.html">ToastData</a>, toastRef: <a href="../classes/ToastRef.html">ToastRef<any></a>, appRef: <a href="../anys/io.html">ApplicationRef</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>toastrService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ToastrService.html" target="_self" >ToastrService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../classes/ToastData.html" target="_self" >ToastData</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../classes/ToastRef.html" target="_self" >ToastRef&lt;any&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>appRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/variables.html#io" target="_self" >ApplicationRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sanitizer</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    <h3>HostBindings</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="@flyInOut"></a>
+                        <span class="name">
+                            <b>
+                            @flyInOut
+                            </b>
+                            <a href="#@flyInOut"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>@flyInOut:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;inactive&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>controls animation </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="class"></a>
+                        <span class="name">
+                            <b>
+                            class
+                            </b>
+                            <a href="#class"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>class:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>a combination of toast type and options.toastClass </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="click"></a>
+                        <span class="name">
+                            <b>
+                            click
+                            </b>
+                            <a href="#click"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>click()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:152</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mouseenter"></a>
+                        <span class="name">
+                            <b>
+                            mouseenter
+                            </b>
+                            <a href="#mouseenter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>mouseenter()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:163</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mouseleave"></a>
+                        <span class="name">
+                            <b>
+                            mouseleave
+                            </b>
+                            <a href="#mouseleave"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>mouseleave()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:176</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activateToast"></a>
+                        <span class="name">
+                            <b>
+                            activateToast
+                            </b>
+                            <a href="#activateToast"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>activateToast()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:110</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>activates toast and sets timeout</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:101</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="remove"></a>
+                        <span class="name">
+                            <b>
+                            remove
+                            </b>
+                            <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>remove()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:143</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>tells toastrService to remove this toast after animation time</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateProgress"></a>
+                        <span class="name">
+                            <b>
+                            updateProgress
+                            </b>
+                            <a href="#updateProgress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>updateProgress()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:128</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>updates progress bar width</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            data
+                            </b>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>data:     <code><a href="../classes/ToastData.html" target="_self" >ToastData</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ToastData.html" target="_self" >ToastData</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hideTime"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            hideTime
+                            </b>
+                            <a href="#hideTime"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>hideTime:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="intervalId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            intervalId
+                            </b>
+                            <a href="#intervalId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>intervalId:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:67</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message
+                            </b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>message:     <code>string | SafeHtml</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string | SafeHtml</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onAction"></a>
+                        <span class="name">
+                            <b>
+                            onAction
+                            </b>
+                            <a href="#onAction"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>onAction:     <code>Subject&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>listens for click on custom action </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTap"></a>
+                        <span class="name">
+                            <b>
+                            onTap
+                            </b>
+                            <a href="#onTap"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>onTap:     <code>Subject&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:72</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>listens for click on toast </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="options"></a>
+                        <span class="name">
+                            <b>
+                            options
+                            </b>
+                            <a href="#options"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>options:     <code><a href="../classes/ToastConfig.html" target="_self" >ToastConfig</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/ToastConfig.html" target="_self" >ToastConfig</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            sub
+                            </b>
+                            <a href="#sub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>sub:     <code><a href="../miscellaneous/variables.html#io" target="_self" >Subscription</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../miscellaneous/variables.html#io" target="_self" >Subscription</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sub1"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            sub1
+                            </b>
+                            <a href="#sub1"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>sub1:     <code><a href="../miscellaneous/variables.html#io" target="_self" >Subscription</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../miscellaneous/variables.html#io" target="_self" >Subscription</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeout"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            timeout
+                            </b>
+                            <a href="#timeout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>timeout:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:66</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <span class="name">
+                            <b>
+                            title
+                            </b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>title:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toastId"></a>
+                        <span class="name">
+                            <b>
+                            toastId
+                            </b>
+                            <a href="#toastId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>toastId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="width"></a>
+                        <span class="name">
+                            <b>
+                            width
+                            </b>
+                            <a href="#width"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>width:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>-1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">client/src/app/modules/toastr/toastr/toast-component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>width of progress bar </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  OnDestroy,
+  HostBinding,
+  HostListener,
+  ApplicationRef,
+  SecurityContext,
+} from &#x27;@angular/core&#x27;;
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition
+} from &#x27;@angular/animations&#x27;;
+import { DomSanitizer, SafeHtml } from &#x27;@angular/platform-browser&#x27;;
+import { Subscription } from &#x27;rxjs/Subscription&#x27;;
+import { Subject } from &#x27;rxjs/Subject&#x27;;
+
+import { ToastConfig, ToastData } from &#x27;./toastr-config&#x27;;
+import { ToastrService } from &#x27;./toastr-service&#x27;;
+import { ToastRef } from &#x27;./toast-injector&#x27;;
+
+@Component({
+  selector: &#x27;[toast-component]&#x27;,
+  template: &#x60;
+  &lt;button *ngIf&#x3D;&quot;options.closeButton&quot; (click)&#x3D;&quot;remove()&quot; class&#x3D;&quot;toast-close-button&quot;&gt;
+    &amp;times;
+  &lt;/button&gt;
+  &lt;div *ngIf&#x3D;&quot;title&quot; class&#x3D;&quot;{{options.titleClass}}&quot; [attr.aria-label]&#x3D;&quot;title&quot;&gt;
+    {{title}}
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;message &amp;&amp; options.enableHtml&quot; class&#x3D;&quot;{{options.messageClass}}&quot; [innerHTML]&#x3D;&quot;message&quot;&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;message &amp;&amp; !options.enableHtml&quot; class&#x3D;&quot;{{options.messageClass}}&quot; [attr.aria-label]&#x3D;&quot;message&quot;&gt;
+    {{message}}
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;options.progressBar&quot;&gt;
+    &lt;div class&#x3D;&quot;toast-progress&quot; [style.width.%]&#x3D;&quot;width&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &#x60;,
+  animations: [
+    trigger(&#x27;flyInOut&#x27;, [
+      state(&#x27;inactive&#x27;, style({
+        display: &#x27;none&#x27;,
+        opacity: 0
+      })),
+      state(&#x27;active&#x27;, style({ opacity: 1 })),
+      state(&#x27;removed&#x27;, style({ opacity: 0 })),
+      transition(&#x27;inactive &#x3D;&gt; active&#x27;, animate(&#x27;300ms ease-in&#x27;)),
+      transition(&#x27;active &#x3D;&gt; removed&#x27;, animate(&#x27;300ms ease-in&#x27;)),
+    ]),
+  ],
+})
+export class Toast implements OnDestroy {
+  toastId: number;
+  message: string | SafeHtml;
+  title: string;
+  options: ToastConfig;
+  /** width of progress bar */
+  width &#x3D; -1;
+  /** a combination of toast type and options.toastClass */
+  @HostBinding(&#x27;class&#x27;) toastClasses &#x3D; &#x27;&#x27;;
+  /** controls animation */
+  @HostBinding(&#x27;@flyInOut&#x27;) state &#x3D; &#x27;inactive&#x27;;
+  private timeout: any;
+  private intervalId: any;
+  private hideTime: number;
+  private sub: Subscription;
+  private sub1: Subscription;
+  /** listens for click on toast */
+  onTap: Subject&lt;any&gt;;
+  /** listens for click on custom action */
+  onAction: Subject&lt;any&gt;;
+
+  constructor(
+    protected toastrService: ToastrService,
+    public data: ToastData,
+    protected toastRef: ToastRef&lt;any&gt;,
+    protected appRef: ApplicationRef,
+    protected sanitizer: DomSanitizer
+  ) {
+    this.options &#x3D; data.optionsOverride;
+    this.toastId &#x3D; data.toastId;
+    this.message &#x3D; data.message;
+    if (this.message &amp;&amp; this.options.enableHtml) {
+      this.message &#x3D; sanitizer.sanitize(SecurityContext.HTML, data.message);
+    }
+    this.title &#x3D; data.title;
+    this.onTap &#x3D; data.onTap;
+    this.onAction &#x3D; data.onAction;
+    this.toastClasses &#x3D; &#x60;${data.toastType} ${this.options.toastClass}&#x60;;
+    this.options.timeOut &#x3D; +this.options.timeOut;
+    this.sub &#x3D; toastRef.afterActivate().subscribe(() &#x3D;&gt; {
+      this.activateToast();
+    });
+    this.sub1 &#x3D; toastRef.manualClosed().subscribe(() &#x3D;&gt; {
+      this.remove();
+    });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+    this.sub1.unsubscribe();
+    clearInterval(this.intervalId);
+    clearTimeout(this.timeout);
+  }
+  /**
+   * activates toast and sets timeout
+   */
+  activateToast() {
+    this.state &#x3D; &#x27;active&#x27;;
+    if (this.options.timeOut !&#x3D;&#x3D; 0) {
+      this.timeout &#x3D; setTimeout(() &#x3D;&gt; {
+        this.remove();
+      }, this.options.timeOut);
+      this.hideTime &#x3D; new Date().getTime() + this.options.timeOut;
+      if (this.options.progressBar) {
+        this.intervalId &#x3D; setInterval(() &#x3D;&gt; this.updateProgress(), 10);
+      }
+    }
+    if (this.options.onActivateTick) {
+      this.appRef.tick();
+    }
+  }
+  /**
+   * updates progress bar width
+   */
+  updateProgress() {
+    if (this.width &#x3D;&#x3D;&#x3D; 0) {
+      return;
+    }
+    const now &#x3D; new Date().getTime();
+    const remaining &#x3D; this.hideTime - now;
+    this.width &#x3D; (remaining / this.options.timeOut) * 100;
+    if (this.width &lt;&#x3D; 0) {
+      this.width &#x3D; 0;
+    }
+  }
+
+  /**
+   * tells toastrService to remove this toast after animation time
+   */
+  remove() {
+    if (this.state &#x3D;&#x3D;&#x3D; &#x27;removed&#x27;) {
+      return;
+    }
+    clearTimeout(this.timeout);
+    this.state &#x3D; &#x27;removed&#x27;;
+    this.timeout &#x3D; setTimeout(() &#x3D;&gt; this.toastrService.remove(this.toastId), 300);
+  }
+  @HostListener(&#x27;click&#x27;)
+  tapToast() {
+    if (this.state &#x3D;&#x3D;&#x3D; &#x27;removed&#x27;) {
+      return;
+    }
+    this.onTap.next();
+    this.onTap.complete();
+    if (this.options.tapToDismiss) {
+      this.remove();
+    }
+  }
+  @HostListener(&#x27;mouseenter&#x27;)
+  stickAround() {
+    if (this.state &#x3D;&#x3D;&#x3D; &#x27;removed&#x27;) {
+      return;
+    }
+    clearTimeout(this.timeout);
+    this.options.timeOut &#x3D; 0;
+    this.hideTime &#x3D; 0;
+
+    // disable progressBar
+    clearInterval(this.intervalId);
+    this.width &#x3D; 0;
+  }
+  @HostListener(&#x27;mouseleave&#x27;)
+  delayedHideToast() {
+    if (+this.options.extendedTimeOut &#x3D;&#x3D;&#x3D; 0 || this.state &#x3D;&#x3D;&#x3D; &#x27;removed&#x27;) {
+      return;
+    }
+    this.timeout &#x3D; setTimeout(() &#x3D;&gt; this.remove(), this.options.extendedTimeOut);
+    this.options.timeOut &#x3D; +this.options.extendedTimeOut;
+    this.hideTime &#x3D; new Date().getTime() + this.options.timeOut;
+    this.width &#x3D; 100;
+    if (this.options.progressBar) {
+      this.intervalId &#x3D; setInterval(() &#x3D;&gt; this.updateProgress(), 10);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><button *ngIf="options.closeButton" (click)="remove()" class="toast-close-button">  &times;</button><div *ngIf="title" class="{{options.titleClass}}" [attr.aria-label]="title">  {{title}}</div><div *ngIf="message && options.enableHtml" class="{{options.messageClass}}" [innerHTML]="message"></div><div *ngIf="message && !options.enableHtml" class="{{options.messageClass}}" [attr.aria-label]="message">  {{message}}</div><div *ngIf="options.progressBar">  <div class="toast-progress" [style.width.%]="width"></div></div></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'Toast'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Toast.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

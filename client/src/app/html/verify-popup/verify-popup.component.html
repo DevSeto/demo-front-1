@@ -1,0 +1,43 @@
+<section>
+    <div class="modal fade modal-custom modal-background" id="create_label_popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" title="Close" type="button" (click)="closeModal()">
+                        <span aria-hidden="true">
+                            <i class="la la-close"></i>
+                        </span>
+                    </button>
+                    <h4 class="modal-title">DNS Name: {{modalData.dnsName}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row box-for-verify-text">
+                        <div class="col-md-12">
+                            <div>
+                                <div>
+                                    <input
+                                            type="text"
+                                            name="dnsValue"
+                                            id="dnsValue"
+                                            class="form-control"
+                                            value="{{modalData.dnsValue}}"
+                                    >
+                                </div>
+                                <div>
+                                    <input
+                                            type="text"
+                                            name="forwardAdress"
+                                            id="forwardAdress"
+                                            class="form-control"
+                                            value="{{modalData.forwardAddress}}"
+                                    >
+                                </div>
+                                <button type="button" (click)="verifyButton()">Verify</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

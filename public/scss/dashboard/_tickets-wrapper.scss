@@ -1,0 +1,65 @@
+.tickets-wrapper {
+  flex-grow: 1;
+  height: calc(100% - 2px);
+  overflow: auto;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  &.scroll {
+    overflow: auto;
+    margin-right: 4px;
+  }
+
+  &.on-spam {
+    background-image: url(/public/images/spam.png);
+    background-size: 22.5%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+.empty-mailbox {
+  width: 380px;
+  margin: 0 auto;
+  margin-top: 70px;
+
+  &__img {
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: $manatee;
+    margin-bottom: 24px;
+    position: relative;
+
+    &-header {
+      font-size: 24px;
+      margin-bottom: 0.6em;
+      @extend .bold;
+    }
+
+    // &-content {
+    // }
+
+  }
+
+  &__btn {
+    text-align: center;
+    .grad-btn {
+      display: inline-block;
+
+    }
+  }
+}
+
+@media all and (max-width: 560px) {
+  .tickets-wrapper {
+    height: 100%;
+  }
+}

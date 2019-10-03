@@ -1,0 +1,50 @@
+<!--<section>
+    <div class="modal fade in box-new-agent modal-background" id="delete-user-popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button (click)="closeDeletePopup()" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">
+                            <i class="la la-close"></i>
+                        </span>
+                    </button>
+                    <h4 class="modal-title">Delete user</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete user: <b>{{invitedAgentName.first_name}} {{invitedAgentName.last_name}}</b></p>
+                    <p class="italic-style">By confirming the user will be deleted from the system permanently.</p>
+                </div>
+                <div class="modal-footer">
+                    <button
+                            type="button"
+                            class=" custom-round-btn gray-btn"
+                            data-dismiss="modal"
+                            (click)="closeDeletePopup()"
+                    >
+                        Close
+                    </button>
+
+                    <button
+                            type="button"
+                            class=" custom-round-btn red-btn"
+                    >
+                        Delete user
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+
+<div class="popup">
+    <div class="popup__bg"></div>
+    <div class="popup-content rm-ticket">
+        <p class="text-center mb24 ">Please confirm you'd like to delete this user</p>
+        <div class="flex justify-around">
+            <button class="btn dafault" (click)="closeDeletePopup()">Cancel</button>
+            <button class="btn dafault discard" (click)="closeDeletePopup()">Delete</button>
+        </div>
+    </div>
+</div>

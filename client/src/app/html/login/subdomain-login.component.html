@@ -1,0 +1,55 @@
+
+
+
+<form
+        class="multistep-form multistep-form--reg"
+        [formGroup]="companyUrlForm"
+        (ngSubmit)="checkCompany()"
+>
+
+    <h2 class="multistep-form__title text-center bold">What’s the name of your company?</h2>
+    <div class="multistep-form__login-input"
+         [class.multistep-form-input-wrapper--passed]="classSuccess('company_url') === true"
+    >
+        <input type="text"
+               class="multistep-form__input input w-100 bold"
+               placeholder="Company name"
+               [class.input-error-style]="classError('company_url')"
+               [class.input-success-style]="classSuccess('company_url')"
+               autocomplete="off"
+               name="company_url"
+               value=""
+               data-rules="required"
+               formControlName="company_url"
+               [(ngModel)]="subDomain"
+               (ngModelChange)="verifyTwinsError('company_url', $event)"
+        >
+        <span class="multistep-form__login-domain bold">.birddesk.com</span>
+    </div>
+
+    <span id="domain-error" class="error-span help-block error backend-error input-group-error">
+            <form-errors
+                    [control]="companyUrlForm.controls.company_url"
+                    [controlName]="'company url'"
+                    [formSubmit]="companyUrlForm.submitted"
+            ></form-errors>
+            <span *ngIf="userFormErrors.company_url.verify">
+                {{userFormErrors.company_url.text}}
+            </span>
+        </span>
+
+    <div class="mb40">
+        <a [routerLink]="['/find-company']" class="link">Find your company</a>
+    </div>
+    <div class="grad-btn grad-btn--fill " [class.disabled]="formSubmit">
+        <button
+                [disabled]="formSubmit"
+                class="grad-btn__btn"
+                type="submit"
+        >
+            Continue to Sign in
+        </button>
+        <span class="grad-btn__bg"></span>
+    </div>
+
+</form>

@@ -1,0 +1,44 @@
+<!--<ul class="dropdown-menu canned-reply-dropdown">-->
+<!--    <li *ngFor="let replies of cannedrepliesService.cannedReplies; let ind = index">-->
+<!--        <a-->
+<!--                (click)="setCannedReplies(replies.body)"-->
+<!--        >-->
+<!--            {{replies.name}}-->
+<!--        </a>-->
+<!--    </li>-->
+<!--    <li [class.border_top]="cannedrepliesService.cannedReplies.length > 0">-->
+<!--        <a-->
+<!--                (click)="showedRepliesModal()"-->
+<!--        >-->
+<!--            Save reply ...-->
+<!--        </a>-->
+<!--    </li>-->
+<!--</ul>-->
+<div class="popup popup--above">
+    <div class="popup__bg"></div>
+    <div class="popup-content canned-respons">
+        <div class="popup__head">
+            <h3 class="popup__header">Canned Responses</h3>
+            <button class="btn popup__close-btn" (click)=" cloud.effect = 'showReply'">
+                <icon-svg pathToSVG="/public/images/icons/close.svg" ripple="false"></icon-svg>
+            </button>
+        </div>
+
+        <div>
+            <canned-reply-module (selectReplies)="cannedrepliesService.selectReplies = $event"
+                (viewReplies)="viewReplies($event)">
+
+            </canned-reply-module>
+            <div class="canned-respons__controls">
+
+                <button class="btn dafault" (click)=" cloud.effect = 'showReply'">Cancel</button>
+
+                <div class="grad-btn">
+                    <button class="grad-btn__btn" (click)="setCannedReplies()">Paste</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

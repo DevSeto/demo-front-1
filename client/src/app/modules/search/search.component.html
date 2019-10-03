@@ -1,0 +1,34 @@
+<div class="search-box">
+    <input
+            (keyup)="search($event.target.value)"
+            (focus)="search($event.target.value)"
+            (blur)="search('')"
+            type="text"
+            placeholder="Search"
+    >
+    <button>
+        <i class="la la-fw la-search "></i>
+    </button>
+    <div class="search-tickets" [class.change-display]="searchedTickets.length">
+        <ul class="list-unstyled search-dropdown scroll-box">
+            <li *ngFor="let ticket of searchedTickets; let idx = index" (mousedown)="redirectToTicketPage(ticket)">
+                <div class="{{ticket.opened_count ? '' : ''}} search-content">
+                    <div class="tickets-info pull-left">
+                        <span class="first-letter-item rose-circle" *ngIf="ticket.customer_id">
+                            {{ticket.customer_name.charAt(0) }}
+                        </span>
+                        <span class="first-letter-item rose-circle" *ngIf="ticket.author">
+                            {{ticket.author.first_name.charAt(0) }}
+                        </span>
+                    </div>
+                    <div class="pull-left">
+                        <p class="notification-text text-dotted">{{ticket.subject}}</p>
+                    </div>
+                    <div class="pull-right">
+                        <a class="ticket-num"> #{{ticket.id}}</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

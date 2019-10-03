@@ -1,0 +1,86 @@
+.label {
+  font-size: 14px;
+  box-sizing: border-box;
+  
+  &--md {
+    font-size: 16px;
+  }
+  
+  &.bordered {
+    padding: 4px 16px;
+    display: inline-flex;
+    border-radius: 13px;
+    border: 1px solid currentColor;
+    padding-right: 10px;
+  }
+
+  &.green {
+    color: $green;
+  }
+
+  &.grey {
+    color: $manatee;
+  }
+
+  &.hot {
+    color: $text-red;
+  }
+}
+
+.label__text {
+  color: inherit;
+  margin-right: 8px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.label__btn {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  line-height: 1;
+}
+
+.label-prew {
+  display: inline-block;
+  margin-left: 24px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+  }
+
+  &--red:after {
+    background-color: $green;
+
+  }
+  &--green:after {
+    background-color: $text-red;
+
+  }
+}
+
+.search-label {
+  position: absolute;
+  padding: 5px 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 48px;
+
+  &__req {
+    position: relative;
+    top: -2px;
+    outline: none;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 2px;
+  }
+}

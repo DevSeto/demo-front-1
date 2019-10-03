@@ -1,0 +1,131 @@
+
+<div class="mailbox-settings__wrapper" id="mailbox-settings-forms">
+    <loading [className]="'extended'" *ngIf="selectMenu.showLoading"></loading>
+    <ng-container *ngIf="!selectMenu.showLoading">
+
+    <div class="notification-pref__header">
+        <h2 class="bold">Mailboxes</h2>
+    </div>
+
+    <div class="tabs">
+        <span class="tabs__tab" [class.tabs__tab--active]="activeTabe.mailbox" data-tab-target=".mailbox-settings" (click)="openTab('mailbox')">Mailbox Settings</span>
+        <span class="tabs__tab " [class.tabs__tab--active]="activeTabe.connection" data-tab-target=".connection-settings" (click)="openTab('connection')">Connection
+                Settings</span>
+        <span class="tabs__tab" [class.tabs__tab--active]="activeTabe.auto" data-tab-target=".auto-reply" (click)="openTab('auto')">Auto Reply</span>
+        <span class="tabs__tab" [class.tabs__tab--active]="activeTabe.agents" data-tab-target=".agents-settings" (click)="openTab('agents')">Agents</span>
+    </div>
+    <!-- mailbox-settings -->
+    <div [class.active]="activeTabe.mailbox" *ngIf="activeTabe.mailbox"  class="mailbox-settings tab-content">
+        <editMailbox
+                *ngIf="succesTrue"
+        ></editMailbox>
+
+
+    </div>
+    <!-- mailbox-settings -->
+
+    <!-- Connection Settings -->
+    <div [class.active]="activeTabe.connection" *ngIf="activeTabe.connection" class="connection-settings tab-content ">
+        <mailbox-connection-tab>
+
+        </mailbox-connection-tab>
+
+    </div>
+    <!-- Connection Settings -->
+    <!-- Auto Reply -->
+    <div [class.active]="activeTabe.auto" *ngIf="activeTabe.auto"  class="auto-reply tab-content">
+
+        <auto_reply_tab></auto_reply_tab>
+    </div>
+
+    <!-- Auto Reply -->
+    <!-- Agents -->
+    <div [class.active]="activeTabe.agents" *ngIf="activeTabe.agents"  class="agents-settings tab-content">
+        <div class="empty-mailbox" *ngIf="selectMenu.showData && !allNotLoggedAgents.length">
+            <div class="empty-mailbox__img">
+                <img src="../../../../../public/images/images/cat-bg.png" alt="Mailbox is empty">
+            </div>
+            <div class="empty-mailbox__text">
+                <h3 class="empty-mailbox__text-header">No agents yet!</h3>
+                <p class="empty-mailbox__text-content">Invite new agents to your team</p>
+            </div>
+            <div class="empty-mailbox__btn">
+                <div class="grad-btn">
+                    <button class="grad-btn__btn  popup-btn"
+                            (click)="cloud.effect = 'addUser'"
+                            data-popup="create-ticket-open-popup"
+                    >
+                        Add user
+                    </button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="agents-settings-grig users-grid"  *ngIf="selectMenu.showData && allNotLoggedAgents.length">
+            <div class="users-grid-table-wrapper">
+                <div class="users-grid-header bold">
+                    <div class="users-grid-header__item users-grid-header__item--contact">Contact</div>
+                    <div class="users-grid-header__item users-grid-header__item--email">E-mail</div>
+    
+                    <div class="users-grid-header__item users-grid-header__item--status">Access</div>
+                    <div class="users-grid-header__item users-grid-header__item--acount">Account</div>
+                </div>
+                <table class="users-grid-table">
+
+                    <tbody>
+                    <ng-container *ngFor="let user of allNotLoggedAgents">
+<!--                        <tr [class.change-opa-box]="!user.mailboxes" class="user-ticket" (click)="changeAssigned(user)">-->
+                        <tr class="users-grid-table__row">
+                            <td class="users-grid-table__cell users-grid-table__cell--contact">
+                                <div class="users-grid-table__el users-grid-table__el--contact"
+                                     (click)="redirectUserProfilePage(user)"
+                                >
+                                    <img class="users-grid-table__el-user-avatar" *ngIf="user.avatar_url" [src]="user.avatar_url" alt="User">
+                                    <div class="resent-activites-bar__user-avatar empty bold"
+                                         *ngIf="!user.avatar_url"
+                                    >
+                                        {{ (user.first_name +' '+ user.last_name) | circleLetters}}
+                                    </div>
+                                    <span class="users-grid-table__el-user-name bold">{{user.first_name+' '+ user.last_name}}</span>
+                                </div>
+                            </td>
+
+                            <td class="users-grid-table__cell users-grid-table__cell--email">
+                                <div class="users-grid-table__el users-grid-table__el--email">
+                                    {{user.email}}
+                                </div>
+                            </td>
+
+                            <td class="users-grid-table__cell users-grid-table__cell--status">
+                                <div class="users-grid-table__el users-grid-table__el--status">
+                                    <label class="ui-checkbox">
+                                        <input
+                                                class="ui-checkbox__input"
+                                               type="checkbox"
+                                               name="after-i-replay"
+                                                [checked]="user.mailboxes"
+                                                (change)="changeAssigned(user)"
+                                        >
+                                        <span class="ui-checkbox__check"></span>
+                                    </label>
+                                </div>
+                            </td>
+
+                            <td class="users-grid-table__cell users-grid-table__cell--acount">
+                                <div class="users-grid-table__el users-grid-table__el--acount">
+                                   {{ (user.role_id == 4)? 'Agent':'Admin'}}
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+
+    <!-- Agents -->
+
+</div>

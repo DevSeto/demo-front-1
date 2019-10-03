@@ -1,0 +1,2027 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>NKDatetime</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code><a href="../classes/_.html" target="_self" >CUSTOM_ACCESSOR</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>datetime</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>.ng2-datetime *[hidden] { display: none; }</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;form-inline ng2-datetime&quot;&gt;
+    &lt;div [ngClass]&#x3D;&quot;{ &#x27;form-group&#x27;: true}&quot;&gt;
+        &lt;input id&#x3D;&quot;{{idDatePicker}}&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;
+               [attr.readonly]&#x3D;&quot;readonly&quot;
+               [attr.required]&#x3D;&quot;required&quot;
+               [attr.placeholder]&#x3D;&quot;datepickerOptions.placeholder || &#x27;Choose date&#x27;&quot;
+               [attr.tabindex]&#x3D;&quot;tabindex&quot;
+               [(ngModel)]&#x3D;&quot;dateModel&quot;
+               (blur)&#x3D;&quot;onTouched()&quot;
+               (keyup)&#x3D;&quot;checkEmptyValue($event)&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div [ngClass]&#x3D;&quot;{ &#x27;form-group&#x27;: true,  &#x27;bootstrap-timepicker timepicker&#x27;: true }&quot;&gt;
+        &lt;input id&#x3D;&quot;{{idTimePicker}}&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input-small&quot;
+               [attr.readonly]&#x3D;&quot;readonly&quot;
+               [attr.required]&#x3D;&quot;required&quot;
+               [attr.placeholder]&#x3D;&quot;timepickerOptions.placeholder || &#x27;Set time&#x27;&quot;
+               [attr.tabindex]&#x3D;&quot;tabindex&quot;
+               [(ngModel)]&#x3D;&quot;timeModel&quot;
+               (focus)&#x3D;&quot;showTimepicker()&quot;
+               (blur)&#x3D;&quot;onTouched()&quot;
+               (keyup)&#x3D;&quot;checkEmptyValue($event)&quot;&gt;
+    &lt;/div&gt;
+    &lt;button *ngIf&#x3D;&quot;hasClearButton&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearModels()&quot;&gt;Clear&lt;/button&gt;
+&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#date">date</a>
+                            </li>
+                            <li>
+                                <a href="#dateModel">dateModel</a>
+                            </li>
+                            <li>
+                                <a href="#datepicker">datepicker</a>
+                            </li>
+                            <li>
+                                <a href="#idDatePicker">idDatePicker</a>
+                            </li>
+                            <li>
+                                <a href="#idTimePicker">idTimePicker</a>
+                            </li>
+                            <li>
+                                <a href="#onChange">onChange</a>
+                            </li>
+                            <li>
+                                <a href="#timeModel">timeModel</a>
+                            </li>
+                            <li>
+                                <a href="#timepicker">timepicker</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkEmptyValue">checkEmptyValue</a>
+                            </li>
+                            <li>
+                                <a href="#clearModels">clearModels</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#init">init</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#pad">pad</a>
+                            </li>
+                            <li>
+                                <a href="#registerOnChange">registerOnChange</a>
+                            </li>
+                            <li>
+                                <a href="#registerOnTouched">registerOnTouched</a>
+                            </li>
+                            <li>
+                                <a href="#showDatepicker">showDatepicker</a>
+                            </li>
+                            <li>
+                                <a href="#showTimepicker">showTimepicker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateDatepicker">updateDatepicker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateModel">updateModel</a>
+                            </li>
+                            <li>
+                                <a href="#writeValue">writeValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#container">container</a>
+                            </li>
+                            <li>
+                                <a href="#datepicker">datepicker</a>
+                            </li>
+                            <li>
+                                <a href="#hasClearButton">hasClearButton</a>
+                            </li>
+                            <li>
+                                <a href="#isSelected">isSelected</a>
+                            </li>
+                            <li>
+                                <a href="#readonly">readonly</a>
+                            </li>
+                            <li>
+                                <a href="#required">required</a>
+                            </li>
+                            <li>
+                                <a href="#tabindex">tabindex</a>
+                            </li>
+                            <li>
+                                <a href="#timepicker">timepicker</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#attr.tabindex">attr.tabindex</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blur">blur</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="container"></a>
+                        <code>container</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>{}</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:49</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="datepicker"></a>
+                        <code>datepicker</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>{}</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:51</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="hasClearButton"></a>
+                        <code>hasClearButton</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:52</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="isSelected"></a>
+                        <code>isSelected</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="readonly"></a>
+                        <code>readonly</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:54</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="required"></a>
+                        <code>required</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:55</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="tabindex"></a>
+                        <code>tabindex</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:56</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="timepicker"></a>
+                        <code>timepicker</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>{}</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:50</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostBindings</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attr.tabindex"></a>
+                        <span class="name">
+                            <b>
+                            attr.tabindex
+                            </b>
+                            <a href="#attr.tabindex"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>attr.tabindex:     <code>string | undefined</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string | undefined</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blur"></a>
+                        <span class="name">
+                            <b>
+                            blur
+                            </b>
+                            <a href="#blur"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>blur()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkEmptyValue"></a>
+                        <span class="name">
+                            <b>
+                            checkEmptyValue
+                            </b>
+                            <a href="#checkEmptyValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>checkEmptyValue(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="138" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:138</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>e</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearModels"></a>
+                        <span class="name">
+                            <b>
+                            clearModels
+                            </b>
+                            <a href="#clearModels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>clearModels()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="149" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:149</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="init"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            init
+                            </b>
+                            <a href="#init"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>init()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:172</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngAfterViewInit"></a>
+                        <span class="name">
+                            <b>
+                            ngAfterViewInit
+                            </b>
+                            <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnChanges"></a>
+                        <span class="name">
+                            <b>
+                            ngOnChanges
+                            </b>
+                            <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:94</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>changes</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pad"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            pad
+                            </b>
+                            <a href="#pad"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>pad(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:255</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="registerOnChange"></a>
+                        <span class="name">
+                            <b>
+                            registerOnChange
+                            </b>
+                            <a href="#registerOnChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>registerOnChange(fn: <a href="../anys/io.html">function</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:130</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fn</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/variables.html#io" target="_self" >function</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="registerOnTouched"></a>
+                        <span class="name">
+                            <b>
+                            registerOnTouched
+                            </b>
+                            <a href="#registerOnTouched"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>registerOnTouched(fn: <a href="../anys/io.html">function</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:134</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fn</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/variables.html#io" target="_self" >function</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showDatepicker"></a>
+                        <span class="name">
+                            <b>
+                            showDatepicker
+                            </b>
+                            <a href="#showDatepicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>showDatepicker()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="166" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:166</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showTimepicker"></a>
+                        <span class="name">
+                            <b>
+                            showTimepicker
+                            </b>
+                            <a href="#showTimepicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>showTimepicker()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:157</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateDatepicker"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            updateDatepicker
+                            </b>
+                            <a href="#updateDatepicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>updateDatepicker(date?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, hours?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:249</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>hours</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateModel"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            updateModel
+                            </b>
+                            <a href="#updateModel"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>updateModel(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:227</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="writeValue"></a>
+                        <span class="name">
+                            <b>
+                            writeValue
+                            </b>
+                            <a href="#writeValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>writeValue(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:119</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="date"></a>
+                        <span class="name">
+                            <b>
+                            date
+                            </b>
+                            <a href="#date"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>date:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dateModel"></a>
+                        <span class="name">
+                            <b>
+                            dateModel
+                            </b>
+                            <a href="#dateModel"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>dateModel:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="datepicker"></a>
+                        <span class="name">
+                            <b>
+                            datepicker
+                            </b>
+                            <a href="#datepicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>datepicker:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="idDatePicker"></a>
+                        <span class="name">
+                            <b>
+                            idDatePicker
+                            </b>
+                            <a href="#idDatePicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>idDatePicker:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>uniqueId(&#x27;q-datepicker_&#x27;)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:66</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="idTimePicker"></a>
+                        <span class="name">
+                            <b>
+                            idTimePicker
+                            </b>
+                            <a href="#idTimePicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>idTimePicker:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>uniqueId(&#x27;q-timepicker_&#x27;)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:67</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onChange"></a>
+                        <span class="name">
+                            <b>
+                            onChange
+                            </b>
+                            <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>onChange:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(_: any) &#x3D;&gt; {
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeModel"></a>
+                        <span class="name">
+                            <b>
+                            timeModel
+                            </b>
+                            <a href="#timeModel"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>timeModel:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timepicker"></a>
+                        <span class="name">
+                            <b>
+                            timepicker
+                            </b>
+                            <a href="#timepicker"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>timepicker:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">client/src/app/modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component, Input, HostListener, AfterViewInit, OnDestroy,
+    SimpleChanges, OnChanges, HostBinding, forwardRef
+} from &#x27;@angular/core&#x27;;
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from &#x27;@angular/forms&#x27;;
+import {ITimepickerEvent} from &#x27;./ITimepickerEvent&#x27;;
+
+const CUSTOM_ACCESSOR &#x3D; {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() &#x3D;&gt; NKDatetime),
+    multi: true
+};
+
+@Component({
+    selector: &#x27;datetime&#x27;,
+    providers: [CUSTOM_ACCESSOR],
+    template: &#x60;
+        &lt;div class&#x3D;&quot;form-inline ng2-datetime&quot;&gt;
+            &lt;div [ngClass]&#x3D;&quot;{ &#x27;form-group&#x27;: true}&quot;&gt;
+                &lt;input id&#x3D;&quot;{{idDatePicker}}&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;
+                       [attr.readonly]&#x3D;&quot;readonly&quot;
+                       [attr.required]&#x3D;&quot;required&quot;
+                       [attr.placeholder]&#x3D;&quot;datepickerOptions.placeholder || &#x27;Choose date&#x27;&quot;
+                       [attr.tabindex]&#x3D;&quot;tabindex&quot;
+                       [(ngModel)]&#x3D;&quot;dateModel&quot;
+                       (blur)&#x3D;&quot;onTouched()&quot;
+                       (keyup)&#x3D;&quot;checkEmptyValue($event)&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div [ngClass]&#x3D;&quot;{ &#x27;form-group&#x27;: true,  &#x27;bootstrap-timepicker timepicker&#x27;: true }&quot;&gt;
+                &lt;input id&#x3D;&quot;{{idTimePicker}}&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control input-small&quot;
+                       [attr.readonly]&#x3D;&quot;readonly&quot;
+                       [attr.required]&#x3D;&quot;required&quot;
+                       [attr.placeholder]&#x3D;&quot;timepickerOptions.placeholder || &#x27;Set time&#x27;&quot;
+                       [attr.tabindex]&#x3D;&quot;tabindex&quot;
+                       [(ngModel)]&#x3D;&quot;timeModel&quot;
+                       (focus)&#x3D;&quot;showTimepicker()&quot;
+                       (blur)&#x3D;&quot;onTouched()&quot;
+                       (keyup)&#x3D;&quot;checkEmptyValue($event)&quot;&gt;
+            &lt;/div&gt;
+            &lt;button *ngIf&#x3D;&quot;hasClearButton&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;clearModels()&quot;&gt;Clear&lt;/button&gt;
+        &lt;/div&gt;
+    &#x60;,
+    styles: [
+        &#x27;.ng2-datetime *[hidden] { display: none; }&#x27;
+    ]
+})
+
+export class NKDatetime implements ControlValueAccessor, AfterViewInit, OnDestroy, OnChanges {
+    @Input(&#x27;container&#x27;) container: any &#x3D; {};
+    @Input(&#x27;timepicker&#x27;) timepickerOptions: any &#x3D; {};
+    @Input(&#x27;datepicker&#x27;) datepickerOptions: any &#x3D; {};
+    @Input(&#x27;hasClearButton&#x27;) hasClearButton: boolean;
+    @Input(&#x27;isSelected&#x27;) isSelected: number;
+    @Input() readonly: boolean;
+    @Input() required: boolean;
+    @Input() tabindex: string;
+
+    date: Date; // ngModel
+    dateModel: string;
+    timeModel: string;
+
+    // instances
+    datepicker: any;
+    timepicker: any;
+
+    idDatePicker: string &#x3D; uniqueId(&#x27;q-datepicker_&#x27;);
+    idTimePicker: string &#x3D; uniqueId(&#x27;q-timepicker_&#x27;);
+
+    onChange &#x3D; (_: any) &#x3D;&gt; {
+    }
+
+    @HostListener(&#x27;blur&#x27;)
+    onTouched &#x3D; () &#x3D;&gt; {
+    }
+
+    @HostBinding(&#x27;attr.tabindex&#x27;)
+    get tabindexAttr(): string | undefined {
+        return this.tabindex &#x3D;&#x3D;&#x3D; undefined ? &#x27;-1&#x27; : undefined;
+    }
+
+    ngAfterViewInit() {
+        this.init();
+    }
+
+    ngOnDestroy() {
+        if (this.datepicker) {
+            this.datepicker.datepicker(&#x27;destroy&#x27;);
+        }
+        if (this.timepicker) {
+            this.timepicker.timepicker(&#x27;remove&#x27;);
+        }
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes) {
+            if (changes[&#x27;datepickerOptions&#x27;] &amp;&amp; this.datepicker) {
+                this.datepicker.datepicker(&#x27;destroy&#x27;);
+
+                if (changes[&#x27;datepickerOptions&#x27;].currentValue) {
+                    this.datepicker &#x3D; null;
+                    this.init();
+                } else if (changes[&#x27;datepickerOptions&#x27;].currentValue &#x3D;&#x3D;&#x3D; false) {
+                    this.datepicker.remove();
+                }
+            }
+            if (changes[&#x27;timepickerOptions&#x27;] &amp;&amp; this.timepicker) {
+                this.timepicker.timepicker(&#x27;remove&#x27;);
+
+                if (changes[&#x27;timepickerOptions&#x27;].currentValue) {
+                    this.timepicker &#x3D; null;
+                    this.init();
+                } else if (changes[&#x27;timepickerOptions&#x27;].currentValue &#x3D;&#x3D;&#x3D; false) {
+                    this.timepicker.parent().remove();
+                }
+            }
+        }
+    }
+
+    writeValue(value: any) {
+        this.date &#x3D; value;
+        if (isDate(this.date)) {
+            setTimeout(() &#x3D;&gt; {
+                this.updateModel(this.date);
+            }, 0);
+        } else {
+            this.clearModels();
+        }
+    }
+
+    registerOnChange(fn: (_: any) &#x3D;&gt; void) {
+        this.onChange &#x3D; fn;
+    }
+
+    registerOnTouched(fn: () &#x3D;&gt; void) {
+        this.onTouched &#x3D; fn;
+    }
+
+    checkEmptyValue(e: any) {
+        const value &#x3D; e.target.value;
+        if (value &#x3D;&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; (
+                this.timepickerOptions &#x3D;&#x3D;&#x3D; false ||
+                this.datepickerOptions &#x3D;&#x3D;&#x3D; false ||
+                (this.timeModel &#x3D;&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; this.dateModel &#x3D;&#x3D;&#x3D; &#x27;&#x27;)
+            )) {
+            this.onChange(undefined);
+        }
+    }
+
+    clearModels() {
+        this.onChange(undefined);
+        if (this.timepicker) {
+            this.timepicker.timepicker(&#x27;setTime&#x27;, null);
+        }
+        this.updateDatepicker(null);
+    }
+
+    showTimepicker() {
+        this.timepicker.timepicker(&#x27;showWidget&#x27;);
+        if(document.getElementsByClassName(&#x27;bootstrap-timepicker-widget&#x27;).length &amp;&amp; this.isSelected){
+            document.getElementsByClassName(&#x27;bootstrap-timepicker-widget&#x27;)[0].classList.add(&quot;selectedPopUp&quot;);
+        }else{
+            document.getElementsByClassName(&#x27;bootstrap-timepicker-widget&#x27;)[0].classList.remove(&quot;selectedPopUp&quot;);
+        }
+    }
+
+    showDatepicker() {
+        this.datepicker.datepicker(&#x27;show&#x27;);
+    }
+
+    //////////////////////////////////
+
+    private init(): void {
+        if (!this.datepicker &amp;&amp; this.datepickerOptions !&#x3D;&#x3D; false) {
+            let options &#x3D; jQuery.extend({enableOnReadonly: !this.readonly}, {container:&#x27;#hours-popup&#x27;});
+            this.datepicker &#x3D; (&lt;any&gt;$(&#x27;#&#x27; + this.idDatePicker)).datepicker(options);
+            this.datepicker
+                .on(&#x27;changeDate&#x27;, (e: any) &#x3D;&gt; {
+                    let newDate: Date &#x3D; e.date;
+                    if (isDate(this.date) &amp;&amp; isDate(newDate)) {
+                        // get hours/minutes
+                        newDate.setHours(this.date.getHours());
+                        newDate.setMinutes(this.date.getMinutes());
+                        newDate.setSeconds(this.date.getSeconds());
+                    }
+
+                    this.date &#x3D; newDate;
+                    this.onChange(newDate);
+                });
+        } else if (this.datepickerOptions &#x3D;&#x3D;&#x3D; false) {
+            (&lt;any&gt;$(&#x27;#&#x27; + this.idDatePicker)).remove();
+        }
+        if (!this.timepicker &amp;&amp; this.timepickerOptions !&#x3D;&#x3D; false) {
+            let options &#x3D; jQuery.extend({defaultTime: false}, this.timepickerOptions);
+            this.timepicker &#x3D; (&lt;any&gt;$(&#x27;#&#x27; + this.idTimePicker)).timepicker(options);
+            this.timepicker
+                .on(&#x27;changeTime.timepicker&#x27;, (e: ITimepickerEvent) &#x3D;&gt; {
+                    let {meridian, hours} &#x3D; e.time;
+
+                    if (meridian) {
+                        // has meridian -&gt; convert 12 to 24h
+                        if (meridian &#x3D;&#x3D;&#x3D; &#x27;PM&#x27; &amp;&amp; hours &lt; 12) {
+                            hours &#x3D; hours + 12;
+                        }
+                        if (meridian &#x3D;&#x3D;&#x3D; &#x27;AM&#x27; &amp;&amp; hours &#x3D;&#x3D;&#x3D; 12) {
+                            hours &#x3D; hours - 12;
+                        }
+                        hours &#x3D; parseInt(this.pad(hours));
+                    }
+
+
+                    if (!isDate(this.date)) {
+                        this.date &#x3D; new Date();
+                        this.updateDatepicker(this.date,hours);
+                    }
+                    this.date.setHours(hours);
+                    this.date.setMinutes(e.time.minutes);
+                    this.date.setSeconds(e.time.seconds);
+                    this.onChange(this.date);
+                });
+        } else if (this.timepickerOptions &#x3D;&#x3D;&#x3D; false) {
+            (&lt;any&gt;$(&#x27;#&#x27; + this.idTimePicker)).parent().remove();
+        }
+
+        this.updateModel(this.date);
+    }
+
+    private updateModel(date: Date): void {
+        this.updateDatepicker(date);
+
+        // update timepicker
+        if (this.timepicker !&#x3D;&#x3D; undefined &amp;&amp; isDate(date)) {
+            let hours &#x3D; date.getHours();
+            // if (this.timepickerOptions.showMeridian) {
+                // Convert 24 to 12 hour system
+                hours &#x3D; (hours &#x3D;&#x3D;&#x3D; 0 || hours &#x3D;&#x3D;&#x3D; 12) ? 12 : hours % 12;
+            // }
+            const meridian &#x3D; date.getHours() &gt;&#x3D; 12 ? &#x27; PM&#x27; : &#x27; AM&#x27;;
+            const time &#x3D;
+                hours + &#x27;:&#x27; +
+                this.pad(this.date.getMinutes()) +
+                (this.timepickerOptions.showMeridian || this.timepickerOptions.showMeridian &#x3D;&#x3D;&#x3D; undefined
+                    ? meridian : &#x27;&#x27;);
+            this.timepicker.timepicker(&#x27;setTime&#x27;, time);
+
+            this.timeModel &#x3D; time; // fix initial empty timeModel bug
+        }
+    }
+
+    private updateDatepicker(date?: any, hours ? : any) {
+        if (this.datepicker !&#x3D;&#x3D; undefined) {
+            this.datepicker.datepicker(&#x27;update&#x27;, date);
+        }
+    }
+
+    private pad(value: any): string {
+        return value.toString().length &lt; 2 ? &#x27;0&#x27; + value : value.toString();
+    }
+}
+
+let id &#x3D; 0;
+function uniqueId(prefix: string): string {
+    return prefix + ++id;
+}
+
+function isDate(obj: any) {
+    return Object.prototype.toString.call(obj) &#x3D;&#x3D;&#x3D; &#x27;[object Date]&#x27;;
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="form-inline ng2-datetime">    <div [ngClass]="{ \'form-group\': true}">        <input id="{{idDatePicker}}" type="text" class="form-control"               [attr.readonly]="readonly"               [attr.required]="required"               [attr.placeholder]="datepickerOptions.placeholder || \'Choose date\'"               [attr.tabindex]="tabindex"               [(ngModel)]="dateModel"               (blur)="onTouched()"               (keyup)="checkEmptyValue($event)"/>    </div>    <div [ngClass]="{ \'form-group\': true,  \'bootstrap-timepicker timepicker\': true }">        <input id="{{idTimePicker}}" type="text" class="form-control input-small"               [attr.readonly]="readonly"               [attr.required]="required"               [attr.placeholder]="timepickerOptions.placeholder || \'Set time\'"               [attr.tabindex]="tabindex"               [(ngModel)]="timeModel"               (focus)="showTimepicker()"               (blur)="onTouched()"               (keyup)="checkEmptyValue($event)">    </div>    <button *ngIf="hasClearButton" type="button" (click)="clearModels()">Clear</button></div></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'NKDatetime'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NKDatetime.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

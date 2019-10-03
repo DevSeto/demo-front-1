@@ -1,0 +1,268 @@
+
+
+<delete-user
+        stopScrolling
+        *ngIf="selectMenu.areYouSure"
+        (closeDeleteEmit)="openCloseMenu(['areYouSure'])"
+        [invitedAgentName]="individualUser"
+>
+</delete-user>
+
+
+
+
+<loading [className]="'extended'" *ngIf="selectMenu.showLoading"></loading>
+
+<form class="user-settings"
+      [formGroup]="settingForm"
+      (ngSubmit)="updateUser()"
+      id="blockSettings"
+
+>
+    <button class="btn user-settings__rm-profile" type="button" (click)="selectMenu.areYouSure = !!1;">Delete account</button>
+    <div class="user-settings__wrapper" id="userProfileForm">
+
+        <div class="flex justify-center">
+            <div class="user-settings__avatar-wrapper"
+                 [ngStyle]="{'background-image': 'url('+userData.avatar_url+')'}">
+                <label class="ui-input ui-input--upload-photo" >
+                    <input type="file" name="avatar"  (change)="uploadUserAvatar($event.target)">
+                </label>
+            </div>
+        </div>
+        <h3 class="user-settings__title">Profile</h3>
+        <div class="flex flex-wrap justify-between">
+            
+
+                <div class="ui-input">
+                    <label class="ui-input__label" for="full_name">Full Name</label>
+                    <input
+                            class="ui-input__input input"
+                           type="text"
+                           name="full_name"
+                           id="full_name"
+                           formControlName="full_name"
+                           [class.input-error-style]="classError('full_name')"
+                           [class.input-success-style]="classSuccess('full_name')"
+                           autocomplete="off"
+                           placeholder="Your Full name"
+                           value=""
+                           data-rules="required"
+                           [(ngModel)]="userData.full_name"
+
+                    >
+                    <span id="registartion_full_name-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="settingForm.controls.full_name"
+                                [controlName]="'full name'"
+                                [formSubmit]="settingForm.submitted"
+                        ></form-errors>
+                        <span *ngIf="_settingsFormErrors.full_name.verify">
+                            {{_settingsFormErrors.full_name.text}}
+                        </span>
+                    </span>
+                </div>
+                <div class="ui-input">
+                    <label class="ui-input__label" for="email_field">E-mail</label>
+                    <input
+                          class="ui-input__input input"
+                           type="email"
+                            name="email_field"
+                            id="email_field"
+                            formControlName="email"
+                            autocomplete="off"
+                            placeholder="Your mail"
+                            value=""
+                            data-rules="required|email"
+                            [class.input-error-style]="classError('email')"
+                            [class.input-success-style]="classSuccess('email')"
+                            [(ngModel)]="userData.email"
+                    >
+                    <span id="email-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="settingForm.controls.email"
+                                [controlName]="'email'"
+                                [formSubmit]="settingForm.submitted"
+                        ></form-errors>
+                        <span *ngIf="_settingsFormErrors.email.verify">
+                            {{_settingsFormErrors.email.text}}
+                        </span>
+                    </span>
+                </div>
+
+                <div class="ui-input">
+                    <label class="ui-input__label" for="user-title">Title</label>
+                    <input
+                            class="ui-input__input input"
+                            type="text"
+                            name="title"
+                            id="user-title"
+                            formControlName="title"
+                            autocomplete="off"
+                            placeholder="Your title"
+                            value=""
+                            [(ngModel)]="userData.title"
+                            formControlName="title"
+                    >
+                </div>
+
+                <div class="ui-input flex flex-wrap">
+                    <div class="w-100">
+                        <label class="ui-input__label" for="phone">Phone Number</label>
+
+                    </div>
+                    <div class="country-code-field">
+                        <input
+                                class="ui-input__input input"
+                                type="tel"
+                                placeholder="+1234"
+                                value="{{userData.country_code}}"
+                                disabled
+                        >
+                    </div>
+                    <div class="phone-field grow-1">
+                        <input
+                                value="489-517-0288"
+                                (keypress)="onlyNumber($event)"
+                                type="tel"
+                                name=" "
+                                id="phone"
+                                formControlName="phone"
+                                class="ui-input__input input"
+                                [(ngModel)]="userData.phone"
+                                [class.input-error-style]="classError('phone')"
+                                [class.success-style-required]="classSuccess('phone')"
+                        >
+                    </div>
+                    <div class="position-relative">
+                            <span id="registartion_phone-error" class="error-span help-block error backend-error input-group-error">
+                      <form-errors
+                              [control]="settingForm.controls.phone"
+                              [controlName]="'phone'"
+                              [formSubmit]="settingForm.submitted"
+                      ></form-errors>
+                                    <span *ngIf="_settingsFormErrors.phone.verify">
+                                        {{_settingsFormErrors.phone.text}}
+                                    </span>
+                    </span>
+                    </div>
+
+                </div>
+
+
+<!--                <div class="ui-select">-->
+<!--                    <label class="ui-select__label" for="user-account">Account</label>-->
+<!--                    <div class="ui-select__input">Agent</div>-->
+<!--                    <div class="ui-select__options"><div class="ui-select__option">Agent</div><div class="ui-select__option">Admin</div><div class="ui-select__option">Super Admin</div></div>-->
+
+<!--                    <select class="ui-select__select" id="user-account">-->
+<!--                        <option value="Agent">Agent</option>-->
+<!--                        <option value="Admin">Admin</option>-->
+<!--                        <option value="Super-Admin">Super Admin</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+
+                <div class="ui-select">
+                    <label class="ui-select__label" for="alternate_email">Alternate E-mail</label>
+                    <input
+                            name="alternate_email"
+                            [(ngModel)]="userData.alternate_email"
+                            id="alternate_email"
+                            [class.input-error-style]="classError('alternate_email')"
+                            [class.success-style-required]="classSuccess('alternate_email')"
+                            class="ui-input__input input"
+                            formControlName="alternate_email"
+                            autocomplete="off"
+                            placeholder="Alternate Emails"
+                            value=""
+                    >
+                    <span id="alternate_email-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="settingForm.controls.alternate_email"
+                                [controlName]="'alternate email'"
+                                [formSubmit]="settingForm.submitted"
+                        ></form-errors>
+                        <span *ngIf="_settingsFormErrors.alternate_email.verify">
+                            {{_settingsFormErrors.alternate_email.text}}
+                        </span>
+                    </span>
+                </div>
+
+                <div class="ui-select">
+                    <label class="ui-select__label" >Country</label>
+                    <div class="ui-select__input" (click)="cloud.effect = 'showCountry';" [class.open]="cloud.effect.showCountry" [class.rotate-drop]="cloud.effect.showCountry">
+                        <img src="{{userData.flag}}">
+                        {{userData.country}}
+                    </div>
+
+                    <div class="ui-select__options scroll-drop" [class.open]="cloud.effect.showCountry">
+
+                        <div class="ui-select__option"
+                             *ngFor="let country of countries, let idx = index"
+                             (click)="selectCountry(idx);cloud.effect = 'showCountry';"
+                             [class.activeCountry]="userData.country === country.nicename"
+                        >
+                            <img src="{{country.img}}">
+                            {{country.nicename}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-select">
+                    <label class="ui-select__label" >Timezone</label>
+                    <div class="ui-select__input input_min_heigth"
+                         [class.input-error-style]="classError('time_zone')"
+                         [class.success-style-required]="classSuccess('time_zone')"
+                         [class.open]="cloud.effect.timezone"
+                         [class.rotate-drop]="cloud.effect.timezone"
+                         (click)="cloud.effect = 'timezone';"> {{userData.time_zone}} </div>
+                    <div class="ui-select__options scroll-drop" [class.open]="cloud.effect.timezone" >
+                        <div
+                                [class.open]="cloud.effect.timezone"
+                                class="ui-select__option "
+                                (click)="changeTimezone('(UTC/GMT '+time+' hours) CEST');cloud.effect = 'timezone'"
+                                    *ngFor="let time of timeZonesCount | numberedCycle;let ind = index"
+                                [attr.selectedValue]="time"
+
+                        >
+                            (UTC/GMT {{time}} hours) CEST
+                        </div>
+                    </div>
+
+                    <span id="timezone-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="settingForm.controls.time_zone"
+                                [controlName]="'timezone'"
+                                [formSubmit]="settingForm.submitted"
+                        ></form-errors>
+                        <span *ngIf="_settingsFormErrors.time_zone.verify">
+                            {{_settingsFormErrors.time_zone.text}}
+                        </span>
+                    </span>
+                </div>
+
+            <div class="w-100">
+
+                <div class="grad-btn pull-right">
+                    <button class="grad-btn__btn"  type="submit">Save Profile</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="change-pass">
+    <div class="accordion">
+        <div class="accordion__title"
+             [class.open] = "selectMenu.resetPassword"
+             (click)="selectMenu.resetPassword = !selectMenu.resetPassword;">Reset Password</div>
+        <reset-password
+                stopScrolling
+                *ngIf="selectMenu.resetPassword"
+                (closeResetEmit)="openCloseMenu(['resetPassword'])"
+                [individualUser]="individualUser"
+        >
+        </reset-password>
+
+    </div>
+</div>

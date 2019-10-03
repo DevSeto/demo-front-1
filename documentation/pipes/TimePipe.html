@@ -1,0 +1,434 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content pipe">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Pipes</li>
+  <li>TimePipe</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>client/src/app/pipes/time/time.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">Name</td>
+                        <td class="col-md-9">timePipe</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="snoozeTimner"></a>
+                        <span class="name">
+                            <b>
+                            snoozeTimner
+                            </b>
+                            <a href="#snoozeTimner"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>snoozeTimner(snooze_time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, server_time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">client/src/app/pipes/time/time.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>snooze_time</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>server_time</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transform"></a>
+                        <span class="name">
+                            <b>
+                            transform
+                            </b>
+                            <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>transform(date_str: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, forSnooze?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">client/src/app/pipes/time/time.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date_str</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>forSnooze</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {PipeTransform, Pipe} from &#x27;@angular/core&#x27;
+import {isString} from &#x27;../helpers/helpers&#x27;;
+
+@Pipe({
+    name: &#x27;timePipe&#x27;
+})
+
+export class TimePipe implements PipeTransform {
+
+    transform( date_str: any , forSnooze ? : string ) : any
+    {
+        if (!date_str) {return;}
+        if(forSnooze){
+            return this.snoozeTimner(date_str , forSnooze)
+        }
+        var currentresult &#x3D; date_str;
+        date_str &#x3D; $.trim(date_str);
+        date_str &#x3D; date_str.replace(/\.\d\d\d+/,&quot;&quot;); // remove the milliseconds
+        date_str &#x3D; date_str.replace(/-/,&quot;/&quot;).replace(/-/,&quot;/&quot;); //substitute - with /
+        date_str &#x3D; date_str.replace(/T/,&quot; &quot;).replace(/Z/,&quot; UTC&quot;); //remove T and substitute Z with UTC
+        date_str &#x3D; date_str.replace(/([\+\-]\d\d)\:?(\d\d)/,&quot; $1$2&quot;); // +08:00 -&gt; +0800
+        var parsed_date : any &#x3D; new Date(date_str);
+
+        var relative_to : any &#x3D; (arguments.length &gt; 1) ? arguments[1] : new Date(); //defines relative to what ..default is now
+        var delta : any &#x3D; parseInt(((relative_to.getTime()-parsed_date)/1000).toString());
+        var currentUserTimezone : any &#x3D; new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[0];
+        if(((+currentUserTimezone.split(&#x27; &#x27;)[0].split(&#x27;+&#x27;)[1]))){
+            currentUserTimezone &#x3D; ((+currentUserTimezone.split(&#x27; &#x27;)[0].split(&#x27;+&#x27;)[1].replace(/\(|\)/g, &quot;&quot;))/100)*60*60;
+
+        }else{
+            currentUserTimezone &#x3D; ((+currentUserTimezone.split(&#x27; &#x27;)[0].split(&#x27;-&#x27;)[1].replace(/\(|\)/g, &quot;&quot;))/100)*60*60;
+        }
+        // console.log(currentUserTimezone)
+        // console.log((+currentUserTimezone.split(&#x27; &#x27;)[1].replace(/\(|\)/g, &quot;&quot;)))
+        // currentUserTimezone &#x3D; (+currentUserTimezone.split(&#x27; &#x27;)[1].replace(/\(|\)/g, &quot;&quot;))*60*60;
+
+        delta&#x3D;(delta&lt;2)?2:delta;
+        delta &#x3D; delta - currentUserTimezone;
+        var r : any &#x3D; &#x27;&#x27;;
+        if ((parseInt((delta / 86400).toString(), 10)) &gt; 6) {
+           r &#x3D; currentresult;
+        } else if(delta &lt; 120) {
+            r &#x3D; &#x27;a minute ago&#x27;;
+        } else if(delta &lt; (45*60)) {
+            r &#x3D; (parseInt((delta / 60).toString(), 10)).toString() + &#x27; min ago&#x27;;
+        } else if(delta &lt; (2*60*60)) {
+            r &#x3D; &#x27;an hour ago&#x27;;
+        } else if(delta &lt; (24*60*60)) {
+            r &#x3D; &#x27;&#x27; + (parseInt((delta / 3600).toString(), 10)).toString() + &#x27; hours ago&#x27;;
+        } else if(delta &lt; (48*60*60)) {
+            r &#x3D; &#x27;a day ago&#x27;;
+        } else {
+            r &#x3D; (parseInt((delta / 86400).toString(), 10)).toString() + &#x27; days ago&#x27;;
+        }
+
+        return r;
+    }
+
+
+
+    snoozeTimner( snooze_time : string , server_time: string )  :any
+    {
+        var countDownDate &#x3D; new Date(snooze_time).getTime();
+
+// Update the count down every 1 second
+//         var x &#x3D; setInterval(() &#x3D;&gt;{
+
+        // Get todays date and time
+        var now &#x3D; new Date(server_time).getTime();
+
+        // Find the distance between now an the count down date
+        var distance &#x3D; countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        let days : any &#x3D; Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours : any &#x3D; Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes: any  &#x3D; Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds : any &#x3D; Math.floor((distance % (1000 * 60)) / 1000);
+
+        if(days &gt; 0){
+            days &#x3D; days + &#x27; day  &#x27;;
+        }else{
+            days &#x3D; &#x27;&#x27;;
+        }
+        if(hours &lt; 10){
+            hours &#x3D; &#x27;0&#x27; + hours;
+        }
+        if(minutes &lt; 10){
+            minutes &#x3D; &#x27;0&#x27; + minutes;
+        }
+        if(seconds &lt; 10){
+            seconds &#x3D; &#x27;0&#x27; + seconds;
+        }
+
+        let snoozeTimeDate : string &#x3D; days  + hours + &quot;:&quot; +  minutes ;
+
+        if(distance &gt; 0){
+            // setTimeout(()&#x3D;&gt;{
+            //     let sndate &#x3D; new Date(server_time);
+            //
+            //     sndate.setSeconds(sndate.getSeconds() + 8);
+            //     this.snoozeTimner( countDownDate  , sndate);
+            // },8000)
+        }else{
+            snoozeTimeDate &#x3D; &#x27;&#x27;;
+        }
+
+        return snoozeTimeDate;
+        // Output the result in an element with id&#x3D;&quot;demo&quot;
+        // If the count down is over, write some text
+        // if (distance &lt; 0) {
+        //     clearInterval(x);
+        //     document.getElementById(&quot;demo&quot;).innerHTML &#x3D; &quot;EXPIRED&quot;;
+        // }
+        // }, 1000);
+    }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
+            var COMPODOC_CURRENT_PAGE_URL = 'TimePipe.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

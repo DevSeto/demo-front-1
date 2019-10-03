@@ -1,0 +1,140 @@
+.header-panel {
+  height: 72px;
+  padding-left: 40px;
+  padding-right: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white-bg;
+
+  &__left {
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    margin-right: 16px;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+
+  &__right {
+    height: 100%;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.create-ticket-btn_header {
+  margin-right: 120px;
+}
+
+.progressbar-notification-wrapper {
+  margin-right: 36px;
+}
+
+@media all and (max-width: 1260px) {
+  .create-ticket-btn_header {
+    margin-right: 18px;
+  }
+
+  .header-panel {
+    padding-left: 34px;
+  }
+}
+
+@media all and (max-width: 680px) {
+  .create-ticket-btn_header {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -1000px;
+    overflow: hidden;
+  }
+
+  .tickets-panel__header .create-ticket-btn.create-ticket-btn_tickets-panel {
+    display: block;
+  }
+
+  .tickets-panel {
+    &.close {
+      .hide-tickets-panel-btn {
+        opacity: 0;
+      }
+    }
+
+    .hide-tickets-panel-btn {
+      opacity: 1;
+    }
+  }
+}
+
+@media all and (max-width: 560px) {
+  .header-panel {
+    padding: 0 12px;
+
+    & .header-panel__right {
+      position: fixed;
+      top: 27px;
+      right: 16px;
+      opacity: 0;
+      pointer-events: none;
+
+      &.show {
+        z-index: 100;
+        animation: showBell 0.4s 0.2s forwards;
+      }
+      
+    }
+  }
+
+  .tickets-panel {
+    position: fixed;
+  }
+
+  .toogle-tickets-btn {
+    display: none;
+  }
+
+  .input-header-search {
+    min-width: auto !important;
+    height: 35px !important;
+    max-width: 200px !important;
+
+    input {
+      min-width: auto !important;
+      padding-top: 0;
+      max-width: none !important;
+      padding-bottom: 0;
+      height: 35px !important;
+    }
+  }
+
+  .progressbar-notification-wrapper {
+    margin-right: 26px !important;
+  }
+}
+
+.progressbar-notification-wrapper {
+  @media all and (max-width: 767px) {
+    margin-right: 18px;
+  }
+}
+
+@keyframes showBell {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  to {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@media all and (max-width: 620px) {
+  .header-panel {
+    height: 52px;
+  }
+}
+

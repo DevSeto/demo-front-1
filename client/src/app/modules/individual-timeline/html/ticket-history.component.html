@@ -1,0 +1,25 @@
+
+
+<div class="resent-activites-details">
+    <h4 [ngClass]="{
+    'resent-activites-details__haeder bold': true,
+    'open':cloud.effect.ticketHistory
+    }"
+    (click)="cloud.effect = 'ticketHistory'"
+    >
+
+        Tickets history
+    </h4>
+    <ul class="resent-activites-details-list">
+        <li class="resent-activites-details-list__item" *ngFor="let history of ticketsService.individualHistory">
+            <span class="resent-activites-details-list__item-user"><a href="#">You</a></span>
+            <span class="resent-activites-details-list__item-action"
+                  [innerHTML]="history.text"
+            ></span>
+            <br />
+            <span class="resent-activites-details-list__item-time">
+                       {{changeHistoryDateFormat(history.created_at)}}
+                      </span>
+        </li>
+    </ul>
+</div>

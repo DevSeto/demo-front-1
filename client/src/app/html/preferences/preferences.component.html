@@ -1,0 +1,360 @@
+<!--
+<section class="page-main-content">
+    <div *ngIf="preferences" class="main-content settings-page">
+        <div class="page-title-box full-width-left">
+            <span class="p-title">Preferences</span>
+        </div>
+        <form
+                [formGroup]="preferences"
+                (ngSubmit)="updateUserPreferences()"
+                id="preferences"
+        >
+            <div class="full-width-left preferences-profile-info">
+                <div class="col-md-2 text-right preference_title">
+                    <p style="margin-top: 7px;">Default view</p>
+                </div>
+                <div class="col-md-10">
+                    <div class="box-dropdown-default">
+                        <ul class="list-unstyled list-inline select_mailbox_item align-middle">
+                            <li>
+                                <span>I am</span>
+                            </li>
+                            <li>
+                                <div class="pull-left field-box-preferences select-box">
+                                    <select class="form-control"
+                                            name=" "
+                                            formControlName="answer"
+                                            id="from_name"
+                                    >
+                                        <option value="available">
+                                            available
+                                        </option>
+                                        <option value="not_available">
+                                            not available
+                                        </option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <span>to answer tickets</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <div class="col-md-2 text-right preference_title">
+                    <div class="box-part2">
+                        <p>Ticket handling</p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="box-part">
+                        <ul class="list-inline list-unstyled tickets-info tickets-checkboxes">
+                            <li class="box-big">
+                                <span>After I reply to a ticket</span>
+                            </li>
+                            <li>
+                                <input
+                                        type="checkbox"
+                                        [checked]="preferences.value.assign_after_reply"
+                                        class="checkbox-with-label"
+                                        id="checkbox1"
+                                        formControlName="assign_after_reply"
+                                />
+                                <label for="checkbox1">assign it to me</label>
+                            </li>
+                            <li>
+                                <input
+                                        type="checkbox"
+                                        [checked]="preferences.value.take_back_after_reply"
+                                        class="checkbox-with-label"
+                                        id="checkbox3"
+                                        formControlName="take_back_after_reply"
+                                />
+                                <label for="checkbox3">take me back to the inbox</label>
+                            </li>
+                        </ul>
+                        <ul class="list-inline list-unstyled tickets-info tickets-checkboxes">
+                            <li class="box-big">
+                                <span>After I add a note to a ticket</span>
+                            </li>
+                            <li>
+                                <input
+                                        type="checkbox"
+                                        class="checkbox-with-label"
+                                        id="checkbox2"
+                                        [checked]="preferences.value.assign_after_note"
+                                        formControlName="assign_after_note"
+                                />
+                                <label for="checkbox2">assign it to me</label>
+                            </li>
+                            <li>
+                                <input
+                                        type="checkbox"
+                                        class="checkbox-with-label"
+                                        id="checkbox4"
+                                        [checked]="preferences.value.take_back_after_note"
+                                        formControlName="take_back_after_note"
+                                />
+                                <label for="checkbox4">take me back to the inbox</label>
+                            </li>
+                        </ul>
+                        <ul class="list-inline list-unstyled tickets-info tickets-checkboxes">
+                            <li class="box-big">
+                                <span>After I update a ticket with no reply or note</span>
+                            </li>
+                            <li>
+                                <input
+                                        type="checkbox"
+                                        class="checkbox-with-label"
+                                        id="checkbox5"
+                                        [checked]="preferences.value.take_back_after_update"
+                                        formControlName="take_back_after_update"
+                                />
+                                <label for="checkbox5">take me back to the inbox</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <div class="col-md-2 text-right preference_title">
+                    <div class="box-part2">
+                        <p>Delay sending</p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="box-part">
+                        <ul class="list-inline list-unstyled">
+                            <li class="delay-sending">
+                                <input
+                                        type="checkbox"
+                                        class="checkbox-with-label"
+                                        id="checkbox6"
+                                        [checked]="preferences.value.delay_sending"
+                                        formControlName="delay_sending"
+                                />
+                                <label for="checkbox6">Delay sending my replies</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <div class=" field-box">
+                        <button
+                                type="submit"
+                                class="btn custom-default-btn"
+                        >
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>-->
+<div class="tickets-wrapper scroll" *ngIf="preferences">
+    <div class="user-settings notification-pref">
+        <div class="notification-pref__header">
+            <h2 class="bold">Preferences</h2>
+            <!--<div>
+                <span class="grey">Browser Notifications</span>
+                <label class="toggle-btn">
+                    <input class="toggle-btn__input" type="checkbox" checked >
+                    <span class="toggle-btn__marker toggle-btn__marker&#45;&#45;on">ON</span>
+                    <span class="toggle-btn__marker toggle-btn__marker&#45;&#45;off">OFF</span>
+                    <span class="toggle-btn__thumb"></span>
+                </label>
+            </div>-->
+        </div>
+
+        <div class="notification-pref__row">
+            <h3 class="notification-pref__row-header bold grey">Default view</h3>
+            <span>I am</span>
+
+
+
+            <div class="ui-select" [class.open]="cloud.effect.showAval">
+                <div class="ui-select__input" [class.open]="cloud.effect.showAval" (click)="cloud.effect = 'showAval'" [class.rotate-drop]="cloud.effect.showAval">{{(preferences.value['answer'] && preferences.value['answer'] == 'available')?preferences.value['answer']:'not available'}}</div>
+                <div class="ui-select__options no-scroll-elem-available dropdown-menu">
+                    <div class="ui-select__select" id="company-country" >
+                        <div class="ui-select__option"  value="Admin" (click)="preferences.value['answer'] = 'not_available'; cloud.effect = 'showAval'">not available</div>
+                        <div class="ui-select__option"  value="Agent" (click)="preferences.value['answer'] = 'available'; cloud.effect = 'showAval'">available</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <span>to answer tickets</span>
+        </div>
+        <form
+                [formGroup]="preferences"
+                (ngSubmit)="updateUserPreferences()"
+                id="preferences"
+        >
+        <div class="notification-pref__row">
+            <p class="notification-pref__row-desc green">Choose one or two options</p>
+
+            <table class="notification-pref-table">
+                <thead class="notification-pref-table__head">
+                <tr class="notification-pref-table__row notification-pref-table__row--header">
+                    <td class="notification-pref-table__cell bold grey">Ticket handling</td>
+                    <td class="notification-pref-table__cell bold grey">Assign <br /> it to me</td>
+                    <td class="notification-pref-table__cell bold grey">Take me back to the inbox</td>
+                </tr>
+                </thead>
+                <tbody class="notification-pref-table__body">
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">After I reply to a ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox" for="checkbox1">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   [checked]="preferences.value.assign_after_reply"
+                                   id="checkbox1"
+                                   formControlName="assign_after_reply"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox" for="checkbox3">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   [checked]="preferences.value.take_back_after_reply"
+                                   id="checkbox3"
+                                   formControlName="take_back_after_reply"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">After I add a note to a ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox" for = "checkbox2">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="checkbox2"
+                                   [checked]="preferences.value.assign_after_note"
+                                   formControlName="assign_after_note"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell" for="checkbox4">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="checkbox4"
+                                   [checked]="preferences.value.take_back_after_note"
+                                   formControlName="take_back_after_note"
+
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">After I update a ticket with no reply or note</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox" for="checkbox5" *ngIf="assign_after_update">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="checkbox5"
+                                   [checked]="preferences.value.assign_after_update"
+                                   formControlName="assign_after_update"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox"for="checkbox7">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="checkbox7"
+                                   [checked]="preferences.value.take_back_after_note"
+                                   formControlName="take_back_after_update"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="notification-pref-table w-100">
+                <thead class="notification-pref-table__head">
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell bold grey">Delay sending</td>
+                </tr>
+                </thead>
+                <tbody class="notification-pref-table__body">
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">Delay sending my replies</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox" for="checkbox6">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="delay-sending"
+                                   id="checkbox6"
+                                   [checked]="preferences.value.delay_sending"
+                                   formControlName="delay_sending"
+                            >
+                            <span class="ui-checkbox__check-wrapper">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="w-100 clearfix">
+                <div class="grad-btn pull-right">
+                    <button class="grad-btn__btn" type="submit" >Save Changes</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </div>
+
+        </div>
+        </form>
+
+
+
+    </div>
+</div>

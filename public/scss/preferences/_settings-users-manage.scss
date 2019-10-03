@@ -1,0 +1,276 @@
+.user-settings {
+  display: block;
+  width: 756px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $whisper;
+  margin-bottom: 32px;
+
+  &--company {
+    border: none;
+
+    .user-settings__avatar-wrapper {
+      background-image: url(../images/stock-img/ava.png);
+    }
+  }
+
+  &__rm-profile {
+    color: $text-red;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    top: 46px;
+    right: 60px;
+    cursor: pointer;
+  }
+
+  &__avatar-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: url(../images/stock-img/ava.svg);
+    background-color: rgba($color: $text-light-grey, $alpha: .2);
+    background-size: cover;
+    position: relative;
+    margin-bottom: 32px;
+
+    &:hover .ui-input--upload-photo {
+      bottom: 0px !important;
+    }
+  }
+
+  &__col-wrapper {
+    width: 366px;
+
+    .ui-input {
+      margin-bottom: 24px;
+    }
+
+    .ui-select {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    @extend .bold;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.change-pass {
+  width: 756px;
+  margin: 0 auto;
+}
+
+.company-save-profile {
+  padding-top: 26px;
+}
+
+.notification-pref {
+  padding-bottom: 0;
+  border-bottom: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 756px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+  }
+
+  &__row {
+    margin-bottom: 40px;
+  }
+
+  &__row-header {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__row-desc {
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
+
+  .ui-select {
+    display: inline-block;
+    margin: 0 16px;
+  }
+
+  .ui-select__input {
+    padding-right: 48px;
+  }
+}
+
+.notification-pref-table {
+  margin-bottom: 24px;
+  width: 100%;
+
+  &__row {
+    height: 56px;
+
+    &.notification-pref-table__row--header {
+      .notification-pref-table__cell {
+        padding: 0;
+      }
+    }
+  }
+
+  &__cell {
+    text-align: center;
+    border-bottom: 1px solid $whisper;
+    padding: 16px 0;
+
+    &:nth-child(1) {
+      width: 75%;
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      width: 10%;
+    }
+
+    &:nth-child(3) {
+      width: 15%;
+    }
+  }
+}
+
+.notification-pref-table__head {
+  .notification-pref-table__cell {
+    border: none;
+  }
+}
+
+.save-pass {
+  padding: 2px;
+}
+
+.change-pass-form {
+  margin-top: 26px;
+}
+
+.user-settings {
+  .help-block {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.user-settings__wrapper .ui-input,
+.user-settings__wrapper .ui-select {
+  width: 366px;
+  margin-bottom: 12px;
+}
+
+@media all and (max-width: 992px) {
+  .user-settings {
+    width: auto;
+    margin: 20px 20px 32px 40px;
+
+    &__wrapper {
+      .flex.justify-center {
+        justify-content: flex-start;
+      }
+    }
+
+    &__avatar-wrapper {
+      width: 100px;
+      height: 100px;
+    }
+
+    .user-settings__wrapper .ui-input,
+    .user-settings__wrapper .ui-select {
+      width: 100%;
+
+      .country-code-field {
+        width: 100px;
+      }
+    }
+  }
+
+  .change-pass {
+    width: calc(100% - 60px);
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+
+  .notification-pref {
+    max-width: none;
+    margin-left: 40px;
+  }
+
+  .notification-pref-table {
+    &__row {
+      &.notification-pref-table__row--header {
+        .notification-pref-table__cell:not(:first-child) {
+        font-size: 14px;
+        }
+        .notification-pref-table__cell {
+        }
+      }
+    }
+    &__cell {
+      &:nth-child(1) {
+        width: calc(100% - 155px);
+      }
+      &:nth-child(2) {
+        width: 62px;
+      }
+      &:nth-child(3) {
+        width: 93px;
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 560px) {
+  .user-settings__avatar-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn.user-settings__rm-profile {
+    top: 6px;
+    right: 6px;
+    left: auto;
+  }
+
+  .user-settings__title {
+    margin-bottom: 26px;
+  }
+
+  .notification-pref {
+    margin: 32px 12px;
+  }
+
+  .notification-pref-table {
+    &__row {
+      &.notification-pref-table__row--header {
+        .notification-pref-table__cell:not(:first-child) {
+        font-size: 10px;
+        }
+        .notification-pref-table__cell {
+        }
+      }
+    }
+    &__cell {
+      &:nth-child(1) {
+        width: calc(100% - 95px);
+      }
+      &:nth-child(2) {
+        width: 43px;
+      }
+      &:nth-child(3) {
+        width: 52px;
+      }
+    }
+  }
+}

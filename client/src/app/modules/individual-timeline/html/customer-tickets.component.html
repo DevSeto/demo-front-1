@@ -1,0 +1,34 @@
+
+<div class="resent-activites-details" *ngIf="ticketsService.customerTickets.length">
+    <h4
+        [ngClass]="{
+    'resent-activites-details__haeder bold': true,
+    'open':cloud.effect.previousTickets
+    }"
+        (click)="cloud.effect = 'previousTickets'"
+    >Previous tickets</h4>
+    <ul class="resent-activites-details-list">
+        <li class="resent-activites-details-list__item"
+            *ngFor="let previousTicket of ticketService.customerTickets"
+        >
+            {{previousTicket.subject}}
+            <br>
+            <span class="action-info pull-left" (click)="redirectToTicketPage(previousTicket.id)">
+                    #{{previousTicket.id}}
+                </span>
+            <span class="marge-collor pull-right" (click)="individualMerge(previousTicket)">
+                 Merge
+            </span>
+<!--            <div class="dropdown sidebar-merge-item pull-right open">-->
+<!--                <a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button">-->
+<!--                    <i class="la la-fw la-ellipsis-h la-angle-up" title="Merge"></i>-->
+<!--                </a>-->
+<!--                <ul class="indiv-merge-item custom-dropdown-menu">-->
+<!--                    <li>-->
+<!--                        <a (click)="individualMerge(previousTicket.id)"> Merge</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,112 @@
+<!--<section>
+    <div closeModal class="modal fade modal-custom modal-background closeModal" id="create_label_popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" (click)="cloud.effect = 'createLabel'" class="close">
+                    <span aria-hidden="true">
+                        <i class="la la-close"></i>
+                    </span>
+                    </button>
+                    <h4 class="modal-title">Create label</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <form>
+                                    <div class="create_label_form">
+                                        <input
+                                                type="text"
+                                                placeholder="Labelname"
+                                                name="body"
+                                                maxlength="12"
+                                                [ngStyle]="{'border-color': createdLabelData.color}"
+                                                [(ngModel)]="createdLabelData.body"
+                                        />
+                                        <button
+                                                type="submit"
+                                                [ngStyle]="{'background-color': createdLabelData.color}"
+                                                [class.active-click]="createdLabelData.color && createdLabelData.body"
+                                                (click)="createLabel()"
+                                        >
+                                            <span *ngIf="!isOpen">Create</span>
+                                            <span *ngIf="isOpen">
+                                                <i class="la la-check"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="color_selection">
+                                        <ul class="list-inline">
+                                            <li *ngFor="let color of chooseColor">
+                                                <span
+                                                        class="color-items circle-sienna label-circle"
+                                                        [ngStyle]="{'background-color': color}"
+                                                        (click)="changeColor( color, $event)"
+                                                ></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+
+
+<div class="popup">
+    <div class="popup__bg"></div>
+    <div class="popup-content create-label">
+
+        <div class="popup__head flex align-center justify-between">
+            <h3 class="popup__header">Create label</h3>
+
+            <button class="btn popup__close-btn" (click)="cloud.effect = 'createLabel'">
+                <icon-svg pathToSVG="/public/images/icons/close.svg"></icon-svg>
+            </button>
+        </div>
+
+        <form action="#">
+            <div>
+                <div class="ui-input">
+                    <label class="ui-input__label" for="labe-title">Label name</label>
+                    <input class="ui-input__input input"
+                           id="labe-title"
+                           placeholder="Label name"
+                           type="text"
+                           name="body"
+                           maxlength="12"
+                           [ngStyle]="{'border-color': createdLabelData.color,'color': createdLabelData.color}"
+                           [(ngModel)]="createdLabelData.body"
+                    >
+                </div>
+
+                <div class="ui-input">
+                    <span class="ui-input__label" for="labe-title">Label color</span>
+
+                    <div class="label-color__wrapper">
+                        <label class="label-color" *ngFor="let color of chooseColor"  [ngStyle]="{'background-color': color}">
+                            <input type="radio"
+                                   name="labe-color"
+                                   (click)="changeColor( color, $event)">
+                            <span class="label-color__border"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="canned-respons__controls">
+                <div class="grad-btn">
+                    <button class="grad-btn__btn"
+                            [class.active-click]="createdLabelData.color && createdLabelData.body"
+                            (click)="createLabel()">Create</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

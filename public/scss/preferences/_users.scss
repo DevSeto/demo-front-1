@@ -1,0 +1,177 @@
+.users {
+  height: 100%;
+  margin-left: 40px;
+  margin-right: 60px;
+  padding-top: 40px;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__add-btn {
+    font-size: 24px;
+    font-size: 18px;
+    color: $blue;
+    cursor: pointer;
+  }
+}
+
+.users-grid {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px);
+}
+
+.users-grid-header.users-grid-header--users-component {
+  min-width: 1000px ;
+}
+
+.users-grid-table-wrapper {
+  max-height: calc(100vh - 266px);
+  overflow: initial;
+}
+
+.users-grid-header {
+  padding: 16px 0px;
+  display: flex;
+
+  &__item {
+    color: $manatee;
+    padding-right: 16px;
+    box-sizing: border-box;
+
+    &--contact {
+      padding-left: 16px;
+      width: 25%;
+    }
+
+    &--email {
+      width: 25%;
+    }
+
+    &--mailbox {
+      width: 27%;
+    }
+
+    &--status {
+      width: 12%;
+    }
+
+    &--acount {
+      padding-right: 16px;
+      width: 11%;
+    }
+  }
+}
+
+.users-grid-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__row {
+    background-color: $white-bg;
+    border-bottom: 1px solid $row-border;
+  }
+
+  &__el {
+    padding: 16px 0;
+    color: $manatee;
+    padding-right: 16px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+
+    &--contact {
+      padding-left: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-user-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      margin-right: 14px;
+    }
+
+    &-user-name {
+      transition: color .15s;
+
+      &:hover {
+        color: $blue;
+        cursor: pointer;
+      }
+    }
+
+    &--email {}
+
+    &--mailbox {
+      transition: color .15s;
+      width: auto;
+
+
+      &:hover {
+        color: $green;
+        cursor: pointer;
+      }
+
+      &--status {}
+
+      &--acount {
+        padding-right: 16px;
+      }
+    }
+  }
+
+  &__cell {
+    &--contact {
+      width: 25%;
+    }
+
+    &--email {
+      width: 25%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &--mailbox {
+      width: 27%;
+    }
+
+    &--status {
+      width: 12%;
+    }
+
+    &--acount {
+      width: 11%;
+    }
+  }
+}
+
+
+.users {
+  overflow: auto;
+  
+  .users-grid {
+    min-width: 1000px;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .users {
+    margin-left: 12px;
+    margin-right: 0;
+    padding-top: 24px;
+
+    &__header {
+      margin-right: 18px;
+    }
+  }
+}

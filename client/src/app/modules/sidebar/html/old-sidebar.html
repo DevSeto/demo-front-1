@@ -1,0 +1,102 @@
+<div id="left-sidebar" [ngClass]="{'blureffect':usersService.forBlure}" class="page-main-content">
+    <div class="sidebar-content first-view-sidebar ">
+        <ul class="list-unstyled menu-main-list">
+            <li class="company-name">
+                <a title="Company name" *ngIf="usersService.compnayName ">
+                    {{usersService.compnayName}}
+                </a>
+            </li>
+            <li *ngFor="let mailbox of mailboxService.mailboxes; let ind = index" class="menu-item">
+                <a (click)="openCloseMailboxes(mailbox.id , ind , !!1)">
+                    <span class="menu-icon">
+                        <i class="la la-fw la-inbox"></i>
+                    </span>
+                    <span class="dotted-item">{{mailbox.name}}</span>
+                    <span class="pull-right">
+                        <i class="la la-fw"
+                           [class.la-angle-down]="!mailbox.showed"
+                           [class.la-angle-up]="mailbox.showed"
+                        ></i>
+                    </span>
+                </a>
+                <ul *ngIf="mailbox.showed" class="list-unstyled sidebar_sub_menu">
+                    <ng-container *ngFor="let subMenu of subMenus;">
+                        <li
+                                *ngIf="subMenu === 'attention' && socketService.trafficCopData[mailbox.id]"
+                                [class.status-active]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                        >
+                            <a
+                                    [class.active-margin-left]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                                    (click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"
+                            >
+                                <span class="sub-menu-item" *ngIf="subMenu === 'attention' && socketService.trafficCopData[mailbox.id]">
+                                    {{'needs attention' | capitalizeFirst}}
+                                </span>
+                                <span class="pull-right">
+                                    {{socketService.trafficCopData[mailbox.id]}}
+                                </span>
+                            </a>
+                        </li>
+                        <li
+                                *ngIf="subMenu !== 'attention'"
+                                [class.status-active]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                        >
+                            <a
+                                    [class.active-margin-left]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                                    (click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"
+                            >
+                            <span class="sub-menu-item">
+                                {{subMenu | capitalizeFirst}}
+                            </span>
+                                <span class="pull-right" *ngIf="subMenu !== 'draft'">
+                                {{mailbox[subMenu+'_tickets_count']}}
+                            </span>
+                                <span class="pull-right" *ngIf="subMenu === 'draft'">
+                               {{(draftService.mailboxDraftData[mailbox.id] || draftService.mailboxDraftData[mailbox.id] === 0)?draftService.mailboxDraftData[mailbox.id]:''}}
+                            </span>
+                            </a>
+                        </li>
+                    </ng-container>
+                </ul>
+            </li>
+            <li *ngIf="mailboxService.mailboxes.length" class="menu-item">
+                <a (click)="cloud.effect = 'createTicket'">
+                    <span class="menu-icon">
+                        <i class="la la-fw la-ticket"></i>
+                    </span>
+                    <span>Create ticket</span>
+                </a>
+            </li>
+            <li *ngIf="mailboxService.mailboxes.length" class="menu-item">
+                <a (click)="openCloseLabelsMenu()">
+                    <span class="menu-icon">
+                        <i class="la la-fw la-tag"></i>
+                    </span>
+                    <span>Labels</span>
+                    <span class="pull-right">
+                        <i class="la la-fw"
+                           [class.la-angle-down]="!activeLabelsMenu"
+                           [class.la-angle-up]="activeLabelsMenu"
+                        >
+                        </i>
+                    </span>
+                </a>
+                <ul *ngIf="activeLabelsMenu" class="list-unstyled sidebar_sub_menu">
+                    <li *ngFor="let label of labelsService.labels">
+                        <a (click)="searchTickets(label)">
+                            <span class="label_icon" [ngStyle]="{'background-color': label.color}"></span>
+                            <span>{{label.body}}</span>
+                        </a>
+                    </li>
+                    <li class="create-label">
+                        <a (click)="cloud.effect = 'createLabel'">
+                            <i class="la la-fw la-plus-circle"></i>
+                            <span>Create label</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+

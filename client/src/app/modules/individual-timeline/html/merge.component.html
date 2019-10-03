@@ -1,0 +1,141 @@
+<!--<div class="merge-ticket-indv full-width-left">-->
+<!--    <div class="merge-ticket-title ">-->
+<!--        <p class="merge-title">-->
+<!--            Merged with ticket-->
+<!--            <span *ngFor="let merged_tickets of merge.merged_tickets_data">#{{merged_tickets.ticket_id}}, </span>-->
+<!--            {{merge.created_at | timePipe}}-->
+<!--        </p>-->
+<!--    </div>-->
+<!--    <div class="panel-group">-->
+<!--        <div *ngFor="let merged_tickets of merge.merged_tickets_data" class="panel panel-default">-->
+<!--            <div class="panel-heading" id="headingOne{{merged_tickets.id}}">-->
+<!--                <div class="panel-title">-->
+<!--                    <a role="button" (click)="cloud.effect = 'ticketData'+merged_tickets.id">-->
+<!--                        <span class="merge-ticket-text">{{merged_tickets.ticket.subject}}</span>-->
+<!--                        <span *ngIf="cloud.effect['ticketData'+merged_tickets.id];then merged_content else other_merged_content"></span>-->
+<!--                        <ng-template #merged_content>-->
+<!--                            <span class="up-down-icons">-->
+<!--                                <i class="la la-fw la-angle-up"></i>-->
+<!--                            </span>-->
+<!--                        </ng-template>-->
+<!--                        <ng-template #other_merged_content>-->
+<!--                            <span class="up-down-icons">-->
+<!--                                <i class="la la-fw la-angle-down"></i>-->
+<!--                            </span>-->
+<!--                        </ng-template>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div id="collapseOne{{merged_tickets.id}}" class="panel-collapse collapse in" *ngIf="cloud.effect['ticketData'+merged_tickets.id]">-->
+<!--                <div class="panel-body">-->
+<!--                    <div class="full-width-left">-->
+<!--                        <ul class="list-inline list-unstyled tickets-info">-->
+<!--                            <li>-->
+<!--                                <span class="first-letter-item rose-circle">-->
+<!--                                    {{merged_tickets.ticket.customer_name | circleLetters}}-->
+<!--                                </span>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p>{{merged_tickets.ticket.customer_name}}</p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <p [innerHTML]="merged_tickets.ticket.subject | noSanitize" class="disable-text-selection"></p>-->
+
+<!--                    <p [innerHTML]="merged_tickets.ticket.body | noSanitize" class="disable-text-selection"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<section class="merged-tickets" style="padding-bottom: 0px;">
+    <h3 class="merged-tickets__title">
+        Merged with ticket
+        <a href="#" class="link">
+            #{{merge.merged_tickets_data.ticket_id}}
+        </a>
+    </h3>
+
+    <div class="merged-tickets__item">
+        <section class="individual-ticket-chain-message individual-ticket-chain-message--customer">
+
+            <div class="individual-ticket-chain-message__header flex">
+                <div class="individual-ticket-chain-message__avatar">
+                    <span class="individual-ticket-chain-message__avatar-abbr">TF</span>
+                </div>
+                <div class="individual-ticket-chain-message__info">
+
+                    <div class="flex">
+                        <h2 class="individual-ticket-chain-message__author bold"
+                            *ngIf="merge.merged_tickets_data.ticket.author &&
+                     merge.merged_tickets_data.ticket.author.company_url === merge.merged_tickets_data.ticket.user.company_url
+                     && merge.merged_tickets_data.ticket.user.id === merge.merged_tickets_data.ticket.author.id"
+                        >You</h2>
+                        <h2 class="individual-ticket-chain-message__author bold"
+                            *ngIf="merge.merged_tickets_data.ticket.author && merge.merged_tickets_data.ticket.user.id !== merge.merged_tickets_data.ticket.author.id"
+                        >{{merge.merged_tickets_data.ticket.author?merge.merged_tickets_data.ticket.author.first_name + ' ' + merge.merged_tickets_data.ticket.author.last_name:merge.merged_tickets_data.ticket.from_name}}</h2>
+                        <h2 class="individual-ticket-chain-message__author bold"
+                            *ngIf="!merge.merged_tickets_data.ticket.author"
+                        >{{merge.merged_tickets_data.ticket.from_name}}</h2>
+                        <div class="individual-ticket-chain-message__forward"  *ngIf="!merge.merged_tickets_data.ticket.author">
+                            <span class="bold">{{merge.merged_tickets_data.ticket.from_email}}</span>
+                        </div>
+                    </div>
+                    <div class="individual-ticket-chain-message__details">
+                        <span class="individual-ticket-chain-message__from bold"
+                                *ngIf="merge.merged_tickets_data.ticket.author && merge.merged_tickets_data.ticket.author.role_id == 2"
+                        >Owner</span>
+                        <span class="individual-ticket-chain-message__from bold"
+                               *ngIf="merge.merged_tickets_data.ticket.author && merge.merged_tickets_data.ticket.author.role_id == 4"
+                        >Agent</span>
+                        <span class="individual-ticket-chain-message__from bold"
+                               *ngIf="!merge.merged_tickets_data.ticket.author"
+                        >Customer</span>
+                        <span class="individual-ticket-chain-message__date">{{merge.merged_tickets_data.created_at | date: 'MMM dd, hh:mm'}}</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="individual-ticket-chain-message__text">
+
+                <button class="btn merge-btn merge-btn--comment">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.125 10.625h-6.25a.625.625 0 0 0 0 1.25h6.25a.625.625 0 0 0 0-1.25zm1.25-3.75h-8.75a.625.625 0 0 0 0 1.25h8.75a.625.625 0 0 0 0-1.25zM10 0C4.478 0 0 3.917 0 8.75c0 2.762 1.466 5.22 3.75 6.824V20l4.38-2.658c.607.1 1.23.158 1.87.158 5.523 0 10-3.917 10-8.75S15.523 0 10 0zm0 16.25c-.73 0-1.435-.085-2.113-.23l-2.942 1.77.04-2.9C2.728 13.535 1.25 11.292 1.25 8.75c0-4.142 3.917-7.5 8.75-7.5s8.75 3.358 8.75 7.5c0 4.142-3.917 7.5-8.75 7.5z" fill-rule="nonzero" fill="#14CD9A"></path></svg>
+                </button>
+                {{merge.merged_tickets_data.ticket.body}}
+            </p>
+        </section>
+
+        <div class="merged-tickets__item-replies-wrapper" *ngIf="mergeTimeline.length">
+            <button class="merged-tickets__see-more-replies"
+                    (click)="openMore = !openMore; scrollToOpenMore($event)"
+                    [class.open]="openMore"
+            >
+                See more
+                <i class="merged-tickets__see-more-replies-after"></i>
+            </button>
+            <div class="merged-tickets__item-replies" *ngIf="openMore">
+                <ng-container *ngFor="let timline of mergeTimeline">
+                    <ticket-comment
+                            *ngIf="timline.type === 'comment' && timline.is_forwarded  == '0'"
+                            [comment]="timline"
+                    ></ticket-comment>
+
+                    <ticket-note
+                            *ngIf="timline.type === 'note'"
+                            [note]="timline"
+                    ></ticket-note>
+
+                    <ticket-forward
+                            *ngIf="timline.is_forwarded == '1'"
+                            [forward]="timline"
+                    ></ticket-forward>
+
+                </ng-container>
+            </div>
+        </div>
+
+    </div>
+
+</section>

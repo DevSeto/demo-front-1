@@ -1,0 +1,104 @@
+<!--<section class="page-main-content">
+    <div class="main-content">
+        <div class="full-width-left settings-main-page">
+            <div class="page-title-box full-width-left">
+                <span class="p-title">Settings </span>
+            </div>
+            <div class="full-width-left">
+                <div class="setting-center-box clearfix">
+                    <div class="settings-small-box">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="la la-user"></i>
+                                <p>Personal</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/users-profile/'+ userData.id]">Profile</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/notifications']">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/preferences']">Preferences</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div *ngIf="userData.display_user_role === 'Account Owner' " class="settings-small-box">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="la la-building"></i>
+                                <p>Company</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/company-profile']">Profile</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/users']">Users</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="settings-small-box">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="la la-ticket"></i>
+                                <p>Ticketing</p>
+                            </li>
+                            <li *ngIf="userData.display_user_role === 'Account Owner' ">
+                                <a href="javascript:void (0)" [routerLink]="['/settings/mailbox']">Mailboxes</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void (0)" [routerLink]="['/settings/canned-replies']">Cannedreplies</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<div class="tickets-wrapper scroll">
+    <div class="general-settings">
+
+        <section class="general-settings__section">
+            <div class="general-settings__section-img">
+                <img src="../../../../../public/images/icons/user-lg.svg" alt="Personal">
+            </div>
+            <h3 class="general-settings__section-title bold green">Personal</h3>
+            <ul class="general-settings-section-list">
+                <li class="general-settings-section-list__item"><a href="javascript:void (0)" [routerLink]="['/settings/users-profile/'+ userData.id]">Profile</a></li>
+                <li class="general-settings-section-list__item"><a href="javascript:void (0)" [routerLink]="['/settings/notifications']">Notifications</a></li>
+                <li class="general-settings-section-list__item"><a href="javascript:void (0)" [routerLink]="['/settings/preferences']">Preferences</a></li>
+            </ul>
+        </section>
+
+        <section class="general-settings__section" *ngIf="userData.display_user_role === 'Account Owner' ">
+            <div class="general-settings__section-img">
+                <img src="../../../../../public/images/icons/build-lg.svg" alt="Company">
+            </div>
+            <h3 class="general-settings__section-title bold green">Company</h3>
+            <ul class="general-settings-section-list__item">
+                <li class="general-settings-section-list__item"><a href="javascript:void (0)" [routerLink]="['/settings/company-profile']">Profile</a></li>
+                <li class="general-settings-section-list__item"><a href="javascript:void (0)" [routerLink]="['/settings/users']">Users</a></li>
+            </ul>
+        </section>
+
+        <section class="general-settings__section ">
+            <div class="general-settings__section-img">
+                <img src="../../../../../public/images/icons/ticket-lg.svg" alt="Ticketing">
+            </div>
+            <h3 class="general-settings__section-title bold green">Ticketing</h3>
+            <ul class="general-settings-section-list__item">
+                <li class="general-settings-section-list__item" *ngIf="userData.display_user_role === 'Account Owner' ">
+                    <a href="javascript:void (0)" [routerLink]="['/settings/mailbox']">
+                        Mailboxes
+                    </a>
+                </li>
+                <li class="general-settings-section-list__item">
+                    <a href="javascript:void (0)" [routerLink]="['/settings/canned-replies-list']">
+                        Canned Replies
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>

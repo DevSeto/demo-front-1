@@ -1,0 +1,46 @@
+.your-companies {
+  margin: 120px 50px 0 50px;
+  font-size: 18px;
+
+  h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+    font-family: 'Lato Bold';
+  }
+}
+
+.companies-list {
+  margin-top: 32px;
+  margin-bottom: 64px;
+  border-top: 1px solid $whisper;
+  max-height: 303px;
+  overflow-y: auto;
+
+  &__li {
+    min-height: 100px;
+    display: flex;
+    border-bottom: 1px solid $whisper;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2px;
+
+    .grad-btn {
+      min-width: 120px;
+    }
+  }
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  &__logo {
+    margin-right: 32px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-family: 'Lato Bold';
+  }
+
+}

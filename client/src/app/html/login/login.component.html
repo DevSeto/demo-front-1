@@ -1,0 +1,175 @@
+<div class="sign-wrapper" >
+    <div class="birddesk-logo" >
+        <img src="../../../../../public/images/logo/logo.svg" alt="Logo" [routerLink]="['/']">
+        <a [routerLink]="['/']">BirdDesk</a>
+    </div>
+    <button class="back-reg-btn" (click)="goBack()">
+        <div class="individual-ticket-panel__btn back">
+            <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            <span>Back</span>
+        </div>
+    </button>
+
+    <div class="multistep-form-wrapper">
+        <div class="steps">
+            <div class="steps__item "
+                 [class.active]="loginStep == 1"
+                 [class.passed]="loginStep == 2"
+                 (click)="loginStep = 1;clickChange = !!1;"
+            >1</div>
+            <div class="steps__item"
+                 [class.active]="loginStep == 2"
+            >2</div>
+        </div>
+
+        <login-check-subdomain
+                *ngIf="loginStep == 1 && showView"
+                (nextStep)="loginStep = $event"
+                [clickChange]="clickChange"
+                (subdomainOutput)="subdomain = $event"
+                [subdomain]="subdomain"
+        >
+
+        </login-check-subdomain>
+        <loading [className]="'extended'" class="signup-loader"   *ngIf="!showView"  ></loading>
+        <ng-container
+                *ngIf=" showView"
+        >
+
+        <form
+              *ngIf="loginStep == 2 && showView"
+              class="multistep-form"
+              [formGroup]="userForm"
+              (ngSubmit)="login()"
+               action="login"
+        >
+
+            <label for="email">
+                <h2 class="multistep-form__title text-center bold">Sign in to Your company</h2>
+            </label>
+<!--            <p class="text&#45;&#45;lg mb24">-->
+<!--                Enter your-->
+<!--                <span class="bold">E-mail</span>-->
+<!--                and-->
+<!--                <label for="password">-->
+
+<!--                <span class="bold">password</span>-->
+<!--                </label>-->
+<!--            </p>-->
+
+            <div class="multistep-form__login-input multistep-form-input-wrapper--passed"
+            >
+                <input type="text"
+                       class="multistep-form__input input w-100 bold"
+                       placeholder="Company name"
+                       [class.input-error-style]="classError('company_url')"
+                       [class.input-success-style]="classSuccess('company_url')"
+                       autocomplete="off"
+                       name="company_url"
+                       value=""
+                       data-rules="required"
+                       disabled
+                       formControlName="company_url"
+                       [(ngModel)]="subdomain"
+                       (ngModelChange)="verifyTwinsError('company_url', $event)"
+                >
+                <span class="multistep-form__login-domain bold">.birddesk.com</span>
+            </div>
+
+            <span id="domain-error" class="error-span help-block error backend-error input-group-error">
+                <form-errors
+                        [control]="userForm.controls.company_url"
+                        [controlName]="'company url'"
+                        [formSubmit]="userForm.submitted"
+                ></form-errors>
+                <span *ngIf="userFormErrors.company_url.verify">
+                    {{userFormErrors.company_url.text}}
+                </span>
+            </span>
+            <div class="multistep-form__login-input" [class.multistep-form-input-wrapper--passed]="classSuccess('email') === true"
+            >
+                <input type="email"
+                       class="multistep-form__input input w-100 mb16"
+                       [class.input-error-style]="classError('email')"
+                       [class.input-success-style]="classSuccess('email') && !userFormErrors.email.verify"
+                       (ngModelChange)="verifyTwinsError('email', $event)"
+                       autocomplete="off"
+                       placeholder="Your mail"
+                       name="email"
+                       value=""
+                       data-rules="required|email"
+                       formControlName="email"
+                       id="email"
+                       autofocus
+                >
+            </div>
+            <span id="mail-error" class="error-span help-block error backend-error input-group-error">
+                <form-errors
+                        [control]="userForm.controls.email"
+                        [controlName]="'email'"
+                        [formSubmit]="userForm.submitted"
+                ></form-errors>
+                <span *ngIf="userFormErrors.email.verify">
+                    {{userFormErrors.email.text}}
+                </span>
+            </span>
+            <div class="multistep-form__login-input" [class.multistep-form-input-wrapper--passed]="classSuccess('password') === true">
+                <input type="password"
+                       class="multistep-form__input input w-100"
+                       placeholder="Password"
+                       [class.input-error-style]="classError('password')"
+                       [class.input-success-style]="classSuccess('password')"
+                       autocomplete="off"
+                       name="password"
+                       value=""
+                       id="password"
+                       data-rules="required"
+                       (ngModelChange)="verifyTwinsError('password', $event)"
+                       formControlName="password"
+                >
+            </div>
+            <span id="password-error" class="error-span help-block error backend-error input-group-error">
+                <form-errors
+                        [control]="userForm.controls.password"
+                        [controlName]="'password'"
+                        [formSubmit]="userForm.submitted"
+                ></form-errors>
+                <span *ngIf="userFormErrors.password.verify">
+                    {{userFormErrors.password.text}}
+                </span>
+            </span>
+            <div class="mb40 flex justify-between">
+                <label class="ui-checkbox">
+                    <input class="ui-checkbox__input"
+                           [checked]="isRememberMe"
+                           (change)="rememberMe()"
+                           type="checkbox"
+                           name="remember-me"
+                    >
+                    <span class="ui-checkbox__check-wrapper">
+                        <span class="ui-checkbox__check"></span>
+                        <span class="ui-checkbox__check__after"></span>
+                    </span>
+                    <span class="ui-checkbox__label">Remember me</span>
+                </label>
+
+                <a  (click)="toForgetPassword()" class="link">Forgot password?</a>
+            </div>
+
+            <div class="grad-btn grad-btn--fill " [class.disabled]="formSubmit">
+                <button
+                        [disabled]="formSubmit"
+                        type="submit"
+                        class="grad-btn__btn"
+                >
+                    Sign in
+                </button>
+                <span class="grad-btn__bg"></span>
+            </div>
+
+        </form>
+        </ng-container>
+
+    </div>
+</div>

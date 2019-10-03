@@ -1,0 +1,20 @@
+.snoozing {
+  margin-bottom: 32px;
+  margin-top: -8px;
+
+  &__text {
+    display: inline-block;
+    margin-right: 24px;
+    color: $yellow;
+  }
+
+  &__btn {
+    font-size: 16px;
+    text-decoration: underline;
+    color: $blue;
+
+    &:hover {
+      color: darken($color: $blue, $amount: 10);
+    }
+  }
+}

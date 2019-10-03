@@ -1,0 +1,52 @@
+.alert {
+  position: fixed;
+  opacity: 0;
+  top: 106px;
+  left: 50%;
+  margin-left: (-256px / 2);
+  height: 70px;
+  width: 256px;
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.05);
+  z-index: 10005;
+  animation: show ease-in-out 2.3s forwards;
+  pointer-events: none;
+  
+  &.ok {
+    background-color: #F3FDFA;
+    color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    margin-right: 0.3em;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@keyframes show {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+
+  25% {
+    top: 106px;
+    opacity: 1;
+  }
+
+  75% {
+    top: 106px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 50px;
+    opacity: 0;
+  }
+}

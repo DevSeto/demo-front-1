@@ -1,0 +1,214 @@
+<!--<div class="conversation-block reply-box full-width-left">-->
+<!--    <div class="full-width-left">-->
+<!--        <ul class="list-inline list-unstyled tickets-info pull-left profile-info">-->
+<!--            <li *ngIf="comment.author && comment.author.avatar !== ''">-->
+<!--                <img src="{{comment.author.avatar_url}}" alt="user photo" class="img-circle">-->
+<!--            </li>-->
+<!--            <li *ngIf="!comment.author || comment.author.avatar === ''">-->
+<!--                <span class="first-letter-item rose-circle" [ngStyle]="{'background-color': ticketService.ticket.color}">-->
+<!--                    {{ticketService.ticket.customer_name | circleLetters}}-->
+<!--                </span>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <p *ngIf="comment.author && comment.author.company_url === usersService.user.company_url && usersService.user.id === comment.author.id;then content else other_content"></p>-->
+<!--                <ng-template #content>-->
+<!--                    You <span class="reply-color">replied</span>-->
+<!--                </ng-template>-->
+<!--                <ng-template #other_content>-->
+<!--                    {{comment.author?comment.author.first_name + ' ' + comment.author.last_name:comment.from_name}} <span class="reply-color">replied</span>-->
+<!--                </ng-template>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <ng-container *ngIf="ticketTemporaryTimeline">-->
+<!--            <span class="timelineButton" (click)="socketService.removeTemporaryTimeline(comment.commentId,comment.key,ind)">-->
+<!--                Discard-->
+<!--            </span>-->
+<!--            <span class="timelineButton" (click)="socketService.editTemporaryTimeline(comment.commentId,comment.key,ind)">-->
+<!--                Undo-->
+<!--            </span>-->
+<!--        </ng-container>-->
+<!--        <span class="pull-right time-info-item">{{(comment.updated_at + timedate) | timePipe}}</span>-->
+<!--    </div>-->
+<!--    <div class="full-width-left text-content disable-text-selection">-->
+<!--        <p openImage [innerHTML]="comment.body | noSanitize" class="custom_body"></p>-->
+<!--        <div class="comment-attachments" *ngIf="comment.files && !ticketTemporaryTimeline">-->
+<!--            <ul class="attachments-list">-->
+<!--                <ng-container *ngFor="let file of comment.files">-->
+<!--                    <li *ngIf=" file.disposition === 'attachment'">-->
+<!--                        <ng-container *ngIf="file.main_type !== 'images'">-->
+<!--                            <a href="{{file.file_full_path}}" download="true">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.file_name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+
+<!--                        <ng-container *ngIf="file.main_type === 'images' &&  file.disposition === 'attachment'">-->
+<!--                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.file_full_path;">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.file_name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+<!--                    </li>-->
+<!--                </ng-container>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--        <div class="comment-attachments" *ngIf="comment.attachments && ticketTemporaryTimeline">-->
+<!--            <ul class="attachments-list">-->
+<!--                <ng-container *ngFor="let file of comment.attachments">-->
+<!--                    <li *ngIf=" file.disposition === 'attachment'">-->
+<!--                        <ng-container *ngIf="file.type.search('image') === -1">-->
+<!--                            <a href="{{file.file_full_path}}" download="true">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+
+<!--                        <ng-container *ngIf="file.type.search('image') !== -1 &&  file.disposition === 'attachment'">-->
+<!--                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.link;">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+<!--                    </li>-->
+<!--                </ng-container>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="seen-part time-info-item" *ngIf="comment.email_status && comment.email_status === 'open'">-->
+<!--        <i class="fa fa-eye"></i>-->
+<!--        <span>Customer viewed {{comment.event_time | timePipe}}</span>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<ng-container *ngIf="ticketTemporaryTimeline">-->
+<!--                <span class="timelineButton" (click)="socketService.removeTemporaryTimeline(comment.commentId,comment.key,ind)">-->
+<!--                    Discard-->
+<!--                </span>-->
+<!--    <span class="timelineButton" (click)="socketService.editTemporaryTimeline(comment.commentId,comment.key,ind)">-->
+<!--                    Undo-->
+<!--                </span>-->
+<!--</ng-container>-->
+
+<div class="message_reply-undo green" *ngIf="ticketTemporaryTimeline">
+    Your reply has been sent. <a (click)="socketService.editTemporaryTimeline(comment.commentId,comment.key,ind)" class="message__link">Undo</a>
+</div>
+
+
+
+<section
+         [ngClass]="{
+         'individual-ticket-chain-message individual-ticket-chain-message_width': true,
+         'traffic-cope':(ticketService.ticket.ticketTrCop && comment.id == ticketService.ticket.ticketTrCop.comment_id && ticketService.ticket.isTrCop)
+         }"
+         [class.individual-ticket-chain-message--agent]="!comment.author"
+         [class.individual-ticket-chain-message--customer]="comment.author && comment.author.role_id == 4"
+>
+
+    <div class="individual-ticket-chain-message__header flex individual-ticket-chain-message--agent">
+        <div class="individual-ticket-chain-message__avatar"
+             *ngIf="comment.author && comment.author.avatar !== ''"
+             [ngStyle]="{'background-image': 'url('+comment.author['avatar_url'] +')'}"
+        >
+        </div>
+        <div class="individual-ticket-chain-message__avatar" *ngIf="!comment.author || comment.author.avatar === ''"
+             [ngStyle]="{'background-color': ticketService.ticket.color}">
+            <span class="individual-ticket-chain-message__avatar-abbr"> {{ticketService.ticket.customer_name | circleLetters}}</span>
+        </div>
+        <div class="individual-ticket-chain-message__info">
+
+            <div class="flex flex-wrap">
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="comment.author &&
+                     comment.author.company_url === usersService.user.company_url
+                     && usersService.user.id === comment.author.id"
+                >You</h2>
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="comment.author && usersService.user.id !== comment.author.id"
+                >{{comment.author?comment.author.first_name + ' ' + comment.author.last_name:comment.from_name}}</h2>
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="!comment.author"
+                >{{comment.from_name}}</h2>
+                <div class="individual-ticket-chain-message__forward"  *ngIf="!comment.author">
+                    <span class="bold">{{comment.from_email}}</span>
+                </div>
+            </div>
+            <div class="individual-ticket-chain-message__details">
+                <span class="individual-ticket-chain-message__from bold"
+                      *ngIf="comment.author && comment.author.role_id == 2"
+                >Owner</span>
+                <span class="individual-ticket-chain-message__from bold"
+                      *ngIf="comment.author && comment.author.role_id == 4"
+                >Agent</span>
+                <span class="individual-ticket-chain-message__from bold"
+                      *ngIf="!comment.author"
+                >Customer</span>
+                <span class="individual-ticket-chain-message__date">{{(comment.updated_at + timedate) | timePipe}}</span>
+                <!-- // TODO -->
+<!--                <span class="individual-ticket-chain-message__date individual-ticket-chain-message__date&#45;&#45;waiting">Wainitg time {{'10h 46min'}}</span>-->
+            </div>
+
+        </div>
+
+    </div>
+    <div class="individual-ticket-chain-message__text"
+       openImage
+    >
+        <p
+                [innerHTML]="comment.body | noSanitize"
+        ></p>
+        <div class="comment-attachments" *ngIf="comment.files && comment.files.length && !ticketTemporaryTimeline">
+            <ul class="attachments-list">
+                <ng-container *ngFor="let file of comment.files">
+                    <li *ngIf=" file.disposition === 'attachment'">
+                        <ng-container *ngIf="file.main_type !== 'images'">
+                            <a href="{{file.file_full_path}}" download="true">
+                                <i class="la la-paperclip">
+                                    {{file.file_name}}
+                                </i>
+                            </a>
+                        </ng-container>
+
+                        <ng-container *ngIf="file.main_type === 'images' &&  file.disposition === 'attachment'">
+                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.file_full_path;">
+                                <i class="la la-paperclip">
+                                    {{file.file_name}}
+                                </i>
+                            </a>
+                        </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="comment-attachments" *ngIf="comment.attachments && comment.attachments.length && ticketTemporaryTimeline">
+            <ul class="attachments-list">
+                <ng-container *ngFor="let file of comment.attachments">
+                    <li *ngIf=" file.disposition === 'attachment'">
+                        <ng-container *ngIf="file.type.search('image') === -1">
+                            <a href="{{file.file_full_path}}" download="true">
+                                <i class="la la-paperclip">
+                                    {{file.name}}
+                                </i>
+                            </a>
+                        </ng-container>
+
+                        <ng-container *ngIf="file.type.search('image') !== -1 &&  file.disposition === 'attachment'">
+                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.link;">
+                                <i class="la la-paperclip">
+                                    {{file.name}}
+                                </i>
+                            </a>
+                        </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+
+    <span class="individual-ticket-chain-message__viewed" *ngIf="comment.email_status && comment.email_status === 'open'">
+       Customer viewed {{comment.event_time | timePipe}}
+    </span>
+</section>

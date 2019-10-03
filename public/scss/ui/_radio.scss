@@ -1,0 +1,40 @@
+@import '../mixins/mixin';
+
+.radio {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0;
+
+  &__border {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #929395;
+    border-radius: 50%;
+  }
+  
+  &__point {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: $green;
+    transition: all .3s;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__input {
+    @include visually-hidden();
+
+    &:checked {
+      & + .radio__border .radio__point {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

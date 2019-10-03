@@ -1,0 +1,61 @@
+<loading [className]="'extended'" class="signup-loader"   *ngIf="!showView"  ></loading>
+
+<section class="email-confirm">
+    <div class="steps">
+
+            <div class="steps__item" *ngFor="let step of steps"
+                 [class.active]="1 == step"
+            >
+                {{step}}
+            </div>
+    </div>
+    <ng-container
+            *ngIf="showView"
+    >
+        <h2 class="email-confirm__header bold ">Create a new company</h2>
+        <p class="email-confirm__text text-center">To make a workspace from scratch, please confirm email of the 
+            <span class="bold">account owner</span>.</p>
+        <form class="email-confirm__form flex justify-between align-center flex-wrap"
+              [formGroup]="userForm"
+              (ngSubmit)="register()"
+        >
+            <div class="multistep-form__login-input"
+                 [class.multistep-form-input-wrapper--passed]="classSuccess('email') === true"
+            >
+                <input
+                        class="input email-confirm__input grow-1"
+                        [class.input-error-style]="classError('email')"
+                        [class.input-success-style]="classSuccess('email')"
+                        autocomplete="off"
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value=""
+                        data-rules="required|email"
+                        formControlName="email"
+                >
+            </div>
+
+
+            <button
+                    class="btn primary"
+                    type="submit"
+            >Confirm</button>
+            <span  class="error-span help-block error backend-error input-group-error w-100">
+                <form-errors
+                        [control]="userForm.controls.email"
+                        [formSubmit]="userForm.submitted"
+                        [controlName]="'email'"
+                ></form-errors>
+                <span *ngIf="userFormErrors.email.verify">
+                    {{userFormErrors.email.text}}
+                </span>
+            </span>
+        </form>
+    </ng-container>
+    <p class="mb24">In next steps you'll be able to setup the desired company email address</p>
+
+    <div class="email-confirm__img">
+        <img src="../../../../../../public/images/sign-up/email-confirm.svg" alt="Email confirm">
+    </div>
+</section>

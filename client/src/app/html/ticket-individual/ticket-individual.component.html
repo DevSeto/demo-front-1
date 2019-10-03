@@ -1,0 +1,340 @@
+<div class="popup" *ngIf="cloud.effect.confirmTicketsDelete">
+    <div class="popup__bg"></div>
+    <div class="popup-content rm-ticket">
+        <p class="text-center mb24 ">Please confirm you'd like to delete this ticket</p>
+        <div class="flex justify-around">
+            <button class="btn dafault" (click)="cloud.effect = 'confirmTicketsDelete'">Cancel</button>
+            <button class="btn dafault discard" (click)="deleteTicket()">Delete</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="alert ok" *ngIf="cloud.effect.showSuccsesMerge">
+    <img class="alert__img" src="../../../../../public/images/icons/ok.svg" alt="OK">
+    <span class="alert__text">Conversation merged</span>
+</div>
+
+<div class="tickets-wrapper">
+    <loading [className]="'extended'" *ngIf="selectMenu.showLoading"></loading>
+
+    <div class="individual-ticket">
+        <div class="individual-ticket-panel">
+            <div class="individual-ticket-panel__controlls">
+                <!--  -->
+                <div class="flex individual-ticket-panel__controlls-wrapper">
+                    <div class="individual-ticket-panel__btn back" (click)="redirectTickets()">
+                        <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z"
+                                fill="currentColor" fill-rule="nonzero" /></svg>
+                        <button>Back</button>
+                    </div>
+
+                    <div class="individual-ticket-panel__btn reply" (click)="openTab('reply',!!cloud.effect.reply)"
+                        [ngClass]="{'active':!!cloud.effect.reply}">
+                        <svg width="18" height="14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.831 8.473h-.098A.738.738 0 0 0 7 9.21v2.405L1.842 7 7 2.387v2.402c0 .409.33.736.737.736h.736c3.518 0 6.495 2.362 7.431 5.582-2.086-1.769-4.749-2.634-8.073-2.634zm9.116 5.526a.731.731 0 0 0 .737-.737c0-5.077-4.132-9.21-9.21-9.21V.736a.732.732 0 0 0-.437-.67.734.734 0 0 0-.791.121l-7 6.263a.735.735 0 0 0 0 1.098l7 6.263a.735.735 0 0 0 1.227-.549V9.957c3.49.13 6.01 1.334 7.892 3.758.142.184.36.284.582.284z"
+                                fill="currentColor" fill-rule="evenodd" /></svg>
+                        <button>Reply</button>
+                    </div>
+                    <div class="individual-ticket-panel__btn forward"
+                        (click)="openTab('forward', !!cloud.effect.forward)"
+                        [ngClass]="{'active': !!cloud.effect.forward}">
+                        <button>Forward</button>
+                    </div>
+                    <div class="individual-ticket-panel__btn add-note"
+                        (click)="openTab('add_note', !!cloud.effect.add_note)"
+                        [ngClass]="{'active': !!cloud.effect.add_note}">
+                        <button>Add note</button>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="flex individual-ticket-panel__controlls-wrapper">
+
+                    <div class="individual-ticket-panel__btn individual-ticket-panel__btn--select  icons-conntroll"
+                        dropdown>
+                        <button class="tickets-controls__btn" dropdown-open>
+                            <icon-svg [pathToSVG]="'/public/images/ico/profile.svg'"></icon-svg>
+                            <!--<icon-svg class="svg-triangle" [ripple]="false" [ripple]="false"
+                                [pathToSVG]="'/public/images/ico/triangle.svg'"></icon-svg>-->
+                            <span
+                                *ngIf="ticketService.ticket.assigned_user && ticketService.ticket.assigned_user.id !== this.usersService.user.id">
+                                {{ticketService.ticket.assigned_user.first_name + ' ' + ticketService.ticket.assigned_user.last_name.charAt(0)}}.
+                            </span>
+                            <span
+                                *ngIf="ticketService.ticket.assigned_user && ticketService.ticket.assigned_user.id === this.usersService.user.id">
+                                me
+                            </span>
+                        </button>
+                        <div class="send-as-clored-btn__dropdown-content dropdown-menu icons-conntroll">
+                            <ul class="send-as-clored-btn__dropdown-list">
+                                <li class="send-as-clored-btn__dropdown-list__el"
+                                    (click)="changeAssigneForIndividual(0)">
+                                    {{everyone}}
+                                </li>
+                                <ng-container *ngIf="userService.activeUsers">
+                                    <ng-container *ngFor="let users of userService.activeUsers">
+                                        <li *ngIf="users.preferences.answer === 'available'"
+                                            (click)="changeAssigneForIndividual(users.id, users)"
+                                            class="send-as-clored-btn__dropdown-list__el">
+                                            <ng-container *ngIf="users.id === usersService.user.id">me</ng-container>
+                                            <ng-container *ngIf="users.id !== usersService.user.id">{{users.first_name}}
+                                            </ng-container>
+                                        </li>
+                                    </ng-container>
+                                </ng-container>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="individual-ticket-panel__btn  flag icons-conntroll" dropdown>
+                        <button class="tickets-controls__btn" dropdown-open>
+                            <icon-svg [pathToSVG]="'/public/images/ico/flag.svg'"></icon-svg>
+                        </button>
+                        <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                            <ul class="send-as-clored-btn__dropdown-list">
+
+                                <li class="send-as-clored-btn__dropdown-list__el" *ngFor="let status of statusList"
+                                    (click)="changeStatus(status)">
+                                    {{ status | capitalizeFirst }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="individual-ticket-panel__btn icons-conntroll" dropdown>
+                        <button class="tickets-controls__btn" dropdown-open>
+                            <icon-svg [pathToSVG]="'/public/images/ico/labels2.svg'"></icon-svg>
+                        </button>
+                        <change-label class="dropdown-menu-onlabel">
+                        </change-label>
+                    </div>
+
+                    <div class="individual-ticket-panel__btn individual-ticket-panel__btn--select time icons-conntroll"
+                        dropdown>
+                        <button class="tickets-controls__btn" dropdown-open>
+                            <icon-svg [pathToSVG]="'/public/images/ico/clock.svg'"></icon-svg>
+                            <!--<icon-svg class="svg-triangle" [ripple]="false"
+                                [pathToSVG]="'/public/images/ico/triangle.svg'"></icon-svg>-->
+                        </button>
+                        <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                            <ul class="send-as-clored-btn__dropdown-list">
+                                <ng-container *ngFor="let snooze of snoozeData">
+                                    <li class="send-as-clored-btn__dropdown-list__el"
+                                        (click)="addSnoozeForIndividual(snooze.key)">
+                                        {{snooze.value}}
+                                    </li>
+
+                                </ng-container>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="individual-ticket-panel__btn trash icons-conntroll">
+                        <!--
+                <button (click)="deleteTicket()">
+                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M14.9 2.5h-3.5V1.1c.1-.6-.4-1.1-1-1.1H5.6C5 0 4.5.5 4.5 1.1v1.4H1.1c-.4 0-.6.3-.6.6s.3.6.6.6H2L3 15c.1.5.5 1 1.1 1H12c.5 0 1-.4 1.1-1l1-11.2h.9c.4 0 .6-.3.6-.6s-.3-.7-.7-.7zM5.8 1.3h4.3v1.2H5.8V1.3zm5.9 13.4H4.3l-1-10.9h9.4l-1 10.9z"
+                                fill="currentColor" fill-rule="nonzero" /></svg>
+                </button>-->
+                        <button class="tickets-controls__btn" (click)="cloud.effect = 'confirmTicketsDelete';">
+                            <icon-svg [pathToSVG]="'/public/images/ico/delete.svg'"></icon-svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="individual-ticket-panel__viewing flex align-center" *ngIf="socketService.viewUsers[ticketId]">
+                <span class="grey">Viewing this ticket:</span>
+                <div class="flex">
+                    <ng-container *ngFor="let user of socketService.viewUsers[ticketId] | keyvalue; let idx = index">
+                        <div class="individual-ticket-panel__viewing-agent" *ngIf="!user.value['typing']"
+                            [ngStyle]="{ 'background-image': 'url(' + user.value.avatar_url + ')'}"
+                            title="{{user.value.first_name}} {{user.value.last_name}} is viewing"></div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="individual-ticket-panel__controlls--right" [class.d-n-i] ="cloud.effect.ticketspanel">
+                <div class="unread-tickets">
+                    <h4 class="unread-tickets__mailboox-title bold">{{mailboxService.mailbox.name}}</h4>
+                    <div class="unread-tickets__anount bold">
+                        {{mailboxService.mailbox.open_tickets_count
+                        +
+                        mailboxService.mailbox.pending_tickets_count
+                        +
+                        mailboxService.mailbox.spam_tickets_count
+                        +
+                        mailboxService.mailbox.closed_tickets_count
+                        +
+                        draftService.mailboxDraftData[mailboxService.mailbox.id]}}
+                        new</div>
+                </div>
+
+                <div class="individual-ticket-panel__btn back back--next" (click)="redirectTickets()">
+                    <button>Next</button>
+                    <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)">
+                        <path
+                            d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z" fill="currentColor" fill-rule="nonzero" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="individual-ticket-chain__wrapper" (scroll)="scrollingTickets()" id="text-editor-black">
+
+            <div class="individual-ticket-chain">
+                <div class="individual-ticket-chain__header flex justify-between">
+                    <div class="flex">
+                        <h2 class="individual-ticket-chain__title">
+                            {{ticketService.ticket.subject}}
+                            <span class="individual-ticket__labels">
+    
+                                <span *ngFor="let label of ticketService.ticket.labels ;let ind = index"
+                                    class="label bordered" [ngStyle]="{'border-color': label.color,'color': label.color}">
+    
+                                    <span class="label__text">{{label.body}}</span>
+                                    <button class="label__btn" (click)="labelRemove(label.label_id,ind)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" style="width:8px;height:8px;"
+                                            viewBox="0 0 1024 1024" fill="currentColor" overflow="hidden">
+                                            <path
+                                                d="M451.67 512L55.107 908.544a42.778 42.778 0 0 0 0 60.33 42.778 42.778 0 0 0 60.33 0L512 572.357l396.544 396.561c16.597 16.598 43.776 16.598 60.33 0 16.598-16.597 16.598-43.776 0-60.373L572.349 512l396.56-396.544c16.598-16.597 16.598-43.776 0-60.33-16.597-16.598-43.775-16.598-60.373 0L512 451.66 115.456 55.125a42.778 42.778 0 0 0-60.33 0 42.778 42.778 0 0 0 0 60.331L451.668 512z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="individual-ticket__info flex">
+                        <span
+                            class="individual-ticket__time grey bold">{{ticketService.ticket.created_at | date: 'MMM dd, hh:mm'}}</span>
+                        <span class="individual-ticket__status red">{{ activeTickets | capitalizeFirst}}</span>
+                        <span class="individual-ticket__id">#{{ticketService.ticket.id}}</span>
+                    </div>
+                </div>
+                <div class="snoozing"
+                    *ngIf="ticketService.ticket.status === 'closed' &&  ticketService.ticket.snooze &&  (ticketService.ticket.snooze | timePipe : ticketService.ticket.server_time)">
+                    <p class="snoozing__text">
+                        Unless you get a reply, this ticket will be reopened in
+                        {{ ticketService.ticket.snooze | timePipe : ticketService.ticket.server_time }}.
+                    </p>
+                    <button class="snoozing__btn" (click)="removeSnooze()">Cancel</button>
+                </div>
+                <add-reply *ngIf="cloud.effect.reply" [statusList]="statusList"
+                    (showLoader)="selectMenu.showLoading = $event"></add-reply>
+                <add-note *ngIf="cloud.effect.add_note" [statusList]="statusList"
+                    (showLoader)="selectMenu.showLoading = $event"></add-note>
+
+                <add-forward (showLoader)="selectMenu.showLoading = $event" *ngIf="cloud.effect.forward"
+                    [statusList]="statusList"></add-forward>
+                <div class="traffic-cope-actions" *ngIf="ticketService.ticket.isTrCop">
+                    <span class="red">Traffic Cop stopped a message</span>
+                    <div class="grad-btn" (click)="sendTrCop()">
+                        <button class="grad-btn__btn">Send</button>
+                        <span class="grad-btn__bg"></span>
+                    </div>
+                    <button class="btn dafault discard" (click)="discardTrCop()">Discard</button>
+                    <button class="btn dafault" (click)="editTrCop()">Edit</button>
+
+
+                </div>
+                <ng-container *ngFor="let timline of ticketService.ticketTemporaryTimeline;let ind = index">
+                    <ticket-comment
+                        *ngIf="timline.type === 'comment' && (timline.is_forwarded === '0' || !timline.is_forwarded)"
+                        [ind]="ind" [comment]="timline" [ticketTemporaryTimeline]="!!1"
+                        [showDisabledImages]="showDisabledImages" (showHideMsg)="showHideMsg($event)"></ticket-comment>
+
+                    <ticket-note *ngIf="timline.type === 'note'" [ticketTemporaryTimeline]="!!1" [ind]="ind"
+                        [note]="timline"></ticket-note>
+
+                    <ticket-forward *ngIf="timline.is_forwarded === '1'" [ticketTemporaryTimeline]="!!1" [ind]="ind"
+                        [forward]="timline"></ticket-forward>
+                </ng-container>
+
+                <ng-container *ngFor="let timline of ticketService.ticketTimeline">
+                    <ticket-comment *ngIf="timline.type === 'comment' && timline.is_forwarded  == '0'"
+                        [comment]="timline" [showDisabledImages]="showDisabledImages"
+                        (showHideMsg)="showHideMsg($event)"></ticket-comment>
+
+                    <ticket-note *ngIf="timline.type === 'note'" [note]="timline"></ticket-note>
+
+                    <ticket-forward *ngIf="timline.is_forwarded == '1'" [forward]="timline"></ticket-forward>
+
+                    <ticket-merge *ngIf="timline.type === 'merge'" [merge]="timline"></ticket-merge>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mobile-actions" dropdown>
+    <button dropdown-open>
+        <icon-svg
+            [pathToSVG]="'/public/images/ico/more.svg'"
+            >
+        </icon-svg>
+    </button>
+    <div class="dropdown">
+        <ul class="dropdown-content popup-list">
+            <li>
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/profile.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+                Barry B.
+            </li>
+
+            <li>
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/flag.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+                flag
+            </li>
+
+            <li>
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/labels2.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+                label
+            </li>
+
+            <li>
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/clock.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+                delay
+            </li>
+
+            <li
+                (click)="cloud.effect = 'confirmTicketsDelete';"
+                >
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/delete.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+                delete
+            </li>
+
+            <li>
+                <icon-svg
+                    [pathToSVG]="'/public/images/ico/resent.svg'"
+                    [ripple]="false"
+                    >
+                </icon-svg>
+            </li>
+        </ul>
+    </div>
+</div>
+

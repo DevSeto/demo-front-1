@@ -1,0 +1,33 @@
+.welcome-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($cobalt, 0.85);
+  z-index: 1006;
+
+  &-content {
+    margin-top: 20vh;
+    margin-left: 47vw;
+    width: 400px;
+    color: $white-bg;
+
+    @media (max-width: 1680px) {
+      margin-left: 33vw;
+    }
+    
+    &__header {
+      font-size: 48px;
+      line-height: (57 / 48);
+      font-family: 'Lato Bold', sans-serif;
+      margin-bottom: 18px;
+    }
+    
+    &__text {
+      font-size: 16px;
+      line-height: (25 / 16);
+      margin-bottom: 24px;
+    }
+  }
+}

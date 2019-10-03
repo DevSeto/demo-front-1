@@ -1,0 +1,223 @@
+<!--<div class="conversation-block full-width-left is-forwarded">-->
+<!--    <div class="full-width-left">-->
+<!--        <ul class="list-inline list-unstyled tickets-info pull-left profile-info">-->
+<!--            <li *ngIf="forward.author && forward.author.avatar !== ''">-->
+<!--                <img src="{{forward.author.avatar_url}}" alt="user photo" class="img-circle">-->
+<!--            </li>-->
+<!--            <li *ngIf="!forward.author || forward.author.avatar === ''">-->
+<!--                <span class="first-letter-item rose-circle" [ngStyle]="{'background-color': ticketService.ticket.color}">-->
+<!--                    {{ticketService.ticket.customer_name | circleLetters}}-->
+<!--                </span>-->
+<!--            </li>-->
+<!--            <li *ngIf="forward.is_forwarded == '1'">-->
+<!--                You <span class="forward-color">forwarded this conversation</span>-->
+<!--                <p>To:-->
+<!--                    <span *ngFor="let email of forward.forwarding_addresses; let idx = index">-->
+<!--                        {{email}}{{idx + 1 !== forward.forwarding_addresses.length ? ',' : ''}}-->
+<!--                    </span>-->
+<!--                    <ng-container *ngIf="ticketTemporaryTimeline">-->
+<!--                         <span *ngFor="let email of forward.forwarding_emails; let idx = index">-->
+<!--                            {{email}}{{idx + 1 !== forward.forwarding_emails.length ? ',' : ''}}-->
+<!--                        </span>-->
+<!--                    </ng-container>-->
+<!--                </p>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <ng-container *ngIf="ticketTemporaryTimeline">-->
+<!--            <span class="timelineButton" (click)="socketService.removeTemporaryTimeline(forward.commentId,forward.key,ind)">-->
+<!--                Discard-->
+<!--            </span>-->
+<!--            <span class="timelineButton" (click)="socketService.editTemporaryTimeline(forward.commentId,forward.key,ind)">-->
+<!--                Undo-->
+<!--            </span>-->
+<!--        </ng-container>-->
+<!--        <span class="pull-right time-info-item">{{(forward.updated_at + timedate) | timePipe}}</span>-->
+<!--    </div>-->
+<!--    <div class="full-width-left text-content disable-text-selection">-->
+<!--        <p openImage [innerHTML]="forward.body | noSanitize" class="custom_body"></p>-->
+<!--        <div class="comment-attachments" *ngIf="forward.files && !ticketTemporaryTimeline">-->
+<!--            <ul class="attachments-list">-->
+<!--                <ng-container *ngFor="let file of forward.files">-->
+<!--                    <li *ngIf=" file.disposition === 'attachment'">-->
+<!--                        <ng-container *ngIf="file.main_type !== 'images'">-->
+<!--                            <a href="{{file.file_full_path}}" download="true">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.file_name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+
+<!--                        <ng-container *ngIf="file.main_type === 'images' &&  file.disposition === 'attachment'">-->
+<!--                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.file_full_path;">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.file_name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+<!--                    </li>-->
+<!--                </ng-container>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="comment-attachments" *ngIf="forward.attachments && ticketTemporaryTimeline">-->
+<!--            <ul class="attachments-list">-->
+<!--                <ng-container *ngFor="let file of forward.attachments">-->
+<!--                    <li *ngIf=" file.disposition === 'attachment'">-->
+<!--                        <ng-container *ngIf="file.type.search('image') == -1">-->
+<!--                            <a href="{{file.file_full_path}}" download="true">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+
+<!--                        <ng-container *ngIf="file.type.search('image') !== -1 &&  file.disposition === 'attachment'">-->
+<!--                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.link;">-->
+<!--                                <i class="la la-paperclip">-->
+<!--                                    {{file.name}}-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                        </ng-container>-->
+<!--                    </li>-->
+<!--                </ng-container>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="seen-part time-info-item" *ngIf="forward.email_status && forward.email_status === 'open'">-->
+<!--        <i class="fa fa-eye"></i>-->
+<!--        <span>Customer viewed {{forward.event_time | timePipe}}</span>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<ng-container *ngIf="ticketTemporaryTimeline">-->
+<!--            <span class="timelineButton" (click)="socketService.removeTemporaryTimeline(forward.commentId,forward.key,ind)">-->
+<!--                Discard-->
+<!--            </span>-->
+<!--    <span class="timelineButton" (click)="socketService.editTemporaryTimeline(forward.commentId,forward.key,ind)">-->
+<!--                Undo-->
+<!--            </span>-->
+<!--</ng-container>-->
+<div class="message_reply-undo green" *ngIf="ticketTemporaryTimeline">
+    Your reply has been sent. <a (click)="socketService.editTemporaryTimeline(forward.commentId,forward.key,ind)" class="message__link">Undo</a>
+</div>
+
+<section class="individual-ticket-chain-message " [class.individual-ticket-chain-message--agent]="!forward.author" [class.individual-ticket-chain-message--customer]="forward.author && forward.author.role_id == 4">
+
+    <div class="individual-ticket-chain-message__header flex individual-ticket-chain-message--agent">
+        <div class="individual-ticket-chain-message__avatar"
+             *ngIf="forward.author && forward.author.avatar !== ''"
+             [ngStyle]="{'background-image': 'url('+forward.author['avatar_url'] +')'}"
+        >
+        </div>
+        <div class="individual-ticket-chain-message__avatar" *ngIf="!forward.author || forward.author.avatar === ''"
+             [ngStyle]="{'background-color': ticketService.ticket.color}">
+            <span class="individual-ticket-chain-message__avatar-abbr"> {{ticketService.ticket.customer_name | circleLetters}}</span>
+        </div>
+        <div class="individual-ticket-chain-message__info">
+
+            <div class="flex">
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="forward.author &&
+                     forward.author.company_url === usersService.user.company_url
+                     && usersService.user.id === forward.author.id"
+                >You</h2>
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="forward.author && usersService.user.id !== forward.author.id"
+                >{{forward.author?forward.author.first_name + ' ' + forward.author.last_name:forward.from_name}}</h2>
+                <h2 class="individual-ticket-chain-message__author bold"
+                    *ngIf="!forward.author"
+                >{{forward.from_name}}</h2>
+                <div class="individual-ticket-chain-message__forward">
+                    <span class="bold">Forward to:</span>
+                    <a class="individual-ticket-chain-message__forward-link"
+                      *ngFor="let email of forward.forwarding_addresses; let idx = index"
+                       [href]="'mailto:' + email"
+                    >
+                        {{email}}{{idx + 1 !== forward.forwarding_addresses.length ? ',' : ''}}
+                    </a>
+                    <ng-container *ngIf="ticketTemporaryTimeline">
+
+                        <a class="individual-ticket-chain-message__forward-link"
+                           *ngFor="let email of forward.forwarding_emails; let idx = index"
+                           [href]="'mailto:' + email"
+                        >
+                            {{email}}{{idx + 1 !== forward.forwarding_emails.length ? ',' : ''}}
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="individual-ticket-chain-message__details">
+                <span class="individual-ticket-chain-message__from bold" *ngIf="forward.author && forward.author.role_id == 2">Owner</span>
+                <span class="individual-ticket-chain-message__from bold" *ngIf="forward.author && forward.author.role_id == 4">Agent</span>
+                <span class="individual-ticket-chain-message__from bold" *ngIf="!forward.author">Customer</span>
+                <span class="individual-ticket-chain-message__date">{{(forward.updated_at + timedate) | timePipe}}</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="individual-ticket-chain-message__text">
+<!--        <button class="btn merge-btn">-->
+<!--            <svg width="16" height="19" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <g fill="none" fill-rule="evenodd">-->
+<!--                    <path d="M-2-1h20v20H-2z" />-->
+<!--                    <path-->
+<!--                            d="M9.236 7.637v6.748h1.846L8.005 18.23l-3.077-3.846h2V6.692h.011l-.011-.011L13.455.154l1.632 1.632-5.851 5.85zM2.406.154L6.213 3.96 4.582 5.593.774 1.786 2.406.154z"-->
+<!--                            fill="#929395" />-->
+<!--                </g>-->
+<!--            </svg>-->
+<!--        </button>-->
+        <p
+                openImage [innerHTML]="forward.body | noSanitize"
+        >
+        </p>
+        <div class="comment-attachments" *ngIf="forward.files && forward.files.length  && !ticketTemporaryTimeline">
+            <ul class="attachments-list">
+                <ng-container *ngFor="let file of forward.files">
+                    <li *ngIf=" file.disposition === 'attachment'">
+                        <ng-container *ngIf="file.main_type !== 'images'">
+                            <a href="{{file.file_full_path}}" download="true">
+                                <i class="la la-paperclip">
+                                    {{file.file_name}}
+                                </i>
+                            </a>
+                        </ng-container>
+
+                        <ng-container *ngIf="file.main_type === 'images' &&  file.disposition === 'attachment'">
+                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.file_full_path;">
+                                <i class="la la-paperclip">
+                                    {{file.file_name}}
+                                </i>
+                            </a>
+                        </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="comment-attachments" *ngIf="forward.attachments  && forward.attachments.length && ticketTemporaryTimeline">
+            <ul class="attachments-list">
+                <ng-container *ngFor="let file of forward.attachments">
+                    <li *ngIf=" file.disposition === 'attachment'">
+                        <ng-container *ngIf="file.type.search('image') == -1">
+                            <a href="{{file.file_full_path}}" download="true">
+                                <i class="la la-paperclip">
+                                    {{file.name}}
+                                </i>
+                            </a>
+                        </ng-container>
+
+                        <ng-container *ngIf="file.type.search('image') !== -1 &&  file.disposition === 'attachment'">
+                            <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.link;">
+                                <i class="la la-paperclip">
+                                    {{file.name}}
+                                </i>
+                            </a>
+                        </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+
+    <span class="individual-ticket-chain-message__viewed" *ngIf="forward.email_status && forward.email_status === 'open'">
+       Customer viewed {{forward.event_time | timePipe}}
+    </span>
+</section>

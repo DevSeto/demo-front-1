@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>+ </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="9.90453078%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#08AEEA" offset="0%"></stop>
+            <stop stop-color="#14CD9A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Mailbox-v4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Settings-mailboxes" transform="translate(-1270.000000, -295.000000)" stroke="url(#linearGradient-1)">
+            <g id="add-mailbox" transform="translate(1146.000000, 173.000000)">
+                <g id="+-" transform="translate(124.000000, 122.000000)">
+                    <circle id="Oval" cx="32" cy="32" r="31.5"></circle>
+                    <path d="M45.5721393,30.7661692 L33.2338308,30.7661692 L33.2338308,18.4278607 C33.2338308,17.7492537 32.6810746,17.1940299 32,17.1940299 C31.3189254,17.1940299 30.7661692,17.7492537 30.7661692,18.4278607 L30.7661692,30.7661692 L18.4278607,30.7661692 C17.7467861,30.7661692 17.1940299,31.321393 17.1940299,32 C17.1940299,32.6847761 17.7467861,33.2338308 18.4278607,33.2338308 L30.7661692,33.2338308 L30.7661692,45.5721393 C30.7661692,46.2569154 31.3189254,46.8059701 32,46.8059701 C32.6810746,46.8059701 33.2338308,46.2569154 33.2338308,45.5721393 L33.2338308,33.2338308 L45.5721393,33.2338308 C46.2532139,33.2338308 46.8059701,32.6847761 46.8059701,32 C46.8059701,31.321393 46.2532139,30.7661692 45.5721393,30.7661692" id="Fill-49" stroke-width="0.2" fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

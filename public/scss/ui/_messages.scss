@@ -1,0 +1,19 @@
+.message {
+  &_reply-undo {
+    line-height: 18px;
+    width: 286px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.02);
+    background-color: $undo-message-bg;
+    margin: 24px auto;
+    margin-top: 0;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  &__link {
+    float: right;
+    color: $blue;
+    text-decoration: underline;
+  }
+}

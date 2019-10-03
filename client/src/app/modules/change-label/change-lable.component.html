@@ -1,0 +1,67 @@
+<section>
+<!--    <ul class="icons-dropdown-menu">-->
+<!--        <li *ngIf="selectMenu.boxSearch">-->
+<!--            <input-->
+<!--                    type="text"-->
+<!--                    id="searchLabels"-->
+<!--                    placeholder="Search label..."-->
+<!--                    [value]="searchVale"-->
+<!--                    [(ngModel)]="searchVale"-->
+<!--                    (keyup)="searchLabel($event.target.value)"-->
+<!--            >-->
+<!--            <a id="showAlllab" (click)="showAllLabels()" style="display: none">-->
+<!--              <span aria-hidden="true">-->
+<!--                    <i class="la la-close"></i>-->
+<!--                </span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li *ngIf="showLabels" [class.scroll-box]="addScroll">-->
+<!--            <ul class="box-maxheight">-->
+<!--                <ng-container *ngFor="let indivLabel of labelsService.labels; let ind = index">-->
+<!--                    <li class="maxlength">-->
+<!--                        <a (click)="addLabel(indivLabel)"-->
+<!--                           *ngIf="((!labelsService.inactiveLabel.ids[indivLabel.id] || (labelsService.inactiveLabel.ids[indivLabel.id] && labelsService.inactiveLabel.ids[indivLabel.id] !== labelsService.inactiveLabel.selectedTicketsCount)) && (labelsService.labels[ind].verify || !searchVale) )"-->
+<!--                        >-->
+<!--                            <span class="label_icon" [ngStyle]="{'background-color': indivLabel.color}"></span>-->
+<!--                            <span>{{indivLabel.body}}</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ng-container>-->
+<!--            </ul>-->
+<!--        </li>-->
+<!--        <li class="create-label">-->
+<!--            <a (click)="cloud.effect = 'createLabel'">-->
+<!--                <i class="la la-fw la-plus-circle"></i>-->
+<!--                <span>Create label</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+    <div class="send-as-clored-btn__dropdown-content icons-dropdown-menu">
+        <ul class="send-as-clored-btn__dropdown-list checked" >
+
+
+            <ng-container *ngIf="showLabels && labelsService.labels.length" [class.scroll-box]="addScroll">
+                <ng-container *ngFor="let indivLabel of labelsService.labels; let ind = index">
+                    <li class="send-as-clored-btn__dropdown-list__el"
+                        *ngIf="((!labelsService.inactiveLabel.ids[indivLabel.id] || (labelsService.inactiveLabel.ids[indivLabel.id] && labelsService.inactiveLabel.ids[indivLabel.id] !== labelsService.inactiveLabel.selectedTicketsCount)) && (labelsService.labels[ind].verify || !searchVale) )"
+                        (click)="addLabel(indivLabel)"
+                    >
+                        <span
+                        >
+                            <span class="label_icon" [ngStyle]="{'background-color': indivLabel.color}"></span>
+                            <span class="abel-prew">{{indivLabel.body | titlecase}}</span>
+
+                        </span>
+                    </li>
+                </ng-container>
+            </ng-container>
+
+
+        </ul>
+        <ul class="send-as-clored-btn__dropdown-list no-scroll-elem">
+            <li class="send-as-clored-btn__dropdown-list__el" (click)="cloud.effect = 'createLabel'">
+                <a  class="green">Create new</a>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,631 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DeleteUser</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/components/delete-user/delete-user.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>delete-user</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../../html/delete-user/delete-user.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#previousTitle">previousTitle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#closeDeletePopup">closeDeletePopup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#invitedAgentName">invitedAgentName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#closeDeleteEmit">closeDeleteEmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(userservice: <a href="../injectables/UsersService.html">UsersService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, usersmodel: <a href="../injectables/UsersModel.html">UsersModel</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userservice</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersmodel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersModel.html" target="_self" >UsersModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="invitedAgentName"></a>
+                        <code>invitedAgentName</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="closeDeleteEmit"></a>
+                        <code>closeDeleteEmit</code>
+                    </td>
+                    <td class="col-md-10">
+                        <em><code>$event</code> Type:</em>    <code><a href="../miscellaneous/variables.html#id" target="_self" >EventEmitter&lt;void | boolean&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="closeDeletePopup"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            closeDeletePopup
+                            </b>
+                            <a href="#closeDeletePopup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>closeDeletePopup()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="previousTitle"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            previousTitle
+                            </b>
+                            <a href="#previousTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>previousTitle:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">client/src/app/components/delete-user/delete-user.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, Output, EventEmitter, Input} from &quot;@angular/core&quot;;
+import {UsersService} from &quot;../../services/components/users.service&quot;;
+import {Router}    from &#x27;@angular/router&#x27;;
+import {UsersModel} from &quot;../../models/components/users.model&quot;;
+import {Title} from &#x27;@angular/platform-browser&#x27;;
+import {Subscribe, State} from &quot;../../modules/subscribe&quot;
+
+
+@Component({
+    selector: &#x27;delete-user&#x27;,
+    templateUrl: &#x27;../../html/delete-user/delete-user.html&#x27;,
+})
+
+export class DeleteUser implements OnInit {
+
+    public previousTitle: string;
+
+    @Output(&#x27;closeDeleteEmit&#x27;)
+    public closeDeleteEmit: EventEmitter&lt;void|boolean&gt; &#x3D; new EventEmitter&lt;void|boolean&gt;();
+
+    @Input(&#x27;invitedAgentName&#x27;)
+    public invitedAgentName: any;
+    
+    constructor(
+        private userservice:UsersService,
+        private router:Router,
+        private usersmodel:UsersModel,
+        private title: Title
+    )
+    {
+
+    }
+
+    public ngOnInit()
+    {
+    }
+
+
+    public closeDeletePopup(): void {
+        this.closeDeleteEmit.emit();
+        this.title.setTitle(this.previousTitle);
+        // console.log(this.invitedAgentName);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section&gt;
+    &lt;div class&#x3D;&quot;modal fade in box-new-agent modal-background&quot; id&#x3D;&quot;delete-user-popup&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                    &lt;button (click)&#x3D;&quot;closeDeletePopup()&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+                        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;
+                            &lt;i class&#x3D;&quot;la la-close&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;h4 class&#x3D;&quot;modal-title&quot;&gt;Delete user&lt;/h4&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                    &lt;p&gt;Are you sure you want to delete user: &lt;b&gt;{{invitedAgentName.first_name}}{{invitedAgentName.last_name}}&lt;/b&gt;&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;italic-style&quot;&gt;By confirming the user will be deleted from the system permanently.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                    &lt;button
+                            type&#x3D;&quot;button&quot;
+                            class&#x3D;&quot; custom-round-btn gray-btn&quot;
+                            data-dismiss&#x3D;&quot;modal&quot;
+                            (click)&#x3D;&quot;closeDeletePopup()&quot;
+                    &gt;
+                        Close
+                    &lt;/button&gt;
+
+                    &lt;button
+                            type&#x3D;&quot;button&quot;
+                            class&#x3D;&quot; custom-round-btn red-btn&quot;
+                    &gt;
+                        Delete user
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section>    <div class="modal fade in box-new-agent modal-background" id="delete-user-popup" tabindex="-1" role="dialog">        <div class="modal-dialog" role="document">            <div class="modal-content">                <div class="modal-header">                    <button (click)="closeDeletePopup()" type="button" class="close" data-dismiss="modal" aria-label="Close">                        <span aria-hidden="true">                            <i class="la la-close"></i>                        </span>                    </button>                    <h4 class="modal-title">Delete user</h4>                </div>                <div class="modal-body">                    <p>Are you sure you want to delete user: <b>{{invitedAgentName.first_name}}{{invitedAgentName.last_name}}</b></p>                    <p class="italic-style">By confirming the user will be deleted from the system permanently.</p>                </div>                <div class="modal-footer">                    <button                            type="button"                            class=" custom-round-btn gray-btn"                            data-dismiss="modal"                            (click)="closeDeletePopup()"                    >                        Close                    </button>                    <button                            type="button"                            class=" custom-round-btn red-btn"                    >                        Delete user                    </button>                </div>            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'DeleteUser'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DeleteUser.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

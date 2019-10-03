@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: 'Lato Regular', sans-serif;
+  color: $text-black;
+  min-height: 600px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-weight: 300;
+  background-color: $snow-bg;
+}
+
+button * {
+  pointer-events: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $manatee;
+  border-radius: 4px;
+  width: 6px;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.d-n {
+  display: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.fb-100 {
+  width: 100%;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.green {
+  color: $green;
+}
+
+.mb16.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb24.mb24 {
+  margin-bottom: 24px;
+}
+
+.mt24 {
+  margin-top: 24px;
+}
+
+.mb40.mb40 {
+  margin-bottom: 40px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mb64 {
+  margin-bottom: 64px;
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.bordered {
+  padding-bottom: 16px;
+  border-bottom: 1px solid $whisper;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-initial {
+  overflow: initial;
+}
+
+.overflow-visible.overflow-visible {
+  overflow: visible;
+}
+
+@media all and (max-width: 560px) {
+  html, body {
+    font-size: 14px;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+}
+
+.accept-policy {
+  width: 110%;
+  transform: translateX(-5%);
+}
+
+.action-gif {
+  position: fixed;
+  z-index: 10001;
+  left: 50%;
+  bottom: 50%;
+  animation: actionGif 2.5s forwards;
+  animation-timing-function: cubic-bezier(0, 0.87, 1, 0.23);
+  animation-timing-function: cubic-bezier(0, 0.55, 1, 0.37);
+  animation-timing-function: cubic-bezier(0, 0.43, 0.8, 0.23);
+  animation-timing-function: cubic-bezier(0.08, 0.38, 0.25, 0.23);
+  opacity: 0;
+  transform: translate(-50%, 25%) rotateZ(-12.5deg);
+}
+
+@keyframes actionGif {
+  0% {
+    left: 0%;
+    bottom: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0.2;
+  }
+  
+  100% {
+    opacity: 0;
+    left: 100%;
+    bottom: 100%;
+  }
+}
+
+.empty-content:before {
+  content: "\00a0\00a0";
+  font-size: 0;
+}

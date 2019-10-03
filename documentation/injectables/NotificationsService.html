@@ -1,0 +1,2774 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>NotificationsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>client/src/app/services/components/notifications.service.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#appUrl">appUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#checkForwarding">checkForwarding</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#defaultToastrParams">defaultToastrParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#inboxDataActive">inboxDataActive</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#individualdata">individualdata</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#notificationSetingsUrl">notificationSetingsUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#notificationUrl">notificationUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#notificationVariables">notificationVariables</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#socket">socket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#subdomain">subdomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ticketId">ticketId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ticketUrl">ticketUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateStatus">updateStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateToken">updateToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user_id">user_id</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usersNotificatiUrl">usersNotificatiUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#usersService">usersService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeInbox">changeInbox</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#connectionSoccet">connectionSoccet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#connectScoet">connectScoet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAllNotification">getAllNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAlltcikets">getAlltcikets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getNotificationForScroll">getNotificationForScroll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getNotificationSetings">getNotificationSetings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPushNotificationData">getPushNotificationData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getTicket">getTicket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openNotificationAccesses">openNotificationAccesses</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#sendPushNotificationData">sendPushNotificationData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setNotificationAccses">setNotificationAccses</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setTicketHistory">setTicketHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setViewed">setViewed</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setViewedNotification">setViewedNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateUserToken">updateUserToken</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, usersService: <a href="../injectables/UsersService.html">UsersService</a>, mailBoxModel: <a href="../injectables/MailBoxModel.html">MailBoxModel</a>, ticketService: <a href="../injectables/TicketsService.html">TicketsService</a>, ticketsModel: <a href="../injectables/TicketsModel.html">TicketsModel</a>, socketService: <a href="../injectables/SocketService.html">SocketService</a>, usersModel: <a href="../injectables/UsersModel.html">UsersModel</a>, toastr: <a href="../injectables/ToastrService.html">ToastrService</a>, mailboxService: <a href="../injectables/MailBoxService.html">MailBoxService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">client/src/app/services/components/notifications.service.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailBoxModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxModel.html" target="_self" >MailBoxModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ticketService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TicketsService.html" target="_self" >TicketsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ticketsModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TicketsModel.html" target="_self" >TicketsModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>socketService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/SocketService.html" target="_self" >SocketService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersModel.html" target="_self" >UsersModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ToastrService.html" target="_self" >ToastrService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailboxService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxService.html" target="_self" >MailBoxService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeInbox"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeInbox
+                            </b>
+                            <a href="#changeInbox"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>changeInbox(count: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, status: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, mailboxId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">client/src/app/services/components/notifications.service.ts:155</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>count</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>status</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>mailboxId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="connectionSoccet"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            connectionSoccet
+                            </b>
+                            <a href="#connectionSoccet"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>connectionSoccet(user_id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, io: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="166" class="link-to-prism">client/src/app/services/components/notifications.service.ts:166</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>user_id</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>io</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="connectScoet"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            connectScoet
+                            </b>
+                            <a href="#connectScoet"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>connectScoet()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">client/src/app/services/components/notifications.service.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAllNotification"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getAllNotification
+                            </b>
+                            <a href="#getAllNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getAllNotification(offset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">client/src/app/services/components/notifications.service.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>offset</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAlltcikets"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getAlltcikets
+                            </b>
+                            <a href="#getAlltcikets"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getAlltcikets(activeTickets: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, ticketsData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="435" class="link-to-prism">client/src/app/services/components/notifications.service.ts:435</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activeTickets</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>ticketsData</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getNotificationForScroll"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getNotificationForScroll
+                            </b>
+                            <a href="#getNotificationForScroll"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getNotificationForScroll(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="404" class="link-to-prism">client/src/app/services/components/notifications.service.ts:404</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getNotificationSetings"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getNotificationSetings
+                            </b>
+                            <a href="#getNotificationSetings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getNotificationSetings()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">client/src/app/services/components/notifications.service.ts:87</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPushNotificationData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getPushNotificationData
+                            </b>
+                            <a href="#getPushNotificationData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getPushNotificationData()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="452" class="link-to-prism">client/src/app/services/components/notifications.service.ts:452</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getTicket"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getTicket
+                            </b>
+                            <a href="#getTicket"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getTicket(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="393" class="link-to-prism">client/src/app/services/components/notifications.service.ts:393</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openNotificationAccesses"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            openNotificationAccesses
+                            </b>
+                            <a href="#openNotificationAccesses"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>openNotificationAccesses(accesses?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">client/src/app/services/components/notifications.service.ts:95</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>accesses</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sendPushNotificationData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            sendPushNotificationData
+                            </b>
+                            <a href="#sendPushNotificationData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>sendPushNotificationData(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="532" class="link-to-prism">client/src/app/services/components/notifications.service.ts:532</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setNotificationAccses"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            setNotificationAccses
+                            </b>
+                            <a href="#setNotificationAccses"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>setNotificationAccses(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">client/src/app/services/components/notifications.service.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setTicketHistory"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            setTicketHistory
+                            </b>
+                            <a href="#setTicketHistory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>setTicketHistory(history: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, historyCount: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="420" class="link-to-prism">client/src/app/services/components/notifications.service.ts:420</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>history</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>historyCount</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setViewed"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            setViewed
+                            </b>
+                            <a href="#setViewed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>setViewed(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">client/src/app/services/components/notifications.service.ts:129</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setViewedNotification"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            setViewedNotification
+                            </b>
+                            <a href="#setViewedNotification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>setViewedNotification(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">client/src/app/services/components/notifications.service.ts:117</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateUserToken"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            updateUserToken
+                            </b>
+                            <a href="#updateUserToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>updateUserToken(user_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">client/src/app/services/components/notifications.service.ts:140</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>user_id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="appUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            appUrl
+                            </b>
+                            <a href="#appUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>appUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL + &#x27;/tickets&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">client/src/app/services/components/notifications.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkForwarding"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            checkForwarding
+                            </b>
+                            <a href="#checkForwarding"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>checkForwarding:     <code>EventEmitter&lt;number&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>EventEmitter&lt;number&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;number&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">client/src/app/services/components/notifications.service.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="defaultToastrParams"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            defaultToastrParams
+                            </b>
+                            <a href="#defaultToastrParams"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>defaultToastrParams:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;any&gt; {
+        progressBar: true,
+        positionClass: &quot;toast-bottom-right&quot;,
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">client/src/app/services/components/notifications.service.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inboxDataActive"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            inboxDataActive
+                            </b>
+                            <a href="#inboxDataActive"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>inboxDataActive:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;open&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">client/src/app/services/components/notifications.service.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="individualdata"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            individualdata
+                            </b>
+                            <a href="#individualdata"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>individualdata:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        timeline:[]
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">client/src/app/services/components/notifications.service.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationSetingsUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            notificationSetingsUrl
+                            </b>
+                            <a href="#notificationSetingsUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>notificationSetingsUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL + &#x27;/settings/user/profile/notifications&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">client/src/app/services/components/notifications.service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            notificationUrl
+                            </b>
+                            <a href="#notificationUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>notificationUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">client/src/app/services/components/notifications.service.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationVariables"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            notificationVariables
+                            </b>
+                            <a href="#notificationVariables"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>notificationVariables:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        noHistorys : !!0,
+        total_new : 0,
+        total: 0,
+        notificationCount: 0,
+        historyCount: 0,
+        stepData: 0,
+        history: [],
+        notificationData: [],
+        newTicketData : []
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">client/src/app/services/components/notifications.service.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="socket"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            socket
+                            </b>
+                            <a href="#socket"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>socket:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">client/src/app/services/components/notifications.service.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subdomain"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            subdomain
+                            </b>
+                            <a href="#subdomain"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>subdomain:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">client/src/app/services/components/notifications.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ticketId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ticketId
+                            </b>
+                            <a href="#ticketId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>ticketId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">client/src/app/services/components/notifications.service.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ticketUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ticketUrl
+                            </b>
+                            <a href="#ticketUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>ticketUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL + &#x27;/tickets&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">client/src/app/services/components/notifications.service.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateStatus"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            updateStatus
+                            </b>
+                            <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>updateStatus:     <code>EventEmitter&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;any&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">client/src/app/services/components/notifications.service.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateToken"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            updateToken
+                            </b>
+                            <a href="#updateToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>updateToken:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL + &#x27;/update_token&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">client/src/app/services/components/notifications.service.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user_id"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            user_id
+                            </b>
+                            <a href="#user_id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>user_id:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">client/src/app/services/components/notifications.service.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usersNotificatiUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            usersNotificatiUrl
+                            </b>
+                            <a href="#usersNotificatiUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>usersNotificatiUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>GlobalVariables.BACKEND_API_URL + &#x27;/settings/user/profile/notifications&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">client/src/app/services/components/notifications.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usersService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            usersService
+                            </b>
+                            <a href="#usersService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>usersService:     <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">client/src/app/services/components/notifications.service.ts:56</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable,EventEmitter} from &#x27;@angular/core&#x27;;
+import {HttpClient, HttpResponse} from &#x27;@angular/common/http&#x27;;
+import {GlobalVariables} from &#x27;../extra/global.variables&#x27;;
+import {TicketsModel} from &quot;../../models/components/tickets.model&quot;;
+import {toPromise} from &quot;rxjs-compat/operator/toPromise&quot;;
+import {GlobalServices} from &quot;../helpers/global.service&quot;;
+import {UsersModel} from &quot;../../models/components/users.model&quot;;
+import {MailBoxModel} from &#x27;../../models/components/mailbox.model&#x27;;
+import {TicketsService} from &#x27;./tickets.service&#x27;;
+import {InboxDataModel} from &#x27;../../models/components/inbox-data.model&#x27;;
+import {DtoMailboxModel} from &quot;../../dto&quot;;
+import {MailBoxService} from &quot;./mailbox.service&quot;;
+import {UsersService} from &#x27;./users.service&#x27;;
+import {ToastrService} from &#x27;../../modules/toastr/toastr/toastr-service&#x27;;
+import {TicketDtoInterface} from &#x27;../../modules/dto/ticket/interfaces/ticket-dto.interface&#x27;;
+import {Encryption} from &#x27;../helpers/encryption.service&#x27;;
+import {SocketService} from &#x27;./socket.service&#x27;;
+
+
+
+@Injectable()
+export class NotificationsService {
+    private usersNotificatiUrl: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/settings/user/profile/notifications&#x27;;
+    private appUrl: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/tickets&#x27;;
+    private ticketUrl: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/tickets&#x27;;
+    private notificationUrl: string &#x3D; GlobalVariables.BACKEND_API_URL ;
+    private notificationSetingsUrl: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/settings/user/profile/notifications&#x27;;
+    private updateToken: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/update_token&#x27;;
+    public socket : any ;
+    public subdomain : string ;
+    public ticketId : number ;
+    public notificationVariables : any &#x3D; {
+        noHistorys : !!0,
+        total_new : 0,
+        total: 0,
+        notificationCount: 0,
+        historyCount: 0,
+        stepData: 0,
+        history: [],
+        notificationData: [],
+        newTicketData : []
+    };
+    public user_id : number;
+    private defaultToastrParams: any &#x3D; &lt;any&gt; {
+        progressBar: true,
+        positionClass: &quot;toast-bottom-right&quot;,
+    };
+
+    public individualdata : any &#x3D; {
+        timeline:[]
+    };
+    public inboxDataActive: any &#x3D; &#x27;open&#x27;;
+
+    constructor(
+        private http: HttpClient,
+        public usersService:UsersService,
+        private mailBoxModel: MailBoxModel,
+        private ticketService: TicketsService,
+        private ticketsModel: TicketsModel,
+        private socketService: SocketService,
+        private usersModel: UsersModel,
+        private toastr: ToastrService,
+        private mailboxService: MailBoxService
+    ) {
+        // this.socket &#x3D; io(&#x27;https://node.birdtest.nl&#x27;, {secure: true});
+            // private ticketsModel: TicketsModel
+    }
+    public checkForwarding: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
+    public updateStatus: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+
+    public connectScoet() : void {
+
+    }
+
+    public getAllNotification ( offset : number ) : Promise&lt;any&gt;
+    {
+        let url: string &#x3D; this.notificationUrl + &#x27;/notifications?offset&#x3D;&#x27; + offset + &#x27;&amp;count&#x3D;5&#x27;;
+        return this.http.get( url, GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then(this.ticketsModel.extractData)
+            .catch(this.ticketsModel.handleError);
+    }
+
+
+
+
+    public getNotificationSetings (  ) : Promise&lt;any&gt;
+    {
+        return this.http.get( this.notificationSetingsUrl, GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then(this.ticketsModel.extractData)
+            .catch(this.ticketsModel.handleError);
+    }
+
+    public openNotificationAccesses( accesses?: any ) : Promise&lt;any&gt;
+    {
+
+        return this.http.post(
+            this.usersNotificatiUrl,
+            this.ticketsModel.dataCompile(accesses) ,
+            GlobalServices.AuthHeader( this.usersModel.getToken() )
+        )
+            .toPromise()
+            .then(this.ticketsModel.extractData)
+            .catch(this.ticketsModel.handleError);
+    }
+
+    public setNotificationAccses (data : any ) : Promise&lt;any&gt;
+    {
+        let url: string &#x3D; GlobalVariables.BACKEND_API_URL + &#x27;/test&#x27;;
+        return this.http.post( url, data,GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then()
+            .catch();
+    }
+
+    public setViewedNotification( id: number ) : Promise&lt;any&gt;
+    {
+
+        let url: string &#x3D; this.notificationUrl + &#x27;/notifications&#x27; + &#x27;/&#x27; + id ;
+        console.log(this.usersModel.getToken());
+        return this.http.get( url,  GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then(this.ticketsModel.extractData)
+            .catch(this.ticketsModel.handleError);
+    }
+
+
+    public setViewed( id: number ) : Promise&lt;any&gt;
+    {
+        let url: string &#x3D; this.notificationUrl + &#x27;/tickets&#x27; + &#x27;/&#x27; + id + &#x27;/set_viewed_ticket&#x27;;
+        console.log(this.usersModel.getToken());
+        return this.http.post( url, {}, GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then(this.ticketsModel.extractData)
+            .catch(this.ticketsModel.handleError);
+    }
+
+
+    public updateUserToken( user_id : number ) : Promise&lt;any&gt;
+    {
+        let url: string &#x3D; this.updateToken;
+        return this.http.post( url, this.ticketsModel.dataCompile({user_id:user_id}), GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then()
+            .catch();
+    }
+
+
+
+
+
+
+
+    public changeInbox(count:number, status :any, mailboxId:number) : void
+    {
+        this.mailboxService.mailboxes.forEach( ( mailbox: DtoMailboxModel ,index : number) : void &#x3D;&gt;
+        {
+            if(mailbox.id &#x3D;&#x3D; mailboxId &amp;&amp; this.mailboxService.mailboxes[index][status+&#x27;_tickets_count&#x27;] + count &gt;&#x3D; 0){
+                this.mailboxService.mailboxes[index][status+&#x27;_tickets_count&#x27;] &#x3D; this.mailboxService.mailboxes[index][status+&#x27;_tickets_count&#x27;] + count;
+            }
+        });
+    }
+
+
+    public connectionSoccet(user_id : any , io:any)
+    {
+        let self : any &#x3D; this;
+        this.user_id &#x3D; user_id;
+
+
+
+        this.socket.on(&#x27;connect&#x27;, function() {
+            self.socket.emit(&#x27;connection&#x27;,{user_id: user_id});
+        });
+
+        // self.socket.emit(&#x27;dynamicConnection&#x27;,{user_id: user_id});
+
+
+
+
+
+
+
+
+        self.socket.emit(&#x27;connection&#x27;,{user_id: user_id});
+
+
+
+
+        this.socket.on(&#x27;events&#x27;, function( data : any ) {
+
+            if(data.success){
+                // if(typeof data.ticket_id &#x3D;&#x3D; &#x27;object&#x27; &amp;&amp;  data.ticket_id.length &#x3D;&#x3D; 1){
+                //     data.ticket_id &#x3D; data.ticket_id[0];
+                // }
+                // //
+                // //
+                // // // if(user_id){
+                // // //     self.updateUserToken(user_id);
+                // // // }
+                // // if(data.success){
+                //     if(data.created_at){
+                //         data.updated_at &#x3D; data.created_at;
+                //
+                //     }
+                // //     let browserNotification : any &#x3D; {
+                // //
+                // //     };
+                // //
+                //     if(data.type &#x3D;&#x3D; &quot;ticket_comment&quot; || data.type &#x3D;&#x3D; &quot;comment&quot;  || data.type &#x3D;&#x3D; &quot;customer_replies_to_unassigned_ticket&quot;  || data.type &#x3D;&#x3D; &quot;user_replies_to_ticket&quot; || data.type &#x3D;&#x3D; &quot;user_replies_to_unassigned_ticket&quot; || data.type &#x3D;&#x3D; &quot;customer_replies_to_user_ticket&quot; ){
+                //         if(data.author.length &lt; 1){
+                //             data.author &#x3D; null;
+                //         }
+                //         data.type &#x3D; &#x27;comment&#x27;;
+                //         if(self.ticketService.ticket &amp;&amp; data.ticket_id &#x3D;&#x3D; self.ticketService.ticket.id){
+                //             self.ticketService.ticketTimeline.push(data)
+                //         }
+                //
+                //     }
+                //     if(data.type &#x3D;&#x3D; &quot;step_first_email&quot; ){
+                //         self.usersService.user.step &#x3D; {&quot;step&quot;:2,&quot;mailbox_id&quot;:&quot;&quot;};
+                //         self.usersModel.updateUserData(self.usersService.user.id, self.usersService.user);
+                //     }
+                // //
+                //     if(data.type &#x3D;&#x3D; &quot;ticket_note&quot; || data.type &#x3D;&#x3D; &quot;add_notes_to_unassigned_ticket&quot; || data.type &#x3D;&#x3D; &quot;add_note_to_user_ticket&quot; ){
+                //         data.type &#x3D; &#x27;note&#x27;
+                //         data.note &#x3D; data.body
+                //         if(self.ticketService.ticket &amp;&amp; data.ticket_id &#x3D;&#x3D; self.ticketService.ticket.id){
+                //             self.ticketService.ticketTimeline.push(data)
+                //         }
+                //
+                //     }
+                //
+                // //
+                //     if(data.type &#x3D;&#x3D; &quot;ticket&quot; ){
+                //         self.getTicket(data.ticket_id).then( (ticketdata:any)&#x3D;&gt;{
+                //             if(ticketdata.success){
+                //                 if(ticketdata.ticketData.status &#x3D;&#x3D; self.ticketService.filterticketsStatus &amp;&amp; self.mailBoxModel.getMailboxCurrentId() &#x3D;&#x3D; ticketdata.ticketData.mailbox_id){
+                //                     self.ticketService.tickets.unshift(ticketdata.ticketData)
+                //
+                //                 }
+                //                 self.ticketService.ticketsNotification.total &#x3D; self.ticketService.ticketsNotification.total + 1;
+                //                 self.ticketService.ticketsNotification.total_new &#x3D; self.ticketService.ticketsNotification.total_new + 1;
+                //                 self.ticketService.ticketsNotification.tickets.unshift(ticketdata.ticketData);
+                //                 self.changeInbox(1,ticketdata.ticketData.status, ticketdata.ticketData.mailbox_id);
+                //                 // if(self.mailBoxModel.getMailboxCurrentId() &#x3D;&#x3D; ticketdata.ticketData.mailbox_id){
+                //                 //     ticketdata.ticketData.comments &#x3D; [];
+                //                 //     if(self.inboxDataActive &#x3D;&#x3D; ticketdata.ticketData.status){
+                //                 //         self.notificationVariables.newTicketData.reverse().push(ticketdata.ticketData);
+                //                 //         self.notificationVariables.newTicketData.reverse();
+                //                 //     }
+                //                 //     // self.notificationVariables.newTicketData.push(ticketdata.ticketData);
+                //                 //
+                //                 // }
+                //             }
+                //         })
+                //     }
+                //         self.notificationVariables.notificationCount++;
+                //         data.comments &#x3D; [];
+                //         data.id &#x3D; data.ticket_id;
+                //         self.ticketService.getInboxdata(self.mailBoxModel.getMailboxCurrentId())
+                //             .then( ( data: any ) : void &#x3D;&gt; {
+                //                 self.changeinboxname[self.mailBoxModel.getMailboxCurrentId()] &#x3D; data.data;
+                //                 self.inboxDataModel.update( self.changeinboxname[self.mailBoxModel.getMailboxCurrentId()], self.mailBoxModel.getMailboxCurrentId() );
+                //             });
+                //
+
+                //
+                //     }
+                //     if(data.type &#x3D;&#x3D; &quot;ticket_history&quot; &amp;&amp; data.merge_data)
+                //     {
+                //         if(self.ticketService.ticket &amp;&amp; data.ticket_id &#x3D;&#x3D; self.ticketService.ticket.id &amp;&amp; data.merge_data.updated_at){
+                //             let timeline : any &#x3D; {
+                //                 &#x27;created_at&#x27;:data.merge_data.updated_at,
+                //                 &#x27;merged_tickets_data&#x27;:data.merge_data.merged_tickets,
+                //                 &#x27;type&#x27;: &#x27;merge&#x27;
+                //             };
+                //             self.ticketService.ticketTimeline.unshift(timeline);
+                //             self.ticketService.getCustomerTickets(self.ticketService.ticket.id , self.ticketService.ticket.customer_id)
+                //                 .then( (data:any): void &#x3D;&gt; {
+                //                     if(data.success){
+                //                         self.ticketService.customerTickets.reset();
+                //                         self.ticketService.customerTickets.set(data.data);
+                //
+                //                     }
+                //                 })
+                //         }
+                //
+                //     }
+                //
+                //         let ticketStorig :any &#x3D; self.ticketsModel.getTicketByid(data.ticket_id);
+                //         if(data.author_id !&#x3D; user_id){
+                //             self.ticketService.getInboxdata(self.mailBoxModel.getMailboxCurrentId())
+                //                 .then( ( data: any ) : void &#x3D;&gt; {
+                //                     self.changeinboxname[self.mailBoxModel.getMailboxCurrentId()] &#x3D; data.data;
+                //                     self.inboxDataModel.update( self.changeinboxname[self.mailBoxModel.getMailboxCurrentId()], self.mailBoxModel.getMailboxCurrentId() );
+                //                 });
+                //             self.getTicket(data.ticket_id).then( (ticketdata:any)&#x3D;&gt;{
+                //
+                //                 if(ticketdata.success){
+                //                     if(self.mailBoxModel.getMailboxCurrentId() &#x3D;&#x3D; ticketdata.ticketData.mailbox_id){
+                //                         ticketdata.ticketData.comments &#x3D; [];
+                //                         let diff &#x3D; !!1;
+                //                         (&lt;any&gt;Object).values(self.notificationVariables.newTicketData).forEach( ( ticket: any , index : any ) : void &#x3D;&gt; {
+                //                             if(ticket.id &#x3D;&#x3D; data.ticket_id &amp;&amp; ticket.status &#x3D;&#x3D; ticketdata.ticketData.status){
+                //                                 self.notificationVariables.newTicketData[index] &#x3D; ticketdata.ticketData;
+                //                                 diff &#x3D; !!0;
+                //                             }
+                //
+                //                             if(ticket.id &#x3D;&#x3D; data.ticket_id &amp;&amp; ticketdata.ticketData.status !&#x3D; ticketStorig.status &amp;&amp; self.inboxDataActive !&#x3D; ticketdata.ticketData.status){
+                //                                 self.notificationVariables.newTicketData.splice(index, 1);
+                //                                 diff &#x3D; !!0;
+                //                             }
+                //
+                //                         })
+                //
+                //                         if(diff &amp;&amp; self.inboxDataActive &#x3D;&#x3D; ticketdata.ticketData.status){
+                //                             self.notificationVariables.newTicketData.push(ticketdata.ticketData);
+                //                         }
+                //
+                //                         // self.notificationVariables.newTicketData.push(ticketdata.ticketData);
+                //                         self.ticketsModel.updateTicketData(ticketdata.ticketData,data.ticket_id);
+                //
+                //                     }
+                //                 }
+                //             })
+                //         }
+                //
+                //
+                //         let count &#x3D; self.notificationVariables.historyCount + 1;
+                //         self.notificationVariables.historyCount &#x3D; count;
+                //         self.notificationVariables.history.reverse().push(data);
+                //         self.notificationVariables.history.reverse();
+                //     }
+                //
+                //
+                //
+                //     if(data.type !&#x3D; &quot;ticket_history&quot; &amp;&amp; data.type !&#x3D; &quot;step_first_email&quot;){
+                //         self.getAllNotification().then(( data: any ) : void &#x3D;&gt; {
+                //             if(data.success ){
+                //                 self.notificationVariables.notificationData &#x3D; self.notificationVariables.notificationData.concat(data.data.tickets);
+                //                 self.notificationVariables.total &#x3D; data.data.total;
+                //                 self.notificationVariables.total_new &#x3D; data.data.total_new
+                //             }
+                //             // this.allNotification &#x3D; data.data;
+                //         });
+                //     }
+                //
+                //
+                // }
+            }
+
+
+        });
+
+        this.socket.on(&#x27;exception&#x27;, function( data : any ) {
+            console.log(&#x27;event&#x27;, data);
+        });
+        this.socket.on(&#x27;disconnect&#x27;, function() {
+            console.log(&#x27;Disconnected&#x27;);
+        });
+
+
+        /**
+         * for fr
+         */
+
+
+
+
+
+
+
+        this.socket.on(&#x27;checkForwarding&#x27;, function( data : any )
+        {
+            self.checkForwarding.emit(data.data.mailbox_id);
+            self.toastr.success(&#x27;Your forwarding code  is copied.&#x27;, &#x27;Success&#x27;, self.defaultToastrParams)
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public getTicket( id: number ) : Promise&lt;any&gt;
+    {
+        let url: string &#x3D; this.ticketUrl + &#x27;/&#x27; + id;
+
+        return this.http.get( url, GlobalServices.AuthHeader(this.usersModel.getToken()) )
+            .toPromise()
+            .then(this.ticketsModel.extractDataForIndividual)
+            .catch(this.ticketsModel.handleError);
+    }
+
+    //
+    public getNotificationForScroll( event : any ){
+
+        if(event.target.offsetTop &lt;&#x3D; event.target.scrollTop &amp;&amp; this.notificationVariables.notificationOffset &lt; this.notificationVariables.total){
+            this.notificationVariables.notificationOffset &#x3D; this.notificationVariables.notificationOffset + 5;
+            this.getAllNotification(this.notificationVariables.notificationOffset).then(( data: any ) : void &#x3D;&gt; {
+                if(data.success &amp;&amp; data.data.tickets.length &gt; 0){
+                    this.notificationVariables.notificationData &#x3D; this.notificationVariables.notificationData.concat(data.data.tickets);
+                    this.notificationVariables.total &#x3D; data.data.total;
+                    this.notificationVariables.total_new &#x3D; data.data.total_new;
+                }
+            });
+        }
+
+    }
+
+
+    public setTicketHistory( history:any,historyCount :any ){
+        this.notificationVariables.historyCount &#x3D; historyCount;
+        this.notificationVariables.history &#x3D; history;
+        // if(this.notificationVariables.history.length &gt; 0){
+        // (&lt;any&gt;Object).values(history).forEach( ( ticket: any , index : any ) : void &#x3D;&gt; {
+        //     this.notificationVariables.history.push(ticket);
+        //
+        // });
+        // console.log(history);
+        // console.log(this.notificationVariables.history);
+        this.notificationVariables.history.reverse();
+        // }
+
+    }
+
+    public getAlltcikets(activeTickets:any,ticketsData:any){
+        this.notificationVariables.newTicketData &#x3D; [];
+        if(ticketsData.length &gt; 0){
+            (&lt;any&gt;Object).values(ticketsData).forEach( ( ticket: any , index : any ) : void &#x3D;&gt; {
+                if(ticket.status &#x3D;&#x3D; activeTickets){
+                    this.notificationVariables.newTicketData.push(ticket);
+                }
+            });
+
+        }
+
+        // return newTicketData;
+    }
+
+
+
+
+    public getPushNotificationData( )
+    {
+       let userdata &#x3D;  this.usersService.user;
+        var self &#x3D; this;
+        let sender : any &#x3D; {
+            clieantId: userdata.id,
+            userRoom: userdata.company_url,
+            type:&#x27;create&#x27;
+        };
+        function buildApplicationServerKey() {
+            const base64 &#x3D; &#x27;BE8PyI95I_jBIfb_LTS_nkUJnOwjLP2zAaGBSFEi3jmFJ3l5ox7-NtNqrVuyPL4Qmt4UxDI-YgwYI1sEMIpoU90&#x3D;&#x27;;
+            const rfc4648 &#x3D; base64.replace(/-/g, &#x27;+&#x27;).replace(/_/g, &#x27;/&#x27;);
+            const characters &#x3D; atob(rfc4648).split(&#x27;&#x27;).map(character &#x3D;&gt; character.charCodeAt(0));
+            return new Uint8Array(characters);
+        }
+
+        function permissionGranted() {
+            navigator.serviceWorker.ready.then((serviceWorkerRegistration) &#x3D;&gt; {
+                serviceWorkerRegistration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: buildApplicationServerKey(),
+                })
+                    .then((subscription) &#x3D;&gt; {
+                        sender.senderBrowserData &#x3D; subscription;
+                        console.log(sender)
+                        self.sendPushNotificationData(sender);
+                        // self.notificationsService.setNotificationAccses(sender);
+                    });
+            });
+        }
+        // function urlBase64ToUint8Array(base64String :any) {
+        //     const padding &#x3D; &#x27;&#x3D;&#x27;.repeat((4 - base64String.length % 4) % 4);
+        //     const base64 &#x3D; (base64String + padding)
+        //         .replace(/\-/g, &#x27;+&#x27;)
+        //         .replace(/_/g, &#x27;/&#x27;);
+        //
+        //     const rawData &#x3D; window.atob(base64);
+        //
+        //     return Uint8Array.from([rawData].map((char) &#x3D;&gt; char.charCodeAt(0)));
+        // }
+
+        function subscribeUserToPush() {
+            return navigator.serviceWorker.register(&#x27;service-worker.js&#x27;)
+                .then(function(registration) {
+                    const subscribeOptions &#x3D; {
+                        userVisibleOnly: true,
+                        applicationServerKey:
+                            buildApplicationServerKey()
+                    };
+                    return registration.pushManager.subscribe(subscribeOptions).then(function(pushSubscription) {
+                        sender.senderBrowserData &#x3D; pushSubscription;
+                        console.log(sender);
+                        self.sendPushNotificationData(sender);
+                        return pushSubscription;
+                    }).catch(function(error) {
+                        permissionGranted();
+                    })
+                })
+        }
+        if ((&lt;any&gt;Notification).permission &#x3D;&#x3D;&#x3D; &#x27;granted&#x27;) {
+            subscribeUserToPush();
+        }
+        //     Notification.requestPermission().then((result) &#x3D;&gt; {
+        //         subscribeUserToPush();
+        //
+        //     });
+        // }else{
+        //     navigator.serviceWorker.getRegistration().then(( registration : any ) &#x3D;&gt; {
+        //         if(registration){
+        //             registration.unregister().then(function(boolean : boolean) {
+        //                 subscribeUserToPush();
+        //             });
+        //         }else{
+        //             subscribeUserToPush();
+        //         }
+        //     });
+        // }
+    }
+
+
+    public sendPushNotificationData(data : any) : void
+    {
+        if(this.socket){
+            console.log(&#x27;asdads&#x27;,data)
+            data.authToken &#x3D; this.usersModel.getToken();
+            this.socket.emit(&#x27;setPushNotificationData&#x27;,data)
+
+        }
+    }
+
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'NotificationsService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<div class="sign-wrapper" >
+    <div class="birddesk-logo" [routerLink]="['/']">
+        <img src="../../../../../public/images/logo/logo.svg" alt="Logo">
+        <a [routerLink]="['/']">BirdDesk</a>
+    </div>
+    <button *ngIf="tabControll > 1" class="back-reg-btn"  (click)="goBack()">
+        <div class="individual-ticket-panel__btn back">
+            <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            <span>Back</span>
+        </div>
+    </button>
+    <button *ngIf="tabControll == 1" class="back-reg-btn"  [routerLink]="['/']">
+        <div class="individual-ticket-panel__btn back">
+            <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            <span>Back</span>
+        </div>
+    </button>
+    <signe-up-email
+            *ngIf="tabControll <= 1"
+            (changeStep)="tabControll = $event;"
+    ></signe-up-email>
+    <ng-container
+           *ngIf="tabControll > 1"
+
+            >
+        <div [class.multistep-form-wrapper]="tabControll != 3">
+            <div class="steps" >
+                <div class="steps__item" *ngFor="let step of steps"
+                     [class.passed]="tabControll > step"
+                     [class.active]="tabControll >= step"
+                     (click)="changeStep(step);"
+                >
+                    {{step}}
+                </div>
+
+            </div>
+                <signe-up-company-options
+                        *ngIf="tabControll == 2"
+                        (changeStep)="tabControll = $event"
+                >
+                </signe-up-company-options>
+                <!--<signe-up-subdomain-->
+                        <!--*ngIf="tabControll == 3"-->
+                        <!--(changeStep)="tabControll = $event"-->
+                <!--&gt;-->
+                <!--</signe-up-subdomain>-->
+               <!--<signe-up-another-email-->
+                        <!--*ngIf="tabControll == 4"-->
+                        <!--(changeStep)="tabControll = $event"-->
+                <!--&gt;-->
+                <!--</signe-up-another-email>-->
+                <signe-up-company-forward
+                        *ngIf="tabControll == 3"
+                        (changeStep)="tabControll = $event"
+                >
+                </signe-up-company-forward>
+        </div>
+     </ng-container>
+
+</div>

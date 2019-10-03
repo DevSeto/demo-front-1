@@ -1,0 +1,66 @@
+@import '../mixins/mixin';
+
+.toggle-btn {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 42px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: $whisper;
+  margin-left: 24px;
+  cursor: pointer;
+  color: $grey;
+  user-select: none;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__marker {
+    @extend .bold;
+    position: absolute;
+    font-size: 10px;
+    line-height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--on {
+      left: 4px;
+      opacity: 0;
+    }
+
+    &--off {
+      right: 4px;
+      opacity: 1;
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 0;
+    margin-right: -18px;
+    right: 100%;
+    background-color: $manatee;
+    transition: all .3s;
+  }
+}
+
+.toggle-btn__input:checked {
+  & ~ .toggle-btn__thumb {
+    background-color: $green;
+    right: 0%;
+    margin-right: 0px;
+
+  }
+  & ~ .toggle-btn__marker--off {
+    opacity: 0;
+  }
+
+  & ~ .toggle-btn__marker--on {
+    opacity: 1;
+  }
+}

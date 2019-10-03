@@ -1,0 +1,40 @@
+@import './accondion';
+@import './button';
+@import './inputs';
+@import './labels';
+@import './messages';
+@import './popup';
+@import './popup-list';
+@import './checkbox';
+@import './toggle-btn';
+@import './search';
+@import './tabs';
+@import './alert';
+@import './radio';
+@import './snoozing';
+@import './welcome-popup';
+@import './profile-setup';
+
+.link {
+  color: $blue;
+
+  &__green {
+    color: $green;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link-default {
+  text-decoration: underline;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.ui-select.create-ticket-form__input.create-ticket-form__input_dropdown.w-100 {
+  width: 100% !important;
+}

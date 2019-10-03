@@ -1,0 +1,279 @@
+<!--<section id="freesignup" class="freesignup-section" *ngIf="loginAgent">-->
+<!--    <div class="box-container container-signin clearfix">-->
+<!--        <div class="signIn-main-content clearfix">-->
+<!--            <div class="heading-text-part ">-->
+<!--                <div class="login-logo-container">-->
+<!--                    <img src="../../../../../public/images/logo2.png" alt="Bird Desk">-->
+<!--                    <h1 class="birddesk">BirdDesk</h1>-->
+<!--                </div>-->
+<!--                <div class="agent-signin">-->
+<!--                    <p class="text-center">Please create your BirdDesk login credentials:</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="input-field-login">-->
+<!--                    <form-->
+<!--                            [formGroup]="agentForm"-->
+<!--                            (ngSubmit)="submitForm()"-->
+<!--                            class="block-form-registration"-->
+<!--                    >-->
+<!--                        <div class="form-group">-->
+<!--                            <div class="box-input-body input-signin-group">-->
+<!--                                <div class="input-group">-->
+<!--                                    <input-->
+<!--                                            class="form-control user-name"-->
+<!--                                            autocomplete="off"-->
+<!--                                            placeholder="Your name"-->
+<!--                                            name="name"-->
+<!--                                            type="name"-->
+<!--                                            value="{{loginAgent.first_name}} {{loginAgent.last_name}}"-->
+<!--                                            disabled-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="box-input-body input-signin-group">-->
+<!--                                <div class="input-group">-->
+<!--                                    <input-->
+<!--                                            class="form-control user-email"-->
+<!--                                            autocomplete="off"-->
+<!--                                            placeholder="Your email"-->
+<!--                                            name="email"-->
+<!--                                            type="email"-->
+<!--                                            value="{{loginAgent.email}}"-->
+<!--                                            disabled-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="box-input-body input-signin-group">-->
+<!--                                <div class="input-group">-->
+<!--                                    <input-->
+<!--                                            [class.input-error-style]="classError('password') || agentFormErrors.password.verify"-->
+<!--                                            [class.input-success-style]="classSuccess('password') && !agentFormErrors.password.verify"-->
+<!--                                            type="password"-->
+<!--                                            class="form-control"-->
+<!--                                            placeholder="Password"-->
+<!--                                            value=""-->
+<!--                                            formControlName="password"-->
+<!--                                            (keyup)="passwordIncludes(agentForm.controls.password.value)"-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--                                <span id="password-error" class="error-span help-block error backend-error input-group-error">-->
+<!--                                    <form-errors-->
+<!--                                            [control]="agentForm.controls.password"-->
+<!--                                            [formSubmit]="agentForm.submitted"-->
+<!--                                            [controlName]="'password'"-->
+<!--                                    ></form-errors>-->
+<!--                                    <span *ngIf="agentFormErrors.password.verify">-->
+<!--                                        {{agentFormErrors.password.text}}-->
+<!--                                    </span>-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                            <div [class.errorpadding]="addpadding">-->
+<!--                                <div *ngIf="agentForm.controls.password.value.length">-->
+<!--                                    <p class="password-strength">-->
+<!--                                        Password strength:-->
+<!--                                        <span id="strength-text"></span>-->
+<!--                                    </p>-->
+<!--                                    <div class="strength-progressbar">-->
+<!--                                        <div id="progress-width"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <ul class="include-list">-->
+<!--                                    <li *ngFor="let field of passwordInclude;">-->
+<!--                                        <span [class.password-include-circle]="field.active" class="custom-blue-circle"></span>-->
+<!--                                        <span [class.password-include-text]="field.active" style="padding-left: 5px">-->
+<!--                                            {{field.name}}-->
+<!--                                        </span>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="box-input-body input-signin-group password_confirmation">-->
+<!--                                <div class="input-group">-->
+<!--                                    <input-->
+<!--                                            [class.input-error-style]="classError('password_confirmation') || agentFormErrors.password_confirmation.verify"-->
+<!--                                            [class.input-success-style]="classSuccess('password_confirmation') && !agentFormErrors.password_confirmation.verify"-->
+<!--                                            type="password"-->
+<!--                                            class="form-control"-->
+<!--                                            value=""-->
+<!--                                            placeholder="Password confirmation"-->
+<!--                                            formControlName="password_confirmation"-->
+<!--                                    >-->
+<!--                                </div>-->
+<!--                                <span id="password_confirmation-error" class="error-span help-block error backend-error input-group-error">-->
+<!--                                    <form-errors-->
+<!--                                            [control]="agentForm.controls.password_confirmation"-->
+<!--                                            [formSubmit]="agentForm.submitted"-->
+<!--                                            [controlName]="'password_confirmation'"-->
+<!--                                    ></form-errors>-->
+<!--                                    <span *ngIf="agentFormErrors.password_confirmation.verify">-->
+<!--                                        {{agentFormErrors.password_confirmation.text}}-->
+<!--                                    </span>-->
+<!--                                    <span class="passwordsErrorText-box" *ngIf="dontMatch">-->
+<!--                                        {{passwordsErrorText}}-->
+<!--                                    </span>-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                            <div class="block-check" [class.errorpadding]="dontMatch || addpadding">-->
+<!--                                <input-->
+<!--                                        id="checkBox2"-->
+<!--                                        type="checkbox"-->
+<!--                                        class="rectangle-checkbox"-->
+<!--                                />-->
+<!--                                <label for="checkBox2">Keep me singed in</label>-->
+<!--                            </div>-->
+<!--                            <div class="input-group">-->
+<!--                                <button type="submit" class="submit-button" style="margin-bottom: 0">Sign in to-->
+<!--                                    BirdDesk-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div class="bottom-text-part">-->
+<!--                                <p class="box-already-have">-->
+<!--                                    <span>-->
+<!--                                        <span>New to BirdDesk?</span>-->
+<!--                                        <span>-->
+<!--                                            <a [routerLink]="['/register']" title="Sign up now"> Sign up now.</a>-->
+<!--                                        </span>-->
+<!--                                    </span>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<div class="sign-wrapper"  *ngIf="loginAgent">
+    <div class="birddesk-logo">
+        <img src="../../../../../public/images/logo/logo.svg" alt="Logo">
+        <a href="#">BirdDesk</a>
+    </div>
+
+    <div class="multistep-form-wrapper multistep-form-wrapper--agent">
+
+        <form class="multistep-form"
+              [formGroup]="agentForm"
+              (ngSubmit)="submitForm()"
+        >
+
+            <h2 class="multistep-form__title text-center bold">Please create your BirdDesk login credentials</h2>
+
+            <div class="multistep-form-inner">
+                <div class="multistep-form-input-wrapper ">
+                    <input type="text"
+                           class="multistep-form__input input w-100"
+                           placeholder="Full name"
+                           autocomplete="off"
+                           name="name"
+                           [value]="loginAgent.first_name +' '+ loginAgent.last_name"
+                           disabled
+                    >
+                </div>
+                <div class="multistep-form-input-wrapper">
+                    <input
+                           class="multistep-form__input input w-100"
+                           autocomplete="off"
+                           placeholder="Your email"
+                           name="email"
+                           type="email"
+                           value="{{loginAgent.email}}"
+                           disabled
+                    >
+                </div>
+                <div class="multistep-form-input-wrapper multistep-form-input-wrapper--last">
+                    <input
+                            type="password"
+                            class="multistep-form__input multistep-form__input--password input w-100"
+                            placeholder="Password"
+                            [class.input-error-style]="classError('password') || agentFormErrors.password.verify"
+                            [class.input-success-style]="classSuccess('password') && !agentFormErrors.password.verify"
+                            value=""
+                            formControlName="password"
+                            (keyup)="passwordIncludes(agentForm.controls.password.value)"
+                    >
+                </div>
+
+
+                <span id="password-error" class="error-span help-block error backend-error input-group-error">
+                    <form-errors
+                            [control]="agentForm.controls.password"
+                            [formSubmit]="agentForm.submitted"
+                            [controlName]="'password'"
+                    ></form-errors>
+                    <span *ngIf="agentFormErrors.password.verify">
+                        {{agentFormErrors.password.text}}
+                    </span>
+                </span>
+                <div class="password-level"
+                     [ngClass]="{
+                        'password-level':true,
+                        'password-level--1' : validCount && validCount < 3,
+                        'password-level--2' : validCount > 2 && validCount < 5,
+                        'password-level--3' : validCount > 4
+                        }"
+                >
+                    <div class="password-level__el"></div>
+                    <div class="password-level__el"></div>
+                    <div class="password-level__el"></div>
+                </div>
+                <div class="pass-error-status" [class.errorpadding]="addpadding">
+
+                    <ul class="include-list">
+                        <li *ngFor="let field of passwordInclude;">
+                            <span [class.password-include-circle]="field.active" class="custom-blue-circle"></span>
+                            <span [class.password-include-text]="field.active" style="padding-left: 5px">
+                                            {{field.name}}
+                                        </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="multistep-form-input-wrapper mb16">
+                    <input
+                            type="password"
+                            class="multistep-form__input multistep-form__input--password input w-100"
+                            placeholder="Password"
+                            [class.input-error-style]="classError('password_confirmation') || agentFormErrors.password_confirmation.verify"
+                            [class.input-success-style]="classSuccess('password_confirmation') && !agentFormErrors.password_confirmation.verify"
+                            value=""
+                            formControlName="password_confirmation"
+                    >
+                    <span id="password-error" class="error-span help-block error backend-error input-group-error  signe-up-error">
+                        <form-errors
+                                [control]="agentForm.controls.password_confirmation"
+                                [formSubmit]="agentForm.submitted"
+                                [controlName]="'password_confirmation'"
+                        ></form-errors>
+                        <span *ngIf="agentFormErrors.password_confirmation.verify">
+                            {{agentFormErrors.password_confirmation.text}}
+                        </span>
+                        <span class="passwordsErrorText-box" *ngIf="dontMatch">
+                            {{passwordsErrorText}}
+                        </span>
+                    </span>
+                </div>
+
+                <div class="ui-checkbox-wrapper">
+                    <label class="ui-checkbox">
+                        <input class="ui-checkbox__input" type="checkbox" name="mailbox" (change)="keepsigned = $event.target.checked">
+                        <span class="ui-checkbox__check-wrapper">
+                                <span class="ui-checkbox__check"></span>
+                                <span class="ui-checkbox__check__after"></span>
+                        </span>
+                        <span class="ui-checkbox__label">Keep me signed in</span>
+                    </label>
+                </div>
+
+                <div class="grad-btn grad-btn--fill " [class.disabled]="dontMatch">
+                    <button [disabled]="dontMatch" class="grad-btn__btn"  type="submit">Sign in</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+
+                <div class="text-center text--sm">New to BirdDesk? <a [routerLink]="['/register']" class="link">Sign up now</a></div>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>

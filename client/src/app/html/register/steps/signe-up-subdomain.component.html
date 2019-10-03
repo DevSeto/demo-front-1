@@ -1,0 +1,54 @@
+
+
+    <form class="multistep-form"
+          [formGroup]="userForm"
+          (ngSubmit)="register()"
+    >
+
+        <h2 class="multistep-form__title text-center bold">What URL do you want for you company?</h2>
+        <div class="flex align-center multistep-form__input">
+            <input type="text"
+                   class="input w-100 multistep-form__input--url ok"
+                   placeholder="Company URL"
+                   [class.input-error-style]="classError('company_url')"
+                   [class.input-success-style]="classSuccess('company_url')"
+                   [class.ok]="classSuccess('company_url')"
+                   autocomplete="off"
+                   placeholder="Your company domain"
+                   name="company_url"
+                   type="text"
+                   value=""
+                   data-rules="required"
+                   formControlName="company_url"
+                   [(ngModel)]="usersService.stepsData.company_url"
+                   (ngModelChange)="verifyTwinsError('company_url', $event)"
+            >
+            <span class="text--lg bold multistep-form__domain">.birddesk.com</span>
+        </div>
+        <span class="error-span help-block error backend-error input-group-error signe-up-error relative-error">
+            <form-errors
+                    [control]="userForm.controls.company_url"
+                    [formSubmit]="userForm.submitted"
+                    [controlName]="'company url'"
+            ></form-errors>
+            <span *ngIf="userFormErrors.company_url.verify">
+                {{userFormErrors.company_url.text}}
+            </span>
+        </span>
+        <label class="ui-checkbox multistep-form__checkbox agree_checkbox">
+            <input class="ui-checkbox__input" type="checkbox" name="mailbox" (change)="agree = !agree">
+            <span class="ui-checkbox__check-wrapper">
+                    <span class="ui-checkbox__check"></span>
+                    <span class="ui-checkbox__check__after"></span>
+            </span>
+            <span class="ui-checkbox__label">By clicking “I Agree”, you understand and agree to the Contract on behalf of the Customer (as described in our <a href="#" class="link-default">Customer Terms of Service</a>), <a href="#" class="link-default">Privacy Policy</a>, and <a href="#" class="link-default">Cookie Policy</a>.</span>
+        </label>
+
+        <div style="width: 160px" class="grad-btn grad-btn--fill" [class.disabled]="oneclick">
+            <button class="grad-btn__btn" [disabled]="oneclick">
+                <i class='fa  fa-circle-o-notch  fa-spin ' *ngIf="oneclick"></i>Create</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+
+    </form>
+

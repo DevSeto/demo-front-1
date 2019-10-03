@@ -1,0 +1,64 @@
+.search-results {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 100%;
+  background-color: $white-smoke-bg;
+  z-index: 3;
+  box-sizing: border-box;
+  box-shadow: 2px 0 15px -10px rgba(0,0,0,0.5);
+
+
+  &__advaced-search {
+    color: $blue;
+    font-size: 16px;
+    display: inline-block;
+    margin: 14px 16px 16px 16px;
+
+    &:hover {
+      color: darken($color: $blue, $amount: 10)
+    }
+  }
+}
+
+.search-list {
+  font-size: 16px;
+  max-height: 226px;
+  overflow: auto;
+  border-bottom: 1px solid $whisper;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &__item {
+    padding: 10px 16px;
+    border-top: 1px solid $whisper;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color: $white-smoke-bg, $amount: 5)
+    }
+  }
+
+  &__item-type {
+    padding-left: 24px;
+    line-height: (24em / 16);
+    color: $text-grey;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: left center;
+
+    &.agents {
+      background-image: url(../images/icons/profile-grey.svg);
+    }
+    
+    &.ticket {
+      background-image: url(../images/icons/tickets-grey.svg);
+    }
+  }
+
+  &__item-title {
+    line-height: (24em / 16);
+  }
+}

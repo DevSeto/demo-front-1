@@ -1,0 +1,162 @@
+@font-face {
+  font-family: 'Lato Black';
+  font-style: normal;
+  src: local('Lato Black'),
+       url('../fonts/Lato-Black.woff2') format('woff2'), 
+       url('../fonts/Lato-Black.woff') format('woff'),
+       url('../fonts/Lato-Black.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Lato Bold';
+  font-style: normal;
+  src: local('Lato Bold'),
+       url('../fonts/Lato-Bold.woff2') format('woff2'), 
+       url('../fonts/Lato-Bold.woff') format('woff'),
+       url('../fonts/Lato-Bold.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Lato Hairline';
+  font-style: normal;
+  src: local('Lato Hairline'),
+       url('../fonts/Lato-Hairline.woff2') format('woff2'), 
+       url('../fonts/Lato-Hairline.woff') format('woff'),
+       url('../fonts/Lato-Hairline.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Lato Light';
+  font-style: normal;
+  src: local('Lato Light'),
+       url('../fonts/Lato-Light.woff2') format('woff2'), 
+       url('../fonts/Lato-Light.woff') format('woff'),
+       url('../fonts/Lato-Light.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  font-style: normal;
+  src: local('Lato Regular'),
+       url('../fonts/Lato-Regular.woff2') format('woff2'), 
+       url('../fonts/Lato-Regular.woff') format('woff'),
+       url('../fonts/Lato-Regular.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  font-style: normal;
+  src: 
+       url('../fonts/Montserrat-Bold.woff2') format('woff2'), 
+       url('../fonts/Montserrat-Bold.woff') format('woff'),
+       url('../fonts/Montserrat-Bold.ttf') format('ttf'),
+}
+
+
+@font-face {
+  font-family: 'PlayfairDisplay Italic';
+  font-style: normal;
+  src: 
+  url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'), 
+  url('../fonts/PlayfairDisplay-Italic.woff') format('woff'),
+  url('../fonts/PlayfairDisplay-Italic.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'SF Display Regular';
+  font-style: normal;
+  src: 
+  url('../fonts/SFUIDisplay-Regular.woff2') format('woff2'), 
+  url('../fonts/SFUIDisplay-Regular.woff') format('woff'),
+  url('../fonts/SFUIDisplay-Regular.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'SF Display Semibold';
+  font-style: normal;
+  src: 
+  url('../fonts/SFUIDisplay-Semibold.woff2') format('woff2'), 
+  url('../fonts/SFUIDisplay-Semibold.woff') format('woff'),
+  url('../fonts/SFUIDisplay-Semibold.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'SF Text Regular';
+  font-style: normal;
+  src: 
+  url('../fonts/SFUIText-Regular.woff2') format('woff2'), 
+  url('../fonts/SFUIText-Regular.woff') format('woff'),
+  url('../fonts/SFUIText-Regular.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'SF Text Semibold';
+  font-style: normal;
+  src: 
+       url('../fonts/SFUIText-Semibold.woff2') format('woff2'), 
+       url('../fonts/SFUIText-Semibold.woff') format('woff'),
+       url('../fonts/SFUIText-Semibold.ttf') format('ttf'),
+}
+
+.bold {
+  font-family: 'Lato Bold', sans-serif;
+}
+
+.normal {
+  font-family: 'Lato Regular';
+}
+
+.light {
+  font-family: 'Lato Light', sans-serif;
+}
+
+.reqular {
+  font-family: 'Lato Regular', sans-serif;
+}
+
+.black {
+  font-family: 'Lato Black', sans-serif;
+}
+
+.grey {
+  color: $text-grey;
+}
+
+.green {
+  color: $green;
+}
+
+.white {
+  color: #fff;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.dark {
+  color: $text-black;
+}
+
+.red {
+  color: $text-red;
+}
+
+.blue {
+  color: $blue;
+}
+
+.text {
+  &--lg {
+    font-size: 18px;
+  }
+
+  &--md {
+    font-size: 14px;
+  }
+
+  &--sm {
+    font-size: 12px;
+  }
+
+}

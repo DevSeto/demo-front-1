@@ -1,0 +1,240 @@
+
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <a class="nav__logo" href="/">BirdDesk</a>
+        <ul id="nav-list" class="nav-list" [class.showHomeMenu]="cloud.effect.showHomeMenu" >
+            <!--<li class="nav-list__li"><a class="nav-list__link" >About us</a></li>
+            <li class="nav-list__li"><a class="nav-list__link">Why birddesk</a></li>
+            <li class="nav-list__li"><a class="nav-list__link" >Resources</a></li>
+            <li class="nav-list__li"><a class="nav-list__link" >Pricing</a></li>
+            <li class="nav-list__li nav-list__li&#45;&#45;last"><a class="nav-list__link" >Contact</a></li>-->
+            <li class="nav-list__li nav-list__li--login"><a class="nav-list__link nav-list__link--login"  [routerLink]="['/login']">Log in</a>
+            </li>
+            <li class="nav-list__li nav-list__li--start">
+                <div class="grad-btn">
+                    <button class="grad-btn__btn grad-btn__btn--ivory" [routerLink]="['/register']">Get Started</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="menu-mobile">
+            <a href=""></a>
+
+            <a class="nav-list__link nav-list__link--login bold" [routerLink]="['/login']">Log in</a>
+
+            <div class="grad-btn">
+                <button class="grad-btn__btn" [routerLink]="['/get-started']">Get Started</button>
+                <span class="grad-btn__bg"></span>
+            </div>
+
+            <button id="menu" class="nav__menu" [class.open]="cloud.effect.showHomeMenu" (click)="cloud.effect = 'showHomeMenu'">
+                <span class="nav__menu-line"></span>
+                <span class="nav__menu-line"></span>
+                <span class="nav__menu-line"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<section class="about-us">
+    <div class="about-us__info">
+        <h2 class="about-us__header">
+            A new and better way, <br />engage and retain customers
+        </h2>
+        <p class="about-us__text">
+            Can something be true and reality and false in our minds? Of course it can (remember “Rashomon”). Could the
+            reverse be true? Yes, it can. This is what we call optical or sensory illusions.
+        </p>
+        <div class="grad-btn grad-btn--fill">
+            <button class="grad-btn__btn" [routerLink]="['/get-started']">Get Started</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+    </div>
+
+    <div class="about-us__img">
+        <img src="../../../../../public/images/images/1.svg" alt="A new and better way, engage and retain customers">
+    </div>
+</section>
+
+<section class="system-intelligently">
+    <div class="system-intelligently__info">
+        <h2 class="system-intelligently__header">The system intelligently adapts</h2>
+        <p class="system-intelligently__text">
+            We know that the Sun exists. We don’t know that God exists. We believe that God exists – but we don’t and cannot
+            know it, in the scientific sense of the word. We can design experiments to falsify (prove wrong) the existence
+            of electrons, quarks, and black holes (and, thus, if all these experiments fail, prove that electrons, quarks,
+            and black holes exist).
+        </p>
+        <ul class="system-intelligently-list">
+            <li class="system-intelligently-list__li">
+                <span>Lower prices</span>
+            </li>
+            <li class="system-intelligently-list__li">
+                <span>We can design experiments to falsify the existence of electrons</span>
+            </li>
+            <li class="system-intelligently-list__li">
+                <span>Lower prices</span>
+            </li>
+        </ul>
+        <div class="grad-btn grad-btn--fill">
+            <button class="grad-btn__btn" [routerLink]="['/get-started']">Get Started</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+    </div>
+    <div class="system-intelligently__img">
+        <img class="system-intelligently__oval" src="../../../../../public/images/images/Oval1.svg" alt="">
+        <img class="system-intelligently__open-tickets" src="../../../../../public/images/images/open-tickets-2x.jpg" alt="">
+    </div>
+
+</section>
+
+<section class="features">
+    <div class="features__info">
+        <h2 class="features__header">Features and functionalities</h2>
+
+        <p class="features__text">
+            Can something be true and reality and false in our minds? Of course it can (remember “Rashomon”). Could the
+            reverse be true? Yes, it can. This is what we call optical or sensory illusions. Even solidity is an illusion of
+            our senses – there are no such things as solid objects (remember the physicist’s desk which is 99.99999% vacuum
+            with minute granules.
+        </p>
+
+        <a class="more-link" href="#">More about Features</a>
+    </div>
+    <div class="features__img">
+        <img src="../../../../../public/images/images/2.svg" alt="">
+    </div>
+</section>
+
+<section class="features">
+    <div class="features__info">
+        <h2 class="features__header">Why users choose, trust and rely on us?</h2>
+
+        <p class="features__text">
+            Can something be true and reality and false in our minds? Of course it can (remember “Rashomon”). Could the
+            reverse be true? Yes, it can. This is what we call optical or sensory illusions. Even solidity is an illusion of
+            our senses – there are no such things as solid objects (remember the physicist’s desk which is 99.99999% vacuum
+            with minute granules.
+        </p>
+
+        <a class="more-link" href="#">More about Us</a>
+    </div>
+    <div class="features__img">
+        <img src="../../../../../public/images/images/3.svg" alt="">
+    </div>
+</section>
+
+<section class="new-way">
+    <div class="new-way__video">
+        <app-track></app-track>
+<!--        <iframe-->
+<!--                width="560"-->
+<!--                height="315"-->
+<!--                src="https://www.youtube.com/embed/ZVjo86OEeFc?controls=0&version=3&enablejsapi=1"-->
+<!--                frameborder="0"-->
+<!--                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                allowfullscreen-->
+<!--                class="youtube-iframe"-->
+<!--        >-->
+
+<!--        </iframe>-->
+
+    </div>
+    <div class="new-way__info">
+        <h2 class="new-way__header">
+            A new and better way to acquire
+        </h2>
+        <p class="new-way__text">
+            We know that the Sun exists. We don’t know that God exists. We believe that God exists – but we don’t and cannot
+            know it, in the scientific sense of the word.
+        </p>
+        <div class="new-way__blockquote">
+            <div class="new-way__blockquote-author">
+                <img src="../../../../../public/images/images/user.png" alt="Harold Perry">
+                <span>Harold Perry</span>
+            </div>
+            <blockquote class="new-way__blockquote-text">
+                <span class="green">«</span>We believe that God exists – but we don’t and cannot know it, in the scientific
+                sense of the word.<span class="green">»</span>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<section class="system-intelligently system-intelligently--last">
+    <div class="system-intelligently__info">
+        <h2 class="system-intelligently__header">The system intelligently adapts</h2>
+        <p class="system-intelligently__text">
+            We know that the Sun exists. We don’t know that God exists. We believe that God exists – but we don’t and cannot
+            know it, in the scientific sense of the word. We can design experiments to falsify (prove wrong) the existence
+            of electrons, quarks, and black holes (and, thus, if all these experiments fail, prove that electrons, quarks,
+            and black holes exist).
+        </p>
+        <a class="more-link" href="#">More about Us</a>
+    </div>
+    <div class="system-intelligently__img">
+        <img class="system-intelligently__oval" src="../../../../../public/images/images/Oval2.svg" alt="">
+        <img class="system-intelligently__open-tickets system-intelligently__open-tickets--mock" src="../../../../../public/images/images/presentation-mock.png" alt="">
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-links">
+        <h3 class="footer-links__title">Features</h3>
+        <ul class="footer-links__list">
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Help Desk</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Knowledge Base</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Bird Chat</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-links">
+        <h3 class="footer-links__title">Company</h3>
+        <ul class="footer-links__list">
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">About Us</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Careers</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Terms of Service</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Security</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Privacy</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="footer-links">
+        <h3 class="footer-links__title">Get Help</h3>
+        <ul class="footer-links__list">
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Developers</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Help Docs</a>
+            </li>
+            <li class="footer-links__li">
+                <a class="footer-links__link" href="#">Contact Sales</a>
+            </li>
+        </ul>
+    </div>
+
+</footer>
+</body>

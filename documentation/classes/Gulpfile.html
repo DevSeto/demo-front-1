@@ -1,0 +1,1361 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>Gulpfile</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>gulpfile.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#Build">Build</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destRoot">destRoot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#generatedFiles">generatedFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#hashSettings">hashSettings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#imageOptimisationSettings">imageOptimisationSettings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#replaceNameHelper">replaceNameHelper</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bowerConcat">bowerConcat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeHtml">changeHtml</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#concatAllJs">concatAllJs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#concatCss">concatCss</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#concatMainJs">concatMainJs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#copyAllFiles">copyAllFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#copyFiles">copyFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#default">default</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#imagesOptimize">imagesOptimize</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeAllFiles">removeAllFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeFiles">removeFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stripCss">stripCss</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stripJs">stripJs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#zoneMinify">zoneMinify</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="Build"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            Build
+                            </b>
+                            <a href="#Build"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>Build:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.destRoot + &quot;build.js&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">gulpfile.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="destRoot"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            destRoot
+                            </b>
+                            <a href="#destRoot"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>destRoot:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;dist/&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">gulpfile.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="generatedFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            generatedFiles
+                            </b>
+                            <a href="#generatedFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>generatedFiles:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        css: &#x27;&#x27;,
+        js: &#x27;&#x27;
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">gulpfile.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hashSettings"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            hashSettings
+                            </b>
+                            <a href="#hashSettings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>hashSettings:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        hashLength: 5,
+        algorithm: &#x27;md5&#x27;
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">gulpfile.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageOptimisationSettings"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            imageOptimisationSettings
+                            </b>
+                            <a href="#imageOptimisationSettings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>imageOptimisationSettings:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        interlaced: true,
+        progressive: true,
+        optimizationLevel: 5,
+        svgoPlugins: [{removeViewBox: true}]
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">gulpfile.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="replaceNameHelper"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            replaceNameHelper
+                            </b>
+                            <a href="#replaceNameHelper"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>replaceNameHelper:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>( file: any ) : string &#x3D;&gt; file.relative.split(&#x27;.&#x27;)[1]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">gulpfile.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bowerConcat"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            bowerConcat
+                            </b>
+                            <a href="#bowerConcat"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>bowerConcat()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">gulpfile.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeHtml"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeHtml
+                            </b>
+                            <a href="#changeHtml"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>changeHtml()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">gulpfile.ts:143</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="concatAllJs"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            concatAllJs
+                            </b>
+                            <a href="#concatAllJs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>concatAllJs()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">gulpfile.ts:88</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="concatCss"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            concatCss
+                            </b>
+                            <a href="#concatCss"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>concatCss()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">gulpfile.ts:110</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="concatMainJs"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            concatMainJs
+                            </b>
+                            <a href="#concatMainJs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>concatMainJs()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">gulpfile.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="copyAllFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            copyAllFiles
+                            </b>
+                            <a href="#copyAllFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>copyAllFiles()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="174" class="link-to-prism">gulpfile.ts:174</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="copyFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            copyFiles
+                            </b>
+                            <a href="#copyFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>copyFiles()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">gulpfile.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="default"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            default
+                            </b>
+                            <a href="#default"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>default()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@SequenceTask() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="191" class="link-to-prism">gulpfile.ts:191</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Array&lt;string&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imagesOptimize"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            imagesOptimize
+                            </b>
+                            <a href="#imagesOptimize"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>imagesOptimize()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">gulpfile.ts:152</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeAllFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            removeAllFiles
+                            </b>
+                            <a href="#removeAllFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>removeAllFiles()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="180" class="link-to-prism">gulpfile.ts:180</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeFiles"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            removeFiles
+                            </b>
+                            <a href="#removeFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>removeFiles()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">gulpfile.ts:161</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stripCss"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            stripCss
+                            </b>
+                            <a href="#stripCss"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>stripCss()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">gulpfile.ts:127</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stripJs"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            stripJs
+                            </b>
+                            <a href="#stripJs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>stripJs()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">gulpfile.ts:135</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="zoneMinify"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            zoneMinify
+                            </b>
+                            <a href="#zoneMinify"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>zoneMinify()</code>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b><code>@Task() </code>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">gulpfile.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Gulpclass, Task, SequenceTask} from &quot;gulpclass/Decorators&quot;;
+import {staticFiles} from &quot;./gulp-static-files.ts&quot;;
+
+let gulp &#x3D; require(&quot;gulp&quot;),
+    del &#x3D; require(&quot;del&quot;),
+    concat &#x3D; require(&quot;gulp-concat&quot;),
+    cssmin &#x3D; require(&quot;gulp-cssmin&quot;),
+    uglify &#x3D; require(&quot;gulp-uglify&quot;),
+    hash &#x3D; require(&#x27;gulp-hash&#x27;),
+    tap &#x3D; require(&#x27;gulp-tap&#x27;),
+    imagemin &#x3D; require(&#x27;gulp-imagemin&#x27;),
+    newer &#x3D; require(&#x27;gulp-newer&#x27;),
+    gzip &#x3D; require(&#x27;gulp-gzip&#x27;),
+    concatCss &#x3D; require(&#x27;gulp-concat-css&#x27;),
+    rename &#x3D; require(&quot;gulp-rename&quot;),
+    replace &#x3D; require(&#x27;gulp-string-replace&#x27;),
+    strip &#x3D; require(&#x27;gulp-strip-comments&#x27;),
+    stripCssComments &#x3D; require(&#x27;gulp-strip-css-comments&#x27;);
+
+@Gulpclass()
+export class Gulpfile {
+
+    private destRoot: string &#x3D; &quot;dist/&quot;;
+    private Build: string &#x3D; this.destRoot + &quot;build.js&quot;;
+
+    private generatedFiles: any &#x3D; {
+        css: &#x27;&#x27;,
+        js: &#x27;&#x27;
+    };
+
+    private hashSettings: any &#x3D; {
+        hashLength: 5,
+        algorithm: &#x27;md5&#x27;
+    };
+
+    private imageOptimisationSettings: any &#x3D; {
+        interlaced: true,
+        progressive: true,
+        optimizationLevel: 5,
+        svgoPlugins: [{removeViewBox: true}]
+    };
+
+    private replaceNameHelper: any &#x3D; ( file: any ) : string &#x3D;&gt; file.relative.split(&#x27;.&#x27;)[1];
+
+    @Task()
+    public copyFiles() : any
+    {
+        return  gulp.src(&#x27;client/src/index-aot.html&#x27;)
+            .pipe(rename({
+                basename: &quot;index&quot;,
+                extname: &quot;.html&quot;
+            }))
+            .pipe(gulp.dest(this.destRoot)),
+
+            gulp.src(&#x27;.htaccess&#x27;).pipe(gulp.dest(this.destRoot)),
+            gulp.src(&#x27;favicon.ico&#x27;).pipe(gulp.dest(this.destRoot)),
+            gulp.src(&#x27;public/fonts/**&#x27;).pipe(gulp.dest(this.destRoot+&#x27;public/fonts&#x27;)),
+            gulp.src(&#x27;public/js/extsrc.min.js&#x27;).pipe(gulp.dest(this.destRoot+&#x27;public/js&#x27;));
+    }
+
+    @Task()
+    public concatMainJs() : any
+    {
+        return gulp.src(staticFiles.js)
+            .pipe(uglify())
+            .pipe(concat(&#x27;main.js&#x27;))
+            .pipe(gulp.dest(this.destRoot + &#x27;public/js&#x27;));
+    }
+
+    @Task()
+    public bowerConcat() : any
+    {
+        return gulp.src(staticFiles.bower)
+            .pipe(uglify())
+            .pipe(concat(&#x27;bower.js&#x27;))
+            .pipe(gulp.dest(this.destRoot + &#x27;public/js&#x27;));
+    }
+
+    @Task()
+    public zoneMinify() : any
+    {
+        return gulp.src(&#x27;node_modules/zone.js/dist/zone.js&#x27;)
+            .pipe(uglify())
+            .pipe(gulp.dest(this.destRoot));
+    }
+
+    @Task()
+    public concatAllJs() : any
+    {
+        return gulp.src([
+            this.destRoot + &#x27;public/js/bower.js&#x27;,
+            this.destRoot + &#x27;public/js/main.js&#x27;,
+            &#x27;node_modules/core-js/client/shim.min.js&#x27;,
+            this.destRoot + &#x27;zone.js&#x27;,
+            this.Build])
+
+            .pipe(concat(&#x27;main.min.js&#x27;))
+            .pipe(hash(this.hashSettings))
+            .pipe(gulp.dest(this.destRoot + &#x27;public/js&#x27;))
+
+            .pipe(tap( ( file: any )&#x3D;&gt;{
+                this.generatedFiles.js &#x3D; &#x27;public/js/main.&#x27;+this.replaceNameHelper(file)+&#x27;.js&#x27;;
+            }))
+
+            .pipe(gzip())
+            .pipe(gulp.dest(this.destRoot + &#x27;public/js&#x27;));
+    }
+
+    @Task()
+    public concatCss() : any
+    {
+        return gulp.src(staticFiles.css)
+            .pipe(concatCss(&#x27;main.min.css&#x27;))
+            .pipe(cssmin())
+            .pipe(hash(this.hashSettings))
+            .pipe(gulp.dest(this.destRoot + &#x27;public/css&#x27;))
+
+            .pipe(tap( ( file: any )&#x3D;&gt;{
+                this.generatedFiles.css &#x3D; &#x27;public/css/main.&#x27;+this.replaceNameHelper(file)+&#x27;.css&#x27;;
+            }))
+
+            .pipe(gzip())
+            .pipe(gulp.dest(this.destRoot + &#x27;public/css&#x27;));
+    }
+
+    @Task()
+    public stripCss() : any
+    {
+        return gulp.src(this.destRoot + this.generatedFiles.css)
+            .pipe(stripCssComments())
+            .pipe(gulp.dest(this.destRoot + &#x27;public/css&#x27;));
+    }
+
+    @Task()
+    public stripJs() : any
+    {
+        return gulp.src(this.destRoot + this.generatedFiles.js)
+            .pipe(strip())
+            .pipe(gulp.dest(this.destRoot + &#x27;public/js&#x27;));
+    }
+
+    @Task()
+    public changeHtml() : any
+    {
+        return gulp.src(this.destRoot + &quot;index.html&quot;)
+            .pipe(replace(/main.css/g, this.generatedFiles.css))
+            .pipe(replace(/main.js/g, this.generatedFiles.js))
+            .pipe(gulp.dest(this.destRoot));
+    }
+
+    @Task()
+    public imagesOptimize() : any
+    {
+        return gulp.src(&#x27;public/images/**&#x27;)
+            .pipe(newer(&#x27;dist/public/images&#x27;))
+            .pipe(imagemin(this.imageOptimisationSettings))
+            .pipe(gulp.dest(this.destRoot+&#x27;public/images&#x27;));
+    }
+
+    @Task()
+    public removeFiles() : any
+    {
+        let removedFiles: Array&lt;string&gt; &#x3D; [
+            this.destRoot + &#x27;public/js/bower.js&#x27;,
+            this.destRoot + &#x27;public/js/main.js&#x27;,
+            this.destRoot + &#x27;build.js&#x27;,
+            this.destRoot + &#x27;zone.js&#x27;
+        ];
+
+        return del(removedFiles);
+    }
+
+    @Task()
+    public copyAllFiles() : any
+    {
+        return gulp.src(this.destRoot+&#x27;**&#x27;).pipe(gulp.dest(this.destRoot+&#x27;client&#x27;));
+    }
+
+    @Task()
+    public removeAllFiles() : any
+    {
+        return del([
+                this.destRoot + &#x27;public/**&#x27;,
+                this.destRoot + &#x27;.htaccess&#x27;,
+                this.destRoot + &#x27;favicon.ico&#x27;,
+                this.destRoot + &#x27;index.html&#x27;
+            ]);
+    }
+
+    @SequenceTask()
+    public default() : Array&lt;string&gt;
+    {
+        console.log(&quot;Start minify and optimisation&quot;);
+
+        return [
+            &quot;copyFiles&quot;,
+            &quot;concatMainJs&quot;,
+            &quot;bowerConcat&quot;,
+            &quot;zoneMinify&quot;,
+            &quot;concatAllJs&quot;,
+            &quot;concatCss&quot;,
+            &quot;stripCss&quot;,
+            &quot;stripJs&quot;,
+            &quot;changeHtml&quot;,
+            &quot;imagesOptimize&quot;,
+            &quot;removeFiles&quot;,
+            &quot;copyAllFiles&quot;,
+            &quot;removeAllFiles&quot;
+        ];
+    }
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Gulpfile.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

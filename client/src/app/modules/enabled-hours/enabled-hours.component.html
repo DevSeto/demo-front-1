@@ -1,0 +1,100 @@
+<div class="office-hours__day"  *ngFor="let day of days, let idx = index ">
+    <label class="ui-checkbox">
+        <input
+                class="ui-checkbox__input"
+                 type="checkbox"
+                name="after-i-replay"
+                [id]="idx"
+                [checked]="mailboxService.mailbox.auto_reply_timeline[day].enable"
+                (click)="clickCheckbox(day)"
+        >
+        <span class="ui-checkbox__check-wrapper">
+                <span class="ui-checkbox__check"></span>
+                <span class="ui-checkbox__check__after"></span>
+        </span>
+    </label>
+    <span class="office-hours__date">  {{day}}</span>
+
+    <div class="ui-select" dropdown>
+        <div class="ui-select__input" dropdown-open>{{mailboxService.mailbox.auto_reply_timeline[day]['from'] | date:'shortTime'}}</div>
+        <div class="ui-select__options" >
+            <div class="ui-select__option"
+                 *ngFor="let hours of hoursData.hoursData"
+                 (click)="changeHours(hours.key,day,'from')"
+            >
+                {{hours.value}}AM
+            </div>
+        </div>
+    </div>
+
+    <span class="office-hours__date-to">to</span>
+
+
+    <div class="ui-select" dropdown>
+        <div class="ui-select__input" dropdown-open>{{mailboxService.mailbox.auto_reply_timeline[day]['to'] | date:'shortTime'}}</div>
+        <div class="ui-select__options" >
+            <div class="ui-select__option"
+                 *ngFor="let hours of hoursData.hoursData"
+                 (click)="changeHours(hours.key,day,'to')"
+            >
+                {{hours.value}}PM
+            </div>
+        </div>
+    </div>
+</div>
+<section *ngIf="1!=1">
+    <div class="">
+        <table class="hours-table">
+            <tr *ngFor="let day of days, let idx = index ">
+                <td width="25px" class="hours-padding">
+                    <div class="rounded-checkbox">
+                        <input
+                                type="checkbox"
+                                id="{{idx}}"
+                                name="check"
+                                [checked]="mailboxService.mailbox.auto_reply_timeline[day].enable"
+                                (click)="clickCheckbox(day)"
+                        />
+                        <label for="{{idx}}"></label>
+                    </div>
+                </td>
+                <td class="hours-padding align-bottom">
+                    <div>
+                        <label for="{{idx}}" class="cursor_pointer">
+                            {{day}}
+                        </label>
+                    </div>
+                </td>
+                <td width="25%">
+                    <div class="dropdown custom-select-item date-picker">
+                        <datetime
+                                (ngModelChange)="changeDate(day)"
+                                [datepicker]="false"
+                                [(ngModel)]="mailboxService.mailbox.auto_reply_timeline[day]['from']"
+                                [container]="'#custom-select-item'+idx"
+                                [isSelected]="mailboxService.mailbox.auto_reply_timeline[day].enable"
+                        >
+                        </datetime>
+                    </div>
+                </td>
+                <td>
+                    <div class="blockTo hours-padding">
+                        to
+                    </div>
+                </td>
+                <td width="25%">
+                    <div class="dropdown timetable custom-select-item date-picker">
+                        <datetime
+                                [datepicker]="false"
+                                (ngModelChange)="changeDate(day)"
+
+                                [(ngModel)]="mailboxService.mailbox.auto_reply_timeline[day]['to']"
+                                [isSelected]="mailboxService.mailbox.auto_reply_timeline[day].enable"
+                        >
+                        </datetime>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

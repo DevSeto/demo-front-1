@@ -1,0 +1,250 @@
+.resent-activites {
+  max-width: 94px;
+  width: 1000px;
+  display: flex;
+  border-left: 1px solid $whisper;
+  position: relative;
+  justify-content: flex-end;
+  transition: all 0.3s;
+  will-change: max-width;
+
+  &__close-btn {
+    color: $individual-ticket-panel-btn;
+    box-sizing: content-box;
+    position: absolute;
+    padding: 8px;
+    width: 16px;
+    height: 16px;
+    top: -68px;
+    right: 0;
+    cursor: pointer;
+    transition: color .3s;
+    outline: none;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &.open {
+    max-width: 320px;
+
+    .resent-activites-bar {
+      min-width: 240px;
+      position: relative;
+
+      &__wrapper {
+        position: relative;
+        max-width: 320px;
+        margin-left: 0px;
+        transition: all 0.3s;
+        box-shadow: -2px 0 7px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: -2px 0 7px 0 rgba(0,0,0,0.05);
+      }
+    }
+  }
+
+  &-btn {
+    position: absolute;
+    width: 32px;
+    top: 20px;
+    height: 32px;
+    padding: 4px;
+    left: 50%;
+    transform: translate(-50%);
+    color: $individual-ticket-panel-btn;
+    transition: color 0.15s;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      color: $green !important;
+      font-family: 'Lato Bold', sans-serif;
+    }
+  }
+}
+
+.resent-activites-bar {
+  position: relative;
+  margin: 0 40px;
+  height: 100%;
+  max-height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    width: 320px;
+    max-width: 0px;
+    background-color: $white-bg;
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+    overflow: hidden;
+    margin-left: 94px;
+    will-change: max-width;
+    transition: max-width 0.3s;
+  }
+
+  &__user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 56px;
+    max-width: 56px;
+    max-height: 56px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    background-image: url(../images/stock-img/avatar.png);
+    background-size: contain;
+    background-position: center;
+    font-size: 0;
+    color: transparent;
+    user-select: none;
+
+    &.empty {
+      background-color: #FFD3D6;
+      background-image: none;
+      color: #EE777F;
+      display: flex;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__user-name {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__user-email {
+    font-size: 16px;
+    color: $manatee;
+    margin-bottom: 16px;
+  }
+}
+
+.resent-activites-details {
+  width: 100%;
+  margin-bottom: 18px;
+
+  &__wrapper {
+    overflow: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__haeder {
+    padding: 8px 0px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      top: 16px;
+      border-top: 2px solid $black;
+      border-right: 2px solid $black;
+      width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      transform: rotateZ(135deg);
+      transition: transform 0.3s;
+      transform-origin: 70% 25%;
+    }
+  }
+
+  &-list {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .3s;
+
+    &__item {
+      line-height: 24px;
+      padding: 16px 0px;
+      border-bottom: 1px solid $whisper;
+
+      .label {
+        margin-left: 18px;
+      }
+    }
+
+    &__item-user {
+      color: $text-green;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.resent-activites-details__haeder.open {
+  &::after {
+    transform: rotateZ(-45deg);
+  }
+}
+
+.resent-activites-details__haeder.open+.resent-activites-details-list {
+  max-height: 500px;
+}
+
+.resent-activites-details-list__item {
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.resent-activites.open {
+  .icon-svg.ripple::after {
+    width: 0;
+    height: 0;
+  }
+}
+
+.resent-activites__close-btn:hover {
+  * {
+    fill: $text-black;
+  }
+  .icon-svg.ripple::after {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media all and (max-width: 1700px) {
+  .resent-activites-bar__wrapper {
+    position: absolute !important;
+    top: 0;
+    height: calc(100% - 80px);
+    transition: all 0.3s !important;
+  }
+
+  .resent-activites.open {
+    max-width: 94px;
+  }
+}
+
+@media all and (max-width: 1260px) {
+  .resent-activites {
+    max-width: 60px;
+  }
+
+  .resent-activites.open {
+    max-width: 60px;
+  }
+
+  .tickets-row__item-message-author {
+    margin-right: 12px;
+  }
+}

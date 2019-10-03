@@ -1,0 +1,387 @@
+button {
+  border: none;
+  background-color: transparent;
+  font-family: 'Lato Regular', sans-serif;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn {
+  &.primary {
+    min-width: 130px;
+    color: $text-white;
+    font-size: 18px;
+    height: 44px;
+    line-height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: linear-gradient(270deg, #08AEEA 0%, #14CD9A 100%);
+    box-shadow: 0 2px 4px 0 rgba(29, 29, 29, 0.25);
+  }
+
+  &.dafault {
+    min-width: 130px;
+    font-size: 18px;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $manatee;
+    color: $manatee;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background-color: $manatee;
+      color: $white-bg;
+    }
+
+  }
+
+  &.discard {
+    color: $text-red;
+    border-color: currentColor;
+    transition: all .3s;
+
+    &:hover {
+      background-color: $text-red;
+      color: $white-bg;
+    }
+  }
+
+  &.approve {
+    color: $text-green;
+    border-color: currentColor;
+    transition: all .3s;
+
+    &:hover {
+      background-color: $text-green;
+      color: $white-bg;
+    }
+  }
+
+  &.skip {
+    background-color: $gray84;
+    color: $white-bg;
+    border: none;
+  }
+}
+
+.notification-btn {
+  position: relative;
+  color: $manatee;
+  transition: color 0.3s;
+  cursor: pointer;
+  outline: none;
+  height: 24px;
+
+  &__badge {
+    position: absolute;
+    color: $text-white;
+    line-height: 17px;
+    height: 17px;
+    padding: 0 1px;
+    right: -4px;
+    top: -6px;
+    min-width: 17px;
+    background-color: $green;
+    border-radius: 17px;
+    font-size: 12px;
+
+  }
+
+  &:hover {
+    color: $green;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+.toogle-tickets-btn {
+  min-height: 24px;
+  min-width: 24px;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 22px;
+
+  &:hover {
+    span {
+      background-color: $green;
+    }
+  }
+
+  span {
+    position: absolute;
+    width: 16px;
+    left: 4px;
+    height: 2px;
+    background-color: $text-black;
+    transition: background-color 0.3s;
+
+    &:nth-child(1) {
+      top: 6px;
+    }
+
+    &:nth-child(2) {
+      top: 11px;
+    }
+
+    &:nth-child(3) {
+      top: 16px;
+    }
+  }
+}
+
+.create-ticket-btn {
+  outline: none;
+  cursor: pointer;
+}
+
+.grad-btn {
+  display: inline-block;
+  position: relative;
+  height: 42px;
+  min-width: 158px;
+  border-radius: 4px;
+  background-color: $white-smoke-bg;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    left: -1px;
+    top: -1px;
+    border-radius: 4px;
+    background: linear-gradient(to right, rgba(8, 174, 234, 1) 0%, rgba(20, 205, 154, 1) 100%);
+    z-index: -1;
+  }
+
+  &__btn {
+    font-size: 18px;
+    color: #3DBFBE;
+    height: 100%;
+    width: 100%;
+    padding: 0 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: $white-smoke-bg;
+    border-radius: 4px;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity .3s;
+    outline: none;
+  }
+
+  &:hover &__bg,
+  &--fill &__bg {
+    opacity: 0;
+  }
+
+  &:hover &__btn,
+  &--fill &__btn {
+    background-clip: none;
+    -webkit-text-fill-color: $white-bg;
+    color: $white-bg;
+  }
+
+  &.plus {
+    width: 24px;
+    height: 24px;
+    min-width: auto;
+    line-height: 1;
+    padding: 0;
+    border-radius: 24px;
+
+    .grad-btn__bg {
+      border-radius: 24px;
+    }
+
+    &::after {
+      border-radius: 24px;
+    }
+
+    .grad-btn__btn {
+      padding: 0;
+      border-radius: 24px !important;
+
+      &::after {
+        content: '+';
+        font-size: 24px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &.grad-btn--minus {
+    .grad-btn__btn {
+      color: $text-red;
+
+      &:after {
+        content: "\2014";
+      }
+
+    }
+
+    .grad-btn__value {
+      color: $text-red;
+      white-space: nowrap;
+    }
+
+    &::after {
+      background: $text-red;
+    }
+  }
+}
+
+.merge-btn {
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+
+    path:last-child {
+      fill: $green;
+    }
+  }
+
+}
+
+.btn-no-border {
+  color: $blue;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.grad-btn.disabled {
+  .grad-btn__btn[disabled="disabled"] {
+    pointer-events: none;
+  }
+
+  &::after {
+    background: $gray84;
+  }
+}
+
+.back-reg-btn {
+  position: absolute;
+  top: 140px;
+  left: 160px;
+  font-size: 16px;
+
+  &:hover {
+
+    svg {
+      color: $green;
+    }
+
+    span {
+      color: $green !important;
+    }
+  }
+}
+
+.grad-btn:hover {
+  .grad-btn__btn.grad-btn__btn--ivory {
+    background-color: transparent;
+    transition: all 0.15s;
+  }
+}
+
+.grad-btn__btn.grad-btn__btn--ivory {
+  background-color: $ivory;
+  transition: all 0.15s;
+}
+
+.backbutton-sm {
+  display: none;
+}
+
+*[class$="__close-btn"]:hover {
+  .icon-svg.ripple::after {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.btn.checking.login-checkmark {
+  height: 44px;
+  min-width: 44px;
+  border-radius: 0 2px 2px 0;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn.checking.login-checkmark svg {
+  position: absolute;
+  height: 50%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media all and (max-width: 1280px) {
+  .back-reg-btn {
+    left: 40px;
+    top: 100px;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .back-reg-btn {
+    left: 12px;
+    top: 100px;
+  }
+}
+
+@media all and (max-width: 560px) {
+  .backbutton-sm {
+    display: flex;
+    align-items: center;
+    color: $manatee;
+    margin-right: 20px;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+
+.grad-btn__bg.bg-white {
+  background-color: $white-bg;
+}
+
+
+.grad-btn.grad-btn--fill:hover::after {
+  background: linear-gradient(to right, #14cd9a 0%, #08aeea 100%);
+}
+
+.btn-simple {
+  height: 55px;
+  padding: 0 40px;
+  color: $greyTwenty;
+  font-size: 18px;
+  box-shadow: 0 2px 4px 0 rgba(29,29,29,0.25);
+  border-radius: 4px;
+  background-color: $white-bg;
+}

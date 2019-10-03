@@ -1,0 +1,18 @@
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+@import './navbar';
+@import './workflow';
+@import './header-panel';
+@import './main-wrapper';
+@import './tickets-panel';
+@import './tickets-wrapper';
+@import './resent-activites';
+@import './individual-ticket';
+@import './ticket-editor';
+@import './tickets';
+@import './ticket-row';
+@import './tickets_grid';
+@import './notifications';

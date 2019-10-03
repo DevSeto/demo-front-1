@@ -1,0 +1,1525 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>LoginAgent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>client/src/app/components/login-agent/login-agent.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../../html/login-agent/login-agent.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_agentFormErrors">_agentFormErrors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addpadding">addpadding</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formSubmit">formSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#invite">invite</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAgent">loginAgent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#passwordsErrorText">passwordsErrorText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#userValidation">userValidation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#checkIfMatchingPasswords">checkIfMatchingPasswords</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#createAgent">createAgent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#rememberMe">rememberMe</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agentForm">agentForm</a>
+                            </li>
+                            <li>
+                                <a href="#classError">classError</a>
+                            </li>
+                            <li>
+                                <a href="#classSuccess">classSuccess</a>
+                            </li>
+                            <li>
+                                <a href="#isRememberMe">isRememberMe</a>
+                            </li>
+                            <li>
+                                <a href="#verifyTwinsError">verifyTwinsError</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#agentFormErrors">agentFormErrors</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, usersService: <a href="../injectables/UsersService.html">UsersService</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, mailboxService: <a href="../injectables/MailBoxService.html">MailBoxService</a>, userModel: <a href="../injectables/UsersModel.html">UsersModel</a>, mailBoxModel: <a href="../injectables/MailBoxModel.html">MailBoxModel</a>, ticketsModel: <a href="../injectables/TicketsModel.html">TicketsModel</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:139</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>titleService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailboxService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxService.html" target="_self" >MailBoxService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersModel.html" target="_self" >UsersModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mailBoxModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/MailBoxModel.html" target="_self" >MailBoxModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ticketsModel</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TicketsModel.html" target="_self" >TicketsModel</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="agentForm"></a>
+                        <code>agentForm</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:66</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="classError"></a>
+                        <code>classError</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>(param:string):boolean &#x3D;&gt; {
+        if ((!this.agentForm.controls[param].valid &amp;&amp; this.agentForm.controls[param].touched) ||
+            (!this.agentForm.controls[param].valid &amp;&amp; this.agentForm.submitted))
+        {
+            this.addpadding &#x3D; !!1;
+            return !!1;
+        }
+        else if (this.agentFormErrors[param].verify)
+            return !!1;
+        else
+        {
+            this.addpadding &#x3D; !!0;
+            return !!0;
+        }
+    }</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:93</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="classSuccess"></a>
+                        <code>classSuccess</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>(param:string):boolean &#x3D;&gt; {
+        return this.agentForm.controls[param].valid &amp;&amp; this.agentForm.controls[param].touched;
+    }</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:110</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="isRememberMe"></a>
+                        <code>isRememberMe</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>false</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:63</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="verifyTwinsError"></a>
+                        <code>verifyTwinsError</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:115</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkIfMatchingPasswords"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            checkIfMatchingPasswords
+                            </b>
+                            <a href="#checkIfMatchingPasswords"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>checkIfMatchingPasswords(passwordKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, passwordConfirmationKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:125</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>passwordKey</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>passwordConfirmationKey</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createAgent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            createAgent
+                            </b>
+                            <a href="#createAgent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>createAgent()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="168" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:168</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="159" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:159</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rememberMe"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            rememberMe
+                            </b>
+                            <a href="#rememberMe"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>rememberMe()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:202</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_agentFormErrors"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            _agentFormErrors
+                            </b>
+                            <a href="#_agentFormErrors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>_agentFormErrors:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+        password: {
+            verify: !!0,
+            text: _._
+        },
+        password_confirmation: {
+            verify: !!0,
+            text: _._
+        }
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addpadding"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            addpadding
+                            </b>
+                            <a href="#addpadding"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>addpadding:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>!!0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formSubmit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            formSubmit
+                            </b>
+                            <a href="#formSubmit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>formSubmit:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>!!0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="invite"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            invite
+                            </b>
+                            <a href="#invite"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>invite:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginAgent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            loginAgent
+                            </b>
+                            <a href="#loginAgent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>loginAgent:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="passwordsErrorText"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            passwordsErrorText
+                            </b>
+                            <a href="#passwordsErrorText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>passwordsErrorText:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;The passwords don&#x27;t match&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userValidation"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            userValidation
+                            </b>
+                            <a href="#userValidation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>userValidation:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+
+        password: [
+            _._,
+            [
+                Validators.required,
+                ValidationService.passwordValidator,
+                Validators.minLength(6)
+            ]
+        ],
+        password_confirmation: [
+            _._,
+            [
+                Validators.required,
+                ValidationService.passwordValidator,
+                Validators.minLength(6)
+            ]
+        ]
+    }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="agentFormErrors"></a>
+                        <span class="name"><b>agentFormErrors</b><a href="#agentFormErrors"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>agentFormErrors()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:68</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>agentFormErrors(currentErrors: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">client/src/app/components/login-agent/login-agent.ts:72</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>currentErrors</td>
+                                                    
+                                                            <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="../miscellaneous/variables.html#id" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input} from &quot;@angular/core&quot;;
+import {OnInit} from &quot;@angular/core&quot;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {Title} from &#x27;@angular/platform-browser&#x27;;
+import {FormBuilder, Validators, FormGroup, FormControl } from &#x27;@angular/forms&#x27;;
+import {UsersService} from &#x27;../../services/components/users.service&#x27;;
+import {ValidationService} from &quot;../../services/helpers/validation.service&quot;;
+import {UsersModel} from &quot;../../models/components/users.model&quot;;
+import {ActivatedRoute} from &quot;@angular/router&quot;;
+// import {Encryption} from &quot;../../services/helpers/encryption.service&quot;;
+import {TicketsModel} from &quot;../../models/components/tickets.model&quot;;
+import {GlobalServices} from &quot;../../services/helpers/global.service&quot;;
+import {_} from &quot;../../services/helpers/helper.service&quot;;
+import {MailBoxService} from &#x27;../../services/components/mailbox.service&#x27;;
+import {MailBoxModel} from &#x27;../../models/components/mailbox.model&#x27;;
+
+
+
+@Component({
+    templateUrl: &#x27;../../html/login-agent/login-agent.html&#x27;,
+})
+
+export class LoginAgent implements OnInit {
+
+    public invite: any;
+    public addpadding:boolean &#x3D; !!0;
+    public formSubmit:boolean &#x3D; !!0;
+    public loginAgent: any;
+    public passwordsErrorText: string &#x3D; &quot;The passwords don&#x27;t match&quot;;
+
+    private _agentFormErrors:any &#x3D; {
+        password: {
+            verify: !!0,
+            text: _._
+        },
+        password_confirmation: {
+            verify: !!0,
+            text: _._
+        }
+    };
+
+    private userValidation:any &#x3D; {
+
+        password: [
+            _._,
+            [
+                Validators.required,
+                ValidationService.passwordValidator,
+                Validators.minLength(6)
+            ]
+        ],
+        password_confirmation: [
+            _._,
+            [
+                Validators.required,
+                ValidationService.passwordValidator,
+                Validators.minLength(6)
+            ]
+        ]
+    };
+
+    @Input()
+    public isRememberMe:boolean &#x3D; false;
+
+    @Input()
+    public agentForm:any;
+
+    public get agentFormErrors():any {
+        return this._agentFormErrors;
+    }
+
+    public set agentFormErrors(currentErrors:any) {
+        if (_.empty(currentErrors))
+        {
+            for (let key in currentErrors)
+            {
+                if (currentErrors.hasOwnProperty(key) &amp;&amp; this._agentFormErrors.hasOwnProperty(key)) {
+                    this._agentFormErrors[key].verify &#x3D; !!1;
+                    this._agentFormErrors[key].text &#x3D; currentErrors[key];
+                }
+            }
+        }
+    }
+
+    // @Input()
+    // public login():void {
+    //     if (this.agentForm.dirty &amp;&amp; this.agentForm.valid)
+    //         this.loginUser();
+    //
+    // }
+
+    @Input()
+    public classError:any &#x3D; (param:string):boolean &#x3D;&gt; {
+        if ((!this.agentForm.controls[param].valid &amp;&amp; this.agentForm.controls[param].touched) ||
+            (!this.agentForm.controls[param].valid &amp;&amp; this.agentForm.submitted))
+        {
+            this.addpadding &#x3D; !!1;
+            return !!1;
+        }
+        else if (this.agentFormErrors[param].verify)
+            return !!1;
+        else
+        {
+            this.addpadding &#x3D; !!0;
+            return !!0;
+        }
+    };
+
+    @Input()
+    public classSuccess:any &#x3D; (param:string):boolean &#x3D;&gt; {
+        return this.agentForm.controls[param].valid &amp;&amp; this.agentForm.controls[param].touched;
+    };
+
+    @Input()
+    public verifyTwinsError(param:string, value:string):void {
+        if (_.empty(this.agentFormErrors[param].text)) {
+            if (this.agentFormErrors[param].text &#x3D;&#x3D; value) {
+                this.agentFormErrors[param].verify &#x3D; !!1;
+            }
+            else
+                this.agentFormErrors[param].verify &#x3D; !!0;
+        }
+    }
+
+    public checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string): any {
+
+        return (group: FormGroup) &#x3D;&gt; 
+        {
+            let passwordInput &#x3D; group.controls[passwordKey],
+                passwordConfirmationInput &#x3D; group.controls[passwordConfirmationKey];
+
+            if (passwordInput.value !&#x3D;&#x3D; passwordConfirmationInput.value) {
+                return passwordConfirmationInput.setErrors( {notEquivalent: true})
+            }
+            else {
+                return passwordConfirmationInput.setErrors(null);
+            }
+        }
+    }
+
+    constructor(
+        private router:Router,
+        private route: ActivatedRoute,
+        private usersService:UsersService,
+        private titleService:Title,
+        private fb:FormBuilder,
+        private mailboxService:MailBoxService,
+        private userModel:UsersModel,
+        private mailBoxModel:MailBoxModel,
+        private ticketsModel: TicketsModel
+    ) {
+        this.invite &#x3D; this.route.snapshot.queryParams[&quot;invite&quot;];
+
+        // console.log(this.ticketsModel.extractDataForUrl(this.invite));
+        this.loginAgent &#x3D; this.ticketsModel.extractDataForUrl(this.invite);
+        console.log(this.loginAgent.user_name, this.loginAgent.user_email)
+    }
+
+    public ngOnInit():void {
+        if (this.userModel.getLoggedUserId)
+        {
+            this.userModel.logoutUser();
+        }
+        this.titleService.setTitle(&#x27;Birddesk: Login&#x27;);
+        this.agentForm &#x3D; this.fb.group(this.userValidation,{validator: this.checkIfMatchingPasswords(&#x27;password&#x27;, &#x27;password_confirmation&#x27;)});
+    }
+    
+    public createAgent() : void
+    {
+        let locationPaths: Array&lt;string&gt; &#x3D; (&lt;any&gt;window).location.host.split(&#x27;.&#x27;);
+        this.userModel.userAuthotization &#x3D; !!0;
+        this.usersService.registerAgent({&#x27;form_data&#x27;:this.agentForm.value, &#x27;url_data&#x27;:this.loginAgent})
+            .then( ( data: any ) &#x3D;&gt; {
+                if ( ! data.success )
+                {
+                    this.agentFormErrors &#x3D; data.errors;
+                }
+                else
+                {
+                    if ( locationPaths[0] &#x3D;&#x3D; data.data.company_url )
+                    {
+                        this.mailboxService.getAllMailboxs()
+                            .then((mailboxData:any)&#x3D;&gt;{
+                                if(mailboxData.success){
+                                    this.mailBoxModel.insertMailboxId(mailboxData.data[0][&#x27;id&#x27;]);
+                                }
+                            });
+
+                        this.userModel.userAuthotization &#x3D; !!1;
+                        this.userModel.insert(data.data);
+                        this.router.navigate([&#x27;/tickets&#x27;]);
+                    }
+                    else
+                    {
+                        (&lt;any&gt;window).location.href &#x3D; GlobalServices.getCompanyUrl(data.data.company_url);
+                    }
+                }
+            });
+
+    }
+
+    public rememberMe() : void
+    {
+        this.isRememberMe &#x3D; !!(+this.isRememberMe - 1);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section id&#x3D;&quot;freesignup&quot; class&#x3D;&quot;freesignup-section&quot;&gt;
+
+    &lt;div class&#x3D;&quot;box-container container-signin clearfix&quot; &gt;
+        &lt;div class&#x3D;&quot;signIn-main-content clearfix&quot;&gt;
+            &lt;div class&#x3D;&quot;heading-text-part &quot;&gt;
+                &lt;div class&#x3D;&quot;login-logo-container&quot;&gt;
+                    &lt;img src&#x3D;&quot;../../../../../public/images/logo2.png&quot; alt&#x3D;&quot;Bird Desk&quot;&gt;
+                    &lt;h1 class&#x3D;&quot;birddesk&quot;&gt;BirdDesk&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;agent-signin&quot;&gt;
+                    &lt;p class&#x3D;&quot;text-center&quot;&gt;Please create your BirdDesk login credentials:&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                &lt;div class&#x3D;&quot;input-field-login&quot;&gt;
+                    &lt;form
+                            [formGroup]&#x3D;&quot;agentForm&quot;
+                            class&#x3D;&quot;block-form-registration&quot;
+                    &gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;div class&#x3D;&quot;box-input-body input-signin-group&quot;&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot;&gt;
+                                    &lt;input
+                                            class&#x3D;&quot;form-control user-name&quot;
+                                            autocomplete&#x3D;&quot;off&quot;
+                                            placeholder&#x3D;&quot;Your name&quot;
+                                            name&#x3D;&quot;name&quot;
+                                            type&#x3D;&quot;name&quot;
+                                            value&#x3D;&quot;{{loginAgent.first_name}} {{loginAgent.last_name}}&quot;
+                                            disabled
+                                    &gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;box-input-body input-signin-group&quot;&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot;&gt;
+                                    &lt;input
+                                            class&#x3D;&quot;form-control user-email&quot;
+                                            autocomplete&#x3D;&quot;off&quot;
+                                            placeholder&#x3D;&quot;Your email&quot;
+                                            name&#x3D;&quot;email&quot;
+                                            type&#x3D;&quot;email&quot;
+                                            value&#x3D;&quot;{{loginAgent.user_email}}&quot;
+                                            disabled
+                                    &gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;box-input-body input-signin-group&quot;&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot;&gt;
+                                    &lt;input
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;password&#x27;) || agentFormErrors.password.verify&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;password&#x27;) &amp;&amp; !agentFormErrors.password.verify&quot;
+                                            type&#x3D;&quot;password&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            placeholder&#x3D;&quot;Password&quot;
+                                            value&#x3D;&quot;&quot;
+                                            formControlName&#x3D;&quot;password&quot;
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;password-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;agentForm.controls.password&quot;
+                                            [controlName]&#x3D;&quot;&#x27;password&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;agentFormErrors.password.verify&quot;&gt;
+                                        {{agentFormErrors.password.text}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;box-input-body input-signin-group&quot; [class.errorpadding]&#x3D;&quot;addpadding&quot;&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot;&gt;
+                                    &lt;input
+                                            [class.input-error-style]&#x3D;&quot;classError(&#x27;password_confirmation&#x27;) || agentFormErrors.password_confirmation.verify&quot;
+                                            [class.input-success-style]&#x3D;&quot;classSuccess(&#x27;password_confirmation&#x27;) &amp;&amp; !agentFormErrors.password_confirmation.verify&quot;
+                                            type&#x3D;&quot;password&quot;
+                                            class&#x3D;&quot;form-control&quot;
+                                            value&#x3D;&quot;&quot;
+                                            placeholder&#x3D;&quot;Password confirmation&quot;
+                                            formControlName&#x3D;&quot;password_confirmation&quot;
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;span id&#x3D;&quot;password_confirmation-error&quot; class&#x3D;&quot;error-span help-block error backend-error input-group-error&quot;&gt;
+                                    &lt;form-errors
+                                            [control]&#x3D;&quot;agentForm.controls.password_confirmation&quot;
+                                            [controlName]&#x3D;&quot;&#x27;password_confirmation&#x27;&quot;
+                                    &gt;&lt;/form-errors&gt;
+                                    &lt;span *ngIf&#x3D;&quot;agentFormErrors.password_confirmation.verify&quot;&gt;
+                                        {{agentFormErrors.password_confirmation.text}}
+                                    &lt;/span&gt;
+                                    &lt;span class&#x3D;&quot;passwordsErrorText-box&quot; *ngIf&#x3D;&quot;classError(&#x27;password_confirmation&#x27;)&quot;&gt;
+                                        {{passwordsErrorText}}
+                                    &lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;block-check&quot; [class.errorpadding]&#x3D;&quot;addpadding&quot;&gt;
+                                &lt;input
+                                        id&#x3D;&quot;checkBox2&quot;
+                                        type&#x3D;&quot;checkbox&quot;
+                                        class&#x3D;&quot;rectangle-checkbox&quot;
+                                /&gt;
+                                &lt;label for&#x3D;&quot;checkBox2&quot;&gt;Keep me singed in&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;input-group&quot;&gt;
+                                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;submit-button&quot; style&#x3D;&quot;margin-bottom: 0&quot; (click)&#x3D;&quot;createAgent()&quot;&gt;Sign in to BirdDesk&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;bottom-text-part&quot;&gt;
+                                &lt;p class&#x3D;&quot;box-already-have&quot;&gt;
+                                    &lt;span&gt;
+                                        &lt;span&gt;New to BirdDesk?&lt;/span&gt;
+                                        &lt;span&gt;
+                                            &lt;a [routerLink]&#x3D;&quot;[&#x27;/register&#x27;]&quot; title&#x3D;&quot;Sign up now&quot;&gt; Sign up now.&lt;/a&gt;
+                                        &lt;/span&gt;
+                                    &lt;/span&gt;
+                                &lt;/p&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section id="freesignup" class="freesignup-section">    <div class="box-container container-signin clearfix" >        <div class="signIn-main-content clearfix">            <div class="heading-text-part ">                <div class="login-logo-container">                    <img src="../../../../../public/images/logo2.png" alt="Bird Desk">                    <h1 class="birddesk">BirdDesk</h1>                </div>                <div class="agent-signin">                    <p class="text-center">Please create your BirdDesk login credentials:</p>                </div>            </div>            <div class="col-md-12">                <div class="input-field-login">                    <form                            [formGroup]="agentForm"                            class="block-form-registration"                    >                        <div class="form-group">                            <div class="box-input-body input-signin-group">                                <div class="input-group">                                    <input                                            class="form-control user-name"                                            autocomplete="off"                                            placeholder="Your name"                                            name="name"                                            type="name"                                            value="{{loginAgent.first_name}} {{loginAgent.last_name}}"                                            disabled                                    >                                </div>                            </div>                            <div class="box-input-body input-signin-group">                                <div class="input-group">                                    <input                                            class="form-control user-email"                                            autocomplete="off"                                            placeholder="Your email"                                            name="email"                                            type="email"                                            value="{{loginAgent.user_email}}"                                            disabled                                    >                                </div>                            </div>                            <div class="box-input-body input-signin-group">                                <div class="input-group">                                    <input                                            [class.input-error-style]="classError(\'password\') || agentFormErrors.password.verify"                                            [class.input-success-style]="classSuccess(\'password\') && !agentFormErrors.password.verify"                                            type="password"                                            class="form-control"                                            placeholder="Password"                                            value=""                                            formControlName="password"                                    >                                </div>                                <span id="password-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="agentForm.controls.password"                                            [controlName]="\'password\'"                                    ></form-errors>                                    <span *ngIf="agentFormErrors.password.verify">                                        {{agentFormErrors.password.text}}                                    </span>                                </span>                            </div>                            <div class="box-input-body input-signin-group" [class.errorpadding]="addpadding">                                <div class="input-group">                                    <input                                            [class.input-error-style]="classError(\'password_confirmation\') || agentFormErrors.password_confirmation.verify"                                            [class.input-success-style]="classSuccess(\'password_confirmation\') && !agentFormErrors.password_confirmation.verify"                                            type="password"                                            class="form-control"                                            value=""                                            placeholder="Password confirmation"                                            formControlName="password_confirmation"                                    >                                </div>                                <span id="password_confirmation-error" class="error-span help-block error backend-error input-group-error">                                    <form-errors                                            [control]="agentForm.controls.password_confirmation"                                            [controlName]="\'password_confirmation\'"                                    ></form-errors>                                    <span *ngIf="agentFormErrors.password_confirmation.verify">                                        {{agentFormErrors.password_confirmation.text}}                                    </span>                                    <span class="passwordsErrorText-box" *ngIf="classError(\'password_confirmation\')">                                        {{passwordsErrorText}}                                    </span>                                </span>                            </div>                            <div class="block-check" [class.errorpadding]="addpadding">                                <input                                        id="checkBox2"                                        type="checkbox"                                        class="rectangle-checkbox"                                />                                <label for="checkBox2">Keep me singed in</label>                            </div>                            <div class="input-group">                                <button type="submit" class="submit-button" style="margin-bottom: 0" (click)="createAgent()">Sign in to BirdDesk</button>                            </div>                            <div class="bottom-text-part">                                <p class="box-already-have">                                    <span>                                        <span>New to BirdDesk?</span>                                        <span>                                            <a [routerLink]="[\'/register\']" title="Sign up now"> Sign up now.</a>                                        </span>                                    </span>                                </p>                            </div>                        </div>                    </form>                </div>            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AddAnotherUser', 'selector': 'add-another-user'},{'name': 'AddForward', 'selector': 'add-forward'},{'name': 'AddMailbox', 'selector': 'addMailbox'},{'name': 'AddNote', 'selector': 'add-note'},{'name': 'AddReplyComment', 'selector': 'add-reply'},{'name': 'AddUserComponent', 'selector': 'addUser'},{'name': 'AppComponent', 'selector': 'birddesk'},{'name': 'AutoReplyTabComponent', 'selector': 'auto_reply_tab'},{'name': 'BusyComponent', 'selector': 'busy'},{'name': 'CannedReplies', 'selector': 'canned-replies'},{'name': 'CannedRepliesDropdown', 'selector': 'canned-replies-dropdown'},{'name': 'ChangeLabel', 'selector': 'change-label'},{'name': 'CompanyAPI', 'selector': ''},{'name': 'CompanyBilling', 'selector': ''},{'name': 'CompanyGroups', 'selector': ''},{'name': 'CompanyProfileComponent', 'selector': 'company-profile'},{'name': 'CompanyUsersActive', 'selector': ''},{'name': 'CoreComment', 'selector': 'core'},{'name': 'CreateCannedReplies', 'selector': 'create-canned-replies'},{'name': 'CreateLabel', 'selector': 'create-label'},{'name': 'CreateTicket', 'selector': 'create-ticket'},{'name': 'CustomerTickets', 'selector': 'customer-tickets'},{'name': 'DeleteUser', 'selector': 'delete-user'},{'name': 'EmailForgetPassword', 'selector': 'email-forget-password'},{'name': 'ErrorPageComponent', 'selector': ''},{'name': 'ErrorsPopup', 'selector': 'errors-popup'},{'name': 'ForgetPassword', 'selector': 'forget-password'},{'name': 'FormErrors', 'selector': 'form-errors'},{'name': 'HourSettings', 'selector': 'hour-settings'},{'name': 'IndexComponent', 'selector': ''},{'name': 'Loading', 'selector': 'loading'},{'name': 'LoginAgent', 'selector': ''},{'name': 'LoginComponent', 'selector': ''},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MailboxComponent', 'selector': 'mailbox'},{'name': 'MailboxSettingsComponent', 'selector': ''},{'name': 'MainFooterComponent', 'selector': 'main-footer'},{'name': 'MainHeaderLoggedComponent', 'selector': 'main-header-logged'},{'name': 'MergeTickets', 'selector': 'merge-ticket'},{'name': 'Modals', 'selector': 'modals'},{'name': 'MultiSelectComponent', 'selector': 'multi-select'},{'name': 'NKDatetime', 'selector': 'datetime'},{'name': 'NotificationDropdownComponent', 'selector': 'notification-dropdown'},{'name': 'NotificationsComponent', 'selector': ''},{'name': 'PaginationComponent', 'selector': 'pagination'},{'name': 'ParentLabelsComponent', 'selector': 'parent-labels'},{'name': 'PreferencesComponent', 'selector': 'preferences'},{'name': 'ReCaptchaComponent', 'selector': 're-captcha'},{'name': 'RegisterComponent', 'selector': ''},{'name': 'ResetPassword', 'selector': 'reset-password'},{'name': 'SearchTickets', 'selector': 'search-tickets'},{'name': 'SettingsComponent', 'selector': ''},{'name': 'Sidebar', 'selector': 'sidebar'},{'name': 'SidebarSettings', 'selector': 'sidebar-settings'},{'name': 'SocketComponent', 'selector': 'socket-commponet'},{'name': 'SomeComponent', 'selector': 'some'},{'name': 'StepsComponent', 'selector': 'steps'},{'name': 'TicketComment', 'selector': 'ticket-comment'},{'name': 'TicketForward', 'selector': 'ticket-forward'},{'name': 'TicketHistory', 'selector': 'individual-history'},{'name': 'TicketIndividualComponent', 'selector': 'ticket-individual'},{'name': 'TicketMerge', 'selector': 'ticket-merge'},{'name': 'TicketNote', 'selector': 'ticket-note'},{'name': 'TicketsChildsComponent', 'selector': 'tickets-Childs'},{'name': 'TicketsComponent', 'selector': 'tickets'},{'name': 'TicketsGlobalRequestsComponent', 'selector': 'tickets-global-request'},{'name': 'Toast', 'selector': '[toast-component]'},{'name': 'UsersComponent', 'selector': 'users'},{'name': 'UsersProfileComponent', 'selector': 'users-profile'},{'name': 'VerifyPopup', 'selector': 'verify-popup'}];
+    var DIRECTIVES = [{'name': 'ClickOutsideDirective', 'selector': '[clickOutside]'},{'name': 'CloseModalsDirective', 'selector': '[closeModal]'},{'name': 'Dropdown', 'selector': '[dropdown]'},{'name': 'DropdownNotClosableZone', 'selector': '[dropdown-not-closable-zone]'},{'name': 'DropdownOpen', 'selector': '[dropdown-open]'},{'name': 'ShowElipsisDirective', 'selector': '[showElipsis]'},{'name': 'StopScrollingDirective', 'selector': '[stopScrolling]'},{'name': 'ToastContainerDirective', 'selector': '[toastContainer]'}];
+    var ACTUAL_COMPONENT = {'name': 'LoginAgent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginAgent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="9.90453078%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#08AEEA" offset="0%"></stop>
+            <stop stop-color="#14CD9A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Mailbox-v4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Settings-mailbox-settings-progress-popup-Copy" transform="translate(-1043.000000, -258.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="notification-on-click-copy-2" transform="translate(993.000000, 57.000000)">
+                <g id="checked-(1)" transform="translate(50.000000, 201.000000)">
+                    <path d="M0.230769231,8.46153846 C0.0769230769,8.30769231 0,8.07692308 0,7.92307692 C0,7.76923077 0.0769230769,7.53846154 0.230769231,7.38461538 L1.30769231,6.30769231 C1.61538462,6 2.07692308,6 2.38461538,6.30769231 L2.46153846,6.38461538 L6.69230769,10.9230769 C6.84615385,11.0769231 7.07692308,11.0769231 7.23076923,10.9230769 L17.5384615,0.230769231 L17.6153846,0.230769231 L17.6153846,0.230769231 C17.9230769,-0.0769230769 18.3846154,-0.0769230769 18.6923077,0.230769231 L19.7692308,1.30769231 C20.0769231,1.61538462 20.0769231,2.07692308 19.7692308,2.38461538 L19.7692308,2.38461538 L7.46153846,15.1538462 C7.30769231,15.3076923 7.15384615,15.3846154 6.92307692,15.3846154 C6.69230769,15.3846154 6.53846154,15.3076923 6.38461538,15.1538462 L0.384615385,8.69230769 L0.230769231,8.46153846 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

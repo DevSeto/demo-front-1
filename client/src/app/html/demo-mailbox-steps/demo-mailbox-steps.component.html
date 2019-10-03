@@ -1,0 +1,223 @@
+<div class="welcome-modal" *ngIf="isDemo || mailboxeService.newReg">
+    <div class="welcome-modal-content">
+        <h2 class="welcome-modal-content__header">
+            Profile Setup
+        </h2>
+        <p class="welcome-modal-content__text">
+            For many of us, our very first experience of learning about the celestial bodies begins when we saw our first
+            full moon in the sky. It is truly a magnificent view even to the naked eye. If the night is clear, you can see
+            amazing detail of the lunar surface just star gazing on in your back yard.
+        </p>
+        <div>
+            <button id="first-popup-btn" class="btn btn-simple"
+                (click)="isDemo = !!0;mailboxeService.newReg = !!0"
+            >
+                Got it
+            </button>
+        </div>
+    </div>
+</div>
+
+<div  class="profile-setup success" >
+    <div class="profile-setup__after"></div>
+
+    <ng-container
+            *ngIf="!isDemo &&  !mailboxeService.defaultMailbox.forwarding_verified"
+    >
+        <div class="profile-setup-progress"
+
+        >
+            <h3 class="profile-setup-progress__header bold">Profile Setup</h3>
+            <p class="profile-setup-progress__text">
+                To complete your account and take full control of BirdDesk please complete your setup
+            </p>
+            <div class="profile-setup-progress-bar">
+                <div class="profile-setup-progress-bar__track">
+                    <div class="profile-setup-progress-bar__thumb"
+                         [class.width66]="mailboxeService.defaultMailbox.dns_verified == 1"
+                    ></div>
+                </div>
+
+                <div class="profile-setup-progress-bar__value">33%</div>
+            </div>
+        </div>
+
+        <div class="profile-setup-steps" >
+            <div class="profile-setup-step passed">
+                <div class="profile-setup-step__img">
+                    <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M-1 0h24v24H-1z"></path>
+                            <path d="M13.708 22.095c-1.05.087-2.251.14-3.62.14-5.757 0-8.574-.94-9.607-1.4-.266-.118-.481-.457-.481-.749v-1.968c0-2.95 2.245-5.396 5.11-5.724a.478.478 0 01.288.079A7.971 7.971 0 0010.088 14c1.752 0 3.37-.57 4.69-1.527a.478.478 0 01.288-.079 5.78 5.78 0 013.923 2.232 5 5 0 00-5.281 7.469zm-3.62-10.154a5.97 5.97 0 110-11.941 5.97 5.97 0 010 11.941zm2.89-3.615H7.32c.272.898 1.435 1.573 2.83 1.573 1.394 0 2.558-.675 2.83-1.573zm5.689 10.536v-1.334a.667.667 0 00-1.334 0v1.334H16a.667.667 0 000 1.333h1.333v1.333a.667.667 0 001.334 0v-1.333H20a.667.667 0 100-1.333h-1.333zM18 23.528a4 4 0 110-8 4 4 0 010 8z" fill="currentColor" fill-rule="nonzero" opacity=".85"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-setup-step__desc">
+                    <h4 class="profile-setup-step__title bold">1. Create account</h4>
+                    <p class="profile-setup-step__text">A short explanation here</p>
+                </div>
+            </div>
+
+            <div class="profile-setup-step " [class.passed]="this.mailboxeService.defaultMailbox.dns_verified == 1"
+            >
+                <div class="profile-setup-step__img">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd" opacity=".7">
+                            <path d="M0 0h24v24H0z"></path>
+                            <path d="M10.088 12.413a5.97 5.97 0 100-11.941 5.97 5.97 0 000 11.941zm2.89-3.615c-.271.898-1.435 1.573-2.83 1.573-1.394 0-2.557-.675-2.829-1.573h5.66zm10.874 10.085l-5.462 4.553a.42.42 0 01-.555-.025l-2.72-2.72a.413.413 0 010-.583l.582-.582c.16-.16.422-.16.583 0l1.922 1.922 4.596-3.83a.413.413 0 01.58.053l.527.632a.413.413 0 01-.053.58zm-9.378 2.448l1.036 1.036c-1.414.2-3.196.34-5.422.34-5.757 0-8.574-.94-9.607-1.4C.215 21.19 0 20.85 0 20.557V18.59c0-2.95 2.245-5.396 5.11-5.724a.478.478 0 01.288.079 7.971 7.971 0 004.69 1.527c1.752 0 3.37-.57 4.69-1.527a.478.478 0 01.288-.079c2.865.328 5.11 2.775 5.11 5.724v.033l-1.918 1.6-1.338-1.338a1.31 1.31 0 00-.932-.386 1.31 1.31 0 00-.931.386l-.583.583a1.319 1.319 0 000 1.863z" fill="currentColor" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-setup-step__desc">
+                    <h4 class="profile-setup-step__title bold">2. Verify your E-mail</h4>
+                    <p class="profile-setup-step__text">A short explanation here</p>
+                </div>
+
+                <!-- Verify your E-mail -->
+                <div class="verify-email">
+                    <div class="verify-email__wrapper" *ngIf="mailboxeService.defaultMailbox.dns_verified != 1">
+                        <h4 class="verify-email__title bold text--md">We sent a six-digit code to your email</h4>
+                        <input class="input verify-email__email" readonly=""
+                               type="text"
+                               [(ngModel)]="mailboxeService.defaultMailbox.email"
+                               disabled
+                        >
+<!--                        <div class="verify-email__link text&#45;&#45;md">-->
+<!--                            Wrong email?-->
+<!--                            <a class="link" href="#">Update here</a>-->
+<!--                        </div>-->
+
+                        <form class="verify-email__form"
+                            (ngSubmit)="sendConfirmCode(f)"
+                              #f="ngForm"
+                        >
+                            <h4 class="verify-email__title bold text--md">Verification code</h4>
+                            <div class="verify-email__inputs">
+                                <ng-container *ngFor='let in of createRange(6) ;let i = index'>
+                                    <input type="text"
+                                           class="verify-email__input input"
+                                           maxlength="1"
+                                           ngmodel
+                                           [name]="i+'num'"
+                                           [(ngModel)]="confirmationKey[i]"
+                                           (keyup)="changeCursorPosition($event, i)"
+                                    >
+                                </ng-container>
+                            </div>
+                            <div class="verify-email__actions">
+                                <div class="grad-btn grad-btn--fill">
+                                    <button type="submit" class="grad-btn__btn">Verify</button>
+
+                                </div>
+                                <div class="text--md verify-email__info">
+                                    <p>Didn’t receive the code?</p>
+                                    <a class="link" (click)="sendNewCode()">
+                                        <img src="../../../../../public/images/ico/refresh.svg" alt="">
+                                        Resend
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+
+            <div class="profile-setup-step blocked">
+                <div class="profile-setup-step__img">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="currentColor" opacity=".85">
+                            <path d="M16 14v-.25c0-1.132.68-2.135 1.731-2.554a2.743 2.743 0 013.015.663l.884.933c.23-.378.37-.817.37-1.292v-9A2.5 2.5 0 0019.5 0h-17A2.5 2.5 0 000 2.5v9A2.5 2.5 0 002.5 14H16zM2 4.13V2.47l9 4.2 9-4.2v1.66l-8.47 3.95a1.242 1.242 0 01-1.06 0L2 4.13z"></path>
+                            <path d="M23.794 17.984l-4.5-4.75A.75.75 0 0018 13.75V16h-7.25a.75.75 0 00-.75.75v3.5c0 .414.336.75.75.75H18v2.25a.75.75 0 001.294.516l4.5-4.75a.75.75 0 000-1.032z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-setup-step__desc">
+                    <h4 class="profile-setup-step__title bold">3. Setup forwarding</h4>
+                    <p class="profile-setup-step__text">At first, you need to verify your email</p>
+                </div>
+                <div class="setup-forwarding" *ngIf="mailboxeService.defaultMailbox.dns_verified == 1">
+                    <h4 class="verify-email__title setup-forwarding__title bold text--md">Forward a copy of all email to</h4>
+                    <div class="setup-forwarding__form">
+                        <input readonly="" type="text" [value]="mailboxeService.defaultMailbox.forward_address" class="input setup-forwarding__code">
+                        <button type="button" class="setup-forwarding__copy" (click)="copyTextToClipboard('setup-forwarding__code')">
+                            <img src="../../../../../public/images/ico/copy-icon.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="setup-forwarding__info text--md">
+                        Verify that your email is forwarding to Birddesk correctly.
+                        <a class="link" (click)="checkForward()">Send a test email</a>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="grad-btn">
+                            <button id="complete-setup" class="grad-btn__btn " (click)="checkForward()" data-popup="create-ticket-open-popup bold">Complete Setup</button>
+                            <span class="grad-btn__bg bg-white"></span>
+                        </div>
+                    </div>
+
+                    <div class="setup-forwarding__help text--md">
+                        Feel stuck and need help?
+                        <a href="" class="link">Read the help article.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <!-- profile-success -->
+    <div class="profile-success" *ngIf="isDemo || mailboxeService.defaultMailbox.forwarding_verified">
+        <h3 class="profile-success__header text-center bold">
+            Congratulations!
+        </h3>
+        <p class="profile-success__text text-center bold">
+            You’ve taken your first step and this is the few extra features available to you now!
+        </p>
+        <ul class="birddesk-features">
+            <li class="birddesk-feature">
+          <span class="birddesk-feature__img green">
+            <img src="../../../../../public/images/ico/paper-plane.svg" alt="paper plane">
+          </span>
+                <div class="birddesk-feature__info">
+                    <h4 class="birddesk-feature__title bold">First extra feature</h4>
+                    <p class="birddesk-feature__desc">A short explanation here</p>
+                </div>
+            </li>
+
+            <li class="birddesk-feature">
+          <span class="birddesk-feature__img red">
+            <img src="../../../../../public/images/ico/settings-work-tool.svg" alt="settings work tool">
+          </span>
+                <div class="birddesk-feature__info">
+                    <h4 class="birddesk-feature__title bold">Second amazing feature</h4>
+                    <p class="birddesk-feature__desc">A short explanation here</p>
+                </div>
+            </li>
+
+            <li class="birddesk-feature">
+          <span class="birddesk-feature__img blue">
+            <img src="../../../../../public/images/ico/envelope.svg" alt="">
+          </span>
+                <div class="birddesk-feature__info">
+                    <h4 class="birddesk-feature__title bold">Third fabulous feature</h4>
+                    <p class="birddesk-feature__desc">A short explanation here</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3 class="birddesk-features__header text-center bold">
+            Wanna know more about useful Birddesk features?
+        </h3>
+        <div class="text-center mb24">
+            <div class="grad-btn grad-btn--fill">
+                <button class="grad-btn__btn">Let Me Know</button>
+
+            </div>
+        </div>
+        <div class="text-center text--md">
+            <a href="#" class="link text-center">Open mailbox settings</a>
+        </div>
+
+
+    </div>
+    <!--  -->
+</div>

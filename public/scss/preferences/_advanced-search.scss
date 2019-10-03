@@ -1,0 +1,148 @@
+@import '../var';
+
+.advanced-search-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 18px);
+  overflow: auto;
+  padding: 40px 0 0 40px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-result {
+  max-width: (1346px + 94px);
+  flex-grow: 1;
+}
+
+.advanced-filters {
+  margin-right: 40px;
+
+  &__header {
+    font-size: 24px;
+    color: $text-black;
+    margin-bottom: 32px;
+  }
+}
+
+.advanced-filters-category {
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__title {
+    font-size: 16px;
+    color: $text-grey;
+    margin-bottom: 16px;
+  }
+}
+
+.advanced-filters-category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__item {
+    font-size: 16px;
+    line-height: (24 / 16);
+    color: $blue;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.search-result-tabs {
+  padding-left: 20%;
+  font-size: 0;
+  margin-bottom: 40px;
+
+  &__tab {
+    font-size: 18px;
+    padding: 0 40px 16px 40px;
+    color: $text-grey;
+    border-bottom: 1px solid $row-border;
+    cursor: pointer;
+
+    &--active, &:hover {
+      color: $text-black;
+      border-color: currentColor;
+    }
+  }
+}
+
+.search-result {
+  .tickets-grid__header {
+    width: 100%;
+    margin: 0;
+  }
+
+  .tickets-grid__header::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .tickets-grid__wrapper {
+    height: calc(100vh - 200px);
+    padding-right: 32px;
+  }
+
+  .tickets-grid {
+    width: 100%;
+  }
+}
+
+.search-result-info {
+  max-width: 756px;
+  margin-left: 5vw;
+  overflow: hidden;
+  border-bottom: 1px solid $whisper;
+
+  &__header {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  &__example {
+    line-height: 44px;
+    background-color: $white-smoke;
+    color: $manatee;
+    padding: 0 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  &__more {
+    margin: 40px 0;
+  }
+}
+
+.advanced-search-actions {
+  position: fixed;
+  z-index: 100;
+  display: none;
+  background-color: $white-bg;
+  align-items: center;
+  height: 48px;
+  box-shadow: 0 4px 10px 0 rgba(242,242,242,0.5);
+  border-radius: 2px;
+  left: 50%;
+  margin-left: -85px;
+  padding: 0 16px;
+  margin-top: -56px;
+
+  .tickets-controls__btn-wrapper:first-child {
+    margin-right: 8px;
+  }
+}

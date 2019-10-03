@@ -1,0 +1,285 @@
+
+<loading [className]="'extended'" *ngIf="selectMenu.showLoading"></loading>
+
+
+<div class="popup" *ngIf="cloud.effect.confirmTicketsDelete">
+    <div class="popup__bg"></div>
+    <div class="popup-content rm-ticket">
+        <p class="text-center mb24 ">Please confirm you'd like to delete this ticket</p>
+        <div class="flex justify-around">
+            <button class="btn dafault" (click)="cloud.effect = 'confirmTicketsDelete'">Cancel</button>
+            <button class="btn dafault discard" (click)="deleteTickets()">Delete</button>
+        </div>
+    </div>
+</div>
+
+<!--<images-popup-->
+<!--stopScrolling-->
+<!--*ngIf="cloud.effect.imgPopup && ticketService.selectedImagen"-->
+<!--[imgFullPath]="ticketService.selectedImagen"-->
+<!--&gt;-->
+<!--</images-popup>-->
+
+
+
+<div
+    [ngClass]="
+        {
+            'tickets-controls': true,'no-shadow':!listType
+            
+        }
+        "
+    >
+
+    <div class="flex">
+        <div
+            *ngIf="!selectMenu.showLoading && ticketService.tickets.length && ticketService.tickets.length !== 1"
+             [ngClass]="{'tickets-controls__btn-wrapper': true,
+             'checked':selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length}"
+        >
+            <div class="tickets-controls__btn" dropdown>
+
+            <input
+                hidden
+                type="checkbox"
+                value="None"
+                id="select-all"
+                name="check"
+                [checked]="selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length"
+                />
+                <span class="tickets-controls__btn tickets-controls__btn--check"
+                      (click)="selectAllTickets(!(selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length))"
+                    dropdown-open
+                >
+                    <icon-svg
+                        [pathToSVG]="'/public/images/ico/checked.svg'"
+
+                        *ngIf="(selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length); else selectAll">
+                    </icon-svg>
+                    <ng-template #selectAll>
+                        <icon-svg #selectAll [pathToSVG]="'/public/images/ico/seleck-all.svg'"></icon-svg>
+                    </ng-template>
+                    <!--<icon-svg class="svg-triangle" [ripple]="false" [ripple]="false" [pathToSVG]="'/public/images/ico/triangle.svg'"></icon-svg>-->
+                </span>
+<!--
+                <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                    <ul class="send-as-clored-btn__dropdown-list">
+                        <li
+                            class="send-as-clored-btn__dropdown-list__el ng-star-inserted"
+                            (click)="selectAllTickets(!(selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length))"
+                        >All</li>
+                    </ul>
+                </div>-->
+
+
+            </div>
+        </div>
+        <ng-container *ngIf="selectedTickets.main.length">
+            <div class="tickets-controls__btn-wrapper" dropdown>
+                <button class="tickets-controls__btn" dropdown-open>
+                    <icon-svg [pathToSVG]="'/public/images/ico/profile.svg'"></icon-svg>
+                </button>
+                <!--<a >-->
+                <!--<i class="la la-fw la-user"></i>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu">-->
+                <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                    <ul class="send-as-clored-btn__dropdown-list">
+                        <li class="send-as-clored-btn__dropdown-list__el" (click)="changeAssigne(0)">
+                        {{everyone}}
+                        </li>
+                        <ng-container *ngIf="userService.activeUsers">
+                        <ng-container *ngFor="let users of userService.activeUsers">
+                        <li
+                        *ngIf="users.preferences.answer === 'available'"
+                        (click)="changeAssigne(users.id, null, users)"
+                        class="send-as-clored-btn__dropdown-list__el"
+                        >
+                        <ng-container *ngIf="users.id === userId">me</ng-container>
+                        <ng-container *ngIf="users.id !== userId">{{users.first_name}}</ng-container>
+                        </li>
+                        </ng-container>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+            <div class="tickets-controls__btn-wrapper" dropdown>
+                <button class="tickets-controls__btn" dropdown-open>
+                    <icon-svg [pathToSVG]="'/public/images/ico/flag.svg'"></icon-svg>
+                </button>
+                <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                    <ul class="send-as-clored-btn__dropdown-list">
+
+                        <li class="send-as-clored-btn__dropdown-list__el"
+                                *ngFor="let status of statusList"
+                                (click)="changeTicketsStatus(status)"
+                        >
+                            {{ status | capitalizeFirst }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tickets-controls__btn-wrapper" dropdown>
+                <button class="tickets-controls__btn" dropdown-open>
+                    <icon-svg [pathToSVG]="'/public/images/ico/labels2.svg'"></icon-svg>
+                </button>
+                <change-label
+                dropdown-not-closable-zone
+                class="dropdown-menu-onlabel"
+                >
+                </change-label>
+            </div>
+            <div class="tickets-controls__btn-wrapper  tickets-controls__btn--select" dropdown>
+                <button class="tickets-controls__btn" dropdown-open>
+                    <icon-svg [pathToSVG]="'/public/images/ico/clock.svg'"></icon-svg>
+
+                </button>
+                <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                    <ul class="send-as-clored-btn__dropdown-list">
+                        <ng-container
+                                *ngFor="let snooze of snoozeData"
+                        >
+                            <li class="send-as-clored-btn__dropdown-list__el" (click)="addSnooze(snooze.key)">
+                                {{snooze.value}}
+                            </li>
+
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tickets-controls__btn-wrapper">
+                <button class="tickets-controls__btn trash" (click)="cloud.effect = 'confirmTicketsDelete';">
+                    <icon-svg [pathToSVG]="'/public/images/ico/delete.svg'"></icon-svg>
+                </button>
+            </div>
+        </ng-container>
+
+    </div >
+
+
+    <div
+        class="flex tickets-filters-wrapper"
+        *ngIf="!selectMenu.showLoading && ticketService.tickets.length"
+        [ngClass]="{'tickets-controls--select-mod': selectedTickets.main.length}"
+        >
+        <div *ngIf="activeTickets !== 'draft' && activeTickets !== 'attention'" class="pagination">
+            <span class="pagination__count">{{(ticketService.tickets.length + offset ) / 15  | ceil }} of  {{(ticketsTotalCount / 15 ) | ceil}}</span>
+            <div
+                    *ngIf = "((ticketsTotalCount / 15 ) | ceil) !==1 "
+                    class="tickets-controls__btn-wrapper pagination__prew ticket-conntroll-row"
+                    (click)="prevTickets()">
+                <button class="tickets-controls__btn">
+                    <svg width="8" height="16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.845 15.836a.594.594 0 0 0 0-.8L1.262 8.009 7.845.965a.594.594 0 0 0 0-.8.505.505 0 0 0-.747 0L.155 7.595a.597.597 0 0 0 0 .8l6.943 7.428a.495.495 0 0 0 .747.013z"
+                              fill="currentColor" fill-rule="nonzero"></path>
+                    </svg>
+                </button>
+
+            </div>
+            <div
+                    *ngIf = "((ticketsTotalCount / 15 ) | ceil) !==1 "
+                    class="tickets-controls__btn-wrapper pagination__next ticket-conntroll-row"
+                    (click)="nextTickets()">
+
+                <button class="tickets-controls__btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16">
+                        <rect width="100%" height="100%" fill="none" />
+                        <g class="currentLayer">
+                            <path d="M.156.164a.594.594 0 0 0 0 .8L6.739 7.99.156 15.035a.594.594 0 0 0 0 .8.505.505 0 0 0 .747 0l6.943-7.43a.597.597 0 0 0 0-.8L.903.177A.495.495 0 0 0 .156.164z"
+                                  fill="currentColor" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="sort-table tickets-controls__btn-wrapper ng-star-inserted " *ngIf="!selectedTickets.main.length && activeTickets !== 'draft'" dropdown>
+            <span class="sort-table__label">Sorted by</span>
+            <span class="sort-table__triger" dropdown-open>
+                  <span class="sort-table__velue">
+                      {{sortTicket.sortTicketData[filterBy]}}
+                  </span>
+                  <svg width="8" height="7" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4l4-4H0z" fill="currentColor" /></svg>
+                </span>
+            <div class="send-as-clored-btn__dropdown-content dropdown-menu">
+                <ul class="send-as-clored-btn__dropdown-list">
+
+                    <li class="send-as-clored-btn__dropdown-list__el"
+                        *ngFor="let attr of filterAttributes"
+                        (click)="ticketFiltering(attr)"
+                    >
+                        {{sortTicket.sortTicketData[attr]}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-switcher">
+            <button   [ngClass]="{'grid-switcher__btn': true,'active':!listType}" (click)="changeListType(!!0)">
+                <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="currentColor" fill-rule="nonzero">
+                        <rect width="3" height="3" rx=".5" />
+                        <rect y="5" width="3" height="3" rx=".5" />
+                        <rect y="10" width="3" height="3" rx=".5" />
+                        <rect y="15" width="3" height="3" rx=".5" />
+                        <rect x="5" width="3" height="3" rx=".5" />
+                        <rect x="5" y="5" width="3" height="3" rx=".5" />
+                        <rect x="5" y="10" width="3" height="3" rx=".5" />
+                        <rect x="5" y="15" width="3" height="3" rx=".5" />
+                        <rect x="10" width="3" height="3" rx=".5" />
+                        <rect x="10" y="5" width="3" height="3" rx=".5" />
+                        <rect x="10" y="10" width="3" height="3" rx=".5" />
+                        <rect x="10" y="15" width="3" height="3" rx=".5" />
+                        <rect x="15" width="3" height="3" rx=".5" />
+                        <rect x="15" y="5" width="3" height="3" rx=".5" />
+                        <rect x="15" y="10" width="3" height="3" rx=".5" />
+                        <rect x="15" y="15" width="3" height="3" rx=".5" />
+                    </g>
+                </svg>
+            </button>
+
+            <button [ngClass]="{'grid-switcher__btn': true,'active':listType}" (click)="changeListType(!!1) " class="grid-switcher__btn">
+                <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="currentColor" fill-rule="evenodd">
+                        <path d="M2.625 5H.375a.36.36 0 0 0-.264.111.36.36 0 0 0-.111.264v2.25c0 .102.037.19.111.264A.361.361 0 0 0 .375 8h2.25a.36.36 0 0 0 .264-.111A.36.36 0 0 0 3 7.625v-2.25a.36.36 0 0 0-.111-.264A.36.36 0 0 0 2.625 5zM2.625 15H.375a.36.36 0 0 0-.264.111.36.36 0 0 0-.111.264v2.25c0 .102.037.19.111.264A.36.36 0 0 0 .375 18h2.25a.36.36 0 0 0 .264-.111.36.36 0 0 0 .111-.264v-2.25a.36.36 0 0 0-.111-.264.36.36 0 0 0-.264-.111zM2.625 10H.375a.361.361 0 0 0-.264.111.36.36 0 0 0-.111.264v2.25c0 .102.037.19.111.264A.36.36 0 0 0 .375 13h2.25a.36.36 0 0 0 .264-.111.36.36 0 0 0 .111-.264v-2.25a.36.36 0 0 0-.111-.264.36.36 0 0 0-.264-.111zM2.625 0H.375a.36.36 0 0 0-.264.111A.36.36 0 0 0 0 .375v2.25c0 .102.037.19.111.264A.36.36 0 0 0 .375 3h2.25a.36.36 0 0 0 .264-.111A.36.36 0 0 0 3 2.625V.375a.36.36 0 0 0-.111-.264A.361.361 0 0 0 2.625 0zM23.568 15H5.432a.447.447 0 0 0-.304.111.339.339 0 0 0-.128.264v2.25c0 .102.043.19.128.264a.447.447 0 0 0 .304.111h18.136a.448.448 0 0 0 .304-.111.339.339 0 0 0 .128-.264v-2.25a.34.34 0 0 0-.128-.264.449.449 0 0 0-.304-.111zM23.568 10H5.432a.449.449 0 0 0-.304.111.339.339 0 0 0-.128.264v2.25c0 .102.043.19.128.264a.448.448 0 0 0 .304.111h18.136a.448.448 0 0 0 .304-.111.339.339 0 0 0 .128-.264v-2.25a.34.34 0 0 0-.128-.264.45.45 0 0 0-.304-.111zM23.872.111A.449.449 0 0 0 23.568 0H5.432a.448.448 0 0 0-.304.111A.339.339 0 0 0 5 .375v2.25c0 .102.043.19.128.264A.448.448 0 0 0 5.432 3h18.136a.448.448 0 0 0 .304-.111.339.339 0 0 0 .128-.264V.375a.34.34 0 0 0-.128-.264zM23.568 5H5.432a.448.448 0 0 0-.304.111.34.34 0 0 0-.128.264v2.25c0 .102.043.19.128.264A.449.449 0 0 0 5.432 8h18.136a.449.449 0 0 0 .304-.111.339.339 0 0 0 .128-.264v-2.25a.34.34 0 0 0-.128-.264.449.449 0 0 0-.304-.111z" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="empty-mailbox__text m0" *ngIf="selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length">
+    <p class="message-select-all">All {{ ticketService.tickets.length}} conversations on this page are selected</p>
+</div>
+<tickets-list *ngIf="listType && !selectMenu.showLoading"
+    (selectTichetEvent)="selectTicket($event[0],$event[1],$event[2])"
+  (redirectTicketIndividual)="redirectToTicketPage($event[0],$event[1],$event[2])"
+
+></tickets-list>
+<tickets-grid
+        *ngIf="!listType && !selectMenu.showLoading"
+          (selectTichetEvent)="selectTicket($event[0],$event[1],$event[2])"
+          (redirectTicketIndividual)="redirectToTicketPage($event[0],$event[1],$event[2])"
+
+></tickets-grid>
+
+<div class="empty-mailbox" *ngIf="!selectMenu.showLoading && !ticketService.tickets.length && ticketService.filterticketsStatus != 'spam'">
+    <div class="empty-mailbox__img">
+        <img src="../../../../../public/images/images/cat-bg.png" alt="Mailbox is empty">
+    </div>
+    <div class="empty-mailbox__text">
+        <h3 class="empty-mailbox__text-header">No tickets yet</h3>
+        <p class="empty-mailbox__text-content">Create new ticket and make something</p>
+    </div>
+    <div class="empty-mailbox__btn">
+        <div class="grad-btn">
+            <button class="grad-btn__btn  popup-btn"  (click)="cloud.effect = 'createTicket'" data-popup="create-ticket-open-popup">Create ticket</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+    </div>
+
+</div>

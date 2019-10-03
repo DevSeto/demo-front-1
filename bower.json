@@ -1,0 +1,66 @@
+{
+  "name": "birddesk",
+  "description": "",
+  "main": "systemjs.config.js",
+  "authors": [
+    "Suren <navasardyansuren@yandex.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/surennavasardyan/frontend",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.6.3",
+    "slicknav": "^1.0.7",
+    "slick-carousel": "^1.6.0",
+    "jquery.fitvids": "fitvids#^1.1.0",
+    "modernizr": "v2.6.2",
+    "isotope": "1.5.26",
+    "textillate": "^0.4.0",
+    "mediaelement": "2.13.1",
+    "jquery.easy-pie-chart": "^2.1.6",
+    "owl.carousel": "^2.1.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.min.css"
+      ]
+    },
+    "owl": {
+      "main": [
+        "owl-carousel/owl.carousel.js"
+      ]
+    },
+    "isotope": {
+      "main": [
+        "jquery.isotope.js"
+      ]
+    },
+    "mediaelement": {
+      "main": [
+        "build/mediaelement-and-player.js"
+      ]
+    },
+    "slicknav": {
+      "main": [
+        "dist/jquery.slicknav.js"
+      ]
+    }
+  }
+}

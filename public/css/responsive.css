@@ -1,0 +1,1044 @@
+@media screen and (max-width: 1450px){
+    .site-header .header-search-item {
+        right: 30%;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    #tab-2.custom-tab-content .mailbox-line .label-box {
+        float: none!important;
+        text-align: left;
+    }
+
+    #tab-2 li.check-btn-item {
+        vertical-align: middle;
+    }
+
+    #tab-2 .step3 .copy-item-box .copy_btn {
+        top: inherit;
+        padding: 8px 15px;
+    }
+    #tab-2.custom-tab-content .connection-settings-tab {
+        margin: 0;
+    }
+    .user-mailbox-email {
+        max-width: 540px;
+    }
+    .user-mailbox-email .label-box {
+        width: 189px;
+    }
+    .user-mailbox-email .drop-box {
+        width: calc(100% - 200px);
+    }
+
+    .mailbox {
+        margin: 30px 2%;
+    }
+
+    .mailbox-content.full-width-left {
+        padding: 0;
+    }
+
+     #tab-2.custom-tab-content .connection-settings-tab {
+         margin: 0;
+         text-align: center;
+         display: inline-block;
+         width: 100%;
+    }
+
+    .connection-settings-row {
+        margin: 0 auto;
+    }
+
+     #tab-2.custom-tab-content .mailbox-line .field-box {
+            float: none!important;
+            width: 100%;
+     }
+
+     #tab-3 .mailbox-auto-reply {
+         margin: 0;
+         display: inline-block;
+         width: 100%;
+     }
+
+    form.block-form-registration {
+        width: inherit;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+     .mailbox {
+        display: block;
+        margin: 25px auto;
+        float: none;
+    }
+    .mailbox-auto-reply {
+        margin: 2% 20%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #createCannedReplies .marginTop:first-child {
+        overflow: hidden;
+    }
+
+    #createCannedReplies,
+    #createCannedReplies .mailbox_font_size li a{
+        font-size: 13px!important;
+    }
+
+    #tab-3 .mailbox-subject-box div:last-child {
+        text-align: center;
+    }
+    .extended{
+        margin-left: 0;
+        width: 55px!important;
+    }
+    .toggle-icon{
+        display: inline-block;
+    }
+    #left-sidebar{
+        left: -230px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    .site-header .header-search-item input{
+        width: 210px;
+    }
+    .sticky-content {
+        width: calc(100% - 51px) !important;
+    }
+    .collapse-view.collapse-in-view .sticky-content {
+        width: calc(100% - 231px) !important;
+    }
+    .sticky-content-indiv {
+        width: calc(100% - 231px) !important;
+    }
+
+    .page-title-box,
+    .user-profile-info,
+    .info-tab-box {
+        padding: 15px;
+    }
+
+    .info-tab-box .tabs {
+        padding-bottom: 15px;
+    }
+
+    .user-settings-tab {
+        margin: 30px auto;
+    }
+
+    #left-sidebar.mobile-menu {
+        z-index: 11;
+    }
+
+    .mailbox-auto-reply {
+        margin: 2% 20%;
+    }
+}
+@media screen and (max-width: 1020px) {
+    section#freesignup {
+        padding: 0 20px;
+    }
+
+    .box-container.container-signin .block-container-left {
+        padding: 0;
+    }
+
+    .field-box {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 991px){
+    .block-container-right{
+        width: calc(100% - 637px);
+    }
+    .preference_title,.personal-not-title{
+        text-align: left!important;
+    }
+
+    #tab-3 .send-auto-reply .field-box,
+    .onoffswitch-label span {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .user-mailbox-email {
+        max-width: 425px;
+    }
+    .user-mailbox-email .label-box {
+        width: 130px;
+    }
+    .user-mailbox-email .drop-box {
+        width: calc(100% - 140px);
+    }
+    .preferences-profile-info{
+        padding: 20px 15px;
+    }
+    .preferences-profile-info:first-child tr:first-child {
+        font-size: 10px;
+    }
+
+    .preferences-profile-info:first-child tr:first-child p {
+        transform: rotate(270deg);
+        margin-bottom: 0;
+    }
+
+}
+@media screen and (max-width: 870px) {
+    .privacy-policy-box {
+        max-width: 500px;
+    }
+
+    .search-dropdown {
+        width: 300px;
+    }
+    .block-container-right {
+        float: none;
+    }
+    .box-container.container-signin .block-container-left {
+        width: 380px;
+    }
+    .block-container-right {
+        position: inherit;
+        width: 100%;
+        padding-top: 0;
+        border: none;
+    }
+    .block-container-left {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .block-container-right {
+        min-height: inherit;
+    }
+
+    .site-header .header-search-item {
+        right: 45%;
+    }
+
+    .site-header .header-search-item input{
+        width: 150px;
+        padding: 5px 20px;
+    }
+
+    .header-search-item .search-box button {
+        left: 0;
+        top: 4px;
+    }
+
+    .la-search {
+        font-size: 15px;
+    }
+
+    .site-header .header-search-item input:focus {
+        width: 170px;
+    }
+    .site-header .header-content li a{
+        padding: 10px;
+    }
+    .setting-center-box .settings-small-box{
+        width: calc(33.3% - 20px);
+        margin-right: 25px;
+    }
+
+    .create-canned-reply-item.open .dropdown-menu {
+        left: inherit;
+    }
+}
+@media screen and (max-width: 767px){
+    .confirm-btn-box .custom-default-btn {
+        width: 100%;
+        float: none!important;
+    }
+
+    .row-with-border {
+        padding-bottom: 22px;
+    }
+    #tab-3 .insert-var-box {
+        text-align: left;
+    }
+    .autoreply-on li:last-child .field-box {
+        width: 100%;
+    }
+    #tab-3 .mailbox-subject-box .field-box,
+    .hours-table {
+        width: 100%;
+    }
+    #tab-3 .mailbox-editor-box.field-box {
+        width: 100%;
+        max-width: inherit;
+    }
+    .mailbox-auto-reply li.fields-row {
+        min-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .send-to-reply {
+        margin-bottom: 0;
+    }
+    .mailbox-subject-box {
+        padding: 13px 0;
+    }
+    #tab-3 .autoreply-on .fields-row>div:first-child {
+        display: block;
+        width: 100%;
+        float: none!important;
+        text-align: left;
+    }
+    .hours-padding {
+         padding-bottom: 0;
+    }
+
+    .align-bottom {
+        vertical-align: middle;
+    }
+
+    .site-header .header-search-item input:focus {
+        width: 150px;
+    }
+    td.trash_col {
+        width: 60px;
+    }
+    .tickets-checkboxes li{
+        width: 100%;
+    }
+    .modal-dialog{
+        width: 90%;
+    }
+    #create_ticket_popup .col-md-6{
+        margin-bottom: 15px;
+    }
+    .user-mailbox-tab,.user-mailbox-email{
+        margin: 0;
+    }
+    .mailbox-auto-reply{
+        margin: 20px 0 0 0;
+    }
+    .custom-tab-content  .user-mailbox-tab,.custom-tab-content .connection-settings-tab{
+        margin: 0;
+    }
+
+    .field-box .custom-default-btn {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #add-user-popup .add-user-form {
+         margin: 0 auto;
+         display: table;
+    }
+
+    .user-mailbox-tab {
+        max-width: 100%;
+    }
+
+    .signature-insert {
+        left: 0;
+        bottom: -22px;
+    }
+
+    .mailbox-line .label-box {
+        float: none!important;
+        text-align: left;
+    }
+    .signature-editor {
+        width: 100% !important;
+    }
+    .mailbox-line .field-box,
+    .box-save-mailboxes {
+        width: 100%;
+    }
+    .mailbox-line {
+        padding: 15px 15px 25px;
+    }
+    .mailbox-line .input-fields-content li label {
+        line-height: 20px;
+    }
+    .field-box input {
+       height: 28px;
+    }
+
+    .signature-section {
+        width:  100%!important;
+    }
+    .editor-bottom-part .new-canned-btn {
+        float: none!important;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .tickets-page.ticket-individual-page .section-right-part {
+        float: none;
+        width: 100%;
+    }
+
+    .sticky-content-right-part {
+        position: relative;
+    }
+    .tickets-page.ticket-individual-page .section-left-part{
+        width: 100%;
+    }
+
+    .progressbar-notification {
+        transform: translate( 37%);
+    }
+    .tickets-table.box-merged td:nth-child(2) {
+        position: relative;
+    }
+    .first-letter-box {
+        width: 100%;
+        text-align: right;
+    }
+    #marge-tickets-popup .merge-top-table td:first-child {
+        width: 34%;
+        overflow: scroll;
+        padding-left: 4px!important;
+    }
+
+    #marge-tickets-popup table td:nth-child(3) {
+        position: relative;
+    }
+    #marge-tickets-popup table td:nth-child(2) {
+        width: 29%;
+    }
+
+    #marge-tickets-popup table td:last-child,
+    #marge-tickets-popup table td:nth-last-child(2) {
+        display: none;
+    }
+
+    .sticky-content-indiv{
+         width: 100%!important;
+    }
+}
+@media screen and (max-width: 660px) {
+    .preferences-profile-info .notif-last-td {
+        width:0;
+    }
+    .box-container.container-signin .block-container-left {
+        width: 100%;
+        margin: 0;
+    }
+    .block-signin {
+        display: inline-block;
+    }
+    .tickets-page .section-left-part{
+        width: 100%!important;
+        min-height: inherit!important;
+    }
+    .tickets-page.ticket-individual-page .section-right-part,.collapse-view.collapse-in-view .section-right-part,.collapse-view .section-right-part {
+        width: 100%;
+        min-height: inherit;
+    }
+    .tickets-page.ticket-individual-page .section-right-part,.collapse-view.collapse-in-view .section-right-part{
+        border-bottom: 1px solid #cfd8dc;
+    }
+    .setting-center-box .settings-small-box{
+        width:90%;
+        max-width: 350px;
+        margin: 0 auto 20px;
+        float: none;
+    }
+    .setting-center-box .settings-small-box:last-child{
+        margin: 0 auto 20px;
+    }
+    .container-signin .login-logo-container {
+        padding-bottom: 30px;
+    }
+    .sticky-content {
+        width: 100%!important;
+        position: relative!important;
+    }
+    .sticky-content-indiv {
+         width: 100% !important;
+        position: relative!important;
+    }
+    .setting-center-box {
+        margin: 35px auto;
+    }
+    .settings-small-box li:first-child {
+        padding: 20px;
+    }
+    .individual-main-content .individual-top-part {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .site-header .desktop-right-menu{
+        display: inline-block;
+    }
+    #reset-password-popup .modal-footer {
+        padding: 20px;
+    }
+    #reset-password-popup .modal-footer .blue-round-btn {
+        min-width: 100%;
+        padding: 10px;
+    }
+    #tab-2 .connection-settings-row {
+        max-width: 250px;
+    }
+    .site-header .header-search-item{
+        right: 16%;
+        padding: 0 5px;
+        font-size: 12px;
+
+    }
+    .site-header .mobile-right-menu{
+        display: inline-block;
+    }
+    .site-header .desktop-right-menu{
+        display: none;
+    }
+    .site-header .mobile-right-menu .dropdown-menu{
+        right: 0;
+        left: inherit!important;
+    }
+    .site-header .header-content li a .la-user{
+        font-size: 22px;
+    }
+    .merge-ticket-indv .panel-heading ul{
+        float: none!important;
+    }
+    #welcome-popup .modal-header{
+        padding: 30px 10px;
+    }
+    #welcome-popup .modal-header li{
+        width: 25%;
+    }
+
+    #left-sidebar.mobile-menu {
+        width: 100%;
+        position: initial;
+    }
+
+    .add-user-form .full-width-left {
+        margin-bottom: 10px;
+    }
+
+
+    #add-user-popup .add-user-form {
+        padding: 0;
+    }
+
+    .color_selection {
+        text-align: center;
+    }
+    .editor-bottom-part button {
+        padding: 6px;
+    }
+
+    .editor-bottom-part li{
+        margin: 5px 0;
+    }
+
+    .editor-bottom-part li {
+        position: relative;
+        margin: 7px auto;
+    }
+
+    .editor-bottom-part li:first-child button,
+    #reply .action-select-item button {
+        font-size: 12px;
+    }
+
+    .editor-bottom-part li .dropdown {
+        float: none!important;
+    }
+
+    .editor-bottom-part ul {
+        text-align: center;
+    }
+
+    .tabs .tab-link {
+        padding-right: 10px;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    .show-tick {
+        right: 63px;
+    }
+    #forward .action-select-item button,
+    .editor-bottom-part li:first-child button, #reply .action-select-item button,
+    #create_ticket_popup .action-select-item button {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+        text-align: left;
+    }
+
+    .tabs .tab-link {
+        display: block;
+        background-color: #f4f8fb;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .section-right-part .tickets-table-header{
+        border-bottom: none;
+    }
+    .block-container-left {
+        padding: 0 35px;
+    }
+    .heading-text-part h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .user-profile-info .dropdown_default{
+        width: 100%;
+        float: left!important;
+        margin-top: 15px;
+    }
+
+    .mailbox-auto-reply li.fields-row {
+        min-width: 100%;
+    }
+    .mailbox{
+        width: 96%;
+        float: none;
+        margin: 15px auto;
+    }
+    .connection-settings-row{
+        width: 100%;
+    }
+    .check-btn-item{
+        text-align: right;
+    }
+
+    .table.ticket-first-page .ticket-id-number,
+    .table.ticket-first-page .comments-count {
+        width: 45px;
+    }
+
+    .table.ticket-first-page .create-ticket-time {
+        width: 130px;
+    }
+
+    .signature-insert {
+        text-align: left;
+    }
+    .editor-bottom-part button {
+        width: 100%;
+        text-align: center;
+    }
+    .marginTop {
+        margin-top: 0;
+    }
+    .text-editor-box {
+        margin: 15px 0;
+    }
+
+    span.pull-right.box-assignto,
+    span.pull-right.box-sendas {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .tickets-table-header.toolbar {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .mailbox-settings-page .table .user-ticket td {
+        padding: 5px!important;
+    }
+    .indiv-tabel tr td:last-child span {
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    #marge-tickets-popup .tickets-table .tickets-info li:first-child {
+        max-width: 50px;
+    }
+    #add-user-popup .add-user-form {
+        width: 100%;
+    }
+
+    #add-user-popup .button-box .custom-default-btn {
+        min-width: 100%;
+    }
+    .search-tickets {
+        top: 25px;
+    }
+    .conversation-block.reply-box .text-content  img {
+        width: 100%;
+    }
+
+    .conversation-block.reply-box .text-content a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #delete-user-popup .modal-footer,
+    #delete-user-popup .modal-body {
+        padding: 12px 20px;
+    }
+
+    #delete-user-popup .gray-btn,
+    #delete-user-popup .red-btn{
+        min-width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    #delete-user-popup p {
+         margin: 5px 0;
+    }
+
+    .custom-select-item ul {
+        width: 100%;
+    }
+
+    .editor-bottom-part li {
+        display: block;
+    }
+
+    .editor-bottom-part ul,
+    .editor-bottom-part li {
+        min-width: 100%;
+    }
+
+    .site-header .header-search-item input {
+        height: 25px;
+    }
+
+    .header-search-item .search-box button {
+        top: 0;
+    }
+
+    .site-header .header-search-item {
+        padding: 8px 5px;
+    }
+
+    section#freesignup {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .block-container-left {
+        padding: 0 10px;
+    }
+    .input-group input {
+        padding: 0 10px;
+    }
+    .bottom-text-part p {
+        font-size: 12px;
+    }
+    .site-header .header-content{
+        padding: 0 10px;
+    }
+    .individual-tab-content .nav-tabs>li>a{
+        padding: 0 10px 0 10px;
+    }
+    .label-box,.field-box{
+        min-width: 100%;
+        width: 100%;
+        text-align: left;
+    }
+    .user-settings-tab label{
+        line-height: inherit;
+    }
+    .user-settings-tab{
+        margin: 20px auto;
+    }
+    .user-mailbox-email .label-box{
+        width: 100%;
+    }
+    .box-subject.select_item{
+        position: relative;
+        width: 100%;
+        float: left;
+        top: 5px;
+        left: 0;
+    }
+    textarea#auto_reply_body {
+        height: 100px !important;
+    }
+    .tabs .tab-link{
+        padding-right: 10px;
+    }
+
+    .table.ticket-first-page .create-ticket-time {
+        width: 90px;
+    }
+
+    .clickable-ticket.comments-count,
+    .clickable-ticket.ticket-id-number{
+        display: none;
+    }
+    #blockSettings ul:first-child {
+        text-align: center;
+    }
+
+    .field-box .custom-default-btn {
+        width: 100%;
+        margin-bottom: 15px;
+         padding: 10px;
+    }
+    .input-fields-content .field-box ul {
+        float: none;
+        text-align: center;
+    }
+
+    .country-code-field {
+        width: 20%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .phone-field {
+        position: relative;
+        right: 0;
+        z-index: 1;
+    }
+
+    .user-page .custom-table tr td {
+        padding: 10px!important;
+    }
+
+    .user-page .custom-table .user-name{
+        font-size: 12px;
+    }
+    .user-page .custom-table td:last-child span {
+        padding-right: 0;
+        font-size: 10px;
+    }
+
+    .user-page tr td:first-child img {
+        max-width: 25px;
+        height: 25px;
+    }
+
+    .la-trash-o,
+    .fa-pencil-square-o{
+        font-size: 22px;
+    }
+
+    .custom-table.canned-replies-table td {
+        padding: 12px!important;
+    }
+
+    .canned-replies-table li .canned_reply_title, .canned-replies-table li:first-child .canned_reply_body p {
+        font-size: 13px;
+    }
+
+    .settings-page .tickets-table tr td:not(:first-child) {
+        display: none;
+    }
+
+    button.box-birddesk-com {
+        width: 110px;
+    }
+
+
+    #create_ticket_popup .create-ticket-to {
+        padding-bottom: 25px;
+    }
+
+    .editor-bottom-part {
+        text-align: center;
+        margin-top: 13px;
+    }
+
+    span.pull-right.box-assignto,
+    span.pull-right.box-sendas {
+        position: absolute;
+    }
+
+    .open>.dropdown-menu {
+        left: inherit!important;
+    }
+
+    #create_label_popup .modal-dialog{
+        width: 90%;
+    }
+    #create_label_popup .modal-body {
+        padding: 30px 15px;
+    }
+    .time-info-item {
+        display: none;
+    }
+    #marge-tickets-popup .merge-top-table td:first-child {
+        word-break: break-word;
+    }
+}
+
+@media screen and (max-width: 400px){
+
+    #full_name-error,
+    .input-signin-group #mail-error {
+        top: 30px;
+        margin-top: 5px;
+    }
+    .input-signin-group #password-error, #domain-error .input-group-error span  {
+        top: 151px;
+    }
+
+    .input-group-error span {
+        font-size: 10px;
+    }
+    #mail-error, .input-signin-group #domain-error {
+        top: 91px;
+    }
+
+    #password-error {
+        top: 226px;
+    }
+    .search-dropdown {
+        width: 250px;
+    }
+    #tab-3 .custom-select-item:after {
+        right: 5px;
+    }
+    #tab-3  .form-control{
+        padding: 5px;
+        font-size: 11px;
+    }
+    .site-header .header-content .menu-item a{
+        display: none;
+    }
+
+    .site-header .header-menu li a{
+        padding: 10px 5px;
+    }
+
+    #marge-tickets-popup .merge-tab-item li {
+        display: block;
+    }
+
+    #marge-tickets-popup .merge-tab-item li a,
+    #marge-tickets-popup .merge-tab-item li{
+        min-width: 100%;
+    }
+    .settings-page #tab-2 .tickets-table .clickable-ticket .tickets-info li:first-child {
+        width: 40px;
+        padding: 0;
+    }
+    .tickets-table .tickets-info li:first-child {
+        width: 100%;
+    }
+    button.box-birddesk-com {
+        font-size: 12px;
+        width: 95px;
+        height: 38px;
+    }
+    p.box-already-have {
+        padding-bottom: 15px;
+    }
+    p.box-forgot {
+        padding-bottom: 15px;
+        display: block;
+        float: none;
+        padding-top: 0;
+    }
+    .input-group .submit-button {
+        margin-bottom: 0;
+        height: 40px;
+    }
+
+    .birddesk {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .container-signin .login-logo-container {
+        padding-top: 30px;
+    }
+
+    .container-signin .heading-text-part p {
+        margin-bottom: 15px;
+    }
+
+    .block-container-left .heading-text-part p {
+        padding-bottom: 25px;
+    }
+    .input-group input {
+        height: 40px;
+    }
+
+    .include-list {
+        display: block;
+        height: 125px;
+    }
+
+    .block-text-right {
+        padding-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width: 370px) {
+    #tab-2 li.check-btn-item {
+        padding: 0;
+        margin: 8px auto;
+        width: 55%;
+        text-align: center;
+    }
+
+    #tab-2 .check-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .individual-tab-content .nav-tabs>li>a {
+        font-size: 12px;
+    }
+    .site-header .header-content li a{
+        padding: 5px;
+    }
+    .site-header .header-search-item {
+        padding: 0;
+    }
+    .page-main-content{
+        margin-top: 51px;
+    }
+    .tickets-table-header.toolbar li{
+        padding:  0;
+    }
+    .site-header .header-content{
+        padding: 0;
+    }
+
+    .user-page .custom-table .user-email {
+        font-size: 10px;
+    }
+
+    .color_selection li {
+        min-height: 23px;
+        min-width: 24px;
+    }
+
+    .fr-toolbar .fr-command.fr-btn i,
+    .fr-popup .fr-command.fr-btn i {
+        margin: 2px;
+        font-size: 15px!important;
+    }
+
+    .create-canned-reply-item i,
+    .upload-file i {
+        font-size: 17px;
+    }
+
+    .fr-toolbar .fr-command.fr-btn,
+    .fr-popup .fr-command.fr-btn {
+        width: 29px;
+    }
+    .site-header .header-search-item input:focus {
+        width: 120px;
+    }
+}

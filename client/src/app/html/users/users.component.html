@@ -1,0 +1,77 @@
+<div class="users">
+    <div class="users__header bold">
+        <h2 class="users__title">Users</h2>
+        <button
+                (click)="cloud.effect = 'addUser';"
+                class="users__add-btn btn bold popup-btn"
+        >Add User</button>
+    </div>
+
+    <div class="overflow-auto">
+        <div class="users-grid-header users-grid-header--users-component bold">
+            <div class="users-grid-header__item users-grid-header__item--contact">Contact</div>
+            <div class="users-grid-header__item users-grid-header__item--email">E-mail</div>
+            <div class="users-grid-header__item users-grid-header__item--mailbox">Mailbox Permissions</div>
+            <div class="users-grid-header__item users-grid-header__item--status">Status</div>
+            <div class="users-grid-header__item users-grid-header__item--acount">Account</div>
+        </div>
+        <div class="users-grid">
+            <div class="users-grid-table-wrapper">
+                <table class="users-grid-table">
+
+                    <tbody>
+                    <tr class="users-grid-table__row" *ngFor="let user of allUsers;
+                    let idx = index" (click)="redirectUserProfilePage(user)">
+                        <td class="users-grid-table__cell users-grid-table__cell--contact">
+                            <div class="users-grid-table__el users-grid-table__el--contact">
+                                <img class="users-grid-table__el-user-avatar" *ngIf="user.avatar_url"
+                                     [src]="user.avatar_url" alt="User">
+                                <div class="resent-activites-bar__user-avatar empty bold" *ngIf="!user.avatar_url">
+                                    {{ (user.first_name +' '+ user.last_name) | circleLetters}}
+                                </div>
+                                <span
+                                        class="users-grid-table__el-user-name bold">{{user.first_name + ' '+ user.last_name}}</span>
+                            </div>
+                        </td>
+
+                        <td class="users-grid-table__cell users-grid-table__cell--email">
+                            <div class="users-grid-table__el users-grid-table__el--email">
+                                {{user.email}}
+                            </div>
+                        </td>
+
+                        <td class="users-grid-table__cell users-grid-table__cell--mailbox">
+                            <div class="users-grid-table__el users-grid-table__el--mailbox popup-wrapper mailboxs_dropdown_content"
+                                 data-mailboxes="Birddtest-1, Mailbox23-2, Mail1box-777">
+                                <ng-container *ngFor="let mailboxName of user.mailbox_names">
+                                    {{mailboxName}}
+                                </ng-container>
+
+                            </div>
+                            <ul class="popup-list dropdown-menu">
+                                <li class="popup-list__item" *ngFor="let mailboxName of user.mailbox_names">
+                                    {{mailboxName}}</li>
+                            </ul>
+                        </td>
+
+                        <td class="users-grid-table__cell users-grid-table__cell--status">
+                            <div class="users-grid-table__el users-grid-table__el--status">
+                                {{user.status}}
+
+                            </div>
+                        </td>
+
+                        <td class="users-grid-table__cell users-grid-table__cell--acount">
+                            <div class="users-grid-table__el users-grid-table__el--acount">
+                                {{user.display_user_role}}
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

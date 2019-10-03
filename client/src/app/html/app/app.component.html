@@ -1,0 +1,96 @@
+<!--<darckscss></darckscss>-->
+<div *ngIf="isLogged();then logged else notLogged"></div>
+
+<ng-template #logged >
+    <socket-commponet></socket-commponet>
+        <!--<update-new *ngIf="(urlparams == '/tickets' || !urlparams)"></update-new>-->
+        <!--<update-old *ngIf="(urlparams != '/tickets' || urlparams)"></update-old>-->
+        <global-sidebar></global-sidebar>
+
+        <main-header-logged
+                *ngIf="showView"
+        [showedSidebar]="showedSidebar"
+        ></main-header-logged>
+
+<!--        <ng-container *ngIf="urlparams != '/tickets' && urlparams">-->
+<!--            <old-main-header-logged></old-main-header-logged>-->
+<!--            <old-sidebar *ngIf="showedSidebar == 'sidebar'"></old-sidebar>-->
+<!--            <sidebar-settings *ngIf="showedSidebar == 'sidebar-settings'"></sidebar-settings>-->
+<!--            <router-outlet></router-outlet>-->
+
+<!--        </ng-container>-->
+        <create-ticket
+                stopScrolling
+                *ngIf="cloud.effect.createTicket"
+        >
+        </create-ticket>
+        <canned-replies-dropdown
+                *ngIf="cloud.effect.showReply"
+
+        >
+        </canned-replies-dropdown>
+        <view-delete-canned-replies
+
+                *ngIf="cloud.effect.viewReplies || cloud.effect.deleteCannedReply"
+        >
+
+        </view-delete-canned-replies>
+        <create-canned-replies
+                stopScrolling
+                *ngIf="cloud.effect.createCannedReplies || cloud.effect.createCannedRepliesCategory"
+        >
+        </create-canned-replies>
+
+
+
+
+        <change-label
+                stopScrolling
+                *ngIf="cloud.effect.changeLabel"
+        >
+        </change-label>
+
+        <merge-ticket
+                stopScrolling
+                *ngIf="cloud.effect.mergeTicket"
+        ></merge-ticket>
+
+        <add-another-user
+                stopScrolling
+                *ngIf="cloud.effect.addAnotherUser"
+        ></add-another-user>
+
+
+        <addUser
+                stopScrolling
+                *ngIf="cloud.effect.addUser"
+        ></addUser>
+
+        <create-label
+                stopScrolling
+                *ngIf="cloud.effect.createLabel"
+        >
+        </create-label>
+        <images-popup
+                stopScrolling
+                *ngIf="cloud.effect.imgPopup && ticketService.selectedImagen"
+                [imgFullPath]="ticketService.selectedImagen"
+        ></images-popup>
+        <!--</modals>-->
+
+        <main-footer></main-footer>
+    <!--</div>-->
+</ng-template>
+
+<ng-template #notLogged>
+        <loading [className]="'extended'" class="signup-loader"   *ngIf="!showView"  ></loading>
+
+        <router-outlet  *ngIf="showView"></router-outlet>
+
+<!--    <ng-container-->
+<!--            *ngIf="urlparams == '/login'"-->
+<!--    >-->
+<!--        <router-outlet></router-outlet>-->
+
+<!--    </ng-container>-->
+</ng-template>

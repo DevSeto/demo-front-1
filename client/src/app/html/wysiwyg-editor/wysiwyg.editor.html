@@ -1,0 +1,91 @@
+<ng-container>
+    <div [ngClass]="className">
+        <wwg-group [name]="'options_list'" [previous]="'0'">
+            <ul class="list-inline list-unstyled pull-left">
+                <li *ngFor="let option of options; let i=index;">
+
+                    <wwg-button
+                            [name]="option.font"
+                            [command]="option.commandName"
+                            (click)="option.command(option, host)"
+                            [label]="option.name"
+                            [toolbar]="option.commandName+','+i"
+                    >
+                        <a>
+                            <i class="la la-fw {{option.font}}"></i>
+                        </a>
+                    </wwg-button>
+
+                    <ng-container *ngIf="option.options && option.openly">
+                        <wwg-button
+                                *ngFor="let subOption of option.options; let subIndex=index;"
+                                [name]="subOption.font"
+                                [command]="subOption.commandName"
+                                (click)="subOption.command(subOption.name, option.options, host)"
+                                [label]="subOption.name"
+                                [toolbar]="subOption.commandName+','+i"
+                        >
+                            <a>
+                                <i class="la {{subOption.font}}"></i>
+                            </a>
+                        </wwg-button>
+                    </ng-container>
+
+                    <ng-container *ngIf="option.dropDownPopup">
+                        <div>
+
+                        </div>
+                    </ng-container>
+
+                </li>
+            </ul>
+        </wwg-group>
+        <wwg-group [name]="'canned_relpy_list'" [previous]="'1'">
+            <div class="dropdown pull-right">
+                <wwg-button
+                        [name]="'Canned reply'"
+                        [command]="'cannedReply'"
+                        [label]="'cannedReply'"
+                        [toolbar]="'cannedReply,0'">
+
+                    <a
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            data-toggle="dropdown"
+                            type="button">
+                        <i class="la la-fw fa-comment-o"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:void (0)"> Lorem Ipsum dolar amet</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)">Quis autem vel eum iure </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)"> Nihil molestiae conseq</a>
+                        </li>
+                        <li class="divider" role="separator"></li>
+                        <li>
+                            <a href="javascript:void (0)"> Save reply ...</a>
+                        </li>
+                    </ul>
+
+                </wwg-button>
+            </div>
+        </wwg-group>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div
+                class="typings"
+                contenteditable
+                spellcheck="true"
+                dir="auto"
+                aria-disabled="false"
+                aria-readonly="false"
+                #host>
+        </div>
+    </div>
+</ng-container>

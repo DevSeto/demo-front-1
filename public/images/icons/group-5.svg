@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>AFBE7708-B596-49EE-9B24-9636BBC5DF91</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24" rx="2"></rect>
+        <filter x="-52.1%" y="-47.9%" width="204.2%" height="204.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.890196078   0 0 0 0 0.890196078   0 0 0 0 0.77254902  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="landing" transform="translate(-150.000000, -1801.000000)">
+            <g id="7-screen" transform="translate(150.000000, 1210.000000)">
+                <g id="bullets" transform="translate(0.000000, 517.000000)">
+                    <g id="2" transform="translate(0.000000, 74.000000)">
+                        <g id="Group-5">
+                            <circle id="Oval-Copy-3" fill="#FCFCDC" cx="25" cy="25" r="25"></circle>
+                            <g id="round-account-button-with-user-inside" transform="translate(13.000000, 13.000000)">
+                                <g id="Rectangle">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                </g>
+                                <path d="M12,3.6 C14.04,3.6 15.6,5.16 15.6,7.2 C15.6,9.24 14.04,10.8 12,10.8 C9.96,10.8 8.4,9.24 8.4,7.2 C8.4,5.16 9.96,3.6 12,3.6 Z" id="Path" fill="#FCD7C2" fill-rule="nonzero"></path>
+                                <path d="M12,20.64 C9,20.64 6.36,19.0800471 4.8,16.8 C4.8,14.4 9.6,13.08 12,13.08 C14.4,13.08 19.2,14.4 19.2,16.8 C17.64,19.08 15,20.64 12,20.64 Z" id="Path" fill="#FCD7C2" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

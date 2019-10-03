@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Birddesk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">Birddesk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<p><a href=""><img src="https://img.shields.io/badge/Project-Birddesk-green.svg?style=flat-square" alt="standard-readme compliant" class="img-responsive"></a></p>
+<h2 id="initial-install">Initial install</h2>
+<ol>
+<li><code>sudo apt-get install nodejs</code></li>
+<li><code>sudo apt-get install npm</code></li>
+<li><code>sudo ln -s /usr/bin/nodejs /usr/bin/node</code></li>
+<li><code>npm install -g bower</code></li>
+<li><code>npm install -g typings</code></li>
+</ol>
+<h2 id="install">Install</h2>
+<div><pre class="line-numbers"><code class="language-bash">$ git clone https://{{Username}}&#64;bitbucket.org/jantonk/birddesk-spa-frontend.git
+$ cd birddesk-spa-frontend
+$ npm install
+$ bower install</code></pre></div><div><pre class="line-numbers"><code class="language-javascript">
+&gt; Edit the following file: ~/node_modules/awesome-typescript-loader/dist/instance.js
+&gt; Line ~142: Replace the body of the &quot;applyDefaults&quot; method with the following (from master):
+
+function applyDefaults(configFilePath, compilerConfig, loaderConfig) {
+    _.defaults(compilerConfig.options, {
+        sourceMap: true,
+        verbose: false,
+        skipDefaultLibCheck: true,
+        suppressOutputPathCheck: true
+    });
+
+    if (loaderConfig.transpileOnly) {
+        compilerConfig.options.isolatedModules = true;
+    }
+
+    _.defaults(compilerConfig.options, {
+        sourceRoot: compilerConfig.options.sourceMap ? process.cwd() : undefined
+    });
+
+    _.defaults(loaderConfig, {
+        sourceMap: true,
+        verbose: false,
+    });
+
+    delete compilerConfig.options.outDir;
+    delete compilerConfig.options.inlineSourceMap;
+    delete compilerConfig.options.outFile;
+    delete compilerConfig.options.out;
+    delete compilerConfig.options.noEmit;
+}</code></pre></div><h3 id="run-project">Run project</h3>
+<p>For Development:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm start</code></pre></div><p><code>http://127.0.0.1:7777</code></p>
+<p>OR</p>
+<p>For Production:</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm run build</code></pre></div><p><code>Create a virtual host and move the &lt;&lt;dist&gt;&gt; folder to the desired directory.</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <script src="./js/menu-wc.js"></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

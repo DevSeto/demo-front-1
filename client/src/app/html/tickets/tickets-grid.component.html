@@ -1,0 +1,137 @@
+<div class="tickets-grid__wrapper" *ngIf="ticketService.tickets.length">
+    <table class="tickets-grid__header">
+        <tr class="tickets-grid__header-row" [ngClass]="{'tickets-grid__header-row': true, 'checked': selectMenu.selectAllTickets && selectedTickets.main.length && selectedTickets.main.length === ticketService.tickets.length}">
+            <td class="tickets-grid__header-date checker">
+
+            </td>
+            <td class="tickets-grid__header-date">Contact</td>
+            <td class="tickets-grid__header-date">Topic</td>
+            <td class="tickets-grid__header-date">Text</td>
+            <td class="tickets-grid__header-date">Labels</td>
+            <td class="tickets-grid__header-date">Assignee</td>
+            <td class="tickets-grid__header-date">Date</td>
+            <td class="tickets-grid__header-date">Number</td>
+        </tr>
+    </table>
+    <section>
+    <table class="tickets-grid">
+        <tbody class="tickets-grid__body">
+        <ng-container *ngFor="let ticket of ticketService.tickets; let idx = index">
+
+            <tr (click)="redirectTicketIndividual.emit([$event, ticket.id, ticket])"  [ngClass]="{'tickets-grid__body-row  ': true, 'new': !ticket.opened, 'checked': selectedTickets.main.length === ticketService.tickets.length || ticket.checked}">
+                <td class="tickets-grid__body-date checker">
+                    <input
+                            hidden
+                            type="checkbox"
+                            id="{{idx}}"
+                            name="check"
+                            [checked]="selectedTickets.main.length === ticketService.tickets.length || ticket.checked"
+                    />
+                    <span class="tickets-grid__item-checkbox" (click)="selectTickets.emit([!ticket.checked, ticket , idx])"></span>
+                </td>
+                <td class="tickets-grid__body-date user">
+                    <div class="resent-activites-bar__user-avatar empty bold " *ngIf="ticket.customer_name"
+                         [ngStyle]="{'background-color': ticket.color ,'color': '#e8e6e6'}"> {{ticket.customer_name | circleLetters}}</div>
+                    <h3 class="resent-activites-bar__user-name text-center bold">{{ticket.customer_name}} </h3>
+                </td>
+                <td class="tickets-grid__body-date topic">
+                    <span class="bold"*ngIf="ticket.subject " [innerHTML]="ticket.subject |  shorten:15"></span>
+                </td>
+                <td class="tickets-grid__body-date content">
+                    <span *ngIf="ticket.last_action  && ticket.last_action.files && ticket.last_action.files.length">
+                        <i class="la la-paperclip fileContent"></i>
+                    </span>
+                    <span
+                            *ngIf="ticket.last_action && ticket.last_action.body && activeTickets !== 'draft'"
+                            [innerHTML]="ticket.last_action.body |  shorten:30  "
+                    >
+                    </span>
+                    <span
+                            *ngIf="activeTickets === 'draft' && ticket.ticketDraft.reply"
+                            [innerHTML]="ticket.ticketDraft.reply |  shorten:80"
+
+                    >
+
+                    </span>
+
+                    <span
+                            *ngIf="activeTickets === 'draft' && !ticket.ticketDraft.reply && ticket.ticketDraft.note"
+                            [innerHTML]="ticket.ticketDraft.note |  shorten:80"
+
+                    >
+                    </span>
+
+                    <span
+                            *ngIf="activeTickets === 'draft' && !ticket.ticketDraft.reply && !ticket.ticketDraft.note && ticket.ticketDraft.forward"
+                            [innerHTML]="ticket.ticketDraft.forward |  shorten:80"
+
+                    >
+
+                    </span>
+                    <span
+                            *ngIf="!ticket.last_action  && activeTickets !== 'draft' && activeTickets !== 'attention' && ( !ticket.comments || !ticket.comments.length)"
+                            [innerHTML]="ticket.body |  shorten:80"
+
+                    >
+
+                    </span>
+
+<!--                    <ul-->
+<!--                            *ngIf="ticket.last_action  && ticket.last_action.files"-->
+<!--                            class="attachments-list  ticket-list-attachments"-->
+<!--                    >-->
+<!--                        <li *ngFor="let file of ticket.last_action.files">-->
+<!--                            <ng-container *ngIf="file.main_type !== 'images'">-->
+<!--                                <a href="{{file.file_full_path}}" download="true">-->
+<!--                                    <i class="la la-paperclip fileContent">-->
+<!--                                        {{file.file_name}}-->
+<!--                                    </i>-->
+<!--                                </a>-->
+<!--                            </ng-container>-->
+
+<!--                            <ng-container *ngIf="file.main_type === 'images' ">-->
+<!--                                <a (click)="cloud.effect = 'imgPopup';ticketService.selectedImagen = file.file_full_path;">-->
+<!--                                    <i class="la la-paperclip fileContent">-->
+<!--                                        {{file.file_name}}-->
+<!--                                    </i>-->
+<!--                                </a>-->
+<!--                            </ng-container>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                    <span class="text_fadeout_effect"></span>
+                </td>
+                <td class="tickets-grid__body-date" >
+                    <ng-container *ngIf="ticket.labels.length">
+                        <span class="tickets-row__item-label hot"
+                              [ngStyle]="{'border-color': ticket.labels[ticket.labels.length -1].color, 'color': ticket.labels[ticket.labels.length -1].color}"
+                        >{{ticket.labels[ticket.labels.length -1].body}}</span>
+                        <span class="tickets-row__item-label-amount"
+                                (mouseover)="mouseoverLabels($event,ticket.labels)"
+                                (mouseout)="showLabels = !!0"
+                                *ngIf="ticket.labels.length > 1">+{{ticket.labels.length-1}}
+                        </span>
+
+
+                    </ng-container>
+                </td>
+                <td class="tickets-grid__body-date">
+                    <span class="tickets-grid__item-assign-on">{{assigneName(ticket.assign_agent_id)}}</span>
+                </td>
+                <td class="tickets-grid__body-date">
+                    <span>{{ticket.created_at | timePipe}}</span>
+                </td>
+                <td class="tickets-grid__body-date">#{{ticket.id}}</td>
+            </tr>
+        </ng-container>
+
+        </tbody>
+    </table>
+    <popover-dropdown
+            *ngIf="showLabels"
+            [parentTag]="parentTag"
+            [labels]="labels"
+    >
+
+    </popover-dropdown>
+    </section>
+</div>

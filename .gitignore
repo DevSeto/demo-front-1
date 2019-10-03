@@ -1,0 +1,11 @@
+node_modules
+typings
+build
+!typings.json
+.idea
+dist
+bower_components
+.tmp
+npm-debug.log
+aot
+build.js

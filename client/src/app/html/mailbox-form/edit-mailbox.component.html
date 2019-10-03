@@ -1,0 +1,235 @@
+<section class="page-main-content" *ngIf="1!=1">
+    <div class="main-content white-bg">
+        <div class="full-width-left">
+            <form
+                    [formGroup]="mailboxForm"
+                    (ngSubmit)="onSubmitted()"
+                    id="blockSettings"
+            >
+                <div class="mailbox-line">
+                    <div class="user-mailbox-tab">
+                        <ul class="list-inline list-unstyled input-fields-content align-middle">
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="full_name">Name</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            type="text"
+                                            name=""
+                                            [class.input-error-style]="classError('name')"
+                                            [class.input-success-style]="classSuccess('name')"
+                                            id="full_name"
+                                            class="form-control"
+                                            formControlName="name"
+                                            [(ngModel)]="mailboxService.mailbox.name"
+                                    >
+                                </div>
+                                 <span class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="mailboxForm.controls.name"
+                                            [formSubmit]="mailboxForm.submitted"
+                                            [controlName]="'name'"
+                                    ></form-errors>
+                                </span>
+                            </li>
+                            <li>
+                                <div class="pull-left text-right label-box">
+                                    <label for="email">Email address</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <input
+                                            type="text"
+                                            name=" "
+                                            id="email"
+                                            class="form-control"
+                                            value="mailboxService.mailbox.email"
+                                            disabled
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mailbox-line">
+                    <div class="user-mailbox-tab">
+                        <ul class="list-inline list-unstyled input-fields-content align-middle">
+                            <li class="signature-section">
+                                <div class="pull-left text-right label-box">
+                                    <label>Signature</label>
+                                </div>
+                                <div class="pull-left field-box signature-editor">
+                                    <div class="mailbox-editor" [froalaEditor]="textEditor.editorOptions"
+                                         [(froalaModel)]="mailboxService.mailbox.signature"></div>
+                                </div>
+                                <div class="signature-insert">
+                                    <select (change)="insertVariables($event,'signature')">
+                                        <option value="" selected disabled>Insert Variable</option>
+                                        <option *ngFor="let variable of variablesJson.json" value="{{variable.value}}">{{variable.key}}
+
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mailbox-line">
+                    <div class="user-mailbox-tab">
+                        <ul class="list-inline list-unstyled input-fields-content align-middle">
+                            <li>
+                                <div class="assigned-agents pull-left text-right label-box">
+                                    <label>Auto Bcc</label>
+                                </div>
+                                <div class="pull-left field-box">
+                                    <div class="pull-left radio-btn-first">
+                                        <input
+                                                class="radio-blue"
+                                                type="radio"
+                                                name="auto_bcc"
+                                                value="on"
+                                                [checked]="mailboxService.mailbox.auto_bcc === 1"
+                                                id="auto_bcc_on"
+                                                (change)="mailboxService.mailbox.auto_bcc = 1"
+                                        >
+                                        <label for="auto_bcc_on">On</label>
+                                    </div>
+                                    <div class="pull-left ">
+                                        <input
+                                                class="radio-blue"
+                                                type="radio"
+                                                name="auto_bcc"
+                                                value="off"
+                                                [checked]="mailboxService.mailbox.auto_bcc === 2"
+                                                checked id="auto_bcc_off"
+                                                (change)="mailboxService.mailbox.auto_bcc = 2"
+
+
+                                        >
+                                        <label for="auto_bcc_off">Off</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mailbox-line">
+                    <div  class="user-mailbox-tab">
+                        <ul class="list-inline list-unstyled input-fields-content align-middle">
+                            <li class="send-btn">
+                                <button
+                                        type="submit"
+                                        class="box-save-mailboxes"
+                                >
+                                    <i class='fa  fa-circle-o-notch  fa-spin ' *ngIf="oneclick"></i>
+                                    <span  >Save changes</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<form
+        [formGroup]="mailboxForm"
+        (ngSubmit)="onSubmitted()"
+        id="blockSettings"
+>
+<div class="flex justify-between mb24">
+    <div class="ui-input mailbox-settings__input">
+        <label class="ui-input__label" for="customer-name">Mailbox Name</label>
+        <input
+                class="ui-input__input input"
+               id="customer-name"
+               type="text"
+               placeholder="Mailbox Name"
+                [class.input-error-style]="classError('name')"
+                [class.input-success-style]="classSuccess('name')"
+                formControlName="name"
+                [(ngModel)]="mailboxService.mailbox.name"
+        >
+        <span class="error-span help-block error backend-error input-group-error">
+            <form-errors
+                    [control]="mailboxForm.controls.name"
+                    [formSubmit]="mailboxForm.submitted"
+                    [controlName]="'name'"
+            ></form-errors>
+        </span>
+    </div>
+
+    <div class="ui-input mailbox-settings__input">
+        <label class="ui-input__label" for="customer-email">E-mail</label>
+        <input class="ui-input__input input"
+               id="customer-email"
+               type="text"
+               placeholder="E-mail"
+               disabled
+               [value]="mailboxService.mailbox.email"
+        >
+    </div>
+</div>
+
+<table class="notification-pref-table">
+    <thead class="notification-pref-table__head">
+    <tr class="notification-pref-table__row">
+        <td class="notification-pref-table__cell bold grey">Bcc</td>
+        <td class="notification-pref-table__cell bold grey"></td>
+        <td class="notification-pref-table__cell bold grey"></td>
+    </tr>
+    </thead>
+    <tbody class="notification-pref-table__body">
+
+    <tr class="notification-pref-table__row">
+        <td class="notification-pref-table__cell">Auto Bcc</td>
+        <td class="notification-pref-table__cell">
+        </td>
+        <td class="notification-pref-table__cell">
+            <label class="ui-checkbox">
+                <input
+                        class="ui-checkbox__input"
+                       type="checkbox"
+                       name="after-i-replay"
+                        [checked]="mailboxService.mailbox.auto_bcc === 1"
+                        (change)="(mailboxService.mailbox.auto_bcc === 2)?mailboxService.mailbox.auto_bcc = 1:mailboxService.mailbox.auto_bcc = 2"
+
+
+                >
+                <span class="ui-checkbox__check-wrapper">
+                        <span class="ui-checkbox__check"></span>
+                        <span class="ui-checkbox__check__after"></span>
+                </span>
+            </label>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="ticket-editor ticket-editor--create-ticket">
+    <div class="variable" dropdown>
+        <button class="variable__btn btn grey" type="button" dropdown-open>Variable</button>
+        <div class="send-as-clored-btn__dropdown-content dropdown-menu-variable">
+            <ul class="send-as-clored-btn__dropdown-list">
+                <li class="send-as-clored-btn__dropdown-list__el"
+                    *ngFor="let variable of variablesJson.json"
+                    (click)="insertVariables(variable.value,'signature')"
+                >
+                    {{variable.key | capitalizeFirst}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+
+         [froalaEditor]="textEditor.editorOptions"
+         [(froalaModel)]="mailboxService.mailbox.signature">
+
+    </div>
+    </div>
+    <div class="text-right edit-mailbox-btn-padding">
+        <div class="grad-btn">
+            <button class="grad-btn__btn" type="submit">Save Changes</button>
+            <span class="grad-btn__bg"></span>
+        </div>
+    </div>
+</form>

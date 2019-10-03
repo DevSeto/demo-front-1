@@ -1,0 +1,811 @@
+    <loading [className]="'extended'" *ngIf="!showView"></loading>
+
+    <!--&gt;There is a new ticket&lt;!&ndash;<section class="page-main-content">&ndash;&gt;-->
+    <!--<div class="main-content settings-page">
+        <div class="page-title-box full-width-left">
+            <span class="p-title">Notifications</span>
+            <button
+                    class="btn custom-default-btn pull-right"
+                    *ngIf="!notificationIsEnable()"
+                    (click)="enableNotification()"
+            >
+                Enable Notification
+            </button>
+        </div>
+
+        <form *ngIf="showView">
+            <div class="full-width-left preferences-profile-info">
+                <table style="width: 100%">
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-secont-td"></td>
+                        <td class="notif-settings notif-checkboxes-td">
+                            <p>Email</p>
+                        </td>
+                        <td class="notif-settings notif-checkboxes-td">
+                            <p>Browser</p>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td text-right">
+                            <p>Notify me when...</p>
+                        </td>
+                        <td class="notif-second-td">
+                            <p>There is a new ticket</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email1"
+                                        name="checkbox1"
+                                        [checked]="notificationFormData[0]['email']"
+                                        (click)="clickCheckbox($event, 'email',0)"
+                                />
+                                <label for="email1"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser1"
+                                        name="checkbox1"
+                                        [checked]="notificationFormData[0]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',0)"
+                                />
+                                <label for="browser1"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>A ticket is assigned to me</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email2"
+                                        name="checkbox2"
+                                        [checked]="notificationFormData[1]['email']"
+                                        (click)="clickCheckbox($event, 'email',1)"
+                                />
+                                <label for="email2"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser2"
+                                        name="checkbox2"
+                                        [checked]="notificationFormData[1]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',1)"
+                                />
+                                <label for="browser2"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>A ticket has been assigned to someone else</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email3"
+                                        name="checkbox3"
+                                        [checked]="notificationFormData[2]['email']"
+                                        (click)="clickCheckbox($event, 'email',2)"
+                                />
+                                <label for="email3"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser3"
+                                        name="checkbox3"
+                                        [checked]="notificationFormData[2]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',2)"
+                                />
+                                <label for="browser3"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>I am mentioned in a ticket</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email4"
+                                        name="checkbox4"
+                                        [checked]="notificationFormData[3]['email']"
+                                        (click)="clickCheckbox($event, 'email',3)"
+                                />
+                                <label for="email4"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser4"
+                                        name="checkbox4"
+                                        [checked]="notificationFormData[3]['browser']"
+                                        (click)="clickCheckbox($event,'browser',3)"
+                                />
+                                <label for="browser4"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>My team is mentioned in a ticket</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email5"
+                                        name="checkbox5"
+                                        [checked]="notificationFormData[4]['email']"
+                                        (click)="clickCheckbox($event, 'email',4)"
+                                />
+                                <label for="email5"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser5"
+                                        name="checkbox5"
+                                        [checked]="notificationFormData[4]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',4)"
+                                />
+                                <label for="browser5"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <table style="width: 100%">
+                    <tr>
+                        <td class="notif-first-td text-right">
+                            <p>Notify me when a customer replies...</p>
+                        </td>
+                        <td class="notif-second-td">
+                            <p>To an unassigned ticket</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email6"
+                                        name="checkbox6"
+                                        [checked]="notificationFormData[5]['email']"
+                                        (click)="clickCheckbox($event, 'email',5)"
+                                />
+                                <label for="email6"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser6"
+                                        name="checkbox6"
+                                        [checked]="notificationFormData[5]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',5)"
+                                />
+                                <label for="browser6"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>To one of my tickets</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email7"
+                                        name="checkbox7"
+                                        [checked]="notificationFormData[6]['email']"
+                                        (click)="clickCheckbox($event,  'email',6)"
+                                />
+                                <label for="email7"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser7"
+                                        name="checkbox7"
+                                        [checked]="notificationFormData[6]['browser']"
+                                        (click)="clickCheckbox($event,  'browser',6)"
+                                />
+                                <label for="browser7"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>To a ticket that is assigned to a team I am in</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email8"
+                                        name="checkbox8"
+                                        [checked]="notificationFormData[7]['email']"
+                                        (click)="clickCheckbox($event, 'email',7)"
+                                />
+                                <label for="email8"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser8"
+                                        name="checkbox8"
+                                        [checked]="notificationFormData[7]['browser']"
+                                        (click)="clickCheckbox($event,  'browser',7)"
+                                />
+                                <label for="browser8"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <table style="width: 100%">
+                    <tr>
+                        <td class="notif-first-td text-right">
+                            <p>Notify me when another user replies or adds a note...</p>
+                        </td>
+                        <td class="notif-second-td">
+                            <p>To an unassigned ticket</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email9"
+                                        name="checkbox9"
+                                        [checked]="notificationFormData[8]['email']"
+                                        (click)="clickCheckbox($event,  'email',8)"
+                                />
+                                <label for="email9"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser9"
+                                        name="checkbox9"
+                                        [checked]="notificationFormData[8]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',8)"
+                                />
+                                <label for="browser9"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>To one of my tickets</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email10"
+                                        name="checkbox10"
+                                        [checked]="notificationFormData[9]['email']"
+                                        (click)="clickCheckbox($event,  'email',9)"
+                                />
+                                <label for="email10"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser10"
+                                        name="checkbox10"
+                                        [checked]="notificationFormData[9]['browser']"
+                                        (click)="clickCheckbox($event,  'browser',9)"
+                                />
+                                <label for="browser10"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="notif-first-td"></td>
+                        <td class="notif-second-td">
+                            <p>To a ticket that is assigned to a team I am in</p>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="email11"
+                                        name="checkbox11"
+                                        [checked]="notificationFormData[10]['email']"
+                                        (click)="clickCheckbox($event,  'email', 10)"
+                                />
+                                <label for="email11"></label>
+                            </div>
+                        </td>
+                        <td class="notif-checkboxes-td">
+                            <div class="rounded-checkbox notif-settings">
+                                <input
+                                        type="checkbox"
+                                        id="browser11"
+                                        name="checkbox11"
+                                        [checked]="notificationFormData[10]['browser']"
+                                        (click)="clickCheckbox($event, 'browser',10)"
+                                />
+                                <label for="browser11"></label>
+                            </div>
+                        </td>
+                        <td class="notif-last-td"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="full-width-left preferences-profile-info">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <div class="field-box">
+                        <button
+                                (click)="changeNotificationSetings()"
+                                class="btn custom-default-btn"
+                        >
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>-->
+        <div class="user-settings notification-pref" *ngIf="notificationFormData.length">
+            <div class="notification-pref__header">
+                <h2 class="bold">Notifications</h2>
+                <div class="align-right">
+                    <span class="grey">Browser Notifications</span>
+                    <label class="toggle-btn">
+                        <input
+                                class="toggle-btn__input"
+                                (change)="enableNotification(socketService.openPushNotification)"
+                                type="checkbox"
+                                [checked]="socketService.openPushNotification"
+                        >
+                        <span class="toggle-btn__marker toggle-btn__marker--on" >ON</span>
+                        <span class="toggle-btn__marker toggle-btn__marker--off">OFF</span>
+                        <span class="toggle-btn__thumb"></span>
+                    </label>
+                </div>
+            </div>
+
+            <table class="notification-pref-table">
+                <thead class="notification-pref-table__head">
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell bold grey">Notify me when</td>
+                    <td class="notification-pref-table__cell bold grey">Email</td>
+                    <td class="notification-pref-table__cell bold grey">Browser</td>
+                </tr>
+                </thead>
+                <tbody class="notification-pref-table__body">
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">There is a new ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="email1"
+                                   [checked]="notificationFormData[0]['email']"
+                                   (click)="clickCheckbox($event, 'email',0)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email1">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="browser1"
+                                   [checked]="notificationFormData[0]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',0)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser1">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">A ticket is assigned to me</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="email2"
+                                   [checked]="notificationFormData[1]['email']"
+                                   (click)="clickCheckbox($event, 'email',1)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email2">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="browser2"
+                                   [checked]="notificationFormData[1]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',1)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser2">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">A ticket has been assigned to someone else</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="email3"
+                                   [checked]="notificationFormData[2]['email']"
+                                   (click)="clickCheckbox($event, 'email',2)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email3">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="browser3"
+                                   [checked]="notificationFormData[2]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',2)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser3">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">I am mentioned in a ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="email4"
+                                   [checked]="notificationFormData[3]['email']"
+                                   (click)="clickCheckbox($event, 'email',3)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email4">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="browser4"
+                                   [checked]="notificationFormData[3]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',3)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser4">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="notification-pref-table">
+                <thead class="notification-pref-table__head">
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell bold grey">Notify me when a customer replies</td>
+                    <td class="notification-pref-table__cell bold grey"></td>
+                    <td class="notification-pref-table__cell bold grey"></td>
+                </tr>
+                </thead>
+                <tbody class="notification-pref-table__body">
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To an unassigned ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="email5"
+                                   [checked]="notificationFormData[4]['email']"
+                                   (click)="clickCheckbox($event, 'email',4)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email5">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="browser5"
+                                   [checked]="notificationFormData[4]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',4)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser5">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To one of my tickets</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="email6"
+                                   [checked]="notificationFormData[5]['email']"
+                                   (click)="clickCheckbox($event, 'email',5)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email6">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="browser6"
+                                   [checked]="notificationFormData[5]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',5)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser6">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To a ticket that is assigned to a team I am in</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="email7"
+                                   [checked]="notificationFormData[6]['email']"
+                                   (click)="clickCheckbox($event, 'email',6)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email7">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="browser7"
+                                   [checked]="notificationFormData[6]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',6)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser7">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="notification-pref-table">
+                <thead class="notification-pref-table__head">
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell bold grey">Notify me when another user replies or adds a note
+                    </td>
+                    <td class="notification-pref-table__cell bold grey"></td>
+                    <td class="notification-pref-table__cell bold grey"></td>
+                </tr>
+                </thead>
+                <tbody class="notification-pref-table__body">
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To an unassigned ticket</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="email8"
+                                   [checked]="notificationFormData[7]['email']"
+                                   (click)="clickCheckbox($event, 'email',7)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email8">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-replay"
+                                   id="browser8"
+                                   [checked]="notificationFormData[7]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',7)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser8">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To one of my tickets</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="email9"
+                                   [checked]="notificationFormData[8]['email']"
+                                   (click)="clickCheckbox($event, 'email',8)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email9">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-add-note"
+                                   id="browser9"
+                                   [checked]="notificationFormData[8]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',8)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser9">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr class="notification-pref-table__row">
+                    <td class="notification-pref-table__cell">To a ticket that is assigned to a team I am in</td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="email10"
+                                   [checked]="notificationFormData[9]['email']"
+                                   (click)="clickCheckbox($event, 'email',9)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="email10">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="notification-pref-table__cell">
+                        <label class="ui-checkbox">
+                            <input class="ui-checkbox__input"
+                                   type="checkbox"
+                                   name="after-i-update"
+                                   id="browser10"
+                                   [checked]="notificationFormData[9]['browser']"
+                                   (click)="clickCheckbox($event, 'browser',9)"
+                            >
+                            <span class="ui-checkbox__check-wrapper" for="browser10">
+                                    <span class="ui-checkbox__check"></span>
+                                    <span class="ui-checkbox__check__after"></span>
+                            </span>
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="w-100 clearfix">
+                <div class="grad-btn pull-right">
+                    <button class="grad-btn__btn" (click)="changeNotificationSetings()">Save Changes</button>
+                    <span class="grad-btn__bg"></span>
+                </div>
+            </div>
+
+        </div>
+<!--
+</section>
+-->
+

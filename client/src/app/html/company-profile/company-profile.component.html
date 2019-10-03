@@ -1,0 +1,230 @@
+
+<loading [className]="'extended'" *ngIf="cloud.effect.showLoading"></loading>
+
+<form class="user-settings"
+      (ngSubmit)="updateCompany()"
+      [formGroup]="companyProfileForm"
+      *ngIf="!cloud.effect.showLoading"
+>
+    <div class="user-settings__wrapper">
+
+        <div class="flex justify-center">
+            <div class="user-settings__avatar-wrapper" [ngStyle]="{'background-image': 'url('+usersService.company.logo_full_path+')'}" >
+                <label class="ui-input ui-input--upload-photo" >
+                    <input type="file" name="avatar"  (change)="uploadCompanyLogo($event.target)">
+                </label>
+            </div>
+        </div>
+
+        <h3 class="user-settings__title">Profile</h3>
+        <div class="flex flex-wrap justify-between">
+
+                <div class="ui-input">
+                    <label class="ui-input__label" for="company_name">Company Name</label>
+                    <input
+                            class="ui-input__input input"
+                            id="company_name"
+                            formControlName="company_name"
+                            [class.input-error-style]="classError('company_name')"
+                            [class.input-success-style]="classSuccess('company_name')"
+                            [(ngModel)]="usersService.company.company_name"
+                            autocomplete="off"
+                            placeholder="Full Name"
+                            name="company_name"
+                            value="{{usersService.company.company_name}}"
+                    >
+                    <span id="registartion_company_name-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.company_name"
+                                            [formSubmit]="companyProfileForm.submitted"
+                                            [controlName]="'company name'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.company_name.verify">
+                                        {{_companyProfileFormErrors.company_name.text}}
+                                    </span>
+                                </span>
+                </div>
+
+                <div class="ui-input">
+                    <label class="ui-input__label" for="company-subdomain">Subdomain</label>
+                    <input
+                            class="ui-input__input input"
+                           id="company-subdomain"
+                           type="text"
+                           name=" "
+                           value="{{usersService.company.subdomain}}"
+                           disabled
+                    >
+                </div>
+
+                <div class="ui-input flex flex-wrap">
+                    <div class="w-100">
+                        <label class="ui-input__label" for="phone">Phone Numer</label>
+
+                    </div>
+                    <div class="pull-left country-code-field">
+                        <input
+                                class="ui-input__input input"
+                                type="tel"
+                                placeholder="+1234"
+                                value="{{usersService.company.country_code}}"
+                                disabled
+                        >
+                    </div>
+                    <div class="pull-left phone-field grow-1">
+                        <input class="ui-input__input input" id="company-numer" type="tel" value="489-517-0288"
+
+                                (keypress)="onlyNumber($event)"
+                                placeholder="Add your company phone-number"
+                                type="tel"
+                                name=" "
+                                id="phone"
+                                formControlName="phone"
+                                [class.input-error-style]="classError('phone')"
+                                [class.input-success-style]="classSuccess('phone')"
+                                [(ngModel)]="usersService.company.phone"
+                        >
+                    </div>
+                    <span id="registartion_phone-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="companyProfileForm.controls.phone"
+                                [formSubmit]="companyProfileForm.submitted"
+                                [controlName]="'phone number'"
+                        ></form-errors>
+                        <span *ngIf="_companyProfileFormErrors.phone.verify">
+                            {{_companyProfileFormErrors.phone.text}}
+                        </span>
+                    </span>
+                </div>
+
+
+                <div class="ui-input">
+                    <label class="ui-input__label" for="website">Website</label>
+                    <input
+                            class="ui-input__input input"
+                            type="text"
+                            name=" "
+                            id="website"
+                            formControlName="website"
+                            placeholder="Website"
+                            [class.input-error-style]="classError('website')"
+                            [class.input-success-style]="classSuccess('website')"
+                            [(ngModel)]="usersService.company.website"
+                    >
+                    <span id="registartion_website-error" class="error-span help-block error backend-error input-group-error">
+                                    <form-errors
+                                            [control]="companyProfileForm.controls.website"
+                                            [formSubmit]="companyProfileForm.submitted"
+                                            [controlName]="'website'"
+                                    ></form-errors>
+                                    <span *ngIf="_companyProfileFormErrors.website.verify">
+                                        {{_companyProfileFormErrors.website.text}}
+                                    </span>
+                                </span>
+                </div>
+
+                <div class="ui-select">
+                    <label class="ui-select__label">Country</label>
+                    <div class="ui-select__input" (click)="cloud.effect = 'showCountry'" [class.open]="cloud.effect.showCountry" [class.rotate-drop]="cloud.effect.showCountry">
+                        <img src="{{usersService.company.flag}}">
+                        {{usersService.company.country}}
+                    </div>
+
+                    <div class="ui-select__options" [class.open]="cloud.effect.showCountry">
+
+                        <div class="ui-select__option"
+                             *ngFor="let country of countries, let idx = index"
+                             (click)="selectCountry(idx);cloud.effect = 'showCountry'"
+                             [class.activeCountry]="usersService.company.country === country.nicename"
+                        >
+                            <img src="{{country.img}}">
+                            {{country.nicename}}
+                        </div>
+                    </div>
+
+<!--                    <select class="ui-select__select" id="company-country">-->
+<!--                        <option value="Admin">Africa</option>-->
+<!--                        <option value="Agent">USA</option>-->
+<!--                        <option value="Super-Admin">Ukraine</option>-->
+<!--                    </select>-->
+                </div>
+
+                <div class="ui-select">
+                    <label class="ui-select__label" >Timezone</label>
+                    <div class="ui-select__input" (click)="cloud.effect = 'timezone'"
+                         [class.open]="cloud.effect.timezone" [class.rotate-drop]="cloud.effect.timezone">
+                        (UTC/GMT {{usersService.company.timezone}} hours) CEST
+                    </div>
+                    <div class="ui-select__options" [class.open]="cloud.effect.timezone">
+                        <div
+                            [class.open]="cloud.effect.timezone"
+                            class="ui-select__option"
+                            (click)="changeTimezone(time);cloud.effect = 'timezone'"
+                            *ngFor="let time of timeZonesCount | numberedCycle;let ind = index"
+                            [attr.selectedValue]="time"
+
+                        >
+                            (UTC/GMT {{time}} hours) CEST
+                        </div>
+                    </div>
+                    <input
+                            type="hidden"
+                            name="timezone"
+                            formControlName="timezone"
+                            [(ngModel)]="usersService.company.timezone"
+                    >
+                    <span id="timezone-error" class="error-span help-block error backend-error input-group-error">
+                        <form-errors
+                                [control]="companyProfileForm.controls.timezone"
+                                [formSubmit]="companyProfileForm.submitted"
+                                [controlName]="'timezone'"
+                        ></form-errors>
+                        <span *ngIf="_companyProfileFormErrors.timezone.verify">
+                            {{_companyProfileFormErrors.timezone.text}}
+                        </span>
+                    </span>
+                </div>
+
+<!--                <div class="pull-left text-right label-box">-->
+<!--                    <label>Timezone</label>-->
+<!--                </div>-->
+<!--                <div class="pull-left field-box select-box">-->
+<!--                    <select-->
+<!--                            id="time_zone"-->
+<!--                            formControlName="timezone"-->
+<!--                            class="form-control"-->
+<!--                            [(ngModel)]="usersService.company.timezone"-->
+<!--                            (change)="changeTimezone($event.target)"-->
+<!--                    >-->
+<!--                        <option-->
+<!--                                *ngFor="let time of timeZonesCount | numberedCycle;let ind = index"-->
+<!--                                [attr.selectedValue]="time"-->
+<!--                                [selected]="time == usersService.company.timezone "-->
+<!--                        >-->
+<!--                            (UTC/GMT {{time}} hours) CEST-->
+<!--                        </option>-->
+<!--                    </select>-->
+<!--                </div>-->
+
+<!--                <div class="ui-select">-->
+<!--                    <label class="ui-select__label" for="company-time-zone">Mainbox</label>-->
+<!--                    <div class="ui-select__input">Birddesk1</div>-->
+<!--                    <div class="ui-select__options"><div class="ui-select__option">Birddesk1</div><div class="ui-select__option">Birddesk2</div><div class="ui-select__option">Birddesk3</div><div class="ui-select__option">Birddesk4</div></div>-->
+
+<!--                    <select class="ui-select__select" id="company-time-zone">-->
+<!--                        <option value="Super-Admin">Birddesk1</option>-->
+<!--                        <option value="Super-Admin">Birddesk2</option>-->
+<!--                        <option value="Super-Admin">Birddesk3</option>-->
+<!--                        <option value="Super-Admin">Birddesk4</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+
+                <div class="w-100 clearfix company-save-profile">
+                    <div class="grad-btn pull-right">
+                        <button class="grad-btn__btn" type="submit">Save Profile</button>
+                        <span class="grad-btn__bg"></span>
+                    </div>
+                </div>
+        </div>
+    </div>
+</form>

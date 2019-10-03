@@ -1,0 +1,203 @@
+<!--<div id="left-sidebar" [ngClass]="{'blureffect':usersService.forBlure}" class="page-main-content">-->
+    <!--<div class="sidebar-content first-view-sidebar ">-->
+        <!--<ul class="list-unstyled menu-main-list">-->
+            <!--<li class="company-name">-->
+                <!--<a title="Company name" *ngIf="usersService.compnayName ">-->
+                    <!--{{usersService.compnayName}}-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li *ngFor="let mailbox of mailboxService.mailboxes; let ind = index" class="menu-item">-->
+                <!--<a (click)="openCloseMailboxes(mailbox.id , ind , !!1)">-->
+                    <!--<span class="menu-icon">-->
+                        <!--<i class="la la-fw la-inbox"></i>-->
+                    <!--</span>-->
+                    <!--<span class="dotted-item">{{mailbox.name}}</span>-->
+                    <!--<span class="pull-right">-->
+                        <!--<i class="la la-fw"-->
+                           <!--[class.la-angle-down]="!mailbox.showed"-->
+                           <!--[class.la-angle-up]="mailbox.showed"-->
+                        <!--&gt;</i>-->
+                    <!--</span>-->
+                <!--</a>-->
+                <!--<ul *ngIf="mailbox.showed" class="list-unstyled sidebar_sub_menu">-->
+                    <!--<ng-container *ngFor="let subMenu of subMenus;">-->
+                        <!--<li-->
+                                <!--*ngIf="subMenu === 'attention' && socketService.trafficCopData[mailbox.id]"-->
+                                <!--[class.status-active]="activeSubMenu === subMenu && mailboxId === mailbox.id"-->
+                        <!--&gt;-->
+                            <!--<a-->
+                                    <!--[class.active-margin-left]="activeSubMenu === subMenu && mailboxId === mailbox.id"-->
+                                    <!--(click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"-->
+                            <!--&gt;-->
+                                <!--<span class="sub-menu-item" *ngIf="subMenu === 'attention' && socketService.trafficCopData[mailbox.id]">-->
+                                    <!--{{'needs attention' | capitalizeFirst}}-->
+                                <!--</span>-->
+                                <!--<span class="pull-right">-->
+                                    <!--{{socketService.trafficCopData[mailbox.id]}}-->
+                                <!--</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li-->
+                                <!--*ngIf="subMenu !== 'attention'"-->
+                                <!--[class.status-active]="activeSubMenu === subMenu && mailboxId === mailbox.id"-->
+                        <!--&gt;-->
+                            <!--<a-->
+                                    <!--[class.active-margin-left]="activeSubMenu === subMenu && mailboxId === mailbox.id"-->
+                                    <!--(click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"-->
+                            <!--&gt;-->
+                            <!--<span class="sub-menu-item">-->
+                                <!--{{subMenu | capitalizeFirst}}-->
+                            <!--</span>-->
+                                <!--<span class="pull-right" *ngIf="subMenu !== 'draft'">-->
+                                <!--{{mailbox[subMenu+'_tickets_count']}}-->
+                            <!--</span>-->
+                                <!--<span class="pull-right" *ngIf="subMenu === 'draft'">-->
+                               <!--{{(draftService.mailboxDraftData[mailbox.id] || draftService.mailboxDraftData[mailbox.id] === 0)?draftService.mailboxDraftData[mailbox.id]:''}}-->
+                            <!--</span>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ng-container>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li *ngIf="mailboxService.mailboxes.length" class="menu-item">-->
+                <!--<a (click)="cloud.effect = 'createTicket'">-->
+                    <!--<span class="menu-icon">-->
+                        <!--<i class="la la-fw la-ticket"></i>-->
+                    <!--</span>-->
+                    <!--<span>Create ticket</span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li *ngIf="mailboxService.mailboxes.length" class="menu-item">-->
+                <!--<a (click)="openCloseLabelsMenu()">-->
+                    <!--<span class="menu-icon">-->
+                        <!--<i class="la la-fw la-tag"></i>-->
+                    <!--</span>-->
+                    <!--<span>Labels</span>-->
+                    <!--<span class="pull-right">-->
+                        <!--<i class="la la-fw"-->
+                           <!--[class.la-angle-down]="!activeLabelsMenu"-->
+                           <!--[class.la-angle-up]="activeLabelsMenu"-->
+                        <!--&gt;-->
+                        <!--</i>-->
+                    <!--</span>-->
+                <!--</a>-->
+                <!--<ul *ngIf="activeLabelsMenu" class="list-unstyled sidebar_sub_menu">-->
+                    <!--<li *ngFor="let label of labelsService.labels">-->
+                        <!--<a (click)="searchTickets(label)">-->
+                            <!--<span class="label_icon" [ngStyle]="{'background-color': label.color}"></span>-->
+                            <!--<span>{{label.body}}</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="create-label">-->
+                        <!--<a (click)="cloud.effect = 'createLabel'">-->
+                            <!--<i class="la la-fw la-plus-circle"></i>-->
+                            <!--<span>Create label</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="tickets-panel height-full" [class.close]="!cloud.effect.ticketspanel">
+    <div class="tickets-panel__header">
+        <button class="create-ticket-btn create-ticket-btn_tickets-panel" (click)="cloud.effect = 'createTicket'">
+            <svg width="157px" height="36px" viewBox="0 0 157 36">
+                <defs>
+                    <linearGradient x1="100%" y1="50%" x2="9.90453078%" y2="50%" id="linearGradient-1">
+                        <stop stop-color="#08AEEA" offset="0%"></stop>
+                        <stop stop-color="#14CD9A" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <g id="Mailbox-v4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Advanced-Search-State" transform="translate(-162.000000, -18.000000)">
+                        <g id="top-expanded" transform="translate(80.000000, 0.000000)">
+                            <g id="bn">
+                                <g transform="translate(82.000000, 18.000000)">
+                                    <g id="Group-15">
+                                        <text id="Create-ticket" fill="url(#linearGradient-1)" font-family="Lato Bold, Lato"
+                                              font-size="18" font-weight="bold">
+                                            <tspan x="51.7645" y="25">Create ticket</tspan>
+                                        </text>
+                                        <g id="Group-12" stroke="url(#linearGradient-1)">
+                                            <circle id="Oval" stroke-width="1.7" cx="18" cy="18" r="17.15"></circle>
+                                            <path d="M25.3333333,17.3333333 L18.6666667,17.3333333 L18.6666667,10.6666667 C18.6666667,10.3 18.368,10 18,10 C17.632,10 17.3333333,10.3 17.3333333,10.6666667 L17.3333333,17.3333333 L10.6666667,17.3333333 C10.2986667,17.3333333 10,17.6333333 10,18 C10,18.37 10.2986667,18.6666667 10.6666667,18.6666667 L17.3333333,18.6666667 L17.3333333,25.3333333 C17.3333333,25.7033333 17.632,26 18,26 C18.368,26 18.6666667,25.7033333 18.6666667,25.3333333 L18.6666667,18.6666667 L25.3333333,18.6666667 C25.7013333,18.6666667 26,18.37 26,18 C26,17.6333333 25.7013333,17.3333333 25.3333333,17.3333333"
+                                                  id="Fill-49" stroke-width="0.2" fill="url(#linearGradient-1)"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+        <button class="hide-tickets-panel-btn" (click)="cloud.effect = 'ticketspanel'">
+            <img src="../../../../../../public/images/icons/arrow.png" alt="Hide Tickets Panel">
+        </button>
+    </div>
+    <div class="tickets-panel-inner">
+
+        <ng-container
+                *ngFor="let mailbox of mailboxService.mailboxes; let ind = index"
+        >
+            <div class="tickets-panel-item"  [class.close]="!mailbox.showed" >
+                <h3 (click)="openCloseMailboxes(mailbox.id , ind , !!1)" class="tickets-panel-item__title bold" tabIndex="1">{{mailbox.name}}</h3>
+                <div class="tickets-panel-item__content">
+                    <ng-container *ngFor="let subMenu of subMenus;">
+                        <div class="tickets-panel-item__category "
+                            *ngIf="subMenu !== 'attention'"
+                            [class.active]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                             (click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"
+                        >
+
+                            <div class="tickets-panel-item__category__icon">
+                                <svg-html
+                                        [svgName]="subMenu">
+
+                                </svg-html>
+                            </div>
+                            <p class="tickets-panel-item__category__title">{{subMenu | capitalizeFirst}}</p>
+                            <span  class="tickets-panel-item__category__amount"*ngIf="subMenu !== 'draft'">
+                            {{mailbox[subMenu+'_tickets_count']}}
+                            </span>
+                            <span  class="tickets-panel-item__category__amount" *ngIf="subMenu === 'draft'">
+                            {{(draftService.mailboxDraftData[mailbox.id] || draftService.mailboxDraftData[mailbox.id] === 0)?draftService.mailboxDraftData[mailbox.id]:''}}
+                            </span>
+
+                        </div>
+                        <div class="tickets-panel-item__category bold attention"
+                            *ngIf="subMenu == 'attention' && socketService.trafficCopData[mailbox.id]"
+                            [class.active]="activeSubMenu === subMenu && mailboxId === mailbox.id"
+                             (click)="sortOpen(subMenu, mailbox.id, (activeSubMenu === subMenu && mailboxId === mailbox.id), ind)"
+                        >
+
+                            <div class="tickets-panel-item__category__ico">
+                                <svg-html
+                                        [svgName]="subMenu">
+
+                                </svg-html>
+                            </div>
+                            <p class="tickets-panel-item__category__title"> {{'Needs attention' | capitalizeFirst}}</p>
+                            <span  class="tickets-panel-item__category__amount"*ngIf="subMenu !== 'draft'">
+                            {{socketService.trafficCopData[mailbox.id]}}
+                            </span>
+
+                        </div>
+                    </ng-container>
+
+                </div>
+
+            </div>
+        </ng-container>
+
+
+        <!--<div class="tickets-panel-item close">-->
+            <!--<h3 class="tickets-panel-item__title bold" tabIndex="1">Work</h3>-->
+            <!--<div class="tickets-panel-item__content"></div>-->
+        <!--</div>-->
+
+    </div>
+</div>

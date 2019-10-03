@@ -1,0 +1,21 @@
+<div class="sign-wrapper">
+    <loading [className]="'extended'" class="signup-loader" *ngIf="!loader"></loading>
+
+    <div class="birddesk-logo">
+        <img src="../../../../../public/images/logo/logo.svg" alt="Logo" [routerLink]="['/']">
+        <a [routerLink]="['/']">BirdDesk</a>
+    </div>
+    <section class="get-started">
+        <ng-container *ngIf="loader">
+            <h2 class="get-started__haeder text-center bold">Get started</h2>
+            <div class="get-started-router">
+                <a class="get-started-router__item" [routerLink]="['/login']">Find your BirdDesk company</a>
+                <a class="get-started-router__item" [href]="environment.getstarted">Create a new company</a>
+            </div>
+
+        </ng-container>
+        <div class="get-started__img get-started__img--md">
+            <img src="../../../../../public/images/sign-up/get-started.svg" (load)="test($event)" alt="Get started">
+        </div>
+    </section>
+</div>
