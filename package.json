@@ -47,7 +47,7 @@
     "core-js": "^2.5.7",
     "diff-dates": "^1.0.12",
     "filesaver.js-npm": "1.0.1",
-    "gitlog": "^3.1.2",
+    "gitlog": "^4.0.4",
     "imports-loader": "0.6.5",
     "ip": "^1.1.5",
     "jquery": "3.1.0",
