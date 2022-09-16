@@ -40,7 +40,7 @@
     "at.js": "^1.5.3",
     "awesome-typescript-loader": "git+https://github.com/DevSeto/awesome-typescript-loader.git",
     "babel-core": "^6.26.3",
-    "bootstrap": "3.3.6",
+    "bootstrap": "3.4.1",
     "browserify": "^16.2.2",
     "class-transformer": "^0.1.7",
     "class-validator": "^0.7.2",
