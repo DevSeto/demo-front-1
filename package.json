@@ -43,7 +43,7 @@
     "bootstrap": "3.3.6",
     "browserify": "^16.2.2",
     "class-transformer": "^0.1.7",
-    "class-validator": "^0.7.2",
+    "class-validator": "^0.14.0",
     "core-js": "^2.5.7",
     "diff-dates": "^1.0.12",
     "filesaver.js-npm": "1.0.1",
